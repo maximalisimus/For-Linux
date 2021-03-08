@@ -1,0 +1,7 @@
+
+sed -n '/Intel/{s/.*Intel/Intel/;s/ .*$//;p}'
+sed 's/.*\(Intel\S*\).*/\1/'
+awk '/Intel/' RS=" "
+grep -oi "intel"
+
+

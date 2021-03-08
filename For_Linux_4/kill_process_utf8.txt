@@ -1,0 +1,24 @@
+﻿
+$ ps aux | grep ping
+
+$ pgrep ping
+
+
+
+
+$ kill 20446
+
+$ kill -TERM 20446
+
+$ kill -KILL 20446
+
+$ pkill ping
+
+$ pkill -TERM ping
+
+$ killall ping
+
+
+
+
+

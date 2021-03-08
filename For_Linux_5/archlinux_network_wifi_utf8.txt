@@ -1,0 +1,209 @@
+﻿
+$ sudo pacman -S netctl dialog wpa_supplicant
+$ sudo pacman -S net-tools
+$ sudo pacman -S network-manager-applet
+$ sudo pacman -S libgtop networkmanager
+$ pacman -S networkmanager-openconnect networkmanager-openvpn networkmanager-pptp networkmanager-vpnc networkmanager-l2tp networkmanager-strongswan
+$ sudo pacman -S iw wireless_tools wicd network-wireless 
+
+$ sudo systemctl stop dhcpcd
+$ sudo systemctl disable dhcpcd
+$ sudo systemctl enable NetworkManager
+$ sudo systemctl start NetworkManager
+
+# Or
+
+# sudo systemctl stop dhcpcd@enp0s3.service
+# sudo systemctl disable dhcpcd@enp0s3.service
+# sudo systemctl stop dhcpcd.service
+# sudo systemctl disable dhcpcd.service
+# sudo systemctl start NetworkManager
+# sudo systemctl enable NetworkManager
+
+
+
+# sudo pacman -S samba libwbclient smb4k smbclient smbnetfs gvfs-smb 
+
+
+
+
+$ lspci -k
+
+
+# ip link set eth0 up
+# ip link set eth0 down
+$ ip link show dev eth0
+
+$ dhcpcd
+
+
+# ip link set wlan0 up
+
+$ dmesg | grep firmware
+
+$ dmesg | grep iwlwifi
+
+
+
+### WEP ###
+
+
+iw dev wlan0 link
+
+iw dev wlan0 scan
+
+$ iw dev wlan0 station dump
+
+# ip link set wlan0 up
+
+# ip link show wlan0
+
+# iw dev wlan0 scan | less
+
+iw dev wlan0 set type ibss
+
+iw dev wlan0 connect ваш_essid
+
+iw dev wlan0 connect ваш_essid 2432
+
+iw dev wlan0 connect ваш_essid key 0:ваш_ключ
+
+iw dev wlan0 connect ваш_essid key 0:ваш_ключ
+
+iw dev wlan0 set power_save on
+
+$ iw dev
+
+
+### WEP ###
+
+
+
+### WPA / WAP2 ###
+
+
+
+$ wpa_passphrase MYSSID passphrase >> /etc/wpa_supplicant/example.conf
+
+
+
+/etc/wpa_supplicant/example.conf
+ctrl_interface=DIR=/run/wpa_supplicant GROUP=wheel
+update_config=1
+fast_reauth=1
+ap_scan=1
+network={
+    ssid="''SSID_сети''"
+    #psk="''парольная_фраза''"
+    psk=59e0d07fa4c7741797a4e394f38a5c321e3bed51d54ad5fcbd3f84bc7415d73d
+}
+
+
+
+$ wpa_passphrase SSID_сети парольная_фраза > /etc/wpa_supplicant/example.conf
+
+$ wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/example.conf
+
+$ dhcpcd
+
+
+# systemctl enable dhcpcd@interface
+
+# systemctl enable wpa_supplicant@имя_интерфейса
+
+
+### WPA / WAP2 ###
+
+
+
+
+### wpa_cli scripting ###
+
+
+#!/bin/bash
+
+case "$2" in
+    CONNECTED)
+        notify-send "WPA supplicant: connection established";
+        ;;
+    DISCONNECTED)
+        notify-send "WPA supplicant: connection lost";
+        ;;
+esac
+
+
+
+$ wpa_cli -a /путь/до/скрипта
+
+
+
+### wpa_cli scripting ###
+
+
+
+
+
+
+### Rename Ethernet devices ###
+
+
+$ ls /sys/class/net
+$ cat /sys/class/net/имя_устройства/address
+$ cat /sys/class/net/device_name/address
+
+
+/etc/udev/rules.d/10-network.rules
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="net1"
+SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="ff:ee:dd:cc:bb:aa", NAME="net0"
+
+OR
+
+/etc/udev/rules.d/10-network.rules
+SUBSYSTEM=="net", DEVPATH=="/devices/platform/wemac.*", NAME="int"
+SUBSYSTEM=="net", DEVPATH=="/devices/pci*/*1c.0/*/net/*", NAME="en"
+
+
+### udevadm info -a -p /sys/class/net/enp0s3 | grep enp0s3 | awk '{print $4}' | tr -d ':' | sed "s/'//g" | sed "s/enp0s3//g"
+
+
+
+The device path should match both the new and old device name, 
+since the rule may be executed more than once on bootup. 
+For example, in the second rule, "/devices/pci*/*1c.0/*/net/enp*" 
+would be wrong since it will stop matching once the name is changed to en. 
+Only the system-default rule will fire the second time around, 
+causing the name to be changed back to e.g. enp1s0.
+
+
+If you're using a USB network device (e.g. Android phone tethering) 
+that has a dynamic MAC address and you want to be able to use different USB ports, 
+you could use a rule that matched depending on vendor and model ID instead:
+
+
+/etc/udev/rules.d/10-network.rules
+SUBSYSTEM=="net", ACTION="add", ENV{ID_VENDOR_ID}=="12ab", ENV{ID_MODEL_ID}=="3cd4", NAME="net2"
+
+
+To test your rules, they can be triggered directly from userspace, 
+e.g. with udevadm --debug test /sys/DEVPATH. 
+Remember to first take down the interface you are trying to rename (e.g. ip link set enp1s0 down).
+
+
+Revert to traditional interface names
+
+# ln -s /dev/null /etc/udev/rules.d/80-net-setup-link.rules
+
+
+### Rename Ethernet devices ###
+
+
+
+
+
+
+
+
+
+
+
+

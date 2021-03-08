@@ -1,0 +1,7 @@
+﻿#!/bin/bash
+ipcalc 192.168.0.0 | awk 'BEGIN{OFS=" "} {print $1,$2}' | awk '!/^$/{print $0}' > ./ip.calc
+cat ip.calc
+exit 0
+
+
+

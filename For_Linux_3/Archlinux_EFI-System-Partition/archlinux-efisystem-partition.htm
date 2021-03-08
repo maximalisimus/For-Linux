@@ -1,0 +1,2784 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="archlinux-efisystem-partition.files/filelist.xml">
+<link rel=Edit-Time-Data href="archlinux-efisystem-partition.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Doctor_Who</o:Author>
+  <o:LastAuthor>Doctor_Who</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>2018-12-29T15:31:00Z</o:LastPrinted>
+  <o:Created>2018-12-29T15:31:00Z</o:Created>
+  <o:LastSaved>2018-12-29T15:31:00Z</o:LastSaved>
+  <o:Pages>3</o:Pages>
+  <o:Words>1939</o:Words>
+  <o:Characters>11053</o:Characters>
+  <o:Company>diakov.net</o:Company>
+  <o:Lines>92</o:Lines>
+  <o:Paragraphs>25</o:Paragraphs>
+  <o:CharactersWithSpaces>12967</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="archlinux-efisystem-partition.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="archlinux-efisystem-partition.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:Georgia;
+	panose-1:2 4 5 2 5 4 5 2 3 3;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:18.0pt;
+	mso-bidi-font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:13.5pt;
+	mso-bidi-font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.mw-redirectedfrom
+	{mso-style-name:mw-redirectedfrom;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.toctoggle
+	{mso-style-name:toctoggle;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.tocnumber
+	{mso-style-name:tocnumber;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.toctext
+	{mso-style-name:toctext;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.mw-headline
+	{mso-style-name:mw-headline;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Стандартный HTML";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	mso-fareast-language:RU;}
+span.plainlinks
+	{mso-style-name:plainlinks;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:207108265;
+	mso-list-template-ids:-458719846;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:400641143;
+	mso-list-template-ids:1860709908;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:850028524;
+	mso-list-template-ids:371898480;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:1075512310;
+	mso-list-template-ids:970246716;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4
+	{mso-list-id:1436902472;
+	mso-list-template-ids:-396961914;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink="#954F72" style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:normal;mso-outline-level:
+1;border:none;mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:
+0cm 0cm 0cm 0cm'><span lang=EN style='font-size:21.5pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-font-kerning:18.0pt;
+mso-ansi-language:EN;mso-fareast-language:RU'>EFI system partition (<span
+class=SpellE>Русский</span>)<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='line-height:14.4pt'><span lang=EN-US
+style='font-size:9.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#54595D;mso-ansi-language:EN-US;mso-fareast-language:
+RU'>(Redirected from&nbsp;</span><span style='font-size:9.0pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#54595D;mso-fareast-language:
+RU'><a
+href="https://wiki.archlinux.org/index.php?title=%D0%A1%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%BD%D1%8B%D0%B9_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB_EFI&amp;redirect=no"
+title="Системный раздел EFI">Системный<span style='mso-ansi-language:EN-US'> </span>раздел<span
+lang=EN-US style='mso-ansi-language:EN-US'> EFI</span></a></span><span
+lang=EN-US style='font-size:9.0pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#54595D;mso-ansi-language:EN-US;mso-fareast-language:
+RU'>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+#DDDDFF'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Состояние перевода:</span></b><b><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span></b><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>На этой странице
+представлен перевод статьи</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_System_Partition"
+title="EFI System Partition"><b>EFI</b><b><span style='mso-ansi-language:RU'> </span>System</b><b><span
+style='mso-ansi-language:RU'> </span>Partition</b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>. Дата последней
+синхронизации: 16 августа 2017. Вы можете</span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="ArchWiki Translation Team (Русский)"><span class=SpellE><b><span
+lang=RU style='mso-ansi-language:RU'>помочь</span></b></span></a></span><span
+class=SpellE><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>синхронизировать</span></span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'> перевод, если в английской версии произошли</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php?title=EFI_System_Partition&amp;diff=0&amp;oldid=485489"><b><span
+lang=RU style='mso-ansi-language:RU'>изменения</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:6.0pt;margin-right:0cm;
+margin-bottom:6.0pt;margin-left:0cm;text-align:center;line-height:normal;
+background:#F9FAFF'><a
+href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png"><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+RU;mso-no-proof:yes;text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Рисунок_x0020_4" o:spid="_x0000_i1028" type="#_x0000_t75"
+ alt="Tango-preferences-desktop-locale.png"
+ href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png"
+ style='width:36pt;height:36pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="archlinux-efisystem-partition.files/image001.png" o:title="Tango-preferences-desktop-locale"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=48 height=48
+src="archlinux-efisystem-partition.files/image001.png"
+alt=Tango-preferences-desktop-locale.png v:shapes="Рисунок_x0020_4"></span><![endif]></span></b></a><b><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>Эта страница нуждается
+в сопроводителе</span></b><a
+href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png"><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+RU;mso-no-proof:yes;text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_3" o:spid="_x0000_i1027" type="#_x0000_t75" alt="Tango-preferences-desktop-locale.png"
+ href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png"
+ style='width:36pt;height:36pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="archlinux-efisystem-partition.files/image001.png" o:title="Tango-preferences-desktop-locale"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=48 height=48
+src="archlinux-efisystem-partition.files/image001.png"
+alt=Tango-preferences-desktop-locale.png v:shapes="Рисунок_x0020_3"></span><![endif]></span></b></a><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal;
+background:#F9FAFF'><span style='font-size:9.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Статья не гарантирует актуальность информации. Помогите русскоязычному
+сообществу поддержкой подобных страниц. См.</span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki"
+title="Команда переводчиков ArchWiki"><b><span lang=RU style='mso-ansi-language:
+RU'>Команда переводчиков </span><span class=SpellE>ArchWiki</span></b></a></span><span
+style='font-size:9.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://en.wikipedia.org/wiki/EFI_System_partition"
+title="w:EFI System partition"><b><span lang=RU style='mso-ansi-language:RU'>Системный
+раздел </span>EFI</b></a>&nbsp;</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>(также называемый </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> или </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFISYS</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>) представляет собой
+физический раздел в формате </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>FAT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>32 (в основной таблице
+разделов диска, а не под </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>LVM</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> или программным </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>RAID</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> и т.д.), откуда
+прошивка</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Unified Extensible Firmware Interface (Русский)"><b>UEFI</b></a>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>запускает загрузчик и
+приложение </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>UEFI</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Это независимый от ОС раздел, который служит местом
+хранения загрузочных устройств </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> и приложений, которые
+будут запускаться с помощью прошивки </span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>. Это необходимо для
+загрузки </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>UEFI</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+#FFDDDD'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Важно:</span></b><b><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span></b><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>Если вы выполняете</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Dual_boot_with_Windows_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Dual boot with Windows (Русский)"><b><span lang=RU style='mso-ansi-language:
+RU'>двойную загрузку</span></b></a>&nbsp;</span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>с существующей установкой </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Windows</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> в системе </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>UEFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>/</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>GPT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, не форматируйте
+раздел </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>UEFI</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>, так как это включает в себя файл </span><span
+class=GramE><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>Windows&nbsp;</span><i><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>.</span></i><span class=SpellE><i><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>efi</span></i></span></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, необходимый для ее
+загрузки. Другими словами, используйте существующий раздел как есть и просто</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><b><span
+lang=RU style='mso-ansi-language:RU'>монтируйте его</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-top:12.0pt;margin-right:0cm;
+margin-bottom:3.0pt;margin-left:0cm;text-align:center;line-height:normal;
+mso-outline-level:2;background:#F9FAFF'><b><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Contents<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:normal;background:#F9FAFF'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;[<span
+class=GramE>hide</span>]&nbsp;</span><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><span
+style='color:#222222;text-decoration:none;text-underline:none'>1</span><span
+style='text-decoration:none;text-underline:none'>Создание <span class=SpellE>раздела</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2_GPT"><span
+style='color:#222222;text-decoration:none;text-underline:none'>1.1</span><span
+style='text-decoration:none;text-underline:none'>Разметка <span class=SpellE>дисков</span>
+GPT</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D0%B4%D0%B8%D1%81%D0%BA%D0%BE%D0%B2_MBR"><span
+style='color:#222222;text-decoration:none;text-underline:none'>1.2</span><span
+style='text-decoration:none;text-underline:none'>Разметка <span class=SpellE>дисков</span>
+MBR</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><span
+style='color:#222222;text-decoration:none;text-underline:none'>2</span><span
+style='text-decoration:none;text-underline:none'>Форматирование <span
+class=SpellE>раздела</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><span
+style='color:#222222;text-decoration:none;text-underline:none'>3</span><span
+style='text-decoration:none;text-underline:none'>Монтирование <span
+class=SpellE>раздела</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%98%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B5_%D0%B2%D0%BE%D0%BF%D1%80%D0%BE%D1%81%D1%8B"><span
+style='color:#222222;text-decoration:none;text-underline:none'>4</span><span
+style='text-decoration:none;text-underline:none'>Известные <span class=SpellE>вопросы</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#ESP_%D0%BD%D0%B0_RAID"><span
+style='color:#222222;text-decoration:none;text-underline:none'>4.1</span><span
+style='text-decoration:none;text-underline:none'>ESP <span class=SpellE>на</span>
+RAID</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BE%D0%B2%D0%B5%D1%82%D1%8B_%D0%B8_%D1%85%D0%B8%D1%82%D1%80%D0%BE%D1%81%D1%82%D0%B8"><span
+style='color:#222222;text-decoration:none;text-underline:none'>5</span><span
+style='text-decoration:none;text-underline:none'>Советы и <span class=SpellE>хитрости</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_bind_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"><span
+style='color:#222222;text-decoration:none;text-underline:none'>5.1</span><span
+style='text-decoration:none;text-underline:none'>Использование bind <span
+class=SpellE>монтирования</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:normal;mso-list:l2 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9FAFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;mso-fareast-language:
+RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.0pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5"><span
+style='color:#222222;text-decoration:none;text-underline:none'>6</span><span
+style='text-decoration:none;text-underline:none'>Смотрите <span class=SpellE>также</span></span></a><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+class=SpellE><span lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:Arial;
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Создание</span></span><span
+lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-ansi-language:
+EN;mso-fareast-language:RU'> <span class=SpellE>раздела</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>В следующих двух разделах показано, как создать
+системный раздел </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>EFI</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'> (</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:normal;background:
+#DDDDFF'><b><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Примечание:</span></b><b><span lang=EN style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span></b><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>Рекомендуется
+использовать</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/GPT_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="GPT (Русский)"><b>GPT</b></a>&nbsp;</span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>для загрузки </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>UEFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, потому что некоторые
+прошивки </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>UEFI</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'> не позволяют загружать </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>UEFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>-</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>MBR</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Рекомендуется сохранять размер </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> на 512 Мбайт, хотя
+меньшие/большие размеры тоже приветствуются.</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="http://www.rodsbooks.com/efi-bootloaders/principles.html"><b><span
+lang=RU style='mso-ansi-language:RU'>[1]</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Согласно <span class=GramE>примечанию</span> </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Microsoft<a
+href="http://technet.microsoft.com/en-us/library/hh824839.aspx#DiskPartitionRules"><b><span
+lang=RU style='mso-ansi-language:RU'>[2]</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, минимальный размер
+для системного раздела </span><span lang=EN style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> (</span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>) будет составлять 100
+МБ, хотя это не указано в спецификации </span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>UEFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>. Обратите внимание,
+что для дисков расширенный формат 4</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>K</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Native</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>drives</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> (4 КБ на сектор)
+размер составляет не менее 256 Мбайт, поскольку это минимальный размер раздела
+дисков </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>FAT</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>32 (рассчитанный как размер сектора (4 КБ) </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>x</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> 65527 = 256 Мбайт),
+из-за ограничений файловой системы </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>FAT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>32.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.6pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;line-height:normal;mso-outline-level:
+3'><b><span style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>Разметка дисков </span></b><b><span
+lang=EN style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>GPT</span></b><b><span
+style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><b><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>Выберите один</span></b><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>из следующих способов
+создания </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>ESP</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'> для диска </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>GPT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> с разделами:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:19.2pt;text-indent:-18.0pt;line-height:normal;mso-list:l3 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN style='font-size:
+10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/Fdisk_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Fdisk (Русский)"><span class=SpellE><span class=GramE><b>fdisk</b></span></span><span
+class=GramE><b><span lang=RU style='mso-ansi-language:RU'>/</span><span
+class=SpellE>gdisk</span></b></span></a></span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>: Создайте раздел с типом раздела </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>System</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> (</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>EFI</span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>System</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>в</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<span
+class=SpellE><i>fdisk</i></span>&nbsp;</span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>или</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>EF</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>00</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>в</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<span
+class=SpellE><i>gdisk</i></span></span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>). </span><span class=SpellE><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Перейдите</span></span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>
+к <span class=SpellE>разделу</span>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><b>#<span
+class=SpellE>Форматирование</span> <span class=SpellE>раздела</span></b></a>&nbsp;<span
+class=SpellE>ниже</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:19.2pt;text-indent:-18.0pt;line-height:normal;mso-list:l3 level1 lfo2;
+tab-stops:list 36.0pt'><![if !supportLists]><span lang=EN style='font-size:
+10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://wiki.archlinux.org/index.php/GNU_Parted_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="GNU Parted (Русский)"><b>GNU</b><b><span style='mso-ansi-language:RU'> </span>Parted</b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>: Создайте раздел </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>FAT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>32 и в </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Parted</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>
+установите/активируйте флаг</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>(<b>не</b></span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>флаг</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>legacy</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>_</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>boot</span><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>) на этом разделе. </span><span class=SpellE><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Перейдите</span></span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>
+к <span class=SpellE>разделу</span>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><b>#<span
+class=SpellE>Монтирование</span> <span class=SpellE>раздела</span></b></a>&nbsp;<span
+class=SpellE>ниже</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:3.6pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;line-height:normal;mso-outline-level:
+3'><span class=SpellE><b><span lang=EN style='font-size:12.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'>Разметка</span></b></span><b><span
+lang=EN style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'> <span
+class=SpellE>дисков</span> MBR<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Создайте раздел с типом раздела</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<i>EFI</i></span><i><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> </span></i><i><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>System</span></i><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, используя </span><span
+class=SpellE><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>fdisk</span></span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>. Перейдите к</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A4%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D1%80%D0%B0%D0%B7%D0%B4%D0%B5%D0%BB%D0%B0"><b><span
+lang=RU style='mso-ansi-language:RU'>#Форматирование раздела</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-fareast-language:
+RU'>Форматирование раздела<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>После создания </span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> вы</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><b><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>должны</span></b><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/File_systems_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B"
+title="File systems (Русский)"><b><span lang=RU style='mso-ansi-language:RU'>форматировать</span></b></a>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>его как </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>FAT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>32:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #BBCCDD 1.0pt;mso-border-alt:
+solid #BBCCDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#EBF1F5'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#EBF1F5;word-break:break-all;border:none;mso-border-alt:solid #BBCCDD .75pt;
+padding:0cm;mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'># </span><span class=SpellE><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>mkfs</span></span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>.</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>fat</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> -</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>F</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>32 /</span><span class=SpellE><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>dev</span></span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>/</span><span class=SpellE><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>sd<i>xY</i></span></span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Если вы использовали </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>GNU</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Parted</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> выше, тогда раздел
+уже должен быть отформатирован.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Если вы получили сообщение</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>WARNING</span><span style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>: </span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>Not</span><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#222222;background:#EBF1F5;
+mso-fareast-language:RU'> </span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:RU'>enough</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-fareast-language:RU'> </span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>clusters</span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'> </span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>for</span><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#222222;background:#EBF1F5;
+mso-fareast-language:RU'> </span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:RU'>a</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'> 32 </span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>bit</span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'> </span><span class=GramE><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>FAT</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>!</span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>,</span></span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> уменьшите размер кластера с помощью
+команды</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span><span class=SpellE><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>mkfs</span></span><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#222222;background:#EBF1F5;
+mso-fareast-language:RU'>.</span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:RU'>fat</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'> -</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>s</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>2 -</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>F</span><span style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-fareast-language:RU'>32
+...</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>или</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>-</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>s</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>1</span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>; иначе раздел может быть нечитаемым </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>UEFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+class=SpellE><span lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:Arial;
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Монтирование</span></span><span
+lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-ansi-language:
+EN;mso-fareast-language:RU'> <span class=SpellE>раздела</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal align=center style='margin-top:6.0pt;margin-right:0cm;
+margin-bottom:6.0pt;margin-left:0cm;text-align:center;line-height:normal;
+background:#F9FAFF'><a
+href="https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png"><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+RU;mso-no-proof:yes;text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_2" o:spid="_x0000_i1026" type="#_x0000_t75" alt="Tango-view-fullscreen.png"
+ href="https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png"
+ style='width:36pt;height:36pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="archlinux-efisystem-partition.files/image002.png" o:title="Tango-view-fullscreen"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=48 height=48
+src="archlinux-efisystem-partition.files/image002.png"
+alt=Tango-view-fullscreen.png v:shapes="Рисунок_x0020_2"></span><![endif]></span></b></a><b><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>This
+article or section needs expansion.</span></b><a
+href="https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png"><b
+style='mso-bidi-font-weight:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";mso-fareast-language:
+RU;mso-no-proof:yes;text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape
+ id="Рисунок_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75" alt="Tango-view-fullscreen.png"
+ href="https://wiki.archlinux.org/index.php/File:Tango-view-fullscreen.png"
+ style='width:36pt;height:36pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="archlinux-efisystem-partition.files/image002.png" o:title="Tango-view-fullscreen"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=48 height=48
+src="archlinux-efisystem-partition.files/image002.png"
+alt=Tango-view-fullscreen.png v:shapes="Рисунок_x0020_1"></span><![endif]></span></b></a><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='text-align:center;line-height:normal;
+background:#F9FAFF'><b><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>Reason:</span></b><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;Add&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>/boot/<span class=SpellE>efi</span></span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;(Discuss
+in&nbsp;<span class=SpellE><a
+href="https://wiki.archlinux.org/index.php/Talk:EFISTUB#ESP_mount_points"><b>Talk<span
+class=GramE>:EFISTUB</span>#ESP</b><b> mount points</b></a></span>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>В случае</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="EFISTUB (Русский)"><b>EFISTUB</b></a>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>файлы ядра и </span><span
+class=SpellE><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>initramfs</span></span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> должны храниться в системном разделе </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>. Для простоты вы
+также можете использовать </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> в качестве самого
+раздела</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>/</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-ansi-language:EN;mso-fareast-language:
+RU'>boot</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>вместо отдельного раздела</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>для загрузки </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFISTUB</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>. Другими словами,
+после создания и форматирования системного раздела </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, как указано выше,
+просто</span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/%D0%A1%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D1%83%D0%B9%D1%82%D0%B5"
+title=Смонтируйте><b><span lang=RU style='mso-ansi-language:RU'>смонтируйте</span></b></a>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>на</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Также смотрите</span><span lang=EN style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFI_system_partition_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_bind_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F"><b><span
+lang=RU style='mso-ansi-language:RU'>#Использование </span>bind</b><b><span
+lang=RU style='mso-ansi-language:RU'> монтирования</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-fareast-language:
+RU'>Известные вопросы<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.6pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;line-height:normal;mso-outline-level:
+3'><b><span lang=EN style='font-size:12.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>ESP</span></b><b><span style='font-size:12.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> на </span></b><b><span lang=EN
+style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>RAID</span></b><b><span
+style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Можно сделать часть </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> массива </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>RAID</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>1, но при этом
+возникает риск повреждения данных, и при создании </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> необходимо учитывать
+дополнительные соображения. Для получения <span class=SpellE>допольнительной</span>
+информации смотрите</span><span lang=EN style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://bbs.archlinux.org/viewtopic.php?pid=1398710#p1398710"><b><span
+lang=RU style='mso-ansi-language:RU'>[3]</span></b></a>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>и</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://bbs.archlinux.org/viewtopic.php?pid=1390741#p1390741"><b><span
+lang=RU style='mso-ansi-language:RU'>[4]</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-fareast-language:
+RU'>Советы и хитрости<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.6pt;margin-right:0cm;margin-bottom:0cm;
+margin-left:0cm;margin-bottom:.0001pt;line-height:normal;mso-outline-level:
+3'><b><span style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>Использование </span></b><b><span
+lang=EN style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>bind</span></b><b><span
+style='font-size:12.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> монтирования<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Вместо того, чтобы устанавливать </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> на</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>, вы можете подключить каталог </span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'> к</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>с помощью </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>bind&nbsp;<a
+href="https://wiki.archlinux.org/index.php/%D0%9C%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0"
+title=Монтирова><b><span lang=RU style='mso-ansi-language:RU'>монтирова</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>ния (смотрите</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="https://jlk.fjfi.cvut.cz/arch/manpages/man/mount.8"><b>mount</b><b><span
+lang=RU style='mso-ansi-language:RU'>(8)</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>). Это позволяет</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<span
+class=SpellE><a
+href="https://wiki.archlinux.org/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Pacman (Русский)"><b>pacman</b></a></span></span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>обновлять ядро напрямую, сохраняя при
+этом организацию </span><span lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-ansi-language:EN;
+mso-fareast-language:RU'>ESP</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'> по своему вкусу.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#DDDDFF'><span class=SpellE><b><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Примечание</span></b></span><b><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>:</span></b><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:19.2pt;text-indent:-18.0pt;line-height:normal;mso-list:l1 level1 lfo3;
+tab-stops:list 36.0pt;background:#DDDDFF'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Для этого требуется, чтобы ядро и загрузчик были совместимы с </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>FAT</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>32. Это не является
+проблемой для обычной установки </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Arch</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, но может быть
+проблематичным для других дистрибутивов (а именно тех, которые требуют
+символических ссылок в</span><span lang=EN style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>). </span><span class=SpellE><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Смотрите</span></span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'> <span
+class=SpellE>сообщение</span> <span class=SpellE>на</span> <span class=SpellE>форуме</span>&nbsp;<span
+class=SpellE><a
+href="https://bbs.archlinux.org/viewtopic.php?pid=1331867#p1331867"><b>здесь</b></a></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:6.0pt;
+margin-left:19.2pt;text-indent:-18.0pt;line-height:normal;mso-list:l1 level1 lfo3;
+tab-stops:list 36.0pt;background:#DDDDFF'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#222222;
+mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'>Для загрузки с помощью этого способа вы</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><i><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>должны</span></i><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>использовать</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>root</span><span style='font-size:10.0pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#222222;
+background:#EBF1F5;mso-fareast-language:RU'>=</span><span lang=EN
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Kernel_parameters_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BF%D0%B8%D1%81%D0%BE%D0%BA_%D0%BF%D0%B0%D1%80%D0%B0%D0%BC%D0%B5%D1%82%D1%80%D0%BE%D0%B2"
+title="Kernel parameters (Русский)"><b><span lang=RU style='mso-ansi-language:
+RU'>параметр ядра</span></b></a></span><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>Как и в</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/EFISTUB_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%90%D0%BB%D1%8C%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5_%D1%82%D0%BE%D1%87%D0%BA%D0%B8_%D0%BC%D0%BE%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F_%D0%B4%D0%BB%D1%8F_ESP"
+title="EFISTUB (Русский)"><b>EFISTUB</b><b><span lang=RU style='mso-ansi-language:
+RU'>#Альтернативные точки монтирования для </span>ESP</b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, скопируйте все
+загрузочные файлы в каталог вашего </span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>, но смонтируйте </span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>ESP&nbsp;</span><b><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>вне</span></b><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;background:#EBF1F5;mso-ansi-language:EN;
+mso-fareast-language:RU'>boot</span><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>(например,</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;background:#EBF1F5;mso-fareast-language:RU'>/</span><span
+class=SpellE><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#222222;background:#EBF1F5;
+mso-ansi-language:EN;mso-fareast-language:RU'>esp</span></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'>). Затем привяжите
+смонтированный раздел к каталогу:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #BBCCDD 1.0pt;mso-border-alt:
+solid #BBCCDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#EBF1F5'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#EBF1F5;word-break:break-all;border:none;mso-border-alt:solid #BBCCDD .75pt;
+padding:0cm;mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'># </span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>mount</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> --</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>bind</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'> /</span><span class=SpellE><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>esp</span></span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>/</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>EFI</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>/</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>arch</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>/ /</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>boot</span><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:normal'><span style='font-size:10.5pt;font-family:
+"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";color:#222222;
+mso-fareast-language:RU'>После проверки успеха отредактируйте свой</span><span
+lang=EN style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>&nbsp;<span
+class=SpellE><a
+href="https://wiki.archlinux.org/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Fstab (Русский)"><b>Fstab</b></a></span></span><span style='font-size:
+10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-fareast-language:RU'>, чтобы изменения были постоянными:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #BBCCDD 1.0pt;border-bottom:
+none;mso-border-top-alt:solid #BBCCDD .75pt;mso-border-left-alt:solid #BBCCDD .75pt;
+mso-border-right-alt:solid #BBCCDD .75pt;padding:12.0pt 12.0pt 0cm 12.0pt;
+background:#EBF1F5'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#EBF1F5;word-break:break-all;border:none;mso-border-top-alt:solid #BBCCDD .75pt;
+mso-border-left-alt:solid #BBCCDD .75pt;mso-border-right-alt:solid #BBCCDD .75pt;
+padding:0cm;mso-padding-alt:12.0pt 12.0pt 0cm 12.0pt'><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>/<span
+class=SpellE>etc</span>/<span class=SpellE>fstab</span><o:p></o:p></span></p>
+
+</div>
+
+<div style='mso-element:para-border-div;border:solid #BBCCDD 1.0pt;mso-border-alt:
+solid #BBCCDD .75pt;padding:10.0pt 12.0pt 12.0pt 12.0pt;background:#EBF1F5'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#EBF1F5;word-break:break-all;border:none;mso-border-alt:solid #BBCCDD .75pt;
+padding:0cm;mso-padding-alt:10.0pt 12.0pt 12.0pt 12.0pt'><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>/<span
+class=SpellE>esp</span>/EFI/arch /boot none <span class=SpellE>defaults<span
+class=GramE>,bind</span></span> 0 0<o:p></o:p></span></p>
+
+</div>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #A2A9B1 1.0pt;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;line-height:normal;mso-outline-level:2;border:none;
+mso-border-bottom-alt:solid #A2A9B1 .75pt;padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span
+class=SpellE><span lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:Arial;
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'>Смотрите</span></span><span
+lang=EN style='font-size:16.0pt;font-family:"Georgia",serif;mso-fareast-font-family:
+"Times New Roman";mso-bidi-font-family:Arial;color:#222222;mso-ansi-language:
+EN;mso-fareast-language:RU'> <span class=SpellE>также</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:19.2pt;text-indent:-18.0pt;line-height:normal;mso-list:l4 level1 lfo4;
+tab-stops:list 36.0pt'><![if !supportLists]><span style='font-size:10.0pt;
+mso-bidi-font-size:10.5pt;font-family:Symbol;mso-fareast-font-family:Symbol;
+mso-bidi-font-family:Symbol;color:#222222;mso-fareast-language:RU'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:10.5pt;
+font-family:"Arial",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#222222;mso-ansi-language:EN;mso-fareast-language:RU'><a
+href="http://blog.uncooperative.org/blog/2014/02/06/the-efi-system-partition/"><b><span
+lang=RU style='mso-ansi-language:RU'>Системный раздел </span>EFI</b><b><span
+lang=RU style='mso-ansi-language:RU'> и поведение загрузки по умолчанию</span></b></a></span><span
+style='font-size:10.5pt;font-family:"Arial",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#222222;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:#F8F9FA'><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'><a href="https://wiki.archlinux.org/index.php/Special:Categories"
+title="Special:Categories"><span class=SpellE>Categories</span></a>:&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:1.5pt;margin-right:0cm;margin-bottom:1.5pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:15.0pt;mso-list:l0 level1 lfo5;
+tab-stops:list 36.0pt;background:#F8F9FA'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#222222;
+mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'><a
+href="https://wiki.archlinux.org/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9"
+title="Category:Русский">Русский</a><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-left:solid #A2A9B1 1.0pt;
+mso-border-left-alt:solid #A2A9B1 .75pt;padding:0cm 0cm 0cm 6.0pt;background:
+#F8F9FA'>
+
+<p class=MsoNormal style='margin-top:1.5pt;margin-right:0cm;margin-bottom:1.5pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:15.0pt;mso-list:l0 level1 lfo5;
+tab-stops:list 36.0pt;background:#F8F9FA;border:none;mso-border-left-alt:solid #A2A9B1 .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 0cm 6.0pt'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:10.5pt;font-family:Symbol;
+mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#222222;
+mso-fareast-language:RU'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span style='font-size:10.5pt;font-family:"Arial",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#222222;mso-fareast-language:
+RU'><a
+href="https://wiki.archlinux.org/index.php/Category:Boot_process_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Category:Boot process (Русский)"><span class=SpellE>Boot</span> <span
+class=SpellE>process</span> (Русский)</a><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

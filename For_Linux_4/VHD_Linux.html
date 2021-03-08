@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.0.4.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-02-19T20:37:42.515400936"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr">
+<div id="vhd-diski-v-linux" dir="ltr" style="position: absolute; top: 0.53cm; left: -0.69cm; width: 0.69cm; height: 0.69cm; border: none; padding: 0cm; background: #ffffff"><p class="western">
+	<br/>
+<br/>
+
+	</p>
+</div>
+<h1 class="western" align="left"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="6" style="font-size: 28pt"><b>VHD
+Диски в Linux.</b></font></font></h1>
+<div id="article_view_-153221588_30484" dir="ltr"><p class="western" style="margin-top: 1.06cm; margin-bottom: 0cm">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Всех
+	интересует вопрос, как же использовать
+	VHD диски в Linux.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Ведь
+	мо умолчанию их поддерживает только
+	windows.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Сегодня
+	мы с вами решим эту проблему раз и
+	навсегда вместе и поможет нам в этом -
+	всемогущий QEMU.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Для
+	начала, необходимо установить пакет
+	nbd. Ядро будет подгружать его модули, а
+	qemu-nbd будет их использовать.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo pacman -S nbd --noconfirm</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Далее
+	необходимо загрузить модули ядра nbd:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo modprobe nbd</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Определимся
+	с размером виртуального диска. Пусть
+	будет 4ГБ.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	qemu-img create -f vpc -o size=4G ./test.vhd</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Образ
+	диска мы создали. Однако надо понимать,
+	что это формат vpc, т.е. vhd. И работать с
+	ним надо уже совершенно иначе, чем с
+	форматом raw (например образ dd).</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Чтобы
+	работать с этим диском, его сначала
+	надо подключить к системе в качестве
+	диска:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	qemu-nbd -c /dev/nbd0 ./test.vhd</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Вот
+	теперь у нас в системе появилось новое
+	устройство - nbd0.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Теперь
+	мы и должны в этом устройстве создать
+	новую таблицу разделов и затем уже сами
+	разделы. Для этого можно воспользоваться
+	следующими утилитами: parted, cfdisk, fdisk,
+	gparted и другие. Я же воспользуюсь GParted и
+	создам таблицу разделов типа msdos, а
+	затем один единственный раздел с типом
+	FAT32. И сразу же отформатирую в FAT32.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Чтобы
+	утилита непосредственно работала с
+	нужным нам диском просто наберите её
+	и следом в консоли через пробел укажите
+	нужный вам диск. В данном случае:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo gparted /dev/nbd0</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Или</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	cfdisk /dev/nbd0</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Не
+	забываем проверить созданные разделы.
+	Теперь они должны быть видны:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	lsblk</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">После
+	того, как создали все необходимые
+	разделы, их необходимо куда-то
+	смонтировать.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Я
+	же тут же создам каталог для монтирования:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	mkdir -p ./disk</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Наше
+	отформатированное устройство будет
+	вести себя как полноценный жесткий
+	диск, поэтому мы можем смонтировать
+	любой раздел этого жесткого диска куда
+	нам заблагорассудится в нужном нам
+	порядке. У меня для этого уже создан
+	каталог.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo mount /dev/nbd0p1 ./disk</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">И
+	только после этого мы можем работать
+	с этим разделом как с полноценным
+	разделом жесткого диска.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">А
+	вот здесь стоит обратить внимание на
+	то, что запись в виртуальный диск, к
+	сожалению, происходит только от имени
+	суперпользователя. Простой пользователь
+	просто получит ошибку записи. Однако
+	если вы используете тип раздела ext
+	подобные, например ext4, то просто создайте
+	внутри отдельную папку и дайте ей права
+	пользователя. Теперь в эту папку может
+	записывать данные любой пользователь.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Далее,
+	я создам папку и скопирую туда несколько
+	старых скриншотов.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">По
+	окончании работы с виртуальным диском,
+	сначала необходимо отмонтировать все
+	разделы:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo umount -l ./disk</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Затем
+	отсоединить наш виртуальный диск от
+	блочного устройства, т.е. грубо говоря
+	отмонтировать, но специальной командой:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	sudo qemu-nbd -d /dev/nbd0</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Всё,
+	можем подключать этот диск к виртуальной
+	машине, например на VirtualBox. Я же загружу
+	образ WinPE для проверки работоспособности
+	этого виртуального диска.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">На
+	скриншоте можете видеть результат
+	проделанной работы.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Всё,
+	можем радоваться жизни.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Удачи!</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</div>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

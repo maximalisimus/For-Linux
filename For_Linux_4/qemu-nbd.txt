@@ -1,0 +1,10 @@
+
+sudo modprobe nbd
+sudo qemu-nbd -c /dev/nbd0 <файл vdi/vhd>
+sudo mount /dev/nbd0p1 /mnt
+sudo umount -l /mnt
+sudo qemu-nbd -d /dev/nbd0
+
+
+
+

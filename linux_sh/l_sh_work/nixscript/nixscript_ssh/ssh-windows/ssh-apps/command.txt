@@ -1,0 +1,3 @@
+cd /data/data/com.termux/files/home/downloads/ 
+./sshtips.sh 14 
+exit 

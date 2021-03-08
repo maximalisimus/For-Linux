@@ -1,0 +1,5 @@
+
+
+tar -cvzf dump.tar.gz --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude="swapfile" --exclude="lost+found" --exclude=".cache" --exclude="Downloads" --exclude=".VirtualBoxVMs" --exclude=".ecryptfs" --exclude=./.config/rpcs3/* --exclude=/.local/rpcs3/* ./.local/ ./.config/
+
+

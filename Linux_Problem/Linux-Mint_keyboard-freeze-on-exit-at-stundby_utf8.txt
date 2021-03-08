@@ -1,0 +1,15 @@
+﻿
+keyboard freeze on exit at stundby
+
+зависание клавиатуры при выходе из режима ожидания
+
+
+$ sudo nano /etc/default/grub
+
+# GRUB_CMDLINE_LINUX_DEFAULT="atkbd.reset i8042.nomux quiet splash"
+
+$ sudo update-grub
+
+
+
+

@@ -1,0 +1,13 @@
+﻿
+https://blackarch.org/strap.sh 
+sudo pacman -S blackarch
+
+
+
+
+
+http://blackarch.org/blackarch/blackarch/os/i686/
+
+http://mirrorservice.org/sites/blackarch.org/blackarch/blackarch/os/i686/
+
+

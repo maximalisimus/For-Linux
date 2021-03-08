@@ -1,0 +1,12 @@
+Regular bash/shell
+# this is regular
+#bash #sed #awk #grep
+-------------
+$ #!/bin/bash
+  sed -n '/Intel/{s/.*Intel/Intel/;s/ .*$//;p}'
+  sed 's/.*\(Intel\S*\).*/\1/'
+  awk '/Intel/' RS=" "
+  grep -oi "intel"
+# And this is not all
+Read more
+maximalisimus

@@ -1,0 +1,76 @@
+
+
+### INFO swap ###
+
+$ lsblk
+$ cat /proc/sys/vm/swappiness
+
+# 80
+
+### Memory is using to 20% to system start is swap
+
+# free
+# cat /proc/meminfo
+
+### sysytem info to memory
+
+### INFO swap ###
+
+
+
+
+### Config swap ###
+
+# man /etc/sysctl.conf
+
+### search <File>
+
+$ cd /etc/sysctl.d/
+$ ls
+
+### create file <FileName.conf> ###
+
+$ sudo nano /etc/sysctl.d/swap.conf
+
+vm.swappiness=20
+
+
+### OR create file <FileName.conf> ###
+
+$ sudo touch /etc/sysctl.d/swap.conf]
+
+### and add the file to string
+
+$ echo "vm.swappiness=20" > /etc/sysctl.d/swap.conf
+
+
+### System is restart (reboot) PC 
+### Or your session is using to manual swap do restart PC then command terminal:
+
+$ sudo sysctl vm.swappiness=20
+
+
+### Config swap ###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

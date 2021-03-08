@@ -1,0 +1,157 @@
+
+Списки (List)
+
+l = []
+lis = [1, 56, 'x', 34, 2.34, ['S', 't', 'r', 'o', 'k', 'a']]
+print (lis)
+
+a = [a + b for a in 'list' if a != 's' for b in 'soup' if b != 'u']
+print (a)
+
+l.append (23) # Добавить элемент в конец списка
+b = [24, 67]
+l.extend (b) # Расширить первый список на элементы второго списка
+l.insert (1, 56) # Вставка элеменета по индексу
+l.append (34)
+l.remove (34) # Удалить первый элемент в списке, значение которого передаётся
+l.pop (0) # Удаление элемента по индексу
+print (l.index (56)) # возврат индекса элемента по искомому значению
+print (l.count (34)) # Возврат кол-ва элеменетов в списке с данными значениями
+l.sort () # Сортировка списка
+l.reverse () # Перевернуть список
+l.clear () # Очистить список
+print (l)
+
+Индексы
+
+a = [0, 23, "Hi"] # Список
+print (a[4]) # Выдаст ошибку, так как элемента не существует
+a = [0, 23, "Hi", 1.56, 9] # Список
+print (a[-2]) # Будет выведено 1.56
+
+Срезы
+
+list[НАЧАЛО:КОНЕЦ:ШАГ]
+list[::3] # Берем каждый третий элемент
+list[2::2] # Начиная со второго элемента берем каждый второй элемент
+list[4:6:] # Начиная с 4 элемента берем все элементы по 6 элемент
+list[::] # Берем все элементы
+
+l = [34, 'sd', 56, 34.34]
+i = 0
+while i < 4:
+	print (l[i])
+	i += 1
+
+print (l[-2::-2])
+
+Кортежи
+
+a = tuple ()
+a = ()
+
+Словари
+
+words = {'short': 'Гоша', 'long': 'Георгий'}
+
+d = {a : a ** 2 for a in range(7)}
+print (d)
+
+person = {'name' : {'last_name': 'Иванов', 'first_name': 'Иван', 'middle_name': 'Иванович'}, 'address': ['г. Андрюшки', 'ул. Васильковская д. 23б', 'кв.12'], 'phone': {'home_phone': '34-67-12', 'mobile_phone': '8-564-345-23-65', 'mobile_phone_2': 'Нет'}}
+# print (person['phone']['mobile_phone'])
+
+print (person.keys ())
+
+Множества
+
+set(some_list) # Результат: 12, 56, 91
+
+Frozenset - метод, что позволяет создать, которое нельзя изменять в ходе выполнения программы. Получается, что Frozenset это смесь множества и кортежа.
+
+Функции
+
+def func (x):
+	def add (a):
+		return x+a
+	return add
+	
+test = func (100)
+print (test (200))
+
+
+def func (*args):
+	return args # Передаем в функции неограниченное кол-во параметров в виде кортежа
+
+def func (**args):
+	return args # Передаем в функции неограниченное кол-во параметров в виде словаря
+
+print (func (short='dict', longer='dictionary'))
+
+
+Модули
+
+module.py:
+
+def hi ():
+	print ("Hello World!")
+	
+def add (x, y):
+	return x + y
+
+if __name__ == "__main__":
+	print ("Hello")
+	
+python.py:
+
+import time
+import os
+import random as r
+from module import hi as h, add as a
+try:
+	import nomodule
+except ImportError:
+	print ("Модуля nomodule не существует")
+
+h ()
+print (a (45, 15))
+
+Классы
+
+Инкапсуляция
+
+class Some:
+	def _printWords(self):
+		print ("Попробуй меня вызвать")
+
+obj = Some()
+obj._printWords() # Вызов функции ничего не даст
+
+Полиморфизм
+
+class Cars:
+	def nothing(self): # Пустая функция
+		pass
+		
+class BMW (Cars):
+	def nothing(self, word):
+		print (word + "!") # Функция теперь будет работать по новому
+ 
+a = BMW()
+a.nothing("Some")
+
+
+Конструкторы
+
+class Cars:
+	wheels = 0
+	marka = ""
+	
+	def __init__(self, wheels, marka):
+		self.wheels = wheels
+		self.marka = marka
+bmw = Cars(4, "X3") # Сразу добавили характеристики
+print (bmw.wheels) # Результат - 4
+
+
+
+

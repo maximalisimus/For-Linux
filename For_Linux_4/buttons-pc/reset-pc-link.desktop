@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Перезагрузка компьютера
+Comment=Reboot PC
+Exec=/home/mikl/programs/buttons-pc/reset-pc.sh
+Icon=/home/mikl/programs/buttons-pc/reset.png
+Type=Application
+Categories=GNOME;GTK;Utility;
+StartupNotify=false
+NoDisplay=false

@@ -1,0 +1,1803 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="archlinux_samba_share.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Олег</o:Author>
+  <o:LastAuthor>Олег</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>2018-10-10T09:50:00Z</o:LastPrinted>
+  <o:Created>2018-10-10T09:50:00Z</o:Created>
+  <o:LastSaved>2018-10-10T09:50:00Z</o:LastSaved>
+  <o:Pages>4</o:Pages>
+  <o:Words>852</o:Words>
+  <o:Characters>4863</o:Characters>
+  <o:Company>Reanimator Extreme Edition</o:Company>
+  <o:Lines>40</o:Lines>
+  <o:Paragraphs>11</o:Paragraphs>
+  <o:CharactersWithSpaces>5704</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="archlinux_samba_share.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="archlinux_samba_share.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+h4
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 4 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:18.0pt;
+	mso-bidi-font-size:18.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+span.4
+	{mso-style-name:"Заголовок 4 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 4";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+span.toctoggle
+	{mso-style-name:toctoggle;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.tocnumber
+	{mso-style-name:tocnumber;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.toctext
+	{mso-style-name:toctext;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.mw-headline
+	{mso-style-name:mw-headline;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Стандартный HTML";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:2082556470;
+	mso-list-template-ids:-1752634930;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0cm 0cm 0cm 0cm'>
+
+<p class=MsoNormal style='margin-bottom:1.2pt;mso-line-height-alt:14.4pt;
+mso-outline-level:1;border:none;mso-border-bottom-alt:solid #AAAAAA .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'><span lang=EN style='font-size:
+19.0pt;font-family:"Times New Roman",serif;color:black;mso-font-kerning:18.0pt;
+mso-ansi-language:EN'>Using Samba in your File Manager<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:18.0pt;background:
+#FFDDDD'><b><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>Warning:&nbsp;</span></b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>(30 June 2018) <span class=GramE>This</span> page needs updating; search
+the forums for more current info<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><br>
+The following tutorial will guide you through setting up <span class=SpellE>usersharing</span>
+with Samba so that you can use your file manager to share folders. Ubuntu
+style.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:7.2pt;text-align:center;
+line-height:18.0pt;mso-outline-level:2;background:#F9F9F9'><b><span lang=EN
+style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Contents<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:18.0pt;background:#F9F9F9'><span lang=EN
+style='font-size:8.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>&nbsp;[<a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager"><span
+class=GramE><span style='color:#0B0080'>hide</span></span></a>]&nbsp;</span><span
+lang=EN style='font-size:9.0pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Installation"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>1</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Installation</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#GTK.2B"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>1.1</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>GTK+</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#KDE"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>1.2</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>KDE</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Configuration"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>2</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Configuration</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Automatic"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>2.1</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Automatic</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:24.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level2 lfo1;
+tab-stops:list 72.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Manual"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>2.2</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Manual</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Post-install_.28Users_and_Groups.29"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>3</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Post-install (Users and Groups)</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#Sharing_In_The_Home_Directory"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>4</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>Sharing In The Home Directory</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;margin-bottom:1.2pt;
+margin-left:18.0pt;text-indent:-18.0pt;line-height:18.0pt;mso-list:l0 level1 lfo1;
+tab-stops:list 36.0pt;background:#F9F9F9'><![if !supportLists]><span lang=EN
+style='font-size:10.0pt;mso-bidi-font-size:9.0pt;font-family:Symbol;mso-fareast-font-family:
+Symbol;mso-bidi-font-family:Symbol;color:black;mso-ansi-language:EN'><span
+style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]><span lang=EN style='font-size:9.0pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><a
+href="https://wiki.manjaro.org/index.php?title=Using_Samba_in_your_File_Manager#See_Also"><span
+style='color:#0B0080;text-decoration:none;text-underline:none'>5</span><span
+style='color:#0B0080'>&nbsp;</span><span style='color:#0B0080;text-decoration:
+none;text-underline:none'>See Also</span></a><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0cm 0cm 2.0pt 0cm;background:
+white'>
+
+<p class=MsoNormal style='margin-bottom:7.2pt;line-height:18.0pt;mso-outline-level:
+2;background:white;border:none;mso-border-bottom-alt:solid #AAAAAA .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 2.0pt 0cm'><span lang=EN style='font-size:
+14.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>Installation<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span class=GramE><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>First</span></span><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'> we need to
+install a few packages. The base package&nbsp;</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>samba</span><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>&nbsp;is
+required in addition to a few more depending on your desktop or file manager.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p>&nbsp;</o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>libwbclient</span>
+nemo-share smb4k <span class=SpellE>thunar</span>-shares-plugin <span
+class=SpellE>smbclient</span> <span class=SpellE>smbnetfs</span> <span
+class=SpellE>gvfs-smb</span> <span class=SpellE>libsmbios</span> <span
+class=SpellE>manjaro</span>-settings-samba<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:3.6pt;line-height:18.0pt;mso-outline-level:
+4;background:white'><b><span lang=EN style='font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>GTK+<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Install samba, <span class=SpellE>gvfs-smb</span>, and the share package
+for your file manager.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Cinnamon / Nemo</span></b><span lang=EN style='font-size:9.5pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>gvfs-smb</span>
+nemo-share<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Gnome / Nautilus</span></b><span lang=EN style='font-size:9.5pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>gvfs-smb</span>
+nautilus-share<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Mate / <span class=SpellE>Caja</span></span></b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>gvfs-smb</span>
+<span class=SpellE>caja</span>-share<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>XFCE / <span class=SpellE>Thunar</span></span></b><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>gvfs-smb</span>
+<span class=SpellE>thunar</span>-shares-plugin<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:3.6pt;line-height:18.0pt;mso-outline-level:
+4;background:white'><b><span lang=EN style='font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>KDE<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>KDE has the ability to browse shares built-in, but still requires&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";color:black;
+background:#F9F9F9;mso-ansi-language:EN'>samba</span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>&nbsp;to share folders and&nbsp;</span><span class=SpellE><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>kdenetwork-filesharing</span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>&nbsp;for settings and easier use.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S samba <span class=SpellE>kdenetwork-filesharing</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'><o:p>&nbsp;</o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0cm 0cm 2.0pt 0cm;background:
+white'>
+
+<p class=MsoNormal style='margin-bottom:7.2pt;line-height:18.0pt;mso-outline-level:
+2;background:white;border:none;mso-border-bottom-alt:solid #AAAAAA .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 2.0pt 0cm'><span lang=EN style='font-size:
+14.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>Configuration<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:3.6pt;line-height:18.0pt;mso-outline-level:
+4;background:white'><b><span lang=EN style='font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>Automatic<o:p></o:p></span></b></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>sudo</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>pacman</span> -S <span class=SpellE>manjaro</span>-settings-samba<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:3.6pt;line-height:18.0pt;mso-outline-level:
+4;background:white'><b><span lang=EN style='font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>Manual<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Now we are ready to set up <span class=SpellE>Manjaro</span> for <span
+class=SpellE>usershares</span>. <span class=SpellE>Usershares</span> allows a
+non-root user to add, modify, and delete their own samba shares.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span class=GramE><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>First</span></span><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'> we're going
+to create the <span class=SpellE>usershare</span> path. This <span class=GramE>is
+<span class=SpellE>were</span></span> samba stores the share configuration (so
+it's not going in&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:
+"Courier New";color:black;background:#F9F9F9;mso-ansi-language:EN'>/<span
+class=SpellE>etc</span>/samba/<span class=SpellE>smb.conf</span></span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>) In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>mkdir</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> -p /<span class=SpellE>var</span>/lib/samba/<span class=SpellE>usershare</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>We have now added the <span class=SpellE>usershares</span> directory
+in&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#F9F9F9;mso-ansi-language:EN'>/<span class=SpellE>var</span>/lib/samba</span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span class=GramE><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>Next</span></span><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'> we need to
+create the <span class=SpellE>sambashare</span> group. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>groupadd</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>sambashare</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>We need to make user&nbsp;</span><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>root</span><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>&nbsp;owner of both the <span class=SpellE>usershares</span>
+directory and the <span class=SpellE>sambashare</span> group.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>chown</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> <span class=SpellE>root:sambashare</span> /<span class=SpellE>var</span>/lib/samba/<span
+class=SpellE>usershare</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Because&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#F9F9F9;mso-ansi-language:EN'>/<span class=SpellE>var</span>/lib/samba/<span
+class=SpellE>usershare</span></span><span lang=EN style='font-size:9.5pt;
+font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>&nbsp;<span
+class=GramE>is now owned</span> by&nbsp;</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>root</span><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>, we need to make the <span class=SpellE>usershare</span>
+directory accessible for non-root users. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>chmod</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> 1770 /<span class=SpellE>var</span>/lib/samba/<span class=SpellE>usershare</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>This <span class=SpellE>chmod</span> command sets the sticky bit (makes the
+permissions fixed for non-root users), as signified by the preceding <span
+class=GramE>1</span> in the 1770 string. The 7+7 signifies that users and
+groups can read, write and execute. The <span class=GramE>0</span> means that
+&quot;others&quot; have no rights to the directory.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Now we need to create a new&nbsp;</span><span class=SpellE><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>smb.conf</span></span><span lang=EN style='font-size:
+9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>&nbsp;from
+the template configuration file. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>cp</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> /<span class=SpellE>etc</span>/samba/<span class=SpellE>smb.conf.default</span>
+/<span class=SpellE>etc</span>/samba/<span class=SpellE>smb.conf</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Open the newly created&nbsp;</span><span class=SpellE><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>smb.conf</span></span><span lang=EN style='font-size:
+9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>&nbsp;in
+a text editor. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>nano</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> /<span class=SpellE>etc</span>/samba/<span class=SpellE>smb.conf</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Replace&nbsp;</span><span class=SpellE><span lang=EN style='font-size:10.0pt;
+font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>nano</span><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>with</span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'> the name of your preferred text editor.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>To make <span class=SpellE>usershares</span> possible we need to add the
+following parameters under section&nbsp;</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>[global]</span><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span lang=EN style='font-size:
+9.5pt;font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-spacerun:yes'> </span><span class=SpellE><span class=GramE>usershare</span></span>
+path = /<span class=SpellE>var</span>/lib/samba/<span class=SpellE>usershare</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span lang=EN style='font-size:
+9.5pt;font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-spacerun:yes'> </span><span class=SpellE><span class=GramE>usershare</span></span>
+max shares = 100<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span lang=EN style='font-size:
+9.5pt;font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-spacerun:yes'> </span><span class=SpellE><span class=GramE>usershare</span></span>
+allow guests = yes<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span lang=EN style='font-size:
+9.5pt;font-family:"Courier New";color:black;mso-ansi-language:EN'><span
+style='mso-spacerun:yes'> </span><span class=SpellE><span class=GramE>usershare</span></span>
+owner only = yes<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Approximately halfway in the&nbsp;</span><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>[global]</span><span lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;
+color:black;mso-ansi-language:EN'>&nbsp;section is the parameter&nbsp;</span><span
+lang=EN style='font-size:10.0pt;font-family:"Courier New";color:black;
+background:#F9F9F9;mso-ansi-language:EN'>security = user</span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>. Find this line and add the following immediately after:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=GramE><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'>map</span></span><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'> to guest = bad user<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>This line makes it possible for users without a &quot;proper username&quot;
+<span class=GramE>to still connect</span> to a share.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Save the&nbsp;</span><span class=SpellE><span lang=EN style='font-size:
+10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;mso-ansi-language:
+EN'>smb.conf</span></span><span lang=EN style='font-size:9.5pt;font-family:
+"Arial",sans-serif;color:black;mso-ansi-language:EN'>&nbsp;file with CTRL+O and
+close <span class=SpellE>nano</span> with CTRL+X.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0cm 0cm 2.0pt 0cm;background:
+white'>
+
+<p class=MsoNormal style='margin-bottom:7.2pt;line-height:18.0pt;mso-outline-level:
+2;background:white;border:none;mso-border-bottom-alt:solid #AAAAAA .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 2.0pt 0cm'><span lang=EN style='font-size:
+14.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>Post-install
+(Users and Groups)<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Now add your user to the <span class=SpellE>sambashare</span> group.
+Replace&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:"Courier New";
+color:black;background:#F9F9F9;mso-ansi-language:EN'>&lt;username&gt;</span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>&nbsp;with your real username. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>usermod</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> -a -G <span class=SpellE>sambashare</span> &lt;username&gt;<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>We still need to enable the samba service. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>systemctl</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> enable <span class=SpellE>smb</span> <span class=SpellE>nmb</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>systemctl</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> start <span class=SpellE>smb</span> <span class=SpellE>nmb</span><o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>Log out and log back in. It should now be possible to configure samba
+shares using the GUI. For instance, in Gnome Files you can right click on any
+directory and share it on the network.<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:none;border-bottom:solid #AAAAAA 1.0pt;
+mso-border-bottom-alt:solid #AAAAAA .75pt;padding:0cm 0cm 2.0pt 0cm;background:
+white'>
+
+<p class=MsoNormal style='margin-bottom:7.2pt;line-height:18.0pt;mso-outline-level:
+2;background:white;border:none;mso-border-bottom-alt:solid #AAAAAA .75pt;
+padding:0cm;mso-padding-alt:0cm 0cm 2.0pt 0cm'><span lang=EN style='font-size:
+14.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:EN'>Sharing
+In <span class=GramE>The</span> Home Directory<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>To be able to share directories in your home (</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>/home/&lt;username&gt;</span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>) you also need to add new permissions to your home (</span><span lang=EN
+style='font-size:10.0pt;font-family:"Courier New";color:black;background:#F9F9F9;
+mso-ansi-language:EN'>/home/&lt;username&gt;</span><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>). Replace&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:
+"Courier New";color:black;background:#F9F9F9;mso-ansi-language:EN'>&lt;username&gt;</span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>&nbsp;with your own username. In the terminal, enter:<o:p></o:p></span></p>
+
+<div style='mso-element:para-border-div;border:solid #DDDDDD 1.0pt;mso-border-alt:
+solid #DDDDDD .75pt;padding:12.0pt 12.0pt 12.0pt 12.0pt;background:#F9F9F9'>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+15.6pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F9F9F9;border:none;mso-border-alt:solid #DDDDDD .75pt;padding:0cm;
+mso-padding-alt:12.0pt 12.0pt 12.0pt 12.0pt'><span class=SpellE><span
+class=GramE><span lang=EN style='font-size:9.5pt;font-family:"Courier New";
+color:black;mso-ansi-language:EN'>chmod</span></span></span><span lang=EN
+style='font-size:9.5pt;font-family:"Courier New";color:black;mso-ansi-language:
+EN'> 701 /home/&lt;username&gt;<o:p></o:p></span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.8pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:18.0pt;background:white'><span lang=EN
+style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;mso-ansi-language:
+EN'>The 701 gives read, write and execute permissions to the user, zero rights
+to groups and execute rights to &quot;other&quot;. The execute rights for
+&quot;other&quot; seems to be required for samba to be able to access the lower
+directories under&nbsp;</span><span lang=EN style='font-size:10.0pt;font-family:
+"Courier New";color:black;background:#F9F9F9;mso-ansi-language:EN'>/home/&lt;username&gt;</span><span
+lang=EN style='font-size:9.5pt;font-family:"Arial",sans-serif;color:black;
+mso-ansi-language:EN'>. Other users <span class=GramE>can't</span> enter your
+home directory with only the execute bit set, but it might lessen security, as
+others now do have permission to execute stuff under your home. There needs to
+be executable stuff in there beforehand, though, and others need to know the
+path to the executable by heart, before they can run it. It <span class=GramE>doesn't</span>
+seem to have much room for <span class=SpellE>misschief</span>, but caveat
+emptor.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

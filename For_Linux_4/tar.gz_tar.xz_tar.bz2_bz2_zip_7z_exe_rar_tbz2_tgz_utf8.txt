@@ -1,0 +1,217 @@
+﻿
+##### unpack  file script #####
+
+/home/user/.bashrc/.unpack
+
+unpack () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xvjf $1    ;;
+      *.tar.gz)    tar xvzf $1    ;;
+      *.tar.xz)    tar xvJf $1    ;;
+      *.bz2)       bunzip2 $1     ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1      ;;
+      *.tar)       tar xvf $1     ;;
+      *.tbz2)      tar xvjf $1    ;;
+      *.tgz)       tar xvzf $1    ;;
+      *.zip)       unzip $1       ;;
+      *.Z)         uncompress $1  ;;
+      *.7z)        7z x $1        ;;
+      *.xz)        unxz $1        ;;
+      *.exe)       cabextract $1  ;;
+      *)           echo "\`$1': Unknown method of file compression" ;;
+    esac
+  else
+    echo "\`$1' no foud"
+  fi
+}
+
+
+
+##### Archivers and Split (Partition) to tar.gz in 10 Mega-Bites #####
+
+tar czvf - ./backup | split -d -b 10m - backup.tar.gz.
+
+or
+
+tar -czvf - --exclude=www/test --exclude='*.zip' /var/www/ | split -b 1024m - ./backup.tar.gz
+
+##### Stick Partition tar.gz 01, 02, 03 on ONE File #####
+
+cat backup.tar* | tar xzf -
+
+or
+
+cat backup.tar.* > backup.tar.gz
+
+or
+
+cat name_file* | tar -xzf -
+
+##### Finish #####
+
+
+
+##### Multi Toms #####
+
+tar --extract --multi-volume --verbose --file goods.tar.001
+
+##### Finish #####
+
+
+
+##### 7z Archivator #####
+
+folder is soft to archive arch.7z in 100 Mega Bites:
+
+7z a -v100m arch.7z soft/
+
+Unpacking Multi-Toms Achive:
+
+7z x arch.7z.001
+
+##### 7z Archivator #####
+
+
+
+##### Tar is Key Comand #####
+
+
+
+Regimes:
+
+-c – create archives
+-v - verbose. Messages
+-x – extract archives
+–delete – delete file on archives
+-r – append files in archives
+-A – append tar-files in archives
+-t – structure archives
+-u – update archives
+-d – if a=b then else
+-z – process in gzip. -c compress and -x uncompress.
+-j – process in bzip2. -c compress and -x uncompress.
+
+RewRite:
+
+-k, --keep-old-files - not rewrite on unpack in files directory
+--keep-newer-files
+--no-overwrite-dir - save meta-data
+--overwrite - rewrite
+--overwrite-dir - rewrite on unpack files to directory
+--recursive-unlink
+--remove-files - delete files to directory at finish compress on archive
+-U, --unlink-first
+-W, --verify
+
+Atributes Files:
+
+--atime-preserve[=method] - save time access
+--delay-directory-restore
+--group=Name
+--mode-Regime
+--mtime=Date or File
+-m, --touch
+--no-delay-directory-restore
+--no-same-owner
+--no-same-permissions
+--numeric-owner
+--owner=Name
+-p, --preserve-permissions, --same-permissions - save Access Atributes Files
+-s, --preserve-order, --same-order - sort, sorting
+
+Devices:
+
+-f, --file=archiver - file or device
+--force-local
+-F, --info-script=Name, --new-volume-script=Name
+-L
+-M
+
+Blocks:
+
+-H - create archiver to folder
+
+Compress - Uncompress:
+
+-a - auto
+-I 
+-j - bzip2
+-J - xz, lzip, lzma, lzop
+-z --compress, --uncompress
+
+
+
+##### Tar is Key Command #####
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Распаковка архивов
+# example: extract file
+extract () {
+ if [ -f $1 ] ; then
+ case $1 in
+ *.tar.bz2)   tar xjf $1        ;;
+ *.tar.gz)    tar xzf $1     ;;
+ *.bz2)       bunzip2 $1       ;;
+ *.rar)       unrar x $1     ;;
+ *.gz)        gunzip $1     ;;
+ *.tar)       tar xf $1        ;;
+ *.tbz2)      tar xjf $1      ;;
+ *.tbz)       tar -xjvf $1    ;;
+ *.tgz)       tar xzf $1       ;;
+ *.zip)       unzip $1     ;;
+ *.Z)         uncompress $1  ;;
+ *.7z)        7z x $1    ;;
+ *)           echo "I don't know how to extract '$1'..." ;;
+ esac
+ else
+ echo "'$1' is not a valid file"
+ fi
+}
+
+
+
+
+# Запаковать архив
+# example: pk tar file
+pk () {
+ if [ $1 ] ; then
+ case $1 in
+ tbz)       tar cjvf $2.tar.bz2 $2      ;;
+ tgz)       tar czvf $2.tar.gz  $2       ;;
+ tar)      tar cpvf $2.tar  $2       ;;
+ bz2)    bzip $2 ;;
+ gz)        gzip -c -9 -n $2 > $2.gz ;;
+ zip)       zip -r $2.zip $2   ;;
+ 7z)        7z a $2.7z $2    ;;
+ *)         echo "'$1' cannot be packed via pk()" ;;
+ esac
+ else
+ echo "'$1' is not a valid file"
+ fi
+
+}   
+
+
+
+
+
+
+

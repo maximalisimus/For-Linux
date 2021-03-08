@@ -1,0 +1,54 @@
+
+BackUp is Process to Live CD
+#### Backup is directory disk with Linux OS at EXT-Filesystem ####
+
+sudo su
+cd / 
+tar cpzvf /media/BackupDisk/backup.tgz --exclude /proc --exclude /sys --exclude=/media --exclude=/lost+found /
+
+
+
+Recovery is Process to Live CD
+#### Backup is directory disk with Linux OS at EXT-Filesystem ####
+
+sudo su
+cd /media
+tar xvpfz BackupDisk/backup.tgz -C /media/Linux
+cd /media/Linux
+mkdir proc
+mkdir sys
+mount --bind /dev /media/Linux/dev 
+mount --bind /proc /media/Linux/proc
+mount --bind /sys /media/Linux/sys
+chroot /media/Linux/
+grub-install /dev/sda
+update-grub
+cd /etc/
+emacs fstab
+nano fstab
+##### RewRite UUID in /dev/sd[XXX] ##### Save and Exit
+exit exit ##### Root Live CD #####
+cd /media/Linux
+umount proc/
+umount dev
+umount sys
+cd /
+umount /media/Linux
+umount /media/BackupDisk
+reboot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

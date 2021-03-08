@@ -1,0 +1,32 @@
+﻿
+gksu - GUI to sudo for GNOME
+
+kdesu - GUI to sudo for KDE
+
+
+# so gksu to default use sudo then
+
+$ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
+
+
+# so kdesu to default use sudo then
+
+nano ~/.kde4/share/config/kdesurc
+# nano ~/.config/kdesurc
+
+[super-user-command]
+super-user-command=sudo
+
+
+
+
+
+# or kwriteconfig5 for  kf5 in kdesu
+
+$ kwriteconfig --file kdesurc --group super-user-command --key super-user-command sudo
+
+
+
+
+
+

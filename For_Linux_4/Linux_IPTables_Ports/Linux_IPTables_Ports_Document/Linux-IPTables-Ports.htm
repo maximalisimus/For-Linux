@@ -1,0 +1,2189 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="Linux-IPTables-Ports.files/filelist.xml">
+<link rel=Edit-Time-Data href="Linux-IPTables-Ports.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Олег</o:Author>
+  <o:LastAuthor>Олег</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>1</o:TotalTime>
+  <o:LastPrinted>2019-01-09T07:50:00Z</o:LastPrinted>
+  <o:Created>2019-01-09T07:50:00Z</o:Created>
+  <o:LastSaved>2019-01-09T07:50:00Z</o:LastSaved>
+  <o:Pages>12</o:Pages>
+  <o:Words>1952</o:Words>
+  <o:Characters>11127</o:Characters>
+  <o:Company>Reanimator Extreme Edition</o:Company>
+  <o:Lines>92</o:Lines>
+  <o:Paragraphs>26</o:Paragraphs>
+  <o:CharactersWithSpaces>13053</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="Linux-IPTables-Ports.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Linux-IPTables-Ports.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073743103 0 0 415 0;}
+@font-face
+	{font-family:"Source Sans Pro";
+	panose-1:2 11 5 3 3 4 3 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1610613495 33554433 0 0 415 0;}
+@font-face
+	{font-family:"Open Sans";
+	panose-1:2 11 6 6 3 5 4 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870161 1073750107 40 0 415 0;}
+@font-face
+	{font-family:inherit;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+h2
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-style-next:Обычный;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:normal;}
+h3
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-style-next:Обычный;
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#243F60;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+code
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#365F91;}
+p.ez-toc-title, li.ez-toc-title, div.ez-toc-title
+	{mso-style-name:ez-toc-title;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+span.ez-toc-section
+	{mso-style-name:ez-toc-section;
+	mso-style-unhide:no;
+	mso-style-parent:"";}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:12.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Cambria;
+	mso-bidi-font-family:"Times New Roman";
+	color:#243F60;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:14505261;
+	mso-list-template-ids:-955086972;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:774447682;
+	mso-list-template-ids:-746263662;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-outline-level:1;background:white;vertical-align:baseline'><b><span
+style='font-size:22.5pt;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase;mso-font-kerning:18.0pt'>КАК ОТКРЫТЬ ПОРТ UBUNTU<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-family:"Open Sans",sans-serif;
+color:#444444;background:white'>Правильная настройка брандмауэра имеет очень
+важное значение для безопасности вашего сервера или даже домашнего компьютера,
+подключенного к сети интернет.</span><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>На промышленных серверах брандмауэр запрещает подключение к
+большинству из них, оставляя только необходимые. В этой статье мы рассмотрим
+как открыть порт iptables и закрыть все остальные. Хотя в большинстве
+дистрибутивов существуют специальные утилиты для настройки брандмауэра,мы будем
+использовать iptables, чтобы вы смогли понять процесс на самом низком уровне.<o:p></o:p></span></p>
+
+<p class=ez-toc-title style='margin-top:0cm;margin-right:0cm;margin-bottom:
+18.75pt;margin-left:0cm;background:white;vertical-align:baseline;box-sizing: border-box'><span
+style='font-family:"Open Sans",sans-serif;color:#444444'>Содержание статьи:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l1 level1 lfo1;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/kak-otkryt-port-ubuntu#_Iptables"
+title="Просмотр правил Iptables" style='box-sizing: border-box;transition: all 0.25s ease 0s'><nav style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; display: block;"><span
+style='color:#FF9950'>Просмотр правил Iptables</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l1 level1 lfo1;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/kak-otkryt-port-ubuntu#_iptables"
+title="Как открыть порт iptables с нуля" style='box-sizing: border-box;
+transition: all 0.25s ease 0s'><span style='color:#FF9950'>Как открыть порт
+iptables с нуля</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l1 level1 lfo1;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/kak-otkryt-port-ubuntu#i"
+title="Как открыть порт, если уже есть правила" style='box-sizing: border-box;
+transition: all 0.25s ease 0s'><span style='color:#FF9950'>Как открыть порт,
+если уже есть правила</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l1 level1 lfo1;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/kak-otkryt-port-ubuntu#i-2"
+title=Выводы style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='color:#FF9950'>Выводы</span></a><o:p></o:p></span></p>
+
+</nav>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_Iptables"><span class=ez-toc-section><span style='font-size:19.5pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'>ПРОСМОТР ПРАВИЛ IPTABLES</span></span></span><span
+style='font-size:19.5pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'><o:p></o:p></span></h2>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-family:"Open Sans",sans-serif;color:#444444'>Прежде чем
+что-либо менять, нужно понять каким образом система работает сейчас. Возможно,
+для лучшего понимания материала вам сначала стоит ознакомиться со статьей&nbsp;<a
+href="https://losst.ru/nastrojka-iptables-dlya-chajnikov" style='box-sizing: border-box;
+transition: all 0.25s ease 0s'><span style='color:#FF9950'>iptables для
+начинающих</span></a>. Для просмотра текущих правил iptables выполните такую
+команду:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -L</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-29-52.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Рисунок_x0020_1" o:spid="_x0000_i1031" type="#_x0000_t75"
+ alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-29-52-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-29-52.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image001.png" o:title="Snimok-ekrana-ot-2017-06-01-20-29-52-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image002.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-29-52-1024x576.png"
+v:shapes="Рисунок_x0020_1"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Здесь мы видим три цепочки OUTPUT, INPUT и FORWARD, за открытые
+порты отвечает цепочка INPUT, именно через нее проходят все входящие пакеты.
+Сейчас политика по умолчанию - ACCEPT, это значит, что подключение ко всем
+портам разрешено. Здесь нам нужно настроить все самим и это будет проще если бы
+какая-либо программа уже создала свои настройки, но этот вариант мы тоже
+рассмотрим ниже.<o:p></o:p></span></p>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_iptables"><span class=ez-toc-section><span style='font-size:19.5pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'>КАК ОТКРЫТЬ ПОРТ IPTABLES С НУЛЯ</span></span></span><span
+style='font-size:19.5pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Если в iptables уже есть какие-либо правила и вы хотите их
+удалить просто выполните:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -F</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Теперь нам нужно добавить правила, которые разрешат обмен
+данными между любыми портами на локальном интерфейсе lo, это нужно чтобы не
+вызвать системных ошибок:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -A INPUT -i lo -j ACCEPT</span></code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;mso-bidi-font-family:
+"Courier New";color:#444444;mso-ansi-language:EN-US'><br style='box-sizing: border-box'>
+<code><span style='font-family:"inherit",serif'>$ sudo iptables -A OUTPUT -o lo
+-j ACCEPT</span></code></span><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Если кратко, то здесь добавляется два правила в цепочки INPUT и
+OUTPUT, разрешающие отправку и прием данных из интерфейса lo. Еще одно
+интересное и важное правило, которое многие упускают. Нужно запрещать только
+новые соединения, а пакеты для уже открытых нужно разрешать. Иначе получится,
+что мы отправляем серверу запрос (цепочка OUTPUT открыта), соединение
+открывается, но сервер не может нам ответить, потому что все пакеты
+отбрасываются в INPUT. Поэтому нужно разрешить все пакеты с
+состоянием&nbsp;ESTABLISHED&nbsp;и RELATED. Для</span><span style='font-family:
+"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'> </span><span
+style='font-family:"Open Sans",sans-serif;color:#444444'>этого</span><span
+style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'>
+</span><span style='font-family:"Open Sans",sans-serif;color:#444444'>есть</span><span
+style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'>
+</span><span style='font-family:"Open Sans",sans-serif;color:#444444'>модуль</span><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'> state:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>&nbsp;sudo iptables -A INPUT -m state --state
+ESTABLISHED,RELATED -j ACCEPT</span></code><span lang=EN-US style='font-family:
+"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Теперь самое интересное, рассмотрим как открыть порт 22 и 80 для
+протокола TCP:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline'><code><span lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;
+color:#444444;mso-ansi-language:EN-US'>&nbsp;sudo iptables -A INPUT -p tcp
+--dport 22 -j ACCEPT</span></code><span lang=EN-US style='font-size:10.0pt;
+font-family:"inherit",serif;mso-bidi-font-family:"Courier New";color:#444444;
+mso-ansi-language:EN-US'><br style='box-sizing: border-box'>
+<code><span style='font-family:"inherit",serif'>$ sudo iptables -A INPUT -p tcp
+--dport 80 -j ACCEPT</span></code></span><span lang=EN-US style='font-family:
+"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-50-52.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_7"
+ o:spid="_x0000_i1030" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-50-52-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-50-52.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image003.png" o:title="Snimok-ekrana-ot-2017-06-01-20-50-52-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image004.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-20-50-52-1024x576.png"
+v:shapes="Рисунок_x0020_7"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Опция -A сообщает, что нужно добавить пакет в конец цепочки, -p
+- указывает протокол, а --dport или Destination Port (порт назначения)
+указывает из какого порта пакеты нужно принимать. Теперь вы можете снова
+посмотреть список правил:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -L</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-18.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_6"
+ o:spid="_x0000_i1029" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-18-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-18.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image005.png" o:title="Snimok-ekrana-ot-2017-06-01-21-00-18-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image006.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-18-1024x576.png"
+v:shapes="Рисунок_x0020_6"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Вывод очень упрощен и понять здесь что-то сложно, например,
+может показаться что у нас два одинаковых правила, хотя это не так. Чтобы
+отобразить более подробную информацию используйте:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -nvL</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-29.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_5"
+ o:spid="_x0000_i1028" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-29-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-29.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image007.png" o:title="Snimok-ekrana-ot-2017-06-01-21-00-29-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image008.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-00-29-1024x576.png"
+v:shapes="Рисунок_x0020_5"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'>Чтобы все это в действительности заработало,
+осталось поменять политику по умолчанию на DROP:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -P INPUT DROP</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Все, можете проверять. Все пользователи смогут получить доступ к
+портам 22 и 80, а к остальным доступа не будет.<o:p></o:p></span></p>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id=i><span class=ez-toc-section><span style='font-size:19.5pt;line-height:115%;
+font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:uppercase'>КАК
+ОТКРЫТЬ ПОРТ, ЕСЛИ УЖЕ ЕСТЬ ПРАВИЛА</span></span></span><span style='font-size:
+19.5pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Довольно часто возникает ситуация, когда вам нужно открыть порт
+Linux, а iptables уже содержит набор правил, запрещающих доступ к портам.
+Иногда вы добавляете правило, все как нужно, с помощью описанной выше команды,
+но не замечаете никакого эффекта. Рассмотрим почему так происходит.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Допустим, программа или предыдущий администратор для надежности
+добавили в конец цепочки правило такого вида:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -A INPUT -j DROP</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-37-29.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_4"
+ o:spid="_x0000_i1027" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-37-29-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-37-29.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image009.png" o:title="Snimok-ekrana-ot-2017-06-01-21-37-29-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image010.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-37-29-1024x576.png"
+v:shapes="Рисунок_x0020_4"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Как вы понимаете, это значит, что все пакеты, которые до него
+доходят, будут отброшены. Ваше правило добавляется в конец цепочки, уже после
+этого. Естественно, что к нему уже никакие пакеты не дойдут, потому что они
+были отброшены ранее. Чтобы обойти эту проблему нужно использовать опцию -I
+(INSERT) вместо -A (ADD), она добавляет правило в начало цепочки и все будет
+работать. Осталось открыть порты Linux:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -I&nbsp;INPUT -p tcp --dport 1924&nbsp;-j ACCEPT</span></code><span
+style='font-family:"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><a
+href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-00.png"
+style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='font-family:"Open Sans",sans-serif;color:#FF9950;mso-no-proof:yes;
+text-decoration:none;text-underline:none'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_3"
+ o:spid="_x0000_i1026" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-00-1024x576.png"
+ href="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-00.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'
+ o:button="t">
+ <v:imagedata src="Linux-IPTables-Ports.files/image011.png" o:title="Snimok-ekrana-ot-2017-06-01-21-38-00-1024x576"/>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout'><img
+border=0 width=750 height=422 src="Linux-IPTables-Ports.files/image012.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-00-1024x576.png"
+v:shapes="Рисунок_x0020_3"></span><![endif]></span></a><span style='font-family:
+"Open Sans",sans-serif;color:#444444'>Теперь смотрим список правил и проверяем:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -L</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Рисунок_x0020_2"
+ o:spid="_x0000_i1025" type="#_x0000_t75" alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-25-1024x576.png"
+ style='width:562.5pt;height:316.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Linux-IPTables-Ports.files/image013.png" o:title="Snimok-ekrana-ot-2017-06-01-21-38-25-1024x576"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=750 height=422
+src="Linux-IPTables-Ports.files/image014.jpg"
+alt="https://losst.ru/wp-content/uploads/2017/06/Snimok-ekrana-ot-2017-06-01-21-38-25-1024x576.png"
+v:shapes="Рисунок_x0020_2"><![endif]></span><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id=i-2><span class=ez-toc-section><span style='font-size:19.5pt;line-height:
+115%;font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:
+uppercase'>ВЫВОДЫ</span></span></span><span style='font-size:19.5pt;line-height:
+115%;font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:
+uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>В этой статье мы рассмотрели как открыть порт Ubuntu 16.04 или в
+любом другом Linux дистрибутиве, а также закрыть ненужные порты. Это повысит
+безопасность вашей системы. Только на первый взгляд кажется, что с iptables
+сложно работать. Если разобраться, то все будет достаточно просто. Надеюсь, эта
+информация была полезной для вас.<o:p></o:p></span></p>
+
+<span style='font-size:12.0pt;line-height:115%;font-family:"Times New Roman",serif;
+mso-fareast-font-family:"Times New Roman";mso-ansi-language:RU;mso-fareast-language:
+RU;mso-bidi-language:AR-SA'><br clear=all style='mso-special-character:line-break;
+page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%;font-family:
+"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<h1 style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline'><span style='font-size:22.5pt;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'>ПРОБРОС ПОРТОВ IPTABLES В LINUX<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-family:"Open Sans",sans-serif;
+color:#444444;background:white'>С увеличением количества компьютеров,
+необходимое количество IP адресов увеличивалось и диапазона IPv4 начало не
+хватать. Тогда была разработана технология NAT, которая позволяет нескольким
+компьютерам объединяться в локальную сеть и быть доступными из внешней сети по
+IP адресу маршрутизатора.</span><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Когда пакет приходит на маршрутизатор, выполняется выяснение
+какому устройству он был адресован и замена ip адресата на нужный. Кроме
+переопределения IP получателя и отправителя, NAT может изменять порты. Это
+называется проброс портов и может быть полезно если вы создали частную сеть, но
+все же хотите пропускать некоторые виды трафика. Всем этим можно управлять с
+помощью iptables. В этой статье мы рассмотрим как выполняется проброс портов
+iptables в Linux.<o:p></o:p></span></p>
+
+<p class=ez-toc-title style='margin-top:0cm;margin-right:0cm;margin-bottom:
+18.75pt;margin-left:0cm;background:white;vertical-align:baseline;box-sizing: border-box'><span
+style='font-family:"Open Sans",sans-serif;color:#444444'>Содержание статьи:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo2;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/probros-portov-iptables-v-linux#_NAT"
+title="Как работает NAT?" style='box-sizing: border-box;transition: all 0.25s ease 0s'><nav style="box-sizing: border-box; margin: 0px; padding: 0px; border: 0px; font: inherit; vertical-align: baseline; display: block;"><span
+style='color:#FF9950'>Как работает NAT?</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo2;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a
+href="https://losst.ru/probros-portov-iptables-v-linux#_iptables"
+title="Проброс портов в iptables" style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='color:#FF9950'>Проброс портов в iptables</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:45.6pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level2 lfo2;tab-stops:list 72.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/probros-portov-iptables-v-linux#i"
+title="Настройка прохождения пакетов" style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='color:#FF9950'>Настройка прохождения пакетов</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:45.6pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level2 lfo2;tab-stops:list 72.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a
+href="https://losst.ru/probros-portov-iptables-v-linux#_iptables-2"
+title="Модификация пакетов в iptables" style='box-sizing: border-box;
+transition: all 0.25s ease 0s'><span style='color:#FF9950'>Модификация пакетов
+в iptables</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:45.6pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level2 lfo2;tab-stops:list 72.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a
+href="https://losst.ru/probros-portov-iptables-v-linux#_iptables-3"
+title="Сохранение настроек iptables" style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='color:#FF9950'>Сохранение настроек iptables</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;
+margin-left:22.8pt;margin-bottom:.0001pt;text-indent:-18.0pt;line-height:normal;
+mso-list:l0 level1 lfo2;tab-stops:list 36.0pt;background:white;vertical-align:
+baseline'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+11.0pt;font-family:Wingdings;mso-fareast-font-family:Wingdings;mso-bidi-font-family:
+Wingdings;color:#444444'><span style='mso-list:Ignore'>§<span style='font:7.0pt "Times New Roman"'>&nbsp;
+</span></span></span><![endif]><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><a href="https://losst.ru/probros-portov-iptables-v-linux#i-2"
+title=Выводы style='box-sizing: border-box;transition: all 0.25s ease 0s'><span
+style='color:#FF9950'>Выводы</span></a><o:p></o:p></span></p>
+
+</nav>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_NAT"><span class=ez-toc-section><span style='font-size:19.5pt;line-height:
+115%;font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:
+uppercase'>КАК РАБОТАЕТ NAT?</span></span></span><span style='font-size:19.5pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Чтобы иметь возможность общаться с другими компьютерами в сети
+компьютер должен иметь уникальный ip адрес. Но поскольку количество адресов
+уменьшалось нужно было придумать технологию, которая позволяла бы давать один
+адрес нескольким машинам. И была придумана технология NAT или&nbsp;Network
+Address Translation.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Все работает очень просто. Компьютер имеет свой адрес в
+локальной сети, он не виден из интернета. Когда ему нужно отправить пакет, он
+отправляет его роутеру, затем роутер подменяет адрес отправителя на свой и
+передает пакет дальше к цели. Параллельно роутер запоминает с какого локального
+компьютера был отправлен пакет на этот адрес. Дальше ответный пакет приходит
+роутеру, он подменяет адрес назначения на адрес нужного компьютера и отдает
+пакет в локальную сеть.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Недостаток в том, что инициировать подключение извне нельзя,
+потому что маршрутизатор просто еще не знает к кому обращаются. Тут на помощь
+приходит проброс портов. Мы можем сказать роутеру: при поступлении пакетов на
+порт 80 перенаправлять их на порт 80 компьютера 192.168.1.2. Теперь адрес
+отправителя и порт будет заменяться на указанный нами и пакет будет передан
+туда, куда нужно. Если на маршрутизаторе установлен Linux, то все это можно
+настроить с помощью iptables.<o:p></o:p></span></p>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_iptables"><span class=ez-toc-section><span style='font-size:19.5pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'>ПРОБРОС ПОРТОВ В IPTABLES</span></span></span><span
+style='font-size:19.5pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Первое что нужно сделать, это включить переадресацию трафика на
+уровне ядра, если это еще не сделано. Для этого выполните:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;echo 1
+| sudo tee /proc/sys/net/ipv4/ip_forward</span></code><span style='font-family:
+"Open Sans",sans-serif;color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Чтобы настройка сохранялась после перезагрузки используйте такую
+команду:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo sysctl -w&nbsp;net.ipv4.ip_forward=1</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><span style='font-family:"Open Sans",sans-serif;color:#444444'>Мы не будем
+здесь подробно рассматривать правила iptables и значение каждой опции, поэтому
+перед тем, как читать дальше вам лучше ознакомиться со статьей&nbsp;<a
+href="https://losst.ru/nastrojka-iptables-dlya-chajnikov" style='box-sizing: border-box;
+transition: all 0.25s ease 0s'><span style='color:#FF9950'>iptables для начинающих</span></a>.
+Дальше рассмотрим проброс портов iptables nat.<o:p></o:p></span></p>
+
+<h3 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id=i><span class=ez-toc-section><span style='font-size:16.0pt;line-height:115%;
+font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:uppercase'>НАСТРОЙКА
+ПРОХОЖДЕНИЯ ПАКЕТОВ</span></span></span><span style='font-size:16.0pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'><o:p></o:p></span></h3>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Сначала мы рассмотрим как разрешить прохождение пакетов через
+маршрутизатор. Для этого в брандмауэре есть цепочка FORWARD. По умолчанию для
+всех пакетов применяется правило DROP, которое означает что все нужно
+отбросить. Сначала разрешим инициализацию новых соединений, проходящих от eth0
+до eth1. Они</span><span style='font-family:"Open Sans",sans-serif;color:#444444;
+mso-ansi-language:EN-US'> </span><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>имеют</span><span style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'> </span><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>тип</span><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'> contrack </span><span style='font-family:
+"Open Sans",sans-serif;color:#444444'>и</span><span style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'> </span><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>представлены</span><span style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'> </span><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>пакетом</span><span lang=EN-US style='font-family:"Open Sans",sans-serif;
+color:#444444;mso-ansi-language:EN-US'> SYN:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>&nbsp;sudo iptables -A FORWARD -i eth0 -o eth1 -p tcp
+--syn --dport 80 -m conntrack --ctstate NEW -j ACCEPT</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Действие ACCEPT означает, что мы разрешаем это соединение. Но
+это правило разрешает только первый пакет, а нам нужно пропускать любой
+следующий трафик в обоих направлениях для этого порта (80). поэтому добавим
+правила для ESTABLIHED и RLEATED:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline'><code><span lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;
+color:#444444;mso-ansi-language:EN-US'>sudo iptables -A FORWARD -i eth0 -o eth1
+-m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</span></code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;mso-bidi-font-family:
+"Courier New";color:#444444;mso-ansi-language:EN-US'><br style='box-sizing: border-box'>
+<code><span style='font-family:"inherit",serif'>$ sudo iptables -A FORWARD -i
+eth1 -o eth0 -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT</span></code></span><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Дальше явно установим что наша политика по умолчанию - DROP:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+iptables -P FORWARD DROP</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Это еще не проброс портов, мы только разрешили определенному
+трафику, а именно на порт 80, проходить через маршрутизатор на другие машины
+локальной сети. Теперь настроим правила, которые будут отвечать за
+перенаправление трафика.<o:p></o:p></span></p>
+
+<h3 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_iptables-2"><span class=ez-toc-section><span style='font-size:16.0pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'>МОДИФИКАЦИЯ ПАКЕТОВ В IPTABLES</span></span></span><span
+style='font-size:16.0pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'><o:p></o:p></span></h3>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Далее мы настроим правила, которые будут указывать как и куда
+нужно перенаправить пакеты, приходящие на порт 80. Сейчас маршрутизатор может
+их пропускать в сеть, но он еще не знает куда. Для этого нам нужно будет
+настроить две вещи - модификацию адреса назначения (Destination) DNAT и
+модификацию адреса отправителя (Source) SNAT.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Правила DNAT настраиваются в цепочке PREROUTING, в таблице NAT.
+Эта операция изменяет адрес назначения пакета чтобы он достиг нужной нам цели,
+когда проходит между сетями. Клиенты будут отправлять пакеты нашему
+маршрутизатору, и им не нужно знать топологию внутренней сети. Пакет
+автоматически будет приходить нашему веб-серверу (192.168.1.2).<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>С помощью этого правила мы перенаправляем все пакеты, пришедшие
+на порт 80, к 192.168.1.2 опять же на порт 80:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -t nat -A PREROUTING -i eth0 -p tcp
+--dport 80 -j DNAT --to-destination 192.168.1.2</span></code><span lang=EN-US
+style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Но это только половина работы. Пакет будет иметь исходный адрес
+клиента, а значит будет пытаться отправить ответ ему. Так как клиент ожидает
+получить ответ от маршрутизатора, то нормального TCP соединения не получиться.
+Чтобы решить эту проблему нужно модифицировать адрес источника и заменить его
+на адрес маршрутизатора 192.168.1.1. Тогда ответ придет маршрутизатору, а тот
+уже от своего имени передаст его в сеть.<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -t nat -A POSTROUTING -o eth1 -p tcp
+--dport 80 -d 192.168.1.2 -j SNAT --to-source 192.168.1.1</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Если вы хотите перенаправить трафик на порт 8080, то нужно
+указать его после ip адреса:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -t nat -A POSTROUTING -o eth1 -p tcp
+--dport 80 -d 192.168.1.2 -j SNAT --to-source 192.168.1.1:8080</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Также может понадобиться выполнить&nbsp;проброс диапазона портов
+iptables, для этого просто укажите диапазон, например, 1000:2000:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;</span></code><code><span
+lang=EN-US style='font-size:10.0pt;font-family:"inherit",serif;color:#444444;
+mso-ansi-language:EN-US'>sudo iptables -t nat -A POSTROUTING -o eth1 -p tcp
+--dport 1000:2000&nbsp;-d 192.168.1.2 -j SNAT --to-source 192.168.1.1</span></code><span
+lang=EN-US style='font-family:"Open Sans",sans-serif;color:#444444;mso-ansi-language:
+EN-US'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>После добавления этого правила можете проверять работу
+перенаправление портов iptables будет выполняться и все будет отправляться так,
+как нужно.<o:p></o:p></span></p>
+
+<h3 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id="_iptables-3"><span class=ez-toc-section><span style='font-size:16.0pt;
+line-height:115%;font-family:"Source Sans Pro",sans-serif;color:#444444;
+text-transform:uppercase'>СОХРАНЕНИЕ НАСТРОЕК IPTABLES</span></span></span><span
+style='font-size:16.0pt;line-height:115%;font-family:"Source Sans Pro",sans-serif;
+color:#444444;text-transform:uppercase'><o:p></o:p></span></h3>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Теперь, когда все настроено, нужно сохранить этот набор правил,
+чтобы он загружался автоматически при каждом старте. Для этого выполните:<o:p></o:p></span></p>
+
+<p style='margin:0cm;margin-bottom:.0001pt;background:white;vertical-align:
+baseline;box-sizing: border-box;font-variant-ligatures: normal;font-variant-caps: normal;
+font-variant-numeric: inherit;font-variant-east-asian: inherit;font-stretch: inherit;
+line-height:inherit;orphans: 2;text-align:start;widows: 2;-webkit-text-stroke-width: 0px;
+text-decoration-style: initial;text-decoration-color: initial;word-spacing:
+0px'><code style='box-sizing: border-box;font-variant:inherit;font-stretch: inherit;
+font-size:inherit;background-color:rgba(0, 0, 0, 0.05);border-radius: 3px'><span
+style='font-size:10.0pt;font-family:"inherit",serif;color:#444444'>&nbsp;sudo
+service iptables-persistent save</span></code><span style='font-family:"Open Sans",sans-serif;
+color:#444444'><o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>Готово. Теперь проброс портов iptables ubuntu будет работать
+так, как нужно.<o:p></o:p></span></p>
+
+<h2 style='margin-top:0cm;background:white;vertical-align:baseline;box-sizing: border-box;
+font-variant-ligatures: normal;font-variant-caps: normal;font-variant-numeric: inherit;
+font-variant-east-asian: inherit;font-stretch: inherit;orphans: 2;text-align:
+start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='box-sizing: border-box'
+id=i-2><span class=ez-toc-section><span style='font-size:19.5pt;line-height:
+115%;font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:
+uppercase'>ВЫВОДЫ</span></span></span><span style='font-size:19.5pt;line-height:
+115%;font-family:"Source Sans Pro",sans-serif;color:#444444;text-transform:
+uppercase'><o:p></o:p></span></h2>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>В этой статье мы рассмотрели как
+выполняется&nbsp;перенаправление портов&nbsp;iptables. Процесс включает в себя
+разрешение на проходящий трафик на уровне ядра, разрешение определенного типа
+трафика, а также настройку адресов источника и назначения для правильного прохождения
+пакетов.<o:p></o:p></span></p>
+
+<p style='margin-top:0cm;margin-right:0cm;margin-bottom:18.75pt;margin-left:
+0cm;background:white;vertical-align:baseline;box-sizing: border-box;font-variant-ligatures: normal;
+font-variant-caps: normal;font-variant-numeric: inherit;font-variant-east-asian: inherit;
+font-stretch: inherit;line-height:inherit;orphans: 2;text-align:start;
+widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'><span style='font-family:"Open Sans",sans-serif;
+color:#444444'>На завершение, видео о том, что такое NAT:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
+href="https://www.youtube.com/watch?v=F7kCOa6PybQ">https://www.youtube.com/watch?v=F7kCOa6PybQ</a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:12.0pt;line-height:115%;font-family:
+"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

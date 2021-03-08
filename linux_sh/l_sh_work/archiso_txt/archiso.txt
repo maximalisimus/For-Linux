@@ -1,0 +1,328 @@
+﻿
+$ sudo pacman -S archiso
+$ sudo pacman -Scc
+$ mkdir ~/livecd && cd ~/livecd && sudo su
+
+# edit /usr/bin/mkarchiso and add -i both pacstrap lines
+
+$ sed -i '/pacstrap/s/-c/-i -c/' /usr/bin/mkarchiso
+
+$ sudo cp -r /usr/share/archiso/configs/releng/* ~/livecd/
+
+
+
+
+1. PART 1.
+
+# edit build.sh # search and remove zsh
+
+$ sed -i 's/zsh //' build.sh
+
+# edit pacman.conf # add multilib
+# edit customize_airootfs.sh # usermod -s /bin/bash root
+# edit mkinitcpio.conf # remove search pxe
+
+$ sed -i 's/\S*pxe\S*\s*//g' "mkinitcpio.conf"
+
+$ sudo ./build.sh -V
+
+
+
+
+2. PART 2.
+
+$ sudo rm -rf work/
+$ sudo rm -rf out/
+
+# edit packages.both # add/remove packages
+# P.
+
+# xorg
+xorg-server
+xorg-xinit
+xorg-twm
+xterm
+
+# vbox
+virtualbox-guest-utils
+virtualbox-guest-dkms
+
+$ sudo mkdir airootfs/etc/skel
+$ cd airootfs/etc/skel/
+
+$ touch .bash_profile
+
+#
+# ~/.bash_profile
+#
+
+[[ -f ~/.bashrc ]] && . ~/.bashrc
+
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+
+
+
+$ touch .bash_logout
+
+#
+# ~/.bash_logout
+#
+
+
+
+$ touch .bashrc
+
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+
+# environment variables
+export EDITOR="$(if [[ -n $DISPLAY ]]; then echo 'leafpad'; else echo 'nano'; fi)"	# leafpad, nano
+
+
+$ touch .xinitrc
+
+#!/bin/sh
+#
+# ~/.xinitrc
+#
+# Executed by startx (run your window manager from here)
+
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+  for f in /etc/X11/xinit/xinitrc.d/*; do
+    [ -x "$f" ] && . "$f"
+  done
+  unset f
+fi
+
+exec mate-session
+# exec startxfce4
+# exec cinnamon-session
+
+
+
+
+$ touch .xsession
+
+#!/bin/sh
+
+#
+# ~/.xsession
+#
+# Executed by xdm/gdm/kdm at login
+#
+/bin/bash --login -i ~/.xinitrc
+
+
+$ cd ~/livecd/
+
+# edit packages.both # add packages
+
+# Desktop
+mate
+mate-extra
+
+# linux
+linux-headers
+
+
+# edit build.sh
+
+# iso_name=...
+# iso_label=...
+
+
+
+
+
+
+
+3. PART 3.
+
+
+# edit customize_airootfs.sh # add string on usermod and <cp -aT /etc/skel/ /root/>
+
+# useradd -m -p "" -g users -G "wheel,storage,power,network,video,audio,lp,games,optical,scanner,floppy,log,rfkill,ftp,http,sys,input,adm,disk" -s /bin/bash liveuser
+useradd -m -p "" -g users -G "wheel,audio" -s /bin/bash liveuser
+usermod -aG "storage,power,network,video,lp,games,optical,scanner,floppy,log,rfkill,ftp,http,sys,input,adm,disk" liveuser
+#chmod 750 /etc/sudoers.d
+chmod 440 /etc/sudoers.d/g_wheel
+chown -R liveuser:users /home/liveuser
+
+# add on finish line <systemctl enable>
+NetworkManager.service
+
+
+
+
+$ sudo mkdir airootfs/etc/systemd/system/getty@tty1.service.d/autologin.conf
+# $ sudo mkdir airootfs/etc/systemd/system/serial-getty@ttyS0.service.d/autologin.conf
+
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin liveuser --noclear %I 38400 linux
+# ExecStart=-/sbin/agetty --autologin liveuser --noclear %I 38400 linux
+
+
+
+$ sudo mkdir airootfs/etc/sudoers.d
+
+$ touch airootfs/etc/sudoers.d/g_wheel
+
+%wheel  ALL=(ALL) NOPASSWD: ALL
+
+
+
+
+$ sudo ./build.sh -V
+
+# test vbox iso
+# vbox configuration on iso machine
+# vbox console
+
+$$ dconf dump / > dump.dconf
+## copy dump.dconf
+## off vbox
+
+$ sudo rm -rf work/
+$ sudo rm -rf out/
+
+
+
+
+
+
+
+
+4. PART 4.
+
+
+
+
+## vbox test
+
+## paste /home/liveuser/dump.conf
+$$ dconf load / < dump.dconf
+$$ mkdir /home/liveuser/.config/autostart
+$$ touch /home/liveuser/.config/autostart/spicetheme.desktop
+
+[Desktop Entry]
+Name=Spice Theme
+Exec=spicetheme
+Icon=utilities-terminal
+Type=Application
+Categories=System;Utility;
+
+$$ sudo cp dump.dconf /usr/bin/
+
+$$ touch /usr/bin/spicetheme
+
+#!/bin/bash
+dconf load / < dump.dconf
+
+$$ sudo chmod +x /usr/bin/spicetheme
+
+## off vbox
+
+
+
+$ sudo rm -rf work/
+$ sudo rm -rf out/
+
+
+$ sudo mkdir airootfs/etc/skel/.config/autostart
+$ sudo touch airootfs/etc/skel/.config/autostart/spicetheme.desktop
+
+[Desktop Entry]
+Name=Spice Theme
+Exec=spicetheme
+Icon=utilities-terminal
+Type=Application
+Categories=System;Utility;
+
+$ sudo mkdir -p airootfs/usr/bin
+$ sudo touch airootfs/usr/bin/spicetheme
+
+#!/bin/bash
+cd /usr/bin
+dconf load / < dump.dconf
+
+$ sudo chmod +x airootfs/usr/bin/spicetheme
+
+# copy file dump.dconf /airootfs/usr/bin/
+
+
+
+
+
+
+
+5. PART 5.
+
+
+
+
+$ sudo cp -r abif-master/ airootfs/
+
+# edit abif-master/abif
+## ISO_HOST="spice"
+## ISO_USER="liveuser"
+# Search <Clean up installation>
+## string "rm -f ${MOUNTPOINT}/etc/sudoers.d/g_wheel 2>>/tmp/.errlog"
+
+# Search dialog <pacbang> and move to <spice>
+
+# Search and remove string to "echo...ip-address...hostname...127.0.0.1..."
+
+# Search Display Manager and move "lxdm" on gdm, lightdm, slim, sddm
+
+# Search <Clean up installation> and paste string on next to systemd
+
+# remove packages
+arch-chroot "pacman -Rns geany --noconfirm" 2>>/tmp/.errlog
+
+
+$ sudo chmod +x abif-master/abif
+
+$ sudo touch airootfs/etc/skel/Desktop/install.desktop
+
+[Desktop Entry]
+Name=Install maximalisimus
+Comment=Application Menu
+Exec=sudo mate-terminal -e /abif-master/abif
+Icon=distributor-logo-arch-linux
+Type=Application
+Categories=GNOME;GTK;Utility;
+StartupNotify=false
+NoDisplay=false
+
+
+# edit build.sh and remove "run_once" on
+
+for arch in x86_64; do
+	make_prepare
+done
+
+make_iso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+##
+##
+## English Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Removing USB devices"
+_menu_body="\nPlease select your USB device.\n"
+_pass_title="A password"
+_pass_body="\nPlease enter your user password.\n"
+_MSG_Title="Error"
+_MSG_Body="The USB device is not detected\n"
+_select_type_pass_title="User password setting"
+_select_type_pass_body="\nPlease select the program mode.\n\n"
+_no_pass_menu="Without a password"
+_memory_pass_menu="Remember password"
+_input_pass_menu="Re-enter password"
+_info_pass_type_title="Information message about the program operation mode"
+_inf0="\nFrom this mode depends on the performance of the program\n"
+_info1="$_inf0\nIn 'no password' mode - user password is set to empty\n"
+_info2="In the 'Remember password' mode, the password is entered into the settings file\n"
+_info3="In the 'Re-enter password' mode, the password will be requested each time you retrieve it\n\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Initial setup of the program"
+_info_install_body="\nThe initial setup of the program is performed.\nConfigure the system language and application mode.\nAs well as installing a dependent package for the application graphics subsystem - xdialog\n\n"

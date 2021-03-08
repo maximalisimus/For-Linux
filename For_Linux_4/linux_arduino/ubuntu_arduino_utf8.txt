@@ -1,0 +1,26 @@
+﻿
+Ubuntu:
+
+sudo apt-get install gcc-avr avr-libs open-jdk-6-jre
+
+tar -xzvf arduino-1.0-linux64.tgz
+
+sudo usermod -a -G tty yourUserName
+sudo usermode -a -G dialout yourUserName
+cd arduino-1.0
+./arduino
+chmod +x install.sh
+
+
+
+
+
+
+
+
+
+
+
+
+
+

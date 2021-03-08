@@ -1,0 +1,22 @@
+
+
+1.	sudo apt-get update
+2.	sudo apt-get upgrade
+3.	sudo apt-get dist-upgrade
+4.	sudo apt-get install linux-soutce
+5.	sudo apt-get build-dep linux
+6.	sudo apt-get install kernel-package
+7.	sudo apt-get install libncurses5-dev
+8.	cd /usr/src
+9.	tar -xjf linux-source-3.19.0.tar.bz2
+10.	cd linux-source-3.19.0.tar.bz2
+11.	sudo make menuconfig
+12.	sudo fakeroot make-kpkg -j 9 --initrd --append-to-version=-custom kernel_image kernel_headers
+13.	cd ../
+14.	sudo dpkg -i linux-image-3.19.8-ckt10-custum_3.19.18-ckt10-custum-10.00.Custom_amd64.deb
+15.	sudo dpkg -i linux-headers-3.19.8-ckt10-custum_3.19.18-ckt10-custum-10.00.Custom_amd64.deb
+16.	sudo update-grub2
+
+
+
+

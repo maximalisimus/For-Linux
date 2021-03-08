@@ -1,0 +1,26 @@
+
+#!/bin/sh
+
+trap "echo -e '\e[1;30mScript $0 is exit\e[0m'" EXIT
+
+trap "echo -e '\e[1;31mScript $0 is stoped \e[1;34m(Ctrl+C)\e[0m'" SIGINT
+
+trap "echo -e '\e[1;35mScript $0 is cenceled \e[1;32m(Ctrl+Z)\e[0m'" SIGTSTP
+trap "echo Script $0 is start" SIGCONT
+
+
+echo -e "\e[1;33mStart $0\e[0m"
+echo -e "\e[1;30mDone $0\e[0m"
+
+
+trap - SIGINT
+
+trap - SIGTSTP
+trap - SIGCONT
+trap - EXIT
+
+
+exit 0
+
+
+

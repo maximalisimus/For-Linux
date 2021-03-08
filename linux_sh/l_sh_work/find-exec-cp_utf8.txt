@@ -1,0 +1,2 @@
+﻿
+# sudo find /root/ -maxdepth 1 -iname "xorg.conf*" -exec cp {} /etc/X11/xorg.conf \;

@@ -1,0 +1,30 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=NAME
+pkgver=VERSION
+pkgrel=1
+pkgdesc=""
+arch=('any')
+url=""
+license=('GPL')
+checkdepends=()
+optdepends=()
+install=
+changelog=
+source=("")
+md5sums=()
+
+build() {
+	cd "$pkgname-$pkgver"
+	./configure --prefix=/usr
+	make
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make DESTDIR="$pkgdir/" install
+}

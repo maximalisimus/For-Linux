@@ -1,0 +1,2 @@
+SYBSYSTEM=="net", ACTION=="add", ATTR{address}=="00:00:00:00:00:00", NAME="lo0"
+SYBSYSTEM=="net", ACTION=="add", ATTR{address}=="08:00:27:cc:a7:8b", NAME="enet0"

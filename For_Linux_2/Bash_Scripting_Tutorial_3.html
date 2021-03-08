@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<!-- saved from url=(0030)http://linuxforum.ru/post/2323 -->
+<html lang="ru-RU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-param" content="_csrf">
+    <meta name="csrf-token" content="UkdJRzFrcVMNCQg/fBNAPzcROh8JWzQEOCV8EnslGH41HSUeXSorPQ==">
+<title>Пишем скрипты в Linux (обучение на примерах) / linuxforum</title>
+<link rel="shortcut icon" href="http://linuxforum.ru/favicon.ico">
+<link href="./Bash_Scripting_Tutorial_3_files/font-awesome.min.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/topic.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/post.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/sidebar.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/user-content.min.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/primer.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/main.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/dev.css" rel="stylesheet">
+<link href="./Bash_Scripting_Tutorial_3_files/saidnavy.css" rel="stylesheet">
+<script async="" src="./Bash_Scripting_Tutorial_3_files/analytics.js"></script><script src="./Bash_Scripting_Tutorial_3_files/GoogleAnalytics.js"></script></head>
+<body>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-brand">
+                        <a href="http://linuxforum.ru/">linuxforum</a><span class="navbar-brand-beta"><a href="http://linuxforum.ru/topics/tagged/support"><sup>beta</sup></a></span>
+                    </div>
+        <ul class="navbar-nav"><li><a href="http://linuxforum.ru/registration">Регистрация</a></li>
+<li><a href="http://linuxforum.ru/login">Вход</a></li></ul>    </div>
+</nav>
+<div class="sub-navbar">
+    <div class="container">
+        <ul class="sub-navbar-nav"><li><a href="http://linuxforum.ru/topics">Последние темы</a></li>
+<li><a href="http://linuxforum.ru/users">Пользователи</a></li></ul>    </div>
+</div>
+<section class="content">
+    <div class="pagecontent">
+        <div class="container">
+            <div class="p-topic-view">
+    <div class="tc-header">
+        <h1>Пишем скрипты в Linux (обучение на примерах)</h1>
+    </div>
+    <div class="topic-content">
+        <div id="w0" class="postlist js-postlist" data-topic-id="221" data-topic-page="1"><div class="post post-rowodd firstpost  js-post" id="post2323" data-post-id="2323">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/8d7b3133b218113b9880725666fcd063" width="48" height="48" alt="forkostya">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/340">forkostya</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-02-23T20:36:43+03:00" title="23 февраля 2010 г., 20:36:43 GMT+3">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/2323#post2323">#1</a></span>
+                                        <span class="post-header-owner">Автор</span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>Автор: Кузнецов Константин  </p>
+<p>[size=7]Пишем скрипты в Linux (обучение на примерах)[/size]  </p>
+<p>Содержание:  </p>
+<ol>
+<li>Введение  </li>
+<li>Обучение написанию сценариев на внутреннем языке BASH (Перевод с англ.)  </li>
+<li>Используемая и рекомендуемая литература  </li>
+</ol>
+<hr>
+<p>[size=6]1. Введение[/size]  </p>
+<p>Главная задача системного администратора - как сделать так, чтобы ничего не делать. Для достижения данной шуточной цели администраторы часто прибегают к написанию сценариев (скриптов). В этом случае всю рутинную, периодическую работу выполняет их верный помощник - компьютер.&gt; Материал из Википедии — свободной энциклопедии<br>
+Скриптовый язык (англ. scripting language, в русскоязычной литературе принято название язык сценариев) — язык программирования, разработанный для записи «сценариев», последовательностей операций, которые пользователь может выполнять на компьютере. Простые скриптовые языки раньше часто называли языками пакетной обработки (batch languages или job control languages). Сценарии обычно интерпретируются, а не компилируются (хотя часто сценарии компилируются каждый раз перед запуском).<br>
+В прикладной программе, сценарий (скрипт) — это программа, которая автоматизирует некоторую задачу, которую без сценария пользователь делал бы вручную, используя интерфейс программы.</p>
+<hr>
+<p>[size=6]2. Обучение написанию сценариев на внутреннем языке BASH[/size]<br>
+оригинал: <a href="http://www.linuxconfig.org/Bash_scripting_Tutorial">http://www.linuxconfig.org/Bash_scripting_Tutorial</a>  </p>
+<p>Это руководство предполагает отсутствие предварительных знаний о методике написания сценариев (далее скриптов) с помощью внутреннего языка Bash. С помощью данного руководства вы обнаружите в скором времени, что написание скриптов очень простая задача. Давайте начнем наше обучение с простого сценария, выполняющего вывод строки "Hello World!" (в перев. с англ. - Всем привет!)  </p>
+<p><strong>1) Сценарий "Всем привет"</strong><br>
+Вот ваш первый пример bash-скрипта:&gt; #!/bin/bash<br>
+echo "Hello World"</p>
+<p>Переходим в директорию, содержащую наш файл hello_world.sh и делаем его исполняемым:</p>
+<pre><code>$ chmod +x hello_world.sh</code></pre>
+<p>Запускаем скрипт на выполнение</p>
+<pre><code>$ ./hello_world.sh</code></pre>
+<p><strong>2) Простой архивирующий bash-скрипт</strong>&gt; #!/bin/bash<br>
+tar -czf myhome_directory.tar.gz /home/user</p>
+<pre><code>$ ./backup.sh  
+tar: Removing leading '\' from member names  
+$ du -sh myhome_directory.tar.gz  
+41M myhome_directory.tar.gz</code></pre>
+<p><strong>3) Работа с переменными</strong><br>
+В данном примере мы объявляем простую переменную и выводим её на экран с помощью команды echo&gt; #!/bin/bash<br>
+STRING="HELLO WORLD!!!"<br>
+echo $STRING</p>
+<pre><code>$ ./hello_world.sh  
+HELLO WORLD!!!</code></pre>
+<p>Наш архивирующий скрипт с переменными:&gt; #!/bin/bash<br>
+OF=myhome<em>directory</em>$(date +%Y%m%d).tar.gz<br>
+IF=/home/user<br>
+tar -czf $OF $IF</p>
+<pre><code>$ ./backup.sh  
+tar: Removing leading '\' from member names  
+$ du -sh *tar.gz  
+41M myhome_directory_20100123.tar.gz</code></pre>
+<p><strong>3.1) Глобальные и локальные переменные</strong>&gt; #!/bin/bash  </p>
+<h1>Объявляем глобальную переменную</h1>
+<h1>Такая переменная может использоваться в любом месте этого скрипта</h1>
+<p>VAR="global variable"<br>
+function bash {  </p>
+<h1>Объявляем локальную переменную</h1>
+<h1>Такая переменная действительна только для функции, в которой её объявили</h1>
+<p>local VAR="local variable"<br>
+echo $VAR<br>
+}<br>
+echo $VAR<br>
+bash  </p>
+<h1>Обратите внимание, что глобальная переменная не изменилась</h1>
+<p>echo $VAR</p>
+<pre><code>$ ./variables.sh  
+global variable  
+local variable  
+global variable</code></pre>
+<p><strong>4) Передаем аргументы в скрипт</strong>&gt; #!/bin/bash  </p>
+<h1>Используйте предопределенные переменные для доступа к аргументам</h1>
+<h1>Выводим аргументы на экран</h1>
+<p>echo $1 $2 $3 ' -&gt; echo $1 $2 $3'  </p>
+<h1>Мы так же можем получить доступ к аргументам через специальный массив args=("$@")</h1>
+<h1>Выводим аргументы на экран</h1>
+<p>echo ${args[0]} ${args[1]} ${args[2]} ' -&gt; args=("$@"); echo ${args[0]} ${args[1]} ${args[2]}'  </p>
+<h1>Используйте переменную $@ для вывода всех аргументов сразу</h1>
+<p>echo $@ ' -&gt; echo $@'<br>
+Используйте переменную $# для вывода количества переданный в скрипт аргументов<br>
+echo Number of arguments passed: $# ' -&gt; echo Number of arguments passed: $#'</p>
+<pre><code>$ ./arguments.sh Bash Scripting Tutorial  
+Bash Scripting Tutorial -&gt; echo $1 $2 $3  
+Bash Scripting Tutorial -&gt; args=("$@"); echo ${args[0]} ${args[1]} ${args[2]}  
+Bash Scripting Tutorial -&gt; echo $@  
+Number of arguments passed: 3  -&gt; echo Number of arguments passed: $#</code></pre>
+<p><strong>5) Выполнение в скрипте команд оболочки</strong>&gt; #!/bin/bash  </p>
+<h1>используйте обратные кавычки " <code> </code> " для выполнения команды оболочки</h1>
+<p>echo <code>uname -o</code>  </p>
+<h1>теперь попробуем без кавычек</h1>
+<p>echo uname -o</p>
+<pre><code>$ uname -o  
+GNU/Linux  
+$ ./bash_backtricks.sh  
+GNU/Linux  
+uname -o</code></pre>
+<p>Как видим, во втором случае вывелась сама команда, а не результат её выполнения  </p>
+<p><strong>6) Читаем пользовательский ввод (интерактивность)</strong>&gt; #!/bin/bash<br>
+echo -e "Hi, please type the word: \c "<br>
+read  word<br>
+echo "The word you entered is: $word"<br>
+echo -e "Can you please enter two words? "<br>
+read word1 word2<br>
+echo "Here is your input: \"$word1\" \"$word2\""<br>
+echo -e "How do you feel about bash scripting? "  </p>
+<h1>read command now stores a reply into the default build-in variable $REPLY</h1>
+<p>read<br>
+echo "You said $REPLY, I'm glad to hear that! "<br>
+echo -e "What are your favorite colours ? "  </p>
+<h1>-a makes read command to read into an array</h1>
+<p>read -a colours<br>
+echo "My favorite colours are also ${colours[0]}, ${colours[1]} and ${colours[2]}:-)"</p>
+<pre><code>$ ./read.sh  
+Hi, please type the word: something  
+The word you entered is: something  
+Can you please enter two words?  
+Debian Linux  
+Here is your input: "Debian" "Linux"  
+How do you feel about bash scripting?  
+good  
+You said good, I'm glad to hear that!  
+What are your favorite colours ?   
+blue green black  
+My favorite colours are also blue, green and black  :-)</code></pre>
+<p><strong>7) Использование ловушки</strong>&gt; #!/bin/bash  </p>
+<h1>объявляем ловушку</h1>
+<p>trap bashtrap INT  </p>
+<h1>очищаем экран</h1>
+<p>clear;  </p>
+<h1>функция ловушки выполняется, когда пользователь нажимает CTRL-C:</h1>
+<h1>На экран будет выводиться =&gt; Executing bash trap subrutine !</h1>
+<h1>но скрипт будет продолжать выполняться</h1>
+<p>bashtrap()<br>
+{<br>
+echo "CTRL+C Detected !...executing bash trap !"<br>
+}  </p>
+<h1>скрипт будет считать до 10</h1>
+<p>for a in <code>seq 1 10</code>; do<br>
+echo "$a/10 to Exit."<br>
+sleep 1;<br>
+done<br>
+echo "Exit Bash Trap Example!!!"</p>
+<pre><code>$ ./trap.sh  
+1/10  
+2/10  
+3/10  
+4/10  
+5/10  
+6/10  
+CTRL+C Detected !...executing bash trap !  
+7/10  
+8/10  
+9/10  
+CTRL+C Detected !...executing bash trap !  
+10/10  
+Exit Bash Trap Example!!!</code></pre>
+<p>Как видим, сочетание клавишь Ctrl-C не остановило выполнение скрипта.  </p>
+<p><strong>8) Массивы</strong><br>
+<strong>8.1) Объявляем простой массив</strong>&gt; #!/bin/bash  </p>
+<h1>Объявляем простой массив с 4 элементами</h1>
+<p>ARRAY=( 'Debian Linux' 'Redhat Linux' Ubuntu Linux )  </p>
+<h1>Получаем количество элементов в массиве</h1>
+<p>ELEMENTS=${#ARRAY[@]}  </p>
+<h1>выводим в цикле каждый элемент массива</h1>
+<p>for (( i=0;i&lt;$ELEMENTS;i++)); do<br>
+echo ${ARRAY[${i}]}<br>
+done</p>
+<pre><code>$./arrays.sh  
+Debian Linux  
+Redhat Linux  
+Ubuntu  
+Linux</code></pre>
+<p><strong>8.2) Заполняем массив значениями из файла</strong>&gt; #!/bin/bash  </p>
+<h1>Объявляем массив</h1>
+<p>declare -a ARRAY  </p>
+<h1>Команда exec &lt;filename перенаправляет ввод со stdin на файл. С этого момента весь ввод, вместо</h1>
+<h1>stdin (обычно это клавиатура), будет производиться из этого файла. Это дает возможность читать</h1>
+<h1>содержимое файла, строку за строкой, и анализировать каждую введенную строку с помощью sed и/или awk.</h1>
+<p>exec 10&lt;bash.txt<br>
+let count=0<br>
+while read LINE &lt;&amp;10; do<br>
+ARRAY[$count]=$LINE<br>
+((count++))<br>
+done<br>
+echo Number of elements: ${#ARRAY[@]}  </p>
+<h1>Вывод значений массива</h1>
+<p>echo ${ARRAY[@]}  </p>
+<h1>закрываем файл</h1>
+<p>exec 10&gt;&amp;-</p>
+<pre><code>$ cat bash.txt  
+Debian Linux  
+Redhat Linux  
+Ubuntu  
+Linux  
+$ ./arrays.sh  
+Number of elements: 4  
+Debian Linux Redhat Linux Ubuntu Linux</code></pre>
+<p><strong>9) Условия "если-то-иначе"</strong><br>
+<strong>9.1) Простое использование "если-иначе" условий</strong><br>
+Обратите внимание на пробелы в квадратных скобках, без которых условие работать не будет.&gt; #!/bin/bash<br>
+directory="./BashScripting"  </p>
+<h1>проверяем наличие директории</h1>
+<p>if [ -d $directory ]; then<br>
+echo "Directory exists"<br>
+else<br>
+echo "Directory does not exists"<br>
+fi</p>
+<pre><code>$ ./if_else.sh  
+Directory does not exists  
+$ mkdir BashScripting  
+$ ./if_else.sh  
+Directory exists</code></pre>
+<p><strong>9.2) Вложенные "если-иначе" условия</strong>&gt; #!/bin/bash  </p>
+<h1>Объявляем переменную со значением 4</h1>
+<p>choice=4  </p>
+<h1>Выводим на экран</h1>
+<p>echo "1. Bash"<br>
+echo "2. Scripting"<br>
+echo "3. Tutorial"<br>
+echo -n "Please choose a word [1,2 or 3]? "  </p>
+<h1>Выполняем, пока переменная равна четырем</h1>
+<h1>Зацикливание</h1>
+<p>while [ $choice -eq 4 ]; do  </p>
+<h1>читаем пользовательский ввод</h1>
+<p>read choice  </p>
+<h1>вложенное "если-иначе" условие</h1>
+<p>if [ $choice -eq 1 ] ; then<br>
+echo "You have chosen word: Bash"<br>
+else<br>
+if [ $choice -eq 2 ] ; then<br>
+echo "You have chosen word: Scripting"<br>
+else<br>
+if [ $choice -eq 3 ] ; then<br>
+echo "You have chosen word: Tutorial"<br>
+else<br>
+echo "Please make a choice between 1-3 !"<br>
+echo "1. Bash"<br>
+echo "2. Scripting"<br>
+echo "3. Tutorial"<br>
+echo -n "Please choose a word [1,2 or 3]? "<br>
+choice=4<br>
+fi<br>
+fi<br>
+fi<br>
+done</p>
+<pre><code>$ ./nested.sh  
+1. Bash  
+2. Scripting  
+3. Tutorial  
+Please choose a word [1,2 or 3]?   
+5  
+Please make a choice between 1-3 !  
+1. Bash  
+2. Scripting  
+3. Tutorial  
+Please choose a word [1,2 or 3]?   
+4  
+Please make a choice between 1-3 !  
+1. Bash  
+2. Scripting  
+3. Tutorial  
+Please choose a word [1,2 or 3]?   
+3  
+You have chosen word: Tutorial</code></pre>
+<p>Таким образом сначала тело цикла "while" выполняется, т.к. переменная choice изначально равна четырем. Потом читаем в неё пользовательский ввод, и если ввод не равен 1,2 или 3 то делаем нашу переменную снова равную 4, в связи с чем тело цикла повторяется (снова необходимо вводить 1,2 или 3).  </p>
+<p><strong>10) Сравнения</strong><br>
+<strong>10.1) Арифметические сравнения</strong>&gt; -lt     &lt;<br>
+-gt     &gt;<br>
+-le     &lt;=<br>
+-ge     &gt;=<br>
+-eq     ==<br>
+-ne     !=</p>
+<blockquote>
+<h1>!/bin/bash</h1>
+<h1>Объявляем переменные с целочисленными значениями</h1>
+<p>NUM1=2<br>
+NUM2=2<br>
+if [ $NUM1 -eq $NUM2 ]; then<br>
+echo "Both Values are equal"<br>
+else<br>
+echo "Values are NOT equal"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ./equals.sh  
+Both Values are equal</code></pre>
+<blockquote>
+<h1>!/bin/bash</h1>
+<h1>Объявляем переменные с целочисленными значениями</h1>
+<p>NUM1=2<br>
+NUM2=3<br>
+if [ $NUM1 -eq $NUM2 ]; then<br>
+echo "Both Values are equal"<br>
+else<br>
+echo "Values are NOT equal"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ./equals.sh  
+Values are NOT equal</code></pre>
+<blockquote>
+<h1>!/bin/bash</h1>
+<h1>Объявляем переменные с целочисленными значениями</h1>
+<p>NUM1=2<br>
+NUM2=1<br>
+if   [ $NUM1 -eq $NUM2 ]; then<br>
+echo "Both Values are equal"<br>
+elif [ $NUM1 -gt $NUM2 ]; then<br>
+echo "$NUM1 is greater then $NUM2"<br>
+else<br>
+echo "$NUM2 is greater then $NUM1"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ./equals.sh  
+2 is greater then 1</code></pre>
+<p><strong>10.2) Символьно-текстовые сравнения</strong>&gt; =  одинаковые<br>
+!=  не одинаковые<br>
+&lt;   меньще чем  </p>
+<blockquote>
+<p>больше чем<br>
+-n s1   переменная s1 не пустая<br>
+-z s1   переменная s1 пустая</p>
+<h1>!/bin/bash</h1>
+<h1>Объявляем символьную переменную S1</h1>
+<p>S1="Bash"  </p>
+<h1>Объявляем символьную переменную S2</h1>
+<p>S2="Scripting"<br>
+if [ $S1 = $S2 ]; then<br>
+echo "Both Strings are equal"<br>
+else<br>
+echo "Strings are NOT equal"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ./statement.sh  
+Strings are NOT equal</code></pre>
+<blockquote>
+<h1>!/bin/bash</h1>
+<h1>Объявляем символьную переменную S1</h1>
+<p>S1="Bash"  </p>
+<h1>Объявляем символьную переменную S2</h1>
+<p>S2="Bash"<br>
+if [ $S1 = $S2 ]; then<br>
+echo "Both Strings are equal"<br>
+else<br>
+echo "Strings are NOT equal"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ./statement.sh  
+Both Strings are equal</code></pre>
+<p><strong>11) Проверка файлов</strong>&gt; -b filename    Block special file<br>
+-c filename Special character file<br>
+-d directoryname    Check for directory existence<br>
+-e filename Check for file existence<br>
+-f filename Check for regular file existence not a directory<br>
+-G filename Check if file exists and is owned by effective group ID.<br>
+-g filename true if file exists and is set-group-id.<br>
+-k filename Sticky bit<br>
+-L filename Symbolic link<br>
+-O filename True if file exists and is owned by the effective user id.<br>
+-r filename Check if file is a readable<br>
+-S filename Check if file is socket<br>
+-s filename Check if file is nonzero size<br>
+-u filename Check if file set-ser-id bit is set<br>
+-w filename Check if file is writable<br>
+-x filename Check if file is executable</p>
+<blockquote>
+<h1>!/bin/bash</h1>
+<p>file="./file"<br>
+if [ -e $file ]; then<br>
+echo "File exists"<br>
+else<br>
+echo "File does not exists"<br>
+fi</p>
+</blockquote>
+<pre><code>$ ls  
+file.sh  
+$ ./file.sh  
+File does not exists  
+$ touch file  
+$ ls  
+file  file.sh  
+$ ./file.sh  
+File exists</code></pre>
+<p>Аналогично для примера мы можем использовать "в то время как" петли, чтобы проверить, если файл не существует. Этот сценарий будет спать, пока файл не существует. Обратите внимание на Bash отрицатель "!" что сводит на нет (инвертирует) -e опцию.  </p>
+<p><strong>12) Циклы</strong><br>
+<strong>12.1) Цикл For</strong>&gt; #!/bin/bash  </p>
+<h1>for цикл</h1>
+<p>for f in $( ls /var/ ); do<br>
+echo $f<br>
+done</p>
+<p>Запуск for-цикла из командной строки bash:</p>
+<pre><code>$ for f in $( ls /var/ ); do echo $f; done</code></pre>
+<pre><code>$ for f in $( ls /var/ ); do echo $f; done  
+backups  
+cache  
+crash  
+games  
+lib  
+local  
+lock  
+log  
+mail  
+opt  
+run  
+spool  
+tmp  
+www</code></pre>
+<p><strong>12.2) While цикл</strong>&gt; #!/bin/bash<br>
+COUNT=6  </p>
+<h1>while цикл</h1>
+<p>while [ $COUNT -gt 0 ]; do<br>
+echo Value of count is: $COUNT<br>
+let COUNT=COUNT-1<br>
+done</p>
+<pre><code>$ ./while_loop.sh  
+Value of count is: 6  
+Value of count is: 5  
+Value of count is: 4  
+Value of count is: 3  
+Value of count is: 2  
+Value of count is: 1</code></pre>
+<p><strong>12.3) Until цикл</strong>&gt; #!/bin/bash<br>
+COUNT=0  </p>
+<h1>until цикл</h1>
+<p>until [ $COUNT -gt 5 ]; do<br>
+echo Value of count is: $COUNT<br>
+let COUNT=COUNT+1<br>
+done</p>
+<pre><code>$ ./until_loop.sh  
+Value of count is: 0  
+Value of count is: 1  
+Value of count is: 2  
+Value of count is: 3  
+Value of count is: 4  
+Value of count is: 5</code></pre>
+<p><strong>12.4) Циклы с неявными условиями</strong><br>
+В следующем примере условием while-цикла является наличие стандартного ввода.<br>
+Тело цикла будет выполняться пока есть чему перенаправляться из стандартного вывода в команду read.&gt; #!/bin/bash  </p>
+<h1>Данный скрипт будет искать и удалять пробелы</h1>
+<h1>в файлах, заменяя их на подчеркивания</h1>
+<p>DIR="."<br>
+Управление циклом с командой read путем перенаправления вывода в цикле.<br>
+find $DIR -type f | while read file; do  </p>
+<h1>используем POSIX-класс [:space:] чтобы найти пробелы в именах файлов</h1>
+<p>if [[ "$file" = <em>[[:space:]]</em> ]]; then  </p>
+<h1>замена пробелов подчеркиваниями</h1>
+<p>mv "$file" <code>echo $file | tr ' ' '_'</code><br>
+fi;<br>
+done</p>
+<pre><code>$ ls -1  
+script.sh  
+$ touch "file with spaces"  
+$ ls -1  
+file with spaces  
+script.sh  
+$ ./script.sh  
+$ ls -1  
+file_with_spaces  
+script.sh</code></pre>
+<p><strong>13) Функции</strong>&gt; #!/bin/bash  </p>
+<h1>Функции могут быть объявлены в любом порядке</h1>
+<p>function function_B {<br>
+echo Function B.<br>
+}<br>
+function function_A {<br>
+echo $1<br>
+}<br>
+function function_D {<br>
+echo Function D.<br>
+}<br>
+function function_C {<br>
+echo $1<br>
+}  </p>
+<h1>Вызываем функции</h1>
+<h1>передаем параметр в функцию function A</h1>
+<p>function_A "Function A."<br>
+function_B  </p>
+<h1>передаем параметр в функцию function C</h1>
+<p>function_C "Function C."<br>
+function_D</p>
+<pre><code>$ ./functions.sh  
+Function A.  
+Function B.  
+Function C.  
+Function D.</code></pre>
+<p><strong>14) Оператор выбора - Select</strong>&gt; #!/bin/bash<br>
+PS3='Choose one word: '   </p>
+<h1>select</h1>
+<p>select word in "linux" "bash" "scripting" "tutorial"<br>
+do<br>
+echo "The word you have selected is: $word"  </p>
+<h1>Прерываем, в противном случае цикл будет бесконечный.</h1>
+<p>break<br>
+done<br>
+exit 0</p>
+<pre><code>$ ./select.sh  
+1) linux  
+2) bash  
+3) scripting  
+4) tutorial  
+Choose one word: 4  
+The word you have selected is: tutorial</code></pre>
+<p><strong>15) Оператор выбора - Case</strong>&gt; #!/bin/bash<br>
+echo "What is your preferred programming / scripting language"<br>
+echo "1) bash"<br>
+echo "2) perl"<br>
+echo "3) phyton"<br>
+echo "4) c++"<br>
+echo "5) I do not know !"<br>
+read case;  </p>
+<h1>простая структура case-выбора</h1>
+<h1>обратите внимание, что в данном примере $case - всего лишь переменная</h1>
+<h1>и не обязана так называться. Это лишь пример</h1>
+<p>case $case in<br>
+1) echo "You selected bash";;<br>
+2) echo "You selected perl";;<br>
+3) echo "You selected phyton";;<br>
+4) echo "You selected c++";;<br>
+5) exit<br>
+esac</p>
+<pre><code>$ ./case.sh  
+What is your preferred programming / scripting language  
+1) bash  
+2) perl  
+3) phyton  
+4) c++  
+5) I do not know !  
+4  
+You selected c++</code></pre>
+<hr>
+<p>[size=6]3. Используемая и рекомендуемая литература[/size]  </p>
+<p>Более подробную информацию можно получить из различных источников, например отсюда<br>
+оригинал: <a href="http://www.linuxconfig.org/Bash_scripting_Tutorial">http://www.linuxconfig.org/Bash_scripting_Tutorial</a><br>
+<a href="http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/">http://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/</a><br>
+<a href="http://bug.cf1.ru/2005-03-17/programming/bash/abs-book.html">http://bug.cf1.ru/2005-03-17/programming/bash/abs-book.html</a></p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<div class="topic-tags">
+    <span class="fa fa-tags topic-tags-fa"></span>
+        <a class="tag-url" href="http://linuxforum.ru/topics/tagged/article">article</a>
+    </div>
+
+<div class="post post-roweven  js-post" id="post5746" data-post-id="5746">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/3eaa4c0f5222d1a22a415fc0db27c496" width="48" height="48" alt="Vartonst">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/8">Vartonst</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-02-27T02:56:06+03:00" title="27 февраля 2010 г., 2:56:06 GMT+3">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/5746#post5746">#2</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>а  как вписать в  автозагрузку скрипт  который  лежит /home/oleg/scripts  имя скрипта conky.sh  ?</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post5845" data-post-id="5845">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/23ddf0d55143bf77b3ef628101bafe8c" width="48" height="48" alt="Marvin">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/774">Marvin</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-02-27T10:02:41+03:00" title="27 февраля 2010 г., 10:02:41 GMT+3">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/5845#post5845">#3</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p><strong>Vartonst</strong>, вариантов масса, способ зависит от используемого ПО.<br>
+Один из них: добавить в ~/.xsession (или .xinitrc)  </p>
+<pre><code>/home/oleg/scripts/conky.sh &amp;</code></pre>
+<p>только не в конец, а перед запуском оконного менеджера.<br>
+К несчастью, я не уверен, что всё пойдёт гладко, ибо наверняка вы используете gdm ): (или kdm)<br>
+Anyway, <a href="http://en.gentoo-wiki.com/wiki/HOWTO_Autostart_Programs">http://en.gentoo-wiki.com/wiki/HOWTO_Autostart_Programs</a> здесь Вы наверняка найдёте решение</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post35109" data-post-id="35109">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/fb30e63dc507e1bce5fb338116bff416" width="48" height="48" alt="ДимOn">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/1212">ДимOn</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-04-20T13:30:27+04:00" title="20 апреля 2010 г., 13:30:27 GMT+4">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/35109#post35109">#4</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>А покажите пример скрипта, как с клиента подключиться к ssh-серверу, перенести на машину клиента определенные файлы и отключиться.</p>
+</blockquote>
+<p>Нашел способ, так как авторизация по ключу не очень подходит, то делаем так:<br>
+Сначала ставим  sshpass  </p>
+<pre><code>aptitude install sshpass</code></pre>
+<p>А теперь скрипт, для синхронизации  </p>
+<pre><code>#!/bin/sh  
+sshpass -p пароль_к_ssh rsync -e ssh --progress -thvr имя_пользователя@IP:/Указываем_путь_откуда/ /Указываем_путь_куда/</code></pre>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post38955" data-post-id="38955">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/7ac552b85ecc176a5d478019a81cf0ec" width="48" height="48" alt="6OTuHO4Er">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/1559">6OTuHO4Er</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-04-21T15:28:41+04:00" title="21 апреля 2010 г., 15:28:41 GMT+4">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/38955#post38955">#5</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>в crontab стоит бэкап баз демоном rsync.<br>
+как запихнуть, что он делает, все в $(date +...).log? кроме --log-file='/...'</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post38962" data-post-id="38962">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/8d7b3133b218113b9880725666fcd063" width="48" height="48" alt="forkostya">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/340">forkostya</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-04-21T15:51:09+04:00" title="21 апреля 2010 г., 15:51:09 GMT+4">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/38962#post38962">#6</a></span>
+                                        <span class="post-header-owner">Автор</span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>а чем --log-file не устраивает?</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post38972" data-post-id="38972">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/9a295649a7e7532f1bfd1fde5760fcb4" width="48" height="48" alt="drBatty">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/86">drBatty</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2010-04-21T16:26:36+04:00" title="21 апреля 2010 г., 16:26:36 GMT+4">6 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/38972#post38972">#7</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>в crontab стоит бэкап баз демоном rsync.<br>
+как запихнуть, что он делает, все в $(date +...).log? кроме --log-file='/...'</p>
+</blockquote>
+<p>..... 1&gt;/var/log/aaa.log 2&gt;/var/log/aaa.errors.log</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post150384" data-post-id="150384">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/32d4350d39b59350fa218c6f5c5aa4cb" width="48" height="48" alt="Nigelist">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/7275">Nigelist</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T08:03:54+03:00" title="27 февраля 2011 г., 8:03:54 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150384#post150384">#8</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>Добрый день! Пока не умею писать скрипты. В общем передо мной стоит задача - настроить бэкап БД постгреса со следующими параметрами:  </p>
+<ul>
+<li>чтобы бэкап имел максимально сжатие</li>
+<li>Кол-во хранимых бэкапов в определенном каталоге не превышал определенного кол-ва</li>
+<li>Имя бэкапа задавалось исходя из текущей даты, например: - postgres_YYYY-MM-DD</li>
+</ul>
+<p>Может кто поможет с этим делом?</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post150385" data-post-id="150385">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/32d4350d39b59350fa218c6f5c5aa4cb" width="48" height="48" alt="Nigelist">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/7275">Nigelist</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T08:28:35+03:00" title="27 февраля 2011 г., 8:28:35 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150385#post150385">#9</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>Или может кто нибудь переделает этот скрипт?  </p>
+<pre><code>#!/bin/bash  
+date=`date "+%Y_%m_%d"`;                                                 # Получим текущую дату в устраивающем нас формате и запишем ее в переменную $date  
+days_open_store='14';                                                   # Сколько дней хранить незашифрованные бэкапы  
+days_crypt_store='60';                                             # Сколько дней хранить зашифрованные бэкапы  
+dir_crypt=/media/remote_share                                   # Каталог для зашифрованных бэкапов, надо чтобы был смонтирован.  
+dir_open=/local_backup                                                   # Каталог для незашифрованных бэкапов (нужны, чтобы можно было быстро восстановить упавшую дазу одынце)  
+gpgdir=/backup/gpg_dir                                                             # Каталог, где лежит .gpg-файл с открытым ключом, которым будут шифроваться бэкапы  
+gpgkey='0xABCDEFGH';                                                     # PGP_ID ключа для зашифровки бэкапов  
+# GnuPG compessing &amp; trust options  
+gpgzip='--compress-algo zip --compress-level 9 --trust-model always --batch'; # Параметры шифрования  
+rar_bin=/bin/rar                                                                 # Путь к бинарю к консольным никсовым RAR-ом  
+# Command and options for PostgreSQL Dump  
+pgdump_binc='/usr/bin/pg_dump -i -h localhost -p 5432 -U postgres -F c -b -o -v -f'; # Часть команды для генерации сжатых дампов  
+pgdump_bin='/usr/bin/pg_dump -h localhost -U postgres '; # Часть команды для генерации обычных SQL-дампов  
+mysqldump_bin='mysqldump -u_backuper -hlocalhost -pPASSWD'; # Часть команды для дампинга MySQL  
+
+echo "=== BackUp script for Server === [$date]";  
+mkdir $dir_open/$date  
+mkdir $dir_crypt/$date  
+sync  
+
+echo 'Make open archives ...';  
+cd $dir_open/$date  
+$pgdump_binc 1c_postgre_compressed_dump.bak 1c_database  
+$pgdump_binc postgre_sysdb_compressed.bak postgres  
+$pgdump_bin 1c_database | gzip &gt; 1c_postgre_sql_dump.gz  
+$pgdump_bin postgres | gzip &gt; postgre_sysdb_sql_dump.gz  
+
+/* Тут раскурено не до конца. 1C:Конфигуратор 8.1 работает в WINE, и нормально выгружает / загружает базы через dt-файлы. Но из консоли не работает, пишет, что не может соединиться с X-сервером. Похоже, что даже в режиме /DumpIB конфигуратор стартует как графическое приложение, так что как это решить в консоли, пока не понятно. Буду рад совету !!! */  
+#sudo -ucyka -H='/home/cyka' wineconsole /home/cyka/wine_c/windows/system32/cmd.exe /c 'C:/1cv81/bin/1cv8.exe config /s Server\1c_database /DisableStartupMessages /n backuper /p PASSWD /DumpIB D:/1C.dt'  
+#   mv /.../.../1C.dt $dir_open/$date # Надо бы переменную с датой вставить в предыдущую строку, но все равно эта часть пока не работает.  
+
+$rar_bin a -r -rr5 -dh -mdG -ep1 -ol -ow manager_files.rar /mnt/sda1/smb/managers  
+$rar_bin a -r -rr5 -dh -mdG -ep1 -ol -ow buh_files.rar /mnt/sda1/smb/buh  
+
+$mysqldump_bin --databases --all-databases | gzip -c &gt; _mysql_sql_dump.gz # Это правильный дамп.  
+#$rar_bin a -r -rr5 -dh -mdG -ep1 -ol -ow _mysql_db.rar /var/mysql/data # А вот так делать не стоит.  
+# Но с базой ничего страшного не случится. Хотя в таком "бэкапе" может и фигня получится.   
+
+$rar_bin a -r -rr5 -dh -mdG -ep1 -ol -ow etc.rar /etc  
+$rar_bin a -r -rr5 -dh -mdG -ep1 -ol -ow home.rar /home  
+sync  
+
+echo 'Make crypted archives ...';  
+gpg --homedir $gpgdir -e -r $gpgkey -o 1c_postgre_compressed.swp $gpgzip 1c_postgre_compressed.bak  
+gpg --homedir $gpgdir -e -r $gpgkey -o postgre_sysdb_compressed.swp $gpgzip postgre_sysdb_compressed.bak  
+gpg --homedir $gpgdir -e -r $gpgkey -o 1c_postgre_sql_dump.swp $gpgzip 1c_postgre_sql_dump.gz  
+gpg --homedir $gpgdir -e -r $gpgkey -o postgre_sysdb_sql_dump.swp $gpgzip postgre_sysdb_sql_dump.gz  
+gpg --homedir $gpgdir -e -r $gpgkey -o buh_files.swp $gpgzip buh_files.rar  
+gpg --homedir $gpgdir -e -r $gpgkey -o manager_files.swp $gpgzip manager_files.rar  
+#gpg --homedir $gpgdir -e -r $gpgkey -o _mysql_db.swp $gpgzip _mysql_db.rar # Бэкапить MySQL прямым копированием - зело =)  
+gpg --homedir $gpgdir -e -r $gpgkey -o _mysql_sql_dump.swp $gpgzip _mysql_sql_dump.gz  
+gpg --homedir $gpgdir -e -r $gpgkey -o etc.swp $gpgzip etc.rar  
+gpg --homedir $gpgdir -e -r $gpgkey -o home.swp $gpgzip home.rar  
+#gpg --homedir $gpgdir -e -r $gpgkey -o 1c_dt.swp $gpgzip 1C.dt # Пока не работает.  
+sync  
+
+echo 'Move crypted archives ...';  
+mv $dir_open/$date/*.swp $dir_crypt/$date  
+sync  
+
+echo 'Delete old backups ...';  
+# Тут есть одна шняга. От старых бэкапов остаются пустые каталоги. То есть файлы внутри каталогов со старыми бэкапами сносятся, а сами каталоги - нет.  
+# Надо как-нить побороть лень и сделать более изящно. Срок хранения зашифрованных и незашифрованных бэкапов разный !!  
+find $dir_open/ -mtime +$days_open_store -delete                                # Удалим все устаревшие незашифрованные бэкапы  
+find $dir_crypt/ -mtime +$days_crypt_store -delete                        # Удалим все устаревшие зашифрованные бэкапы  
+
+echo "=== BackUp script complete ===== [$date]";</code></pre>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post150390" data-post-id="150390">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/32d4350d39b59350fa218c6f5c5aa4cb" width="48" height="48" alt="Nigelist">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/7275">Nigelist</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T09:39:20+03:00" title="27 февраля 2011 г., 9:39:20 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150390#post150390">#10</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <p>Тут попробовал сделать скрипт архивирования по учебнику. Такого содержания:  </p>
+<pre><code>#!/bin/bash  
+backup_dir1=myhome_directory_$(date +%Y-%m-%d).tar.gz  
+backup_dir2=/home/shared/public/  
+tar -czf $backup_dir2 $backup_dir1</code></pre>
+<p>Выдает ошибку:  </p>
+<pre><code>tar: myhome_directory_2011-02-27.tar.gz: Функция stat завершилась с ошибкой: Нет такого файла или каталога  
+tar: /home/shared/public/: Функция open завершилась с ошибкой: Это каталог  
+tar: Неисправимая ошибка: завершение работы  
+tar: Child returned status 2  
+tar: Завершение работы с состоянием неисправности с из-за возникших ошибок</code></pre>
+<p>Что сделал неправильно?</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post150391" data-post-id="150391">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/04d68a309565a55421152118311006dc" width="48" height="48" alt="Coldead">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/14208">Coldead</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T10:08:10+03:00" title="27 февраля 2011 г., 10:08:10 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150391#post150391">#11</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>Тут попробовал сделать скрипт архивирования по учебнику. Такого содержания:  </p>
+</blockquote>
+<pre><code>#!/bin/bash  
+backup_dir1=myhome_directory_$(date +%Y-%m-%d).tar.gz  
+backup_dir2=/home/shared/public/  
+tar -czf $backup_dir2 $backup_dir1</code></pre>
+<p>Выдает ошибку:  </p>
+<pre><code>tar: myhome_directory_2011-02-27.tar.gz: Функция stat завершилась с ошибкой: Нет такого файла или каталога  
+tar: /home/shared/public/: Функция open завершилась с ошибкой: Это каталог  
+tar: Неисправимая ошибка: завершение работы  
+tar: Child returned status 2  
+tar: Завершение работы с состоянием неисправности с из-за возникших ошибок</code></pre>
+<p>Что сделал неправильно?</p>
+<pre><code>#!/bin/bash  
+backup_dir1=myhome_directory_$(date +%Y-%m-%d).tar.gz  
+backup_dir2=/home/shared/public/  
+tar -czf $backup_dir1 $backup_dir2</code></pre>
+<p>Так попробуйте.</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post150410" data-post-id="150410">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/9a295649a7e7532f1bfd1fde5760fcb4" width="48" height="48" alt="drBatty">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/86">drBatty</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T11:33:22+03:00" title="27 февраля 2011 г., 11:33:22 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150410#post150410">#12</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>Тут попробовал сделать скрипт архивирования по учебнику. Такого содержания:</p>
+</blockquote>
+<p>выкиньте свой учебник на помойку.<br>
+читайте <a href="http://www.google.ru/search?hl=ru&amp;source=hp&amp;q=advanced+bash+scripting&amp;aq=1&amp;aqi=g10&amp;aql=&amp;oq=Advanced+bash">это</a>.  </p>
+<blockquote>
+<p>Добрый день! Пока не умею писать скрипты. В общем передо мной стоит задача - настроить бэкап БД постгреса со следующими параметрами:<br>
+1    <em>      чтобы бэкап имел максимально сжатие<br>
+2    </em>      Кол-во хранимых бэкапов в определенном каталоге не превышал определенного кол-ва<br>
+3    *      Имя бэкапа задавалось исходя из текущей даты, например: - postgres_YYYY-MM-DD<br>
+Может кто поможет с этим делом?</p>
+</blockquote>
+<p>1) man xz<br>
+2) man ls, man head<br>
+3) man date</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post150473" data-post-id="150473">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/32d4350d39b59350fa218c6f5c5aa4cb" width="48" height="48" alt="Nigelist">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/7275">Nigelist</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T14:13:47+03:00" title="27 февраля 2011 г., 14:13:47 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150473#post150473">#13</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>выкиньте свой учебник на помойку.<br>
+читайте это.</p>
+</blockquote>
+<p><strong>drBatty</strong>, я имел в виду статью на этой странице... smile<br>
+Эта <a href="http://poplinux.ru/adv-bash">книга</a> нормальная?</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-roweven  js-post" id="post150501" data-post-id="150501">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/9a295649a7e7532f1bfd1fde5760fcb4" width="48" height="48" alt="drBatty">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/86">drBatty</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T15:27:33+03:00" title="27 февраля 2011 г., 15:27:33 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150501#post150501">#14</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>я имел в виду статью на этой странице...</p>
+</blockquote>
+<p>ладно, оставим нужную trow на совести Кузнецова :)  </p>
+<blockquote>
+<p>Эта книга нормальная?</p>
+</blockquote>
+<p>я про неё и говорил.<br>
+а вообще вам нужно man tar &amp;&amp; info tar<br>
+читать (что такое &amp;&amp; знаете уже?)</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+
+<div class="post post-rowodd  js-post" id="post150508" data-post-id="150508">
+    <div class="post-avatar">
+                <img class="avatar" src="./Bash_Scripting_Tutorial_3_files/32d4350d39b59350fa218c6f5c5aa4cb" width="48" height="48" alt="Nigelist">            </div>
+    <div class="post-container">
+        <div class="post-content">
+            <div class="post-header">
+                <span class="post-header-user"><a href="http://linuxforum.ru/user/7275">Nigelist</a></span> написал
+                <span class="post-header-time"><time is="time-ago" datetime="2011-02-27T15:59:17+03:00" title="27 февраля 2011 г., 15:59:17 GMT+3">5 лет назад</time>
+                <span class="post-header-count"><a class="muted-link" href="http://linuxforum.ru/post/150508#post150508">#15</a></span>
+                                                    </span></div>
+            <div class="post-body">
+                <div class="post-message markdown-body js-post-message">
+                    <blockquote>
+<p>читать (что такое &amp;&amp; знаете уже?)</p>
+</blockquote>
+<p>Ага знаю. Еще не спец, но уже не чайник... smile</p>                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+</div>                <div class="pagination-center">
+            <ul class="pagination"><li class="first disabled"><span>Первая</span></li>
+<li class="active"><a href="http://linuxforum.ru/topic/221" data-page="0">1</a></li>
+<li><a href="http://linuxforum.ru/topic/221/page/2" data-page="1">2</a></li>
+<li><a href="http://linuxforum.ru/topic/221/page/3" data-page="2">3</a></li>
+<li class="last"><a href="http://linuxforum.ru/topic/221/page/3" data-page="2">Последняя</a></li></ul>        </div>
+    </div>
+    <div class="sidebar">
+        <div class="sidebar-module">
+        <h4>Список тегов</h4>
+        <div class="interesting-tags">
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/administration">administration</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/alt_linux">alt_linux</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/arch">arch</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/article">article</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/books">books</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/centos">centos</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/command_line">command_line</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/common">common</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/debian">debian</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/dm">dm</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/fedora">fedora</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/freebsd">freebsd</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/games">games</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/gentoo">gentoo</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/hardware">hardware</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/job">job</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/kernel">kernel</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/mageia">mageia</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/mandriva">mandriva</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/mint">mint</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/multimedia">multimedia</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/news">news</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/noise">noise</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/opensuse">opensuse</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/other_linux">other_linux</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/pictures">pictures</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/programming">programming</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/red_hat">red_hat</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/rosa">rosa</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/slackware">slackware</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/software">software</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/support">support</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/suse">suse</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/ubuntu">ubuntu</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/virtualization">virtualization</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/wine">wine</a>
+                            <a class="tag-url" href="http://linuxforum.ru/topics/tagged/wm">wm</a>
+                    </div>
+    </div>
+</div></div>        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="copyright">
+            <h6>©&nbsp;linuxforum,&nbsp;2016                Время генерации 0.10207 сек.
+            </h6>
+        </div>
+        <div class="footbar">
+            <ul><li><a href="http://linuxforum.ru/terms">Правила пользования</a></li>
+<li>•</li>
+<li><a href="http://linuxforum.ru/feedback">Обратная связь</a></li></ul>        </div>
+    </div>
+</footer>
+<div class="container">
+    <div class="adsbox">
+        <div class="saidnavy right">
+            <ul class="saidnavy-links">
+                                <li>Продаем <a href="http://www.realxenon.ru/modules/shop/cat_188.html">камеры заднего вида</a> на все марки автомобилей</li>
+                <li><a href="http://www.bergab.ru/">Подшипники</a> для пользователей linux</li>
+                            </ul>
+        </div>
+    </div>
+</div><script src="./Bash_Scripting_Tutorial_3_files/jquery.js"></script>
+<script src="./Bash_Scripting_Tutorial_3_files/yii.js"></script>
+<script src="./Bash_Scripting_Tutorial_3_files/topic.js"></script>
+<script src="./Bash_Scripting_Tutorial_3_files/post.js"></script><!-- 501d116450925505 -->
+
+
+</body></html>

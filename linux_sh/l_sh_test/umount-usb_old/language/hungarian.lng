@@ -1,0 +1,27 @@
+##
+##
+## Hungarian Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="USB eszkozok eltavolitasa"
+_menu_body="\nValassza ki az USB-eszkozt.\n"
+_pass_title="Jelszo"
+_pass_body="\nKerjuk, adja meg felhasznaloi jelszavat.\n"
+_MSG_Title="Hiba"
+_MSG_Body="Az USB-eszkoz nem eszlelheto\n"
+_select_type_pass_title="Felhasznaloi jelszo beallitasa"
+_select_type_pass_body="\nValassza ki a program modot.\n\n"
+_no_pass_menu="Jelszo nelkul"
+_memory_pass_menu="Jelszo megjegyzese"
+_input_pass_menu="Adja meg ujra a jelszot"
+_info_pass_type_title="Tajekoztato uzenet a program mukodesi modjarol"
+_inf0="\nEttol a modtol fugg a program teljesitmenye\n"
+_info1="$_inf0\n'No password' modban-a felhasznaloi jelszo ures\n"
+_info2="A Jelszo megjegyzese (Remember password) modban a jelszo bekerul a beallitofajlba\n"
+_info3="\nA jelszo ismetelt megadasa modban a jelszo minden egyes letoltesekor bekeresre kerul\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="A program kezdeti beallitasa"
+_info_install_body="\nA program kezdeti beallitasa megtortenik.\nA rendszer nyelvenek es az alkalmazas modjanak beallitasa.\nValamint egy fuggo csomag telepitese az alkalmazas grafikus alrendszer-xdialog\n\n"

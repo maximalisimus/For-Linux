@@ -1,0 +1,27 @@
+﻿
+sudo e4defrag -c /mnt/hdd/games
+
+sudo e4defrag -v /mnt/hdd/games
+
+
+
+
+sudo tune2fs -l /dev/sdb4 | grep Reserved
+
+
+
+sudo tune2fs -m 1 /dev/sdb4
+
+
+
+sudo tune2fs -l /dev/sdb4 | grep Reserved
+
+
+
+df -h /mnt/hdd/games
+
+
+
+
+
+

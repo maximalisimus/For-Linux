@@ -1,0 +1,446 @@
+#!/bin/bash
+ABSOLUT_scr=`readlink -e "$0"`
+filesdir_scr=`dirname "$ABSOLUT_FILENAME"`
+source $filesdir_scr/init.conf
+source $filesdir_scr/settings.conf
+scripts_filename=`readlink -e "$0"`
+scripts_filedir=`dirname "$scripts_filename"`
+declare -a wnet
+declare -a wname
+declare -a stat
+wnet_count=""
+hostnames=""
+my_ip=""
+my_gw=""
+my_brdc=""
+ping_net=""
+netowrk=0
+toadapter=""
+tmplt()
+{
+	case "$1" in
+		1) if [[ $2 =~ ^([0-9]{1,3}[\.]){3}[0-9]{1,3}[\/][0-9]{1,2} ]]; then
+			# ^([0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9][\/][0-9][0-9])
+				echo "1"
+			else
+				echo "0"
+			fi;;
+		2) if [[ $2 =~ ^([0-9]{1,3}[\.]){3}[0-9]{1,3} ]]; then
+			# ^([0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9].[0-9][0-9][0-9])
+				echo "1"
+			else
+				echo "0"
+			fi;;
+	esac
+}
+setip()
+{
+	my_ip=$(setparameter "IP address and mask" "Please enter your network ip address and mask")
+	thecount="0"
+	while [ "$thecount" == "0" ]; do
+		thecount=$( tmplt "1" $my_ip)
+		if [ "$thecount" == "0" ]; then
+			thecount="0"
+			my_ip=$(setparameter "IP address and mask" "Please enter your network ip address and mask")
+		elif [ "$thecount" == "1" ]; then
+			dialog --colors --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7IP Adreess" --msgbox "IP Address: \Z1$my_ip" 0 0
+			thecount="1"
+			break
+		fi
+	done
+}
+setgw()
+{
+	my_gw=$(setparameter "Gateway" "Please enter the default gateway")
+	thecount="0"
+	while [ "$thecount" == "0" ]; do
+		thecount=$( tmplt "2" $my_gw)
+		if [ "$thecount" == "0" ]; then
+			my_gw=$(setparameter "Gateway" "Please enter the default gateway")
+			thecount="0"
+		elif [ "$thecount" == "1" ]; then
+			dialog --colors --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Gateway Adreess" --msgbox "Gateway Address: \Z1$my_gw" 0 0
+			thecount="1"
+			break
+		fi
+	done
+}
+setbrdc()
+{
+	my_brdc=$(setparameter "Broadcast" "Please enter the broadcast network")
+	thecount="0"
+	while [ "$thecount" == "0" ]; do
+		thecount=$( tmplt "2" $my_brdc)
+		if [ "$thecount" == "0" ]; then
+			my_brdc=$(setparameter "Broadcast" "Please enter the broadcast network")
+			thecount="0"
+		elif [ "$thecount" == "1" ]; then
+			dialog --colors --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Broadcast Adreess" --msgbox "Broadcast Address: \Z1$my_brdc" 0 0
+			thecount="1"
+			break
+		fi
+	done
+}
+routeaddresses()
+{
+	`sudo hostnamectl set-hostname $hostnames`
+	`sudo ip address add $my_ip broadcast $my_brdc dev $toadapter`
+	if [ -n "$my_gtw" ]; then
+		`sudo ip route add default via $my_gtw`
+	fi
+	`sudo ip link set $toadapter down`
+	sleep 3
+	`sudo ip link set $toadapter up`
+	unset hostnames
+	unset my_ip
+	unset my_brdc
+	unset my_gtw
+}
+setstat()
+{
+	stat=( $(ip -o link show | gawk '{print $9}' | tr -d ':') )
+}
+unsetstat()
+{
+	unset stat
+}
+setmyping()
+{
+	ping -c 3 ya.ru 2> /dev/null 1> /dev/null
+	ping_net="$?"
+	# ( $(ping -c 3 ya.ru | sed '1,6d' | sed '2,1d' | awk '{print $6}' | tr -d '%') )
+}
+unsetmyping()
+{
+	unset ping_net
+}
+setwnet()
+{
+	case "$1" in
+		1) wnet=( $(ip -o link show | gawk '{print $2}' | tr -d ':' | grep w) )
+			network=2;;
+		2) wnet=( $(ip -o link show | gawk '{print $2}' | tr -d ':' | grep e) )
+			network=1;;
+	esac
+}
+unsetwnet()
+{
+	unset wnet
+}
+setwnetcount()
+{	
+	case "$1" in
+		1) wnet_count=( $(ip -o link show | gawk '{print $2}' | tr -d ':' | grep w | wc -l) );;
+		2) wnet_count=( $(ip -o link show | gawk '{print $2}' | tr -d ':' | grep e | wc -l) );;
+	esac
+}
+unsetwnetcount()
+{
+	unset wnet_count
+}
+setwname()
+{
+	wname=( $(iw dev $1 scan | grep SSID | awk '{print $2}') )
+}
+unsetwname()
+{
+	unset wname
+}
+setdhcp()
+{
+	dhcpstat=( $(sudo systemctl is-active dhcpcd) )
+	if [ "$dhcpstat" == "active" ]; then
+		`sudo systemctl stop dhcpcd`
+		unset dhcpstat
+		sleep 1
+		dhcpstat=( $(sudo systemctl is-active dhcpcd) )
+		if [ "$dhcpstat" == "active" ]; then
+			`sudo systemctl stop dhcpcd`
+			sleep 1
+			`sudo systemctl start dhcpcd`
+			sleep 1
+			`sudo systemctl stop dhcpcd`
+		elif [ "$dhcpstat" == "inactive" ]; then
+			`sudo systemctl start dhcpcd`
+			sleep 1
+			`sudo systemctl stop dhcpcd`
+		fi
+		sleep 1
+		`sudo dhcpcd`
+	elif [ "$dhcpstat" == "inactive" ]; then
+		`sudo systemctl start dhcpcd`		
+		unset dhcpstat
+		sleep 1
+		dhcpstat=( $(sudo systemctl is-active dhcpcd) )
+		if [ "$dhcpstat" == "active" ]; then
+			`sudo systemctl stop dhcpcd`
+			sleep 1
+			`sudo systemctl start dhcpcd`
+			sleep 1
+			`sudo systemctl stop dhcpcd`
+		elif [ "$dhcpstat" == "inactive" ]; then
+			`sudo systemctl start dhcpcd`
+			sleep 1
+			`sudo systemctl stop dhcpcd`
+		fi
+		sleep 1
+		`sudo dhcpcd`
+	fi
+}
+wifiwep()
+{
+	case "$1" in
+		1) `iw dev $1 connect $2`;;
+		2) `iw dev $1 connect $2 key 0:$3`;;
+	esac
+}
+wifiwpa()
+{
+	case "$1" in
+		1) # `wpa_passphrase $2 > $scripts_filedir/conf/example.conf`
+			`wpa_passphrase $2 > ./conf/example.conf`
+			# /etc/wpa_supplicant/example.conf
+			# `wpa_supplicant -B -i $adaptername -c $scripts_filedir/conf/example.conf`
+			`wpa_supplicant -B -i $adaptername -c ./conf/example.conf`;; 
+				# /etc/wpa_supplicant/example.conf;;
+		2) # `wpa_passphrase $2 $3 > $scripts_filedir/conf/example.conf`
+			`wpa_passphrase $2 $3 > ./conf/example.conf`
+			# /etc/wpa_supplicant/example.conf
+			#`wpa_supplicant -B -i $adaptername -c $scripts_filedir/conf/example.conf`
+			`wpa_supplicant -B -i $adaptername -c ./conf/example.conf`;; 
+				# /etc/wpa_supplicant/example.conf;;
+	esac
+}
+networkfine()
+{
+	if [ "${#my_ip[*]}" -ne 0 ]; then 
+		unset my_ip
+	fi
+	if [ "${#wnet[*]}" -ne 0 ]; then 
+		unsetwnet
+	fi
+	if [ "${#wname[*]}" -ne 0 ]; then 
+		unsetwname
+	fi
+	if [ "${#stat[*]}" -ne 0 ]; then 
+		unsetstat
+	fi
+	if [ "${#wnet_count[*]}" -ne 0 ]; then 
+		unsetwnetcount
+	fi
+	if [ "${#ping_net[*]}" -ne 0 ]; then 
+		unsetmyping
+	fi
+}
+setwnetecnryption()
+{
+	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Select ecnryption" --menu "Please to select the type to ecnryption network connection" 0 0 2 \
+		"1" "WEP" \
+		"2" "WPA \ WPA2" \
+		2>${ANSWER}
+	return $(cat ${ANSWER})
+}
+settypencrypt()
+{
+	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Select type ecnryption" --menu "Please to select the ecnryption network connection" 0 0 2 \
+		"1" "Open" \
+		"2" "Encrypt" \
+		2>${ANSWER}
+	return $(cat ${ANSWER})
+}
+setparameter()
+{
+	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7$1" --inputbox "$2" 0 0 \ 2>${ANSWER}
+	return $(cat ${ANSWER})
+}
+inputadresses()
+{
+	dialog --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "Manual ethernet configuration" --menu "Manual adapter addresses configuration" 0 0 5 \
+ 	"1" "Hostname" \
+	"2" "IP address" \
+	"3" "Gateway" \
+	"4" "Broadcast" \
+	"5" "< Back to Main menu" \
+	2>${ANSWER}	
+	case $(cat ${ANSWER}) in	    
+		"1") hostnames=$(setparameter "Hostname" "Please enter the hostname network")
+			;;
+		"2") setip
+			;;
+		"3") setgw
+			;;
+		"4") setbrdc
+			;;
+		"5") selectnetwork
+			;;
+	esac
+	if [ -n "$hostnames" ]; then
+		if [ -n "$my_ip" ]; then
+			if [ -n "$my_gw" ]; then
+				if [ -n "$my_brdc"]; then
+					routeaddresses
+				fi
+			fi
+		fi
+	fi
+	inputadresses	
+}
+selectnetwork()
+{
+	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Select network" --menu "Please to select the type on network connection" 0 0 3 \
+		"1" "\Z4Ethernet" \
+		"2" "\Z2WiFi" \
+		"3" "\Z0Exit" \
+		2>${ANSWER}
+		case $(cat ${ANSWER}) in
+	    	"1") setwnetcount "2"
+				setwnet "2"
+				selectnetadapter
+				;;
+			"2") setwnetcount "1"
+				setwnet "1"
+				selectnetadapter
+				;;
+			"3") dialog --backtitle "$VERSION - $SYSTEM ($ARCHI)" --yesno "Do you want to exit?" 0 0
+				if [[ $? -eq 0 ]]; then
+					 clear
+					exit 0
+				else
+					selectnetwork
+				fi
+				;;				
+		esac
+	selectnetwork	
+}
+confwftofile()
+{
+	case "$encrpt" in
+		1) case "$typencrpt" in
+				1) wifiwep "1" "$SSID"
+					;;
+				2) wifiwep "2" "$SSID" "$pass"
+					;;
+			esac
+			;;
+		2) case "$typencrpt" in
+				1) wifiwpa "1" "$SSID"
+					;;
+				2) wifiwpa "2" "$SSID" "$pass"
+					;;
+			esac
+			;;
+	esac
+	sleep 3
+	setdhcp
+	sleep 3
+	setmyping
+	if [ "$ping_net" == "0" ]; then
+		echo -e "\e[1;32mInternet Success Full!\e[0m"
+	elif [ "$ping_net" != "0" ]; then
+		ethernetsetupconf
+	fi
+}
+wifisetupconf()
+{
+	setwname "${wnet[$toadapter]}"
+	dialog --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "Wifi setup" --menu "Wifi setup configuration" 0 0 5 \
+		"1" "SSID" \
+		"2" "Encryption" \
+		"3" "Type encryption" \
+		"4" "Password" \
+		"5" "< Back menu" \
+		2>${ANSWER}	
+	case $(cat ${ANSWER}) in	    
+		"1") SSID = $(setparameter "Please input to SSID network" "${wnet[*]}")
+			;;
+		"2") encrpt=$(setwnetecnryption)
+			;;
+		"3") typencrpt=$(settypencrypt)
+			;;
+		"4") pass=$(setparameter "Input password" "Please input to passwords on wifi network SSID")
+			;;
+		"5") selectnetwork		
+			;;
+	esac
+	if [ -n "$SSID" ]; then
+		if [ -n "$pass" ]; then
+			if [ -n "$encrpt" ]; then
+				if [ -n "$typencrpt" ]; then
+					confwftofile
+				fi
+			fi
+		fi
+	fi
+	wifisetupconf
+}
+ethernetsetupconf()
+{
+	sleep 3
+	setdhcp
+	sleep 3
+	setmyping
+	if [ "$ping_net" == "0" ]; then
+		echo -e "\e[1;32mInternet Success Full!\e[0m"
+	elif [ "$ping_net" != "0" ]; then
+		echo -e "\e[1;31mSory, the Internet to Failure!\e[0m"
+		dialog --colors --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Manual network configuration" --yesno "Do you network configuration to manual input config?" 0 0 \ 2>${ANSWER}
+		case $(cat ${ANSWER}) in
+			0) inputadresses				
+				;;
+			1) selectnetwork
+				;;
+		#	255) 
+		#		;;
+		esac		
+	fi
+}
+selectnetadapter()
+{
+	case "$wnet_count" in
+		1)	setwname "${wnet[1]}"
+			;;
+		2)	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Select network adapter" --menu "Please to select on network adapter" 0 0 2 \
+			"1" "${wnet[1]" \   
+			"2" "${wnet[2]" \ 2>${ANSWER}
+			;;
+		3)	dialog --colors --default-item 1 --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "\Z7Select network adapter" --menu "Please to select on network adapter" 0 0 3 \
+			"1" "${wnet[1]" \   
+			"2" "${wnet[2]" \   
+			"3" "${wnet[3]" \ 2>${ANSWER}
+			;;	
+	esac
+	toadapter=$(cat ${ANSWER})
+	if [ "$wnet_count" -ge 1 ]; then
+		if [ "$network" -eq 2 ]; then
+			wifisetupconf
+		else
+			ethernetsetupconf
+		fi
+	else
+		toadapter=""
+		unsetwnet
+		unsetwnetcount
+		selectnetwork
+		$(selectnetadapter)
+	fi
+}
+setstat
+for letter in "${stat[@]}"; do
+	if [ "${net[$count]}" != "lo" ]; then
+		echo -e -n "${net[$count]} \e[0m"
+		if [ "$letter" != "UP" ]; then
+			`ip link set ${net[$count]} up`
+			checkprocess
+		else
+			echo -e -n "\e[1;31mUP\e[0m\n"
+			checkprocess
+		fi		
+	fi
+	let count+=1
+done
+while true; do
+	selectnetwork  
+done
+networkfine
+echo -e "\e[1;30m\n\nDone $0\e[0m"
+source $filesdir_scr/fine.conf

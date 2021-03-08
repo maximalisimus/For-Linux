@@ -1,0 +1,52 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/desktop/gnome/crypto/'
+saved-view='/org/'
+show-warning=false
+window-height=500
+window-is-fullscreen=false
+window-is-maximized=true
+window-width=648
+
+[org/gnome/desktop/applications/terminal]
+exec='xfce4-terminal'
+
+[org/gnome/gedit/plugins]
+active-plugins=['modelines', 'filebrowser', 'quickhighlight', 'time', 'snippets', 'quickopen', 'spell', 'docinfo']
+
+[org/gnome/gedit/plugins/filebrowser]
+root='file:///'
+tree-view=true
+virtual-root='file:///home/mikl'
+
+[org/gnome/gedit/preferences/editor]
+bracket-matching=true
+display-line-numbers=true
+highlight-current-line=true
+insert-spaces=true
+tabs-size=uint32 4
+wrap-last-split-mode='word'
+
+[org/gnome/gedit/preferences/ui]
+show-tabs-mode='auto'
+
+[org/gnome/gedit/state/window]
+bottom-panel-size=140
+side-panel-active-page='GeditWindowDocumentsPanel'
+side-panel-size=200
+size=(867, 505)
+state=128
+
+[org/gnome/nm-applet]
+disable-connected-notifications=true
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+sidebar-width=173
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+window-position=(127, 0)
+window-size=(1096, 603)

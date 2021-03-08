@@ -1,0 +1,22 @@
+
+
+about:config
+signon.management.page.fileImport.enabled
+
+mozilla.org
+
+AdBlocker for YouTube
+AdBlocker Ultimate
+anonymoX
+Docs Online Viewer
+HTTPS Everywhere
+KeePassXC-Browser
+Open in PDF Viewer
+Tampermonkey
+
+Chameleon
+NoScript
+Privacy Settings
+Self-Destructing Cookies
+
+

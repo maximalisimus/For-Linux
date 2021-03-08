@@ -1,0 +1,60 @@
+﻿
+https://wiki.archlinux.org/index.php/Video_game_platform_emulators_(Русский)
+https://ru.wikipedia.org/wiki/Список_эмуляторов_игровых_приставок
+
+
+
+Citra — Эмулятор Nintendo 3DS
+DeSmuME — Эмулятор Nintendo DS - desmume - Community
+Dolphin — Эмулятор GameCube и Wii с широкими возможностями.
+epsxe — Эмулятор PlayStation для ПК с архитектурой x86.
+FCEUX — NTSC и PAL 8-битный эмулятор Nintendo/Famicom
+Gambatte — Точный эмулятор Game Boy Color
+Gens2 — Эмулятор Sega Genesis, Sega CD и 32X - gens - Multilib
+Flycast - Sega Dreamcast
+mednafen — Консольный мультисистемный эмулятор MegaDrive, SNES - mednafen - Community
+Mupen64Plus — Высокосовместимый эмулятор Nintendo 64 с системой плагинов - mupen64plus - Community, Client
+pSX — Эмулятор PlayStation с относительно высокой совместимостью и без системы плагинов
+PCSXR — PS1
+PCSX2 — PS2 - pcsx2 - Multilib
+RPCS3 — PS3
+PPSSPP — PSP - ppsspp - Community
+bsnes — эмулятор Super Nintendo (SNES, NES, Game Boy, WonderSwan)
+Visual Boy Advance — Эмулятор Game Boy с поддержкой Game Boy Advance, Game Boy Color и Super Game Boy - vbam-wx - Community
+XQEMU — Оригинальный эмулятор Xbox
+Xenia - Xbox 360
+Yuzu — Экспериментальный свободный эмулятор и отладчик Nintendo Switch
+
+
+
+DOSBox — Свободный эмулятор DOS, в основном фокусирующийся на запуске DOS-игр - dosbox - Community
+DOSEmu — Свободный эмулятор DOS - dosemu - Community
+
+
+
+
+Citra — Nintendo 3DS
+DeSmuME — Nintendo DS
+Dolphin — GameCube, Wii
+epsxe — PS for PC x86
+FCEUX — NTSC, PAL 8-bit Nintendo/Famicom
+Gambatte — Game Boy Color
+Gens2 — Sega Genesis, Sega CD
+Flycast - Sega Dreamcast
+mednafen — MegaDrive, SNES
+Mupen64Plus — Nintendo 64
+pSX — PS (скорее всего не нужна)
+PCSXR — PS1
+PCSX2 — PS2
+RPCS3 — PS3
+PPSSPP — PSP
+bsnes — Super Nintendo (SNES, NES, Game Boy, WonderSwan)
+Visual Boy Advance — Game Boy, Game Boy Advance, Game Boy Color, Super Game Boy
+XQEMU — Xbox
+Xenia - Xbox 360
+Yuzu — Nintendo Switch
+DOSBox — DOS
+DOSEmu — DOS
+
+
+

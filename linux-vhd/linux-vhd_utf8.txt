@@ -1,0 +1,10 @@
+﻿
+title Test2
+find --set-root /OS/Mint.img
+map /OS/Mint.img (hd0)
+map --hook
+root (hd0,0)
+chainloader (hd0)+1
+
+
+

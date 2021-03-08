@@ -1,0 +1,28 @@
+pkgname=archlinux-language
+_pkgrun="language-setup.sh"
+pkgver=2.5
+pkgrel=1
+pkgdesc="Localize the ArchLinux system in pseudographic mode using the dialog package."
+pkgdesc_ru="Локализация системы ArchLinux в псевдографическом режиме, используя пакет dialog."
+arch=('any')
+url="https://github.com/maximalisimus/$pkgname/"
+license=('GPL')
+depends=(dialog)
+makedepends=(git imagemagick)
+replaces=($pkgname)
+
+source=("$pkgname::git+https://github.com/maximalisimus/$pkgname.git"
+	)
+	
+md5sums=('SKIP'
+	)
+prepare() {
+	cd ${srcdir}/$pkgname
+	make TARGET=$_pkgrun POSTFIX=./post/ tmpdir=./$pkgname install
+}
+
+package() {
+	mkdir -p $pkgdir/usr/
+	cp -a ${srcdir}/$pkgname/post/usr/* $pkgdir/usr/
+}
+

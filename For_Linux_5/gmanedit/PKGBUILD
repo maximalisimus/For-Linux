@@ -1,0 +1,23 @@
+pkgname=gmanedit
+pkgver=0.4.2
+pkgrel=6
+pkgdesc="GTK GUI Man Page Editor"
+arch=('x86_64')
+# # arch=('i486' 'i686' 'pentium4' 'x86_64')
+_arch="amd64"
+# _arch="i386"
+license=('GPL')
+depends=(atk libconfig libfontenc freetype2 lib32-freetype2 gtk2 gtk3 glib2 lib32-glib2 pango lib32-pango zlib)
+source=("${pkgname}_${pkgver}-${pkgrel}_${_arch}.deb")
+md5sums=('SKIP')
+
+package() {
+	cd "${srcdir}"
+	mkdir -p setup
+	tar -xvJf data.tar.xz -C setup/
+	mkdir -p $pkgdir/usr/
+	cp -a ${srcdir}/setup/usr/* $pkgdir/usr/
+	find "$pkgdir/usr/bin/" -type f -exec chmod +x {} \;
+	find "$pkgdir/usr/share/applications/" -type f -iname "*.desktop" -exec chmod +x {} \;
+	find "$pkgdir/usr/share/menu/" -type f -exec chmod +x {} \;
+}

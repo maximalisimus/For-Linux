@@ -1,0 +1,16 @@
+
+ssh-host-config
+mkpasswd --local > /etc/passwd
+mkgroup --local > /etc/group
+cygrunsrv -S sshd
+cygcheck -c openssh
+exec ssh-agent bash
+ssh-add ~/.ssh/id_rsa
+
+
+
+
+
+
+
+

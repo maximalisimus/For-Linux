@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.0.4.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-02-19T23:31:39.573739664"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr">
+<div id="khitrosti-dlya-pkgbuild-i-ne-tolko-rassuzhdenia-s-primerami" dir="ltr" style="position: absolute; top: 1.08cm; left: -0.69cm; width: 0.69cm; height: 0.69cm; border: none; padding: 0cm; background: #ffffff"><p class="western">
+	<br/>
+<br/>
+
+	</p>
+</div>
+<h1 class="western" align="left"><font face="Times Newer Roman, serif"><font size="6" style="font-size: 28pt"><b>Хитрости
+для PKGBUILD и не только. Рассуждения с
+примерами.</b></font></font></h1>
+<p class="western" align="left" style="margin-top: 1.06cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Допустим
+у нас есть некий исходный код, который
+надо превратить одновременно в несколько
+разных пакетов одним PKGBUILD-ом.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Сначала
+задаём один единственный pkgbase. Затем
+массивом pkgname все необходимые наименования
+пакетов, включая одно идентичное название
+pkgbase.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Теперь
+для каждого заданного пакета создаём
+свою package_pkgname() функцию. Раньше у нас
+всегда была одна единственная package(), а
+теперь их несколько - согласно массиву
+pkgname.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например:
+pkgbase=nvidia-340xx-lts</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">pkgname=(nvidia-340xx-lts
+nvidia-340xx-lts-dkms)</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">package_nvidia-340xx-lts()
+и package_nvidia-340xx-lts-dkms().</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">В
+каждой такой функции можно переопределить
+некоторые массивы - например depends, pkgdesc
+и другие. Но это не самое страшное.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Самое
+страшное - это то, что для каждого пакета
+надо устанавливать свою версию. Поможет
+вам в этом функция pkgver(), но только в
+случае если наши исходные файлы с git или
+svn. Если файлы прикреплены локально, то
+функция не поможет. Более подробно о
+данном методе смотрите на ArchWiki.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Большинство
+всех блогов на вопрос создания pkgbuild из
+deb или rpm - пишут про функцию tar -xzf или tar
+-xJf в функции package().</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Однако
+как мы все знаем, каждый раз менять ключ
+в команде не очень то и удобно. Лучше
+всегда пользуйтесь для любых архивов
+другой командой, т.к. она одна единственная
+с одинаковыми ключами для чего угодно:
+bsdtar -xf &quot;архив-для распаковки.расширение&quot;
+-C &quot;Путь извлечения&quot;.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например
+так: bsdtar -xf &quot;html-icons.tar.gz&quot; -C
+&quot;$pkgdir/usr/share/icons/&quot;</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Однако
+стоит напомнить и ещё одну переменную
+noextract в PKGBUILD-е. В предыдущем примере в
+source подключен архив с иконками. Чтобы
+не делать лишнюю работу по копированию
+и распаковке, лучше задать переменную
+noextract=('html-icons.tar.gz') в виде массива файлов,
+которые не надо извлекать, т.к. далее
+это будет произведено вручную меньшими
+затратами.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">bsdtar
+вполне можно использовать и в Makefile-ах,
+что прилично увеличит их производительность.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Существует
+и ещё одна команда. Вот на ней остановимся
+более подробно: install -Dm644 &quot;/Источник/исходный-файл&quot;
+&quot;/Назначение/конечный-файл&quot;.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Команду
+можно использовать как в PKGBUILD-ах, так и
+в Makefile-ах.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Она
+копирует исходный файл или папку с
+предоставленными правами доступа в
+указанный каталог с указанными именем.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например:
+install -Dm644 &quot;${_cplugin_pkgname}.desktop&quot;
+&quot;$pkgdir/usr/share/applications/${_cplugin_pkgname}.desktop&quot;</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Ключ
+-D - копировать из источника в назначение.
+-m - режим, как chmod, а не rwxr-xr-x. -g - группа.
+-o - владелец. -t - каталог.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Надеюсь
+все знают о преобразованиях rwx-rwx-rwx из
+двоичного в десятичный прав доступа?
+Указывать необходимо именно в цифрами.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Другой
+пример копирования целой папки: install
+-Dt &quot;${pkgdir}${_extradir}&quot; -m644
+&quot;${srcdir}/${_pkg}/kernel&quot;/{nvidia,uvm/nvidia-uvm}.ko</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Многие
+из вас, как и я раньше - создавали ярлыки
+desktop entries вручную. Но иногда это гораздо
+удобнее и быстрее осуществлять утилитой
+gendesk.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Сразу
+скажу о ключе -n, т.к. вам врядли захочется
+видеть в качестве иконки голубого
+пони... Неважно. Название иконки вставите
+уже сами в другом ключе.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">выглядеть
+это будет примерно так: gendesk -n
+--pkgname=&quot;Название-desktop-файла&quot;
+--pkgdesc=&quot;Описание, никуда не крепится&quot;
+--name=&quot;Строка Name&quot; --comment=&quot;Комментарий&quot;
+--icon=&quot;Название-иконки-без-расширения&quot;
+--terminal=false --categories=&quot;Здесь категории
+через точку с запятой; в конце не ставится&quot;
+--custom=&quot;URL=http://www.example.com/&quot;
+--startupnotify=false -f</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Поле
+custom позволяет вставить нужную строку
+вручную.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">А
+далее, если вам необходимо можно лишние
+строки просто вырезать с помощью sed-а.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например
+так:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">sed
+-i '/Type=/s/Application/Link/' ${_cplugin_pkgname}.desktop</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">sed
+-i '/Exec=/d' ${_cplugin_pkgname}.desktop</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">sed
+-i '/Version=/d' ${_cplugin_pkgname}.desktop</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Название
+иконки лучше вставлять без расширения.
+А преобразовать картинку в кучу иконок
+с разными размерами можно простым
+Makefile.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например
+так:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">ICONDIR=./</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">ICON_NAME=icon-name</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">ICONFL=$(ICONDIR)/$(ICON_NAME).png</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">sizes:=16
+24 32 64 96 128</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">icon_sizes:=$(foreach
+sz,$(sizes),$(sz)x$(sz))</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">.PHONY:
+all icon</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">all:
+icon</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">icon:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">for
+i in $(icon_sizes) ; do \</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">mkdir
+-p $(ICONDIR)/hicolor/$$i/apps/ ; \</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">convert
+$(ICON_NAME).png -resize $$i
+$(ICONDIR)/hicolor/$$i/apps/$(ICON_NAME).png ; \</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">done</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">В
+итоге у вас будет папка с иконками разных
+размеров: hicolor. Упакуйте её в архив и
+используйте как в примерах выше.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Запомните,
+что файлы иконок после установки должны
+располагаться по следующему пути:
+/usr/share/icons/hicolor/папки-с-размерами...</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Ну
+и напоследок самое интересное.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Если
+вы хотите что-то делать во время установки
+или удаления пакета, то обратите внимание
+на строку install=script.install в PKGBUILD-е.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">просто
+создайте в той же папке скрипт с любым
+названием (например script.install) и подключите
+его только в одной строке install=.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">В
+этом скрипте создайте нужную вам функцию.
+Никаких #!/bin/bash не должно быть - голый
+файл с набором функций.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">pre_install(){
+}, post_install(){ }, pre_upgrade(){ }, post_upgrade() { },
+pre_remove() { }, post_remove() { }.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Можете
+вставить только одну любую единственную
+функцию.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">В
+качестве примера скрипт установки
+ключей:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">post_upgrade()
+{</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">if
+usr/bin/pacman-key -l &gt;/dev/null 2&gt;&amp;1; then</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">usr/bin/pacman-key
+--populate elseworld</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">fi</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">}</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">post_install()
+{</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">if
+[ -x usr/bin/pacman-key ]; then</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">post_upgrade</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">fi</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">}</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Чтобы
+поменьше мусорить в системе - как только
+отладили ваш PKGBUILD - собирайте его с
+ключами -sCc - устанока зависимостей и
+удаление srcdir и pkgdir после сборки пакета(ов).
+Ну и если вдруг что-то не заладилось с
+контрольными суммами - ставте SKIP и
+собирайте со следующими ключами:
+--skipchecksums --skippgpcheck --skipinteg.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

@@ -1,0 +1,62 @@
+
+_us_gr_users=(adm ftp games http log rfkill sys systemd-journal users uucp wheel)
+_us_gr_system=(dbus kmem locate lp mail nobody proc smmsp tty utmp)
+_us_gr_presystemd=(audio disk floppy input kvm optical scanner storage video)
+
+#
+# User groups
+_ug_select_ttl=""
+ug_select_bd="\n\n"
+#
+# User Groups for user
+#
+_ugd_adm=""
+_ugd_ftp=""
+_ugd_games=""
+_ugd_http=""
+_ugd_log=""
+_ugd_rfkill=""
+_ugd_sys=""
+_ugd_systemd-journal=""
+_ugd_users=""
+_ugd_uucp=""
+_ugd_wheel=""
+#
+# User Groups for system
+#
+_ugd_dbus=""
+_ugd_kmem=""
+_ugd_locate=""
+_ugd_lp=""
+_ugd_mail=""
+_ugd_nobody=""
+_ugd_proc=""
+_ugd_smmsp=""
+_ugd_tty=""
+_ugd_utmp=""
+#
+# User Groups for Pre-Systemd
+#
+_ugd_audio=""
+_ugd_disk=""
+_ugd_floppy=""
+_ugd_input=""
+_ugd_kvm=""
+_ugd_optical=""
+_ugd_scanner=""
+_ugd_storage=""
+_ugd_video=""
+
+
+
+
+
+
+
+
+
+
+
+
+
+

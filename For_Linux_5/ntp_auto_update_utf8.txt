@@ -1,0 +1,16 @@
+﻿
+ntp systemd-timesyncd
+
+# При рассинхронизации времени
+
+$ sudo timedatectl set-ntp true
+
+# Это заставит синхронизироваться
+
+# Чтобы узнать текущее состоянии службы
+
+$ timedatectl status
+
+
+
+

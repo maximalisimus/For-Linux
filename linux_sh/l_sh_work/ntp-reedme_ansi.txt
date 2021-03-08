@@ -1,0 +1,104 @@
+
+
+јппаратные часы можно установить по системным и наоборот:
+
+# hwclock --systohc
+# hwclock --hctosys
+
+
+
+Area:				HostName:
+
+Worldwide			pool.ntp.org
+Asia				asia.pool.ntp.org
+Europe				europe.pool.ntp.org
+North America		north-america.pool.ntp.org
+Oceania				oceania.pool.ntp.org
+South America		south-america.pool.ntp.org
+
+
+
+
+
+Africa africa.pool.ntp.org (50)
+Antarctica antarctica.pool.ntp.org (0)
+Asia asia.pool.ntp.org (317)
+Europe europe.pool.ntp.org (2986)
+North-America north-america.pool.ntp.org (970)
+Oceania oceania.pool.ntp.org (131)
+South-America south-america.pool.ntp.org (59)
+
+
+
+https://www.ntppool.org/zone/africa
+https://www.ntppool.org/zone/antarctica
+https://www.ntppool.org/zone/asia
+https://www.ntppool.org/zone/europe
+https://www.ntppool.org/zone/north-america
+https://www.ntppool.org/zone/oceania
+https://www.ntppool.org/zone/south-america
+
+
+
+
+
+_zones=(africa antarctica asia europe north-america oceania south-america)
+URL="https://www.ntppool.org/zone/${_zones[3]}"
+_ntp_files="./ntp.txt"
+# curl -s "${URL}" | sed -e 's/<[^>]*>//g' | awk '!/^$/{print $0}' | sed 's/^[ \t]*//' | grep -Ei " [a-z]{2}.pool.ntp.org" | grep -Ei "\([0-9]{1,4}\)" | grep -Evi "\+|\!|-|\([a-z]" | sed -E 's/ \&#[0-9]{1,4};//g' | sed -E 's/ \([0-9]{1,4}\)//g' | tr ' ' '_' >> $_ntp_files
+curl -s "${URL}" | sed -e 's/<[^>]*>//g' | awk '!/^$/{print $0}' | sed 's/^[ \t]*//' | grep -Ei " [a-z]{2}.pool.ntp.org" | grep -Evi "\+|\!|-|\([a-z]" | sed -E 's/ \&#[0-9]{1,4};//g' | sed -E 's/ \([0-9]{1,4}\)//g' | tr ' ' '_' >> $_ntp_files
+
+
+
+
+# pacman -S ntp
+# systemctl start ntpd
+# systemctl enable ntpd
+
+# pacman -S networkmanager-dispatcher-ntpd
+
+# ntpd -qg &
+
+# timedatectl set-ntp true 
+$ timedatectl status
+
+
+/etc/systemd/timesyncd.conf
+[Time]
+#NTP=
+#FallbackNTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
+
+
+
+
+/etc/ntp.conf
+server 0.it.pool.ntp.org iburst
+server 1.it.pool.ntp.org iburst
+server 2.it.pool.ntp.org iburst
+server 3.it.pool.ntp.org iburst
+
+restrict default nomodify nopeer
+# Ёти настройки не позвол€т пользовател€м измен€ть что-либо. ћожете также добавить следующие опции
+# restrict default kod nomodify notrap nopeer noquery
+restrict 127.0.0.1
+
+# Ќаконец, установите файл-буфер (в котором будет находитьс€ погрешность часов системы) и журнал (лог):
+driftfile /var/lib/ntp/ntp.drift
+logfile /var/log/ntp.log
+
+
+restrict default Ч задает значение по умолчанию дл€ всех рестриктов.
+kod Ч узлам, которые часто отправл€ют запросы сначала отправить поцелуй смерти (kiss of death), затем отключить от сервера.
+notrap Ч не принимать управл€ющие команды.
+nomodify Ч запрещает команды, которые могут вносить изменени€ состо€ни€.
+nopeer Ч не синхронизироватьс€ с хостом.
+noquery Ч не принимать запросы.
+
+
+
+
+
+
+
+
+

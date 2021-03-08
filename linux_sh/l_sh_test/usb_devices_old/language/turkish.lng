@@ -1,0 +1,27 @@
+##
+##
+## Turkish Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="USB aygıtlarını çıkarma"
+_menu_body="\nLütfen USB aygıtınızı seçin.\n"
+_pass_title="Şifre giriş"
+_pass_body="\nLütfen kullanıcı şifresini girin.\n"
+_MSG_Title="Hata"
+_MSG_Body="USB aygıtı algılanmadı\n"
+_select_type_pass_title="Kullanıcı parolasını ayarlama"
+_select_type_pass_body="\nLütfen programın çalışma modunu seçin.\n\n"
+_no_pass_menu="Şifre olmadan"
+_memory_pass_menu="Şifreyi hatırla"
+_input_pass_menu="Şifre yeniden giriş"
+_info_pass_type_title="Program çalışma modu hakkında bilgi mesajı"
+_inf0="\nBu mod, programın performansına bağlıdır\n"
+_info1="$_inf0\n''Şifre girişi Yok' modunda - kullanıcı şifresi boş olarak ayarlanır\n"
+_info2="'Şifreyi hatırla' modunda-şifre ayarlar dosyasına girilir\n"
+_info3="\n'Şifre yeniden giriş' modunda-her çıkarıldığında şifre istenecektir\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Programın ilk kurulumu"
+_info_install_body="\nProgramın ilk kurulumu yapılır.\nSistem dilini ve uygulama modunu özelleştirin.\nVe ayrıca uygulamanın grafik alt sisteminin çalışması için bağımlı paketi yükleme-xdialog\n\n"

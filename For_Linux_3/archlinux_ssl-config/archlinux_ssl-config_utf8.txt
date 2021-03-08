@@ -1,0 +1,62 @@
+
+$ sudo pacman -Syu
+$ sudo pacman -S apache
+
+# Для начала нужно перейти в главный каталог конфигураций Apache. Все последующие действия следует выполнять в этом каталоге.
+
+$ cd /etc/httpd/conf
+
+# Создайте 1024-битный закрытый ключ RSA. Опция -des3 указывает на необходимость парольной фразы. Парольная фраза обеспечивает более высокий уровень безопасности, однако при перезапуске Apache она может стать причиной некоторых проблем. В случае сбоя или перезапуска Apache ее придется постоянно повторно вводить.
+
+$ sudo openssl genrsa -des3 -out server.key 1024
+
+# Теперь нужно создать запрос на подпись сертификата (англ. certificate-signing request, или CSR). Если в предыдущем шаге была создана парольная фраза, на данном этапе она будет запрошена.
+
+$ sudo openssl req -new -key server.key -out server.csr
+
+# Эта команда выведет на экран форму, которую нужно заполнить. Самое важное поле в ней – Common Name; внесите в него официальный домен или IP-адрес сервера.
+
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:US
+State or Province Name (full name) [Some-State]:New York
+Locality Name (eg, city) []:NYC
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Awesome Inc
+Organizational Unit Name (eg, section) []:Dept of Merriment
+Common Name (e.g. server FQDN or YOUR name) []:example.com
+Email Address []:webmaster@awesomeinc.com
+
+
+# Удалите фразовый пароль:
+
+$ sudo cp server.key server.key.org
+$ sudo openssl rsa -in server.key.org -out server.key
+
+# Теперь нужно задать срок действия сертификата; для этого измените значение опции –days, которая указывает количество дней, в течение которых сертификат будет действителен. Например, нижеприведенная команда задает срок действия в 1 год.
+
+$ sudo openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
+
+# Готово! Теперь сертификат создан и подписан. Осталось только включить его в настройки Apache. Откройте главный конфигурационный файл Apache:
+
+$ sudo nano /etc/httpd/conf/httpd.conf
+
+# В нем раскомментируйте строку:
+
+### Include conf/extra/httpd-ssl.conf
+
+# Перезапустите Apache, чтобы изменения вступили в силу:
+
+$ sudo systemctl restart httpd
+
+# Теперь откройте в браузере https://домен_или_IP, и на экране появится новый самоподписанный SSL-сертификат.
+
+
+
+
+
+

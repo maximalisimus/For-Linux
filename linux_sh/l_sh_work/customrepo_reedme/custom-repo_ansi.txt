@@ -1,0 +1,25 @@
+
+repo-add customrepo.db.tar.gz github-desktop-2.1.0-2-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz gksu-2.0.2-6-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz google-chrome-76.0.3809.132-1-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz package-query-1.9-3-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz pamac-aur-7.3.3-1-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz pikaur-1.4.3-1-any.pkg.tar.xz
+repo-add customrepo.db.tar.gz timeshift-19.01-2-x86_64.pkg.tar.xz
+repo-add customrepo.db.tar.gz yay-9.2.1-1-x86_64.pkg.tar.xz
+
+
+# add File to string
+$ sudo nano /etc/pacman.conf
+
+[customrepo]
+SigLevel = Optional TrustAll
+Server = file:///home/midfingr/customrepo/$arch
+
+
+
+
+
+
+# repo-remove customrepo.db.tar.gz your-packages-version.tar.gz
+

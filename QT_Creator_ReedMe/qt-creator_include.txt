@@ -1,0 +1,19 @@
+#include <QApplication>
+#include <QDialog>
+#include "vroot.h"
+#include <time.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <QLabel>
+#include <QImage>
+#include <QLayout>
+#include <QPixmap>
+#include <QSlider>
+#include <QPainter>
+#include <QCheckBox>
+#include <QSettings>
+#include <QGroupBox>
+#include <QPushButton>
+#include <QString>
+#include <qwindowdefs.h>
+

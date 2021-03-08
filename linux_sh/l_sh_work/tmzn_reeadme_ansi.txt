@@ -1,0 +1,12 @@
+
+cat tmzn.txt | grep -Evi "utc" | awk '!/^$/{print $0}' | cut -d '/' -f1 | uniq -d
+ 
+cat tmzn.txt | grep -Evi "utc" | awk '!/^$/{print $0}' | grep -Ei "America" | cut -d '/' -f2 | uniq -d
+  
+cat tmzn.txt | grep -Evi "utc" | awk '!/^$/{print $0}' | grep -Ei "America" | cut -d '/' -f2 | uniq -u
+
+echo "Argentina" | grep -Ei "Argentina|Indiana|Kentucky|North_Dakota" | wc -l
+
+cat tmzn.txt | grep -Evi "utc" | awk '!/^$/{print $0}' | grep -Ei "America" | grep -Ei "Argentina" | cut -d '/' -f3
+
+

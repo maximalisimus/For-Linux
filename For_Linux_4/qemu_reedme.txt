@@ -1,0 +1,12 @@
+
+lsusb
+# ID Flash card
+qemu-system-x86_64
+-enable-kvm -machine q35,accel=kvm -device intel-iommu
+-m 1024
+-cdrom my-iso.iso
+-hda /dev/sdX
+-usb --device usb-host,vendorid=0x125f,productid=0xdb8a
+
+
+

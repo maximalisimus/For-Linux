@@ -1,0 +1,19 @@
+ofs	hex dump	ascii
+0000	 89 02 33 04 00 01 0a 00 1d 16 21 04 74 82 31 eb    cb d8 08 a1 4f 5e 85 d2 8c 00 4c 2f 93 48 1f 6b 	..3.......!.t.1.....O^....L/.H.k
+0020	 05 02 5a d3 3c 83 00 0a 09 10 8c 00 4c 2f 93 48    1f 6b 1b da 10 00 93 45 e6 4f 3d e5 58 15 e9 a7 	..Z.<.......L/.H.k.....E.O=.X...
+0040	 20 9d 03 c3 cc b0 d2 53 dd 33 ac ab 0f 72 1f cd    e0 68 7e 75 22 57 ea 59 71 7a 71 da 50 f1 ef 0b 	.......S.3...r...h~u"W.Yqzq.P...
+0060	 cf 95 4e 8e b7 d3 1e da b6 e9 57 c6 b5 0d 4e 68    b3 d3 c5 e8 41 f3 dd 9c e6 a9 8d 7a 9e 05 8c 1a 	..N.......W...Nh....A......z....
+0080	 39 7e e9 d7 5f 60 92 a2 10 23 9b c4 84 62 7c 55    b3 23 2c f2 e2 c5 67 15 20 b4 41 23 2c 00 d2 d8 	9~.._`...#...b|U.#,...g...A#,...
+00a0	 c4 2f 01 a0 4c a4 c5 a9 44 fe de 7b 86 5a ec c1    90 de 97 07 e6 a5 37 f4 a7 65 98 96 55 9e 40 5a 	./..L...D..{.Z........7..e..U.@Z
+00c0	 dd 8d ea df 5e 03 03 74 64 c7 cb 6c 15 32 12 a4    79 f2 9c 4b e1 d0 4f 4b 16 d7 f7 e1 c2 50 12 44 	....^..td..l.2..y..K..OK.....P.D
+00e0	 ae e7 ff 53 05 d3 4b 83 96 1a 36 d8 9e 20 e4 60    dc 23 c3 9d 27 c8 c9 6e b2 64 57 3e 43 aa 32 f7 	...S..K...6....`.#..'..n.dW>C.2.
+0100	 d0 27 44 a6 6b 6b 5f e2 77 93 4a 7d 32 9a 9b 91    15 97 68 8a 73 fa ec 43 d3 5f 4b 30 28 f5 b2 08 	.'D.kk_.w.J}2.....h.s..C._K0(...
+0120	 d0 de 87 6a 41 f1 04 cd 48 21 4b 0e 85 a6 8a 69    b1 1d 75 22 76 4e 5f b9 29 cb ab ba 8f e3 fc 01 	...jA...H!K....i..u"vN_.).......
+0140	 08 6e 6a 61 6c 80 eb 92 2e be 17 91 5d 45 52 5d    2c a3 a9 99 c1 6a 57 f0 de f4 b6 42 6d 4a 5c 72 	.njal.......]ER],....jW....BmJ\r
+0160	 cb 70 23 e3 ea 71 44 72 1c 03 22 ca 0b 58 53 c2    12 1b ff cc 80 91 b7 6c 69 e6 f0 b5 3f ce 0d 73 	.p#..qDr.."..XS........li...?..s
+0180	 d6 1b 9d ac a7 d7 6a f8 be 21 82 a5 b7 ff 02 62    56 fc 7b 6c c2 c0 74 3b 93 bb f8 33 f7 1a 0f 4d 	......j..!.....bV.{l..t;...3...M
+01a0	 24 e1 e1 dd ce 18 dc 95 57 74 89 3d f1 ac 45 b2    c1 04 81 ac 59 f5 95 16 1d 11 81 23 c7 bd 70 d8 	$.......Wt.=..E.....Y......#..p.
+01c0	 a5 1d 19 fb d3 92 1d 29 dd a5 3f 17 5a 68 de 37    66 35 80 73 b8 c8 e2 1e 23 5a b3 c5 5b 46 51 2d 	.......)..?.Zh.7f5.s....#Z..[FQ-
+01e0	 2e ee ee 83 56 f1 7a d1 c1 be 1b 8b 31 f6 34 1c    95 65 12 50 20 5f ee bd f6 da 0e ac a2 03 3d 9c 	....V.z.....1.4..e.P._........=.
+0200	 42 27 52 37 fd 56 89 9b 69 e6 27 45 3a d0 ce 23    a9 6b 2f 29 c1 b5 3b 2b 2a 69 9b 89 ab 96 67 c3 	B'R7.V..i.'E:..#.k/)..;+*i....g.
+0220	 1b 25 8d 7e 0b 45 5e 72 ba 6e 3e 21 a9 c4 8c b4    a6 70 58 f6 7e e4 	.%.~.E^r.n>!.....pX.~.

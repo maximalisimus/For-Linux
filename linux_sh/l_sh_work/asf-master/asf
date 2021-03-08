@@ -1,0 +1,16 @@
+source ./conf/init.conf
+source ./settings.conf
+######################################################################
+##																	##
+##                        Execution     							##
+##																	##
+######################################################################
+sh $internet
+# id_system
+# select_language
+# check_requirements
+# greeting
+#	while true; do
+ #         main_menu_online      
+ #   done
+source ./conf/fine.conf

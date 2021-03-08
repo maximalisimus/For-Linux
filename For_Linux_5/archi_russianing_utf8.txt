@@ -1,0 +1,179 @@
+﻿
+
+# loadkeys ru
+# setfont cyr-sun16
+
+
+# sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+
+# pacman -S kbd-ru-keymaps
+
+# pacman -S terminus-font
+
+# nano /etc/locale.gen
+
+en_US.UTF-8
+en_US.ISO-8859-1
+ru_RU.KOI8-R
+ru_RU.UTF-8
+ru_RU.ISO-8859-5
+
+# nano /etc/locale.conf
+
+LANG=ru_RU.UTF-8
+ LC_MESSAGES=ru_RU.UTF-8
+
+# nano /etc/vconsole.conf
+
+LOCALE="ru_RU.UTF-8"
+ KEYMAP="ru"
+ HARDWARECLOCK="UTC"
+ TIMEZONE="Europe/Moscow" 
+ FONT="cyr-sun16"
+ CONSOLEFONT="cyr-sun16"
+ CONSOLEMAP=""
+USECOLOR="yes"
+
+# locale-gen
+# export Lang=ru_RU.UTF-8
+# nano /etc/mkinitcpio.conf
+
+HOOKS="base consolefont keymap udev <Ваши хуки>"
+
+
+# Примечание: 
+ Если вышеперечисленные способы не помогли изменить шрифт в tty, вероятно, изменения не сохраняются после KMS.  Для обхода этой проблемы. попробуйте добавить в initrd модуль, выполняющий modesetting (nouveau/radeon/i915 и  т.п.):
+
+MODULES="nouveau"
+
+
+
+# pacman -S ttf-dejavu ttf-liberation
+
+# nano /etc/hal/fdi/policy/10-keymap.fdi
+
+<?xml version="1.0" encoding="utf-8"?>
+<deviceinfo version="0.2">
+ <device>
+  <match key="info.capabilities" contains="input.keypad">
+    <merge key="input.xkb.rules" type="string">base</merge>
+    <merge key="input.xkb.model" type="string">pc105</merge>
+    <merge key="input.x11_driver" type="string">evdev</merge>
+    <merge key="input.xkb.layout" type="string">us,ru</merge>
+    <merge key="input.xkb.variant" type="string">,winkeys</merge>
+    <merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+  </match>
+ </device>
+</deviceinfo>
+
+
+
+# Модели клавиатур в строке input.xkb.model
+# Значение этого ключа в /usr/share/X11/xkb/rules/evdev.lst
+
+# Например для клавиатуры Logitech Generic Keyboard строка имеет вид:
+<merge key="input.xkb.model" type="string">logitech_base</merge>
+
+
+# Раскладки xkb.layout и xkb.variant 
+# Переключение раскладок input.xkb.options
+# Для Ctrl-Shift, при использовании русской раскладки горит лампочка Scroll Lock: 
+<merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+
+
+
+
+# Русске Man страницы
+
+# pacman -S man-pages-ru
+
+# LESSCHARSET должна быть со значением UTF-8. Просто закоментировать строку < export LESSCHARSET="latin1" > в /etc/profile
+
+
+# mkinitcpio -p linux
+
+
+
+
+
+
+
+
+
+
+Fonts
+
+
+
+
+# if mount for windows to link-label fonts ntfs disk
+
+ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
+fc-cache
+
+
+# or copy fonts windows to fonts linux
+
+# mkdir /usr/share/fonts/WindowsFonts
+# cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
+# chmod 755 /usr/share/fonts/WindowsFonts/*
+
+fc-cache
+
+
+pacman -S 
+
+ttf-office-2007-fonts- AUR Office 2007 fonts
+ttf-win7-fonts - AUR fonts Windows 7
+ttf-ms-win8AUR — fonts Windows 8.1
+ttf-ms-win10AUR — fonts Windows 10
+
+ttf-ms-fonts - AUR
+ttf-vista-fonts - AUR
+
+
+# for all browser to replace fonts - it create file
+
+nano /etc/fonts/conf.d/30-metric-aliases-free.conf
+
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+       <alias binding="same">
+         <family>Helvetica</family>
+         <accept>
+         <family>Arial</family>
+         </accept>
+       </alias>
+       <alias binding="same">
+         <family>Times</family>
+         <accept>
+         <family>Times New Roman</family>
+         </accept>
+       </alias>
+       <alias binding="same">
+         <family>Courier</family>
+         <accept>
+         <family>Courier New</family>
+         </accept>
+       </alias>
+</fontconfig>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+﻿
+curl -O https://blackarch.org/strap.sh
+sudo bash ./strap.sh
+sudo pacman -Syyu
+pacman -S blackarch
+
+

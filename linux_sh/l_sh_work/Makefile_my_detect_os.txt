@@ -1,0 +1,39 @@
+# Detect operating system in Makefile.
+# Author: maximalisimus
+# Date: 2021-02-11
+
+OSFLAG 				:=
+ARCHFLAG 			:=
+ifeq ($(OS),Windows_NT)
+	OSFLAG += -D WIN32
+	ifeq ($(PROCESSOR_ARCHITECTURE),AMD64)
+		OSFLAG += x86_64
+	endif
+	ifeq ($(PROCESSOR_ARCHITECTURE),x86)
+		OSFLAG += x86
+	endif
+else
+	UNAME_S := $(shell uname -s)
+	ifeq ($(UNAME_S),Linux)
+		OSFLAG += LINUX
+	endif
+	ifeq ($(UNAME_S),Darwin)
+		OSFLAG += OSX
+	endif
+		UNAME_M := $(shell uname -m)
+	ifeq ($(UNAME_M),x86_64)
+		ARCHFLAG += x86_64
+	endif
+		ifneq ($(filter %86,$(UNAME_M)),)
+	ARCHFLAG += x86
+		endif
+	ifneq ($(filter arm%,$(UNAME_M)),)
+		ARCHFLAG += ARM
+	endif
+endif
+
+all:
+	@echo $(OSFLAG)
+	@echo $(ARCHFLAG)
+
+

@@ -1,0 +1,29 @@
+﻿
+$ sudo mkdir /usr/share/sddm/prusony-temeSDDM
+$ sudo cp /home/prusony/Загрузки/trava2_1600x900.jpg /usr/share/sddm/prusony-temeSDDM
+
+$ sudo nano /usr/share/sddm/themes/breeze/theme.conf
+# background=/usr/share/sddm/prusony-temeSDDM/trava2-1600x900.jpg
+
+$ sudo nano /etc/sddm.conf
+
+[Theme]
+Current=prusony-temeSDDM
+CursorTheme=Adwaita
+
+$ sddm-greeter --theme /usr/share/sddm/prusony-temeSDDM/trava2-1600x900.jpg
+
+
+
+
+$ sudo cp /home/prusony/Загрузки/trava2_1600x900.jpg /usr/share/sddm/themes/breeze/components/artwork/background.png
+
+
+/usr/share/sddm/themes/breeze/components/artwork/
+
+/usr/share/sddm/themes/breeze/
+
+
+
+
+

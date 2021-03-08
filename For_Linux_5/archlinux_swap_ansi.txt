@@ -1,0 +1,28 @@
+
+$ swapon --show
+
+$ free -h
+
+
+### Swap Info memory system
+
+$ cat /sys/fs/cgroup/memory/memory.swappiness
+or
+$ cat /proc/sys/vm/swappiness
+
+
+
+### Setup manual session memory on swap
+
+# sysctl vm.swappiness=10
+
+
+
+### Setup manual system memory on swap
+
+nano /etc/sysctl.d/10-sysctl.conf
+vm.swappiness=10
+
+
+
+

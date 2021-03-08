@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- saved from url=(0109)https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9) -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Install from existing Linux (Русский) - ArchWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Install_from_existing_Linux_(Русский)","wgTitle":"Install from existing Linux (Русский)","wgCurRevisionId":430618,"wgRevisionId":430618,"wgArticleId":3445,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Getting and installing Arch (Русский)","Русский"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Install_from_existing_Linux_(Русский)","wgRelevantArticleId":3445,"wgIsProbablyEditable":!1,
+"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits"]);
+} );</script>
+<link rel="stylesheet" href="./Archlinux_Bootstrap_Russian_files/load.php">
+<!--[if IE 6]><link rel="stylesheet" href="/skins/ArchLinux/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/skins/ArchLinux/IE70Fixes.css?303" media="screen" /><![endif]-->
+<style>
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.highlight{font-weight:bold}
+pre,.mw-code{white-space:pre} span.archwiki-template-pkg{font-family:monospace} div.archwiki-template-message{position:relative;overflow:hidden; min-height:4.6em; margin-bottom:1em;background-color:#F9FAFF;border:1px solid #D7DFE3;padding:0 100px;text-align:center}div.archwiki-template-message > p > a{display:block;position:absolute;top:5px}div.archwiki-template-message > p > a:first-of-type{left:26px; }div.archwiki-template-message > p > a:last-of-type{right:26px; }div.archwiki-template-message > div{font-size:90%}div.archwiki-template-message ul,div.archwiki-template-message ol{text-align:left}
+.mw-search-results{float:none} #bodyContent a.external[href],#bodyContent a.extiw,.link-https{background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMTMiIHdpZHRoPSIxMyIgdmVyc2lvbj0iMS4xIiB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzYuNDY3ODA4LC0yNTguMzkwMDUpIj4KPHBhdGggc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiMzMzY2YmI7IiBkPSJtNDEuNDcsMjU5LjQsNywwLDAsNy0yLTItMywyLDAtMSwzLTIuMjUsMSwxLDAtMy43NS0zLjc1LDAsMSwxLTIuMjUsMy0xLDAsMi0zeiIvPgo8cGF0aCBzdHlsZT0ib3BhY2l0eToxO2ZpbGw6IzMzNjZiYjsiIGQ9Im00My40NywyNjEuNC01LDAsMCw4LDgsMCwwLTUtMSwwLDAsNC02LDAsMC02LDQsMHoiLz4KPHBhdGggc3R5bGU9Im9wYWNpdHk6MTtmaWxsOiMxNWE1ZWE7IiBkPSJtNDAuNTUsMjYzLjljMC0wLjYyMTMsMC42MjEzLTAuNjIxMywwLjYyMTMtMC42MjEzLDEuODY0LDAuNjIxMywzLjEwNywxLjg2NCwzLjcyOCwzLjcyOCwwLDAsMCwwLjYyMTMtMC42MjEzLDAuNjIxMy0xLjI0My0xLjg2NC0xLjg2NC0yLjQ4NS0zLjcyOC0zLjcyOHoiLz4KPC9nPgo8L3N2Zz4K) center right no-repeat;padding-right:13px} #bodyContent a.external[href ^="http://wiki.archlinux.org"],#bodyContent a.external[href ^="https://wiki.archlinux.org"]{background:none;padding-right:0} a:link,#toc a, #bodyContent #toc a,#p-cactions li a,#p-personal li a,#p-cactions li a:visited,#p-personal li a:visited,#bodyContent a.external,#bodyContent a.extiw{color:#07b}a:hover,#toc a:hover, #bodyContent #toc a:hover,#p-cactions li a:hover,#p-personal li a:hover,#p-cactions li a:visited:hover,#p-personal li a:visited:hover,#bodyContent a:hover.external,#bodyContent a:hover.extiw{color:#07b;text-decoration:underline}a:visited,#toc a:visited, #bodyContent #toc a:visited,#bodyContent a:visited.external,#bodyContent a:visited.extiw{color:#357}a:visited:hover,#toc a:visited:hover, #bodyContent #toc a:visited:hover,#bodyContent a:visited:hover.external,#bodyContent a:visited:hover.extiw{color:#357;text-decoration:underline}a:focus,a:active,#toc a:focus,#toc a:active, #bodyContent #toc a:focus,#bodyContent #toc a:active,#p-cactions li a:focus,#p-cactions li a:active,#p-personal li a:focus,#p-personal li a:active,#bodyContent a:focus.external,#bodyContent a:active.external,#bodyContent a:focus.extiw,#bodyContent a:active.extiw{color:#e90 !important}a.new,#p-cactions .new a,#p-personal a.new{color:#b00 !important} code,tt{ display:inline;white-space:pre;padding:0.3em}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:.6em 3.6em .6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba(255,255,255,0.5);border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important}.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABblBMVEUAAAD///////9PfTf///80aRdTgjn///9Feij///////////9Rfzf///////////9PfjZRgDh1o1xOfTb///////+bwYqLtnj///////9PfTa82K////9WhT6YxIL///9QgDdTgzr////////j7uDl7eLq8efi693k7OH///////9UhjuBr2rp9uRUhjr///9YljVKgir///9WiTlYjT3////9/v57vFlbkT5PjC9dlD/5/fhuq09stUTs9uhxuElctCpfnT1huDFloEZloUZmpENmvDZpvDxpvTxqvjxrvT5rvT9rwTxsqktswD5uwkBvuUdxw0NztFBztU9ztVBzwkp0tlJ1xkd2t1R3uVR4w1F4xk54x014yE15uVZ5v1R5xVB6v1R7yFJ8wVh9xVl9yFR9yVd9ylN+xVh+yFd/x1l/yFeAylmEx1+Ny2uY0Hqe04Wj1Ymv3Ze33qLD47TJ5L3O6cPU7Mrq9eb2+/Q4j37OAAAAQHRSTlMAAQIEBAUFBQwPFB4fJCUoKiosQEhJS01RUlZZXmdydXaChYuSlJSWmJmoq6uur8LExcvM19fg5ejt8fX2+Pr7SljgewAAAKpJREFUGBkFwQNCAwAAAMDLtl3LtrG4rWXbtvX77gAgZ6grFwC0bhwNVgKgdPZx8b0dgLi+s7Wn0VoAqpfOI9+BNADZI7fLrz2pSEwGHZuH+78lSK8ZLkLezF3ooyUG3VPXq2USei9WngeyoG195yBYWDF3E/2pAhl1e9Gr8bGT+bfOFCC2fnvh4X7rcqIAQNNu+HT6sxkAjceTL/2ZAIhv+PorBwBJxfkA//dFHSCBy/UTAAAAAElFTkSuQmCC);background-image:url(/resources/src/mediawiki.action/images/green-checkmark.png?9048a)!ie;background-position:left}.postedit-close{position:absolute;padding:0 .8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:black;text-shadow:0 0.0625em 0 white;text-decoration:none;opacity:0.2;filter:alpha(opacity=20)}.postedit-close:hover{color:black;text-decoration:none;opacity:0.4;filter:alpha(opacity=40)}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:black;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:white}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="./Archlinux_Bootstrap_Russian_files/load(1).php">
+<style></style>
+<script async="" src="./Archlinux_Bootstrap_Russian_files/load(2).php"></script>
+<meta name="generator" content="MediaWiki 1.26.2">
+<link rel="shortcut icon" href="https://wiki.archlinux.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.archlinux.org/opensearch_desc.php" title="ArchWiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="https://wiki.archlinux.org/index.php?title=Special:RecentChanges&amp;feed=atom">
+<script src="./Archlinux_Bootstrap_Russian_files/load(3).php"></script></head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Install_from_existing_Linux_Русский skin-archlinux action-view">
+
+		<div id="archnavbar"><!-- Arch Linux global navigation bar -->
+			<div id="archnavbarlogo">
+				<p><a id="logo" href="https://www.archlinux.org/"></a></p>
+			</div>
+			<div id="archnavbarmenu">
+				<ul id="archnavbarlist">
+					<li id="anb-home"><a href="https://www.archlinux.org/">Home</a></li><li id="anb-packages"><a href="https://www.archlinux.org/packages/">Packages</a></li><li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li><li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li><li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li><li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li><li id="anb-download"><a href="https://www.archlinux.org/download/">Download</a></li>				</ul>
+			</div>
+		</div><!-- #archnavbar -->
+
+		<div id="globalWrapper">
+		<div id="column-content">
+			<div id="content" class="mw-body" role="main">
+				<a id="top"></a>
+				
+				<div class="mw-indicators">
+</div>
+				<h1 id="firstHeading" class="firstHeading" lang="en">Install from existing Linux (Русский)</h1>
+				
+				<div id="bodyContent" class="mw-body-content">
+					<div id="siteSub">From ArchWiki</div>
+					<div id="contentSub"></div>
+										<div id="jump-to-nav" class="mw-jump">Jump to: <a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#column-one">navigation</a>, <a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#searchInput">search</a></div>
+
+					<!-- start content -->
+					<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div style="float:right; clear:right; width:25%; margin: 0 0 0.5em 0.5em;"><p style="background:#333; color:white; padding:0.2em; border-bottom:5px #08c solid; margin:0; text-align:center; font-weight:bold;">Ссылки по теме</p><ul style="list-style-type:none; margin:0; padding:0.3em;">
+<li style="padding:0.4em 0; line-height:1;"><a href="https://wiki.archlinux.org/index.php/Install_from_SSH_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Install from SSH (Русский)">Install from SSH (Русский)</a></li>
+</ul></div>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="./Archlinux_Bootstrap_Russian_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a><b>Эта страница нуждается в сопроводителе</b><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="./Archlinux_Bootstrap_Russian_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a></p>
+<div>Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. <a href="https://wiki.archlinux.org/index.php/%D0%9A%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%B0_%D0%BF%D0%B5%D1%80%D0%B5%D0%B2%D0%BE%D0%B4%D1%87%D0%B8%D0%BA%D0%BE%D0%B2_ArchWiki" title="Команда переводчиков ArchWiki" class="mw-redirect">Команда переводчиков ArchWiki</a></div>
+</div>
+<div class="noprint archwiki-template-message">
+<p><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="./Archlinux_Bootstrap_Russian_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a><b>Эта статья или раздел нуждается в <a href="https://wiki.archlinux.org/index.php/ArchWiki:Contributing_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9F.D0.B5.D1.80.D0.B5.D0.B2.D0.BE.D0.B4" title="ArchWiki:Contributing (Русский)">переводе</a></b><a href="https://wiki.archlinux.org/index.php/File:Tango-preferences-desktop-locale.png" class="image"><img alt="Tango-preferences-desktop-locale.png" src="./Archlinux_Bootstrap_Russian_files/Tango-preferences-desktop-locale.png" width="48" height="48"></a></p>
+<div><b>Примечания:</b> Устаревший контент был заменён английским на момент 21 февраля 2015. (обсуждение: <a rel="nofollow" class="external text" href="https://wiki.archlinux.org/index.php/Talk:Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)">Talk:Install from existing Linux (Русский)#</a>)</div>
+</div>
+<p>Этот документ описывает bootstrapping process, нужный для того, чтобы установить Arch Linux из уже работающего хоста Linux.
+После bootstrapping, установка продолжается так, как описано в <a href="https://wiki.archlinux.org/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Installation guide (Русский)">руководстве по установке</a> Arch Linux.
+</p><p>Установка Arch Linux из-под другого Linux полезна для:
+</p>
+<ul><li> беспроводной установки Arch Linux, например для виртуального сервера</li>
+<li> замены существующего Linux без LiveCD (смотрите <a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D1.83.D0.B6.D0.B5_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B5.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B1.D0.B5.D0.B7_LiveCD">#Замена уже существующей системы без LiveCD</a>)</li>
+<li> создания нового дистрибутива Linux или LiveCD основанного на Arch Linux</li>
+<li> создания chroot окружения Arch Linux, например для контейнеров Docker</li>
+<li> <a href="https://wiki.archlinux.org/index.php/Diskless_network_boot_NFS_root" title="Diskless network boot NFS root" class="mw-redirect">rootfs-over-NFS для бездисковых систем</a></li></ul>
+<p>Цель процедуры начальной загрузки в том, чтобы настроить окружение, из которого можно будет запустить <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=arch-install-scripts">arch-install-scripts</a></span> (содержит такие скрипты как <code>pacstrap</code> и <code>arch-root</code>). Установить <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=arch-install-scripts">arch-install-scripts</a></span> нужно на самой хост-системе или настройкой chroot основанного на Arch Linux.
+</p><p>Если хост работает под Arch Linux, сразу установите <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=arch-install-scripts">arch-install-scripts</a></span>.
+</p>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Примечание: </strong>Этот гайд расчитан на то, что имеющийся хост может запускать программы архитектуры нового Arch Linux. В случае с x86_64 хостом, можно даже использовать i686-pacman при сборке 32-битного окружения chroot. Смотрите <a href="https://wiki.archlinux.org/index.php/Arch64_Install_bundled_32bit_system" title="Arch64 Install bundled 32bit system" class="mw-redirect">Arch64 - установка встроенной 32-битной системы</a>.</div> 
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Arch_Linux-based_chroot"><span class="tocnumber">1</span> <span class="toctext">Arch Linux-based chroot</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.91.D0.BC_chroot"><span class="tocnumber">1.1</span> <span class="toctext">Создаём chroot</span></a>
+<ul>
+<li class="toclevel-3 tocsection-3"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_1:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Bootstrap_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.28.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D1.83.D0.B5.D1.82.D1.81.D1.8F.29"><span class="tocnumber">1.1.1</span> <span class="toctext">Способ 1: Использование Bootstrap образа (рекомендуется)</span></a></li>
+<li class="toclevel-3 tocsection-4"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7_LiveCD"><span class="tocnumber">1.1.2</span> <span class="toctext">Способ 2: Используя образ LiveCD</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-5"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC_.D0.BD.D0.B0.D1.88.D0.B5_chroot_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5"><span class="tocnumber">1.2</span> <span class="toctext">Используем наше chroot окружение</span></a>
+<ul>
+<li class="toclevel-3 tocsection-6"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B0_.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.B9_pacman"><span class="tocnumber">1.2.1</span> <span class="toctext">Начальная настройка хранилища ключей pacman</span></a></li>
+<li class="toclevel-3 tocsection-7"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0"><span class="tocnumber">1.2.2</span> <span class="toctext">Установка</span></a>
+<ul>
+<li class="toclevel-4 tocsection-8"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A5.D0.BE.D1.81.D1.82_Debian"><span class="tocnumber">1.2.2.1</span> <span class="toctext">Хост Debian</span></a></li>
+<li class="toclevel-4 tocsection-9"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.A5.D0.BE.D1.81.D1.82_Fedora"><span class="tocnumber">1.2.2.2</span> <span class="toctext">Хост Fedora</span></a></li>
+</ul>
+</li>
+<li class="toclevel-3 tocsection-10"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B"><span class="tocnumber">1.2.3</span> <span class="toctext">Настройка системы</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D1.83.D0.B6.D0.B5_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B5.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B1.D0.B5.D0.B7_LiveCD"><span class="tocnumber">2</span> <span class="toctext">Замена уже существующей системы без LiveCD</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Arch_Linux-based_chroot">Arch Linux-based chroot</span></h2>
+<p>Идея состоит в том, чтобы как бы запустить Arch Linux внутри уже имеющейся системы.
+Настоящая установка, которая будет содержаться внутри chroot, будет затем запущена из этой Arch системы.
+Есть два способа настроить и войти в chroot, они представлены ниже.
+</p>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Примечание: </strong>Хост-система должна использовать Linux 2.6.32 или новее.</div>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Примечание: </strong>Используйте только один из двух способов, и не забудьте дочитать эту статью до конца, чтобы закончить установку.</div>
+<h3><span class="mw-headline" id=".D0.A1.D0.BE.D0.B7.D0.B4.D0.B0.D1.91.D0.BC_chroot">Создаём chroot</span></h3>
+<h4><span class="mw-headline" id=".D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_1:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_Bootstrap_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7.D0.B0_.28.D1.80.D0.B5.D0.BA.D0.BE.D0.BC.D0.B5.D0.BD.D0.B4.D1.83.D0.B5.D1.82.D1.81.D1.8F.29">Способ 1: Использование Bootstrap образа (рекомендуется)</span></h4>
+<p>Скачиваем образ bootstrap с <a rel="nofollow" class="external text" href="https://www.archlinux.org/download">любого желаемого зеркала</a>, либо сразу используя прямую ссылку на нужный вам образ (с зеркала kernel.org):
+<br>Образ x86_64:
+</p>
+<pre> $ curl -O <a rel="nofollow" class="external free" href="https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-x86_64.tar.gz">https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-x86_64.tar.gz</a>
+</pre>
+<p>Образ i686:
+</p>
+<pre> $ curl -O <a rel="nofollow" class="external free" href="https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-i686.tar.gz">https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-i686.tar.gz</a>
+</pre>
+<p>Внимание! Ссылки  могут оказаться нерабочими. В этом случае перейдите по адресу <a rel="nofollow" class="external free" href="https://mirrors.kernel.org/archlinux/iso/">https://mirrors.kernel.org/archlinux/iso/</a> и найдите образ там
+</p><p>Распаковываем его:
+</p>
+<pre> # cd /tmp
+ # tar xzf &lt;путь-к-каталогу-где-образ&gt;/archlinux-bootstrap-2016.04.01-*.tar.gz
+</pre>
+<p>Выбираем подходящий для вашего интернета сервер, откуда будут загружаться основные репозитории:
+</p>
+<pre> # nano /tmp/root.*/etc/pacman.d/mirrorlist
+</pre>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Примечание: </strong>Если ваша хост-система — x86_64, а образ boostrap — i686, то также подправьте <code>/tmp/root.i686/etc/pacman.conf</code>, ясно указав <code>Architecture = i686</code>, чтобы pacman качал пакеты под архитектуру i686.</div>
+<p>Войдём в chroot
+</p>
+<ul><li> Если установлен bash 4 или новее, то:</li></ul>
+<pre>  # /tmp/root.*/bin/arch-chroot /tmp/root.*/
+</pre>
+<ul><li> Иначе:</li></ul>
+<pre>  # cd /tmp/root.*
+  # cp /etc/resolv.conf etc
+  # mount --rbind /proc proc
+  # mount --rbind /sys sys
+  # mount --rbind /dev dev
+  # mount --rbind /run run
+    (при условии, что /run существует)
+  # chroot /tmp/root.* /bin/bash
+</pre>
+<h4><span class="mw-headline" id=".D0.A1.D0.BF.D0.BE.D1.81.D0.BE.D0.B1_2:_.D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D1.8F_.D0.BE.D0.B1.D1.80.D0.B0.D0.B7_LiveCD">Способ 2: Используя образ LiveCD</span></h4>
+<p>Можно смонтировать корневой образ последнего установочного диска Arch Linux и затем заchroot'ить туда. Плюс этого способа в том, что у вас будет сразу рабочий Arch Linux installation прямо внутри хост-системы без надобности в его настройки.
+</p>
+<div style="padding: 5px; margin: 0.50em 0; background-color: #DDDDFF; border: thin solid #BBBBDD; overflow: hidden;"><strong> Примечание: </strong>Перед тем как продолжить, удостоверьтесь, что у вас последняя версия <a rel="nofollow" class="external text" href="http://squashfs.sourceforge.net/">squashfs</a> на хост-системе. Иначе будут ошибки типа: <code>FATAL ERROR aborting: uncompress_inode_table: failed to read block</code>.</div>
+<ul><li> Корневой образ можно скачать с одного из <a rel="nofollow" class="external text" href="https://www.archlinux.org/download">зеркал</a> в папке arch/x86_64/ либо arch/i686/, смотря какую архитектуру хотите. Образ имеет формат squashfs, который является read-only, поэтому нам надо распаковать его и смонтировать корневой образ (root-image.fs).</li></ul>
+<ul><li>Чтобы распаковать корневой образ, надо</li></ul>
+<pre># unsquashfs -d /squashfs-root root-image.fs.sfs</pre>
+<ul><li> Теперь смонтируем его с помощью опции loop</li></ul>
+<pre># mkdir /arch
+# mount -o loop /squashfs-root/root-image.fs /arch
+</pre>
+<ul><li> Перед тем как <a href="https://wiki.archlinux.org/index.php/Change_root" title="Change root">chrooting</a> to it, нужно смонтировать некоторые виртуальные системные разделы, а затем скопировать resolv.conf для интернета.</li></ul>
+<pre># mount -t proc none /arch/proc
+# mount -t sysfs none /arch/sys
+# mount -o bind /dev /arch/dev
+# mount -o bind /dev/pts /arch/dev/pts # важно для pacman (для проверки подписей)
+# cp -L /etc/resolv.conf /arch/etc # а это, чтобы мог работать интернет в chroot
+</pre>
+<ul><li> Теперь всё готово, чтобы to chroot в только что установленное окружение Arch</li></ul>
+<pre># chroot /arch bash</pre>
+<h3><span class="mw-headline" id=".D0.98.D1.81.D0.BF.D0.BE.D0.BB.D1.8C.D0.B7.D1.83.D0.B5.D0.BC_.D0.BD.D0.B0.D1.88.D0.B5_chroot_.D0.BE.D0.BA.D1.80.D1.83.D0.B6.D0.B5.D0.BD.D0.B8.D0.B5">Используем наше chroot окружение</span></h3>
+<h4><span class="mw-headline" id=".D0.9D.D0.B0.D1.87.D0.B0.D0.BB.D1.8C.D0.BD.D0.B0.D1.8F_.D0.BD.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.85.D1.80.D0.B0.D0.BD.D0.B8.D0.BB.D0.B8.D1.89.D0.B0_.D0.BA.D0.BB.D1.8E.D1.87.D0.B5.D0.B9_pacman">Начальная настройка хранилища ключей pacman</span></h4>
+<p>Перед установкой, ключи pacman должны быть настроены. Перед тем как вводить следующие две команды, можете почитать <a href="https://wiki.archlinux.org/index.php/Pacman-key#Initializing_the_keyring" title="Pacman-key" class="mw-redirect">pacman-key#Initializing the keyring</a>, чтобы узнать entropy requirements:
+</p>
+<pre># pacman-key --init
+# pacman-key --populate archlinux
+</pre>
+<h4><span class="mw-headline" id=".D0.A3.D1.81.D1.82.D0.B0.D0.BD.D0.BE.D0.B2.D0.BA.D0.B0">Установка</span></h4>
+<p>Следуйте <a href="https://wiki.archlinux.org/index.php/Installation_guide#Mount_the_partitions" title="Installation guide">Installation guide#Mount the partitions</a> и <a href="https://wiki.archlinux.org/index.php/Installation_guide#Install_the_base_packages" title="Installation guide">Installation guide#Install the base packages</a>.
+</p>
+<h5><span class="mw-headline" id=".D0.A5.D0.BE.D1.81.D1.82_Debian">Хост Debian</span></h5>
+<p>На хостах Debian <code>pacstrap</code> выводит следующую ошибку:
+</p>
+<pre># pacstrap /mnt base
+# ==&gt; Creating install root at /mnt
+# mount: mount point /mnt/dev/shm is a symbolic link to nowhere
+# ==&gt; ERROR: failed to setup API filesystems in new root
+</pre>
+<p>Это потому, что в Debian <code>/dev/shm</code> ссылается на <code>/run/shm</code>, который в Arch-based chroot не существует, поэтому ссылка не рабочая. Чтобы исправить это, просто создайте каталог <code>/run/shm</code>:
+</p>
+<pre># mkdir /run/shm
+</pre>
+<h5><span class="mw-headline" id=".D0.A5.D0.BE.D1.81.D1.82_Fedora">Хост Fedora</span></h5>
+<p>На хостах Fedora и Live USB, если у вас не получается сгенерировать ваш <code><a href="https://wiki.archlinux.org/index.php/Fstab_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Fstab (Русский)">fstab</a></code> с помощью <code>genfstab</code>, то удалите из fstab одинаковые записи и везде опции <code>seclabel</code> (это опция специфична для Fedora и поэтому не даст вам загрузиться).
+</p>
+<h4><span class="mw-headline" id=".D0.9D.D0.B0.D1.81.D1.82.D1.80.D0.BE.D0.B9.D0.BA.D0.B0_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B">Настройка системы</span></h4>
+<p>С этого момента просто следуйте согласно разделам начиная с «<a href="https://wiki.archlinux.org/index.php/Installation_guide_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#.D0.9C.D0.BE.D0.BD.D1.82.D0.B8.D1.80.D0.BE.D0.B2.D0.B0.D0.BD.D0.B8.D0.B5_.D1.80.D0.B0.D0.B7.D0.B4.D0.B5.D0.BB.D0.BE.D0.B2" title="Installation guide (Русский)">Монтирование разделов</a>» из <a href="https://wiki.archlinux.org/index.php/Installation_guide" title="Installation guide">руководства по установке Arch Linux</a>.
+</p>
+<h2><span class="mw-headline" id=".D0.97.D0.B0.D0.BC.D0.B5.D0.BD.D0.B0_.D1.83.D0.B6.D0.B5_.D1.81.D1.83.D1.89.D0.B5.D1.81.D1.82.D0.B2.D1.83.D1.8E.D1.89.D0.B5.D0.B9_.D1.81.D0.B8.D1.81.D1.82.D0.B5.D0.BC.D1.8B_.D0.B1.D0.B5.D0.B7_LiveCD">Замена уже существующей системы без LiveCD</span></h2>
+<p>Освободите ~650МБ, например, переформатировав существующий swap-раздел (после окончания установки, можете обратно создать swap). Если не можете столько освободить, выясните точно, какие пакеты группы base вам понадобятся для того, чтобы get a system с работающим интернетом and running in the temporary partition. То есть надо будет ясно указать каждый пакет для pacstrap. И ещё надо указать -c, чтобы пакеты скачивались на хост-систему, дабы избежать недостатка свободного места.
+</p><p>После того как установили, перезагрузитесь в свою новую систему, затем <a href="https://wiki.archlinux.org/index.php/Full_system_backup_with_rsync#With_a_single_command" title="Full system backup with rsync">rsync the entire system</a> to the primary partition.
+Fix the bootloader configuration before rebooting.
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20160511094227
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.030 seconds
+Real time usage: 0.035 seconds
+Preprocessor visited node count: 367/1000000
+Preprocessor generated node count: 1001/1000000
+Post‐expand include size: 11287/2097152 bytes
+Template argument size: 6499/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   19.822      1 - -total
+ 26.64%    5.280      5 - Template:Note_(Русский)
+ 19.81%    3.927      5 - Template:META_Box_Blue
+ 12.91%    2.560      5 - Template:META_Box
+ 11.59%    2.297     12 - Template:Ic
+  9.34%    1.851      1 - Template:Related_articles_start_(Русский)
+  9.30%    1.843      2 - Template:META_Message
+  9.02%    1.788      1 - Template:Unmaintained_(Русский)
+  8.56%    1.697      1 - Template:Translateme_(Русский)
+  8.40%    1.666      5 - Template:Bc
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:3445-0!*!0!!en!5!* and timestamp 20160511094227 and revision id 430618
+ -->
+</div><div class="printfooter">
+Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=430618">https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(Русский)&amp;oldid=430618</a>"</div>
+					<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.archlinux.org/index.php/Special:Categories" title="Special:Categories">Categories</a>: <ul><li><a href="https://wiki.archlinux.org/index.php/Category:Getting_and_installing_Arch_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Category:Getting and installing Arch (Русский)">Getting and installing Arch (Русский)</a></li><li><a href="https://wiki.archlinux.org/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9" title="Category:Русский">Русский</a></li></ul></div></div>					<!-- end content -->
+										<div class="visualClear"></div>
+				</div>
+			</div>
+		</div>
+		<div id="column-one">
+			<h2>Navigation menu</h2>
+					<div id="p-cactions" class="portlet" role="navigation">
+			<h3>Views</h3>
+
+			<div class="pBody">
+				<ul>
+				<li id="ca-nstab-main" class="selected"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="View the content page [alt-shift-c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="https://wiki.archlinux.org/index.php?title=Talk:Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=edit" title="This page is protected.
+You can view its source [alt-shift-e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=history" title="Past revisions of this page [alt-shift-h]" accesskey="h">History</a></li>
+				</ul>
+							</div>
+		</div>
+				<div class="portlet" id="p-personal" role="navigation">
+				<h3>Personal tools</h3>
+
+				<div class="pBody">
+					<ul>
+													<li id="pt-createaccount"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Install+from+existing+Linux+%28%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%29&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li>
+													<li id="pt-login"><a href="https://wiki.archlinux.org/index.php?title=Special:UserLogin&amp;returnto=Install+from+existing+Linux+%28%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9%29" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>
+											</ul>
+				</div>
+			</div>
+			<div class="portlet" id="p-logo" role="banner">
+				<a href="https://wiki.archlinux.org/index.php/Main_page" class="mw-wiki-logo" title="Visit the main page"></a>
+			</div>
+				<div class="generated-sidebar portlet" id="p-navigation" role="navigation">
+		<h3>Navigation</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-mainpage-description"><a href="https://wiki.archlinux.org/index.php/Main_page" title="Visit the main page [alt-shift-z]" accesskey="z">Main page</a></li>
+											<li id="n-categories"><a href="https://wiki.archlinux.org/index.php/Table_of_contents">Categories</a></li>
+											<li id="n-portal"><a href="https://wiki.archlinux.org/index.php/Getting_involved" title="Various ways Archers can contribute to the community">Getting involved</a></li>
+											<li id="n-currentevents"><a href="https://wiki.archlinux.org/index.php/ArchWiki:News" title="The latest lowdown on the wiki">Wiki news</a></li>
+											<li id="n-randompage"><a href="https://wiki.archlinux.org/index.php/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+									</ul>
+					</div>
+		</div>
+			<div id="p-search" class="portlet" role="search">
+			<h3><label for="searchInput">Search</label></h3>
+
+			<div id="searchBody" class="pBody">
+				<form action="https://wiki.archlinux.org/index.php" id="searchform">
+					<input type="hidden" name="title" value="Special:Search">
+					<input type="search" name="search" placeholder="Search" title="Search ArchWiki [alt-shift-f]" accesskey="f" id="searchInput" autocomplete="off">
+					<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchGoButton" class="searchButton">&nbsp;
+						<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">
+				</form>
+
+							</div>
+		</div>
+		<div class="generated-sidebar portlet" id="p-interaction" role="navigation">
+		<h3>interaction</h3>
+		<div class="pBody">
+							<ul>
+											<li id="n-help"><a href="https://wiki.archlinux.org/index.php/Category:Help" title="Wiki navigation, reading, and editing help">Help</a></li>
+											<li id="n-Contributing"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Contributing">Contributing</a></li>
+											<li id="n-recentchanges"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+											<li id="n-Recent-talks"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges?namespace=0&amp;invert=1" rel="nofollow">Recent talks</a></li>
+											<li id="n-newpages"><a href="https://wiki.archlinux.org/index.php/Special:NewPages">New pages</a></li>
+											<li id="n-Statistics"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Statistics">Statistics</a></li>
+											<li id="n-Reports"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Reports">Reports</a></li>
+											<li id="n-Requests"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Requests">Requests</a></li>
+									</ul>
+					</div>
+		</div>
+			<div class="portlet" id="p-tb" role="navigation">
+			<h3>Tools</h3>
+
+			<div class="pBody">
+				<ul>
+											<li id="t-whatlinkshere"><a href="https://wiki.archlinux.org/index.php/Special:WhatLinksHere/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="A list of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+											<li id="t-recentchangeslinked"><a href="https://wiki.archlinux.org/index.php/Special:RecentChangesLinked/Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+											<li id="t-specialpages"><a href="https://wiki.archlinux.org/index.php/Special:SpecialPages" title="A list of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+											<li id="t-print"><a href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>
+											<li id="t-permalink"><a href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;oldid=430618" title="Permanent link to this revision of the page">Permanent link</a></li>
+											<li id="t-info"><a href="https://wiki.archlinux.org/index.php?title=Install_from_existing_Linux_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)&amp;action=info" title="More information about this page">Page information</a></li>
+									</ul>
+							</div>
+		</div>
+				<div id="p-lang" class="portlet" role="navigation">
+				<h3>In other languages</h3>
+
+				<div class="pBody">
+					<ul>
+													<li class="interlanguage-link interwiki-en"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux" title="Install from existing Linux – English" lang="en" hreflang="en">English</a></li>
+													<li class="interlanguage-link interwiki-es"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Espa%C3%B1ol)" title="Install from existing Linux – español" lang="es" hreflang="es">Español</a></li>
+													<li class="interlanguage-link interwiki-fr"><a href="http://wiki.archlinux.fr/Install_chroot" title="Install chroot – français" lang="fr" hreflang="fr">Français</a></li>
+													<li class="interlanguage-link interwiki-it"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Italiano)" title="Install from existing Linux – italiano" lang="it" hreflang="it">Italiano</a></li>
+													<li class="interlanguage-link interwiki-ja"><a href="https://wiki.archlinuxjp.org/index.php/%E6%97%A2%E5%AD%98%E3%81%AE_Linux_%E3%81%8B%E3%82%89%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" title="既存の Linux からインストール – 日本語" lang="ja" hreflang="ja">日本語</a></li>
+													<li class="interlanguage-link interwiki-pt"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(Portugu%C3%AAs)" title="Install from existing Linux – português" lang="pt" hreflang="pt">Português</a></li>
+													<li class="interlanguage-link interwiki-uk"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0)" title="Install from existing Linux – українська" lang="uk" hreflang="uk">Українська</a></li>
+													<li class="interlanguage-link interwiki-zh-cn"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="Install from existing Linux – 中文（中国大陆）‎" lang="zh-CN" hreflang="zh-CN">中文（中国大陆）‎</a></li>
+													<li class="interlanguage-link interwiki-zh-tw"><a href="https://wiki.archlinux.org/index.php/Install_from_existing_Linux_(%E6%AD%A3%E9%AB%94%E4%B8%AD%E6%96%87)" title="Install from existing Linux – 中文（台灣）‎" lang="zh-TW" hreflang="zh-TW">中文（台灣）‎</a></li>
+											</ul>
+
+									</div>
+			</div>
+				</div><!-- end of the left (by default at least) column -->
+		<div class="visualClear"></div>
+					<div id="footer" role="contentinfo">
+						<ul id="f-list">
+									<li id="lastmod"> This page was last modified on 9 April 2016, at 22:13.</li>
+									<li id="copyright">Content is available under <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+									<li id="privacy"><a href="https://wiki.archlinux.org/index.php/ArchWiki:Privacy_policy" title="ArchWiki:Privacy policy">Privacy policy</a></li>
+									<li id="about"><a href="https://wiki.archlinux.org/index.php/ArchWiki:About" title="ArchWiki:About">About ArchWiki</a></li>
+									<li id="disclaimer"><a href="https://wiki.archlinux.org/index.php/ArchWiki:General_disclaimer" title="ArchWiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+		</div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="./Archlinux_Bootstrap_Russian_files/load(4).php">
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":58});
+} );</script>
+
+<div class="suggestions" style="display: none; font-size: 11.4617px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body><!-- Cached/compressed 20160511094227 --></html>

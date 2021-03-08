@@ -1,0 +1,22 @@
+
+whoer.net
+
+
+Firefox icon startup settings:
+firefox -no-remote -p
+
+
+mozila plugins:
+
+no-script
+https everywhere
+self destructing cookies
+privacy settings
+random agent spoofer
+
+
+
+
+
+
+

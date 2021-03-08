@@ -1,0 +1,322 @@
+
+C:\Windows\system32>diskpart
+
+create vdisk file=<file path> {[type=<fixed|expandable>] | [parent=<file path>] | [source=<file path>]} [maximum=<n>] [sd=<SDDL>] [noerr]
+
+Создадим файл виртуального диска размером 5Gb (помните, что в 1Gb = 1024Mb, значит нужно указать 5 * 1025 = 5120).
+DISKPART> create vdisk file=c:\virtual_disk.vhd maximum=5120
+
+В результате от логического диска «C:» будет как бы отщеплён кусок размером 5Gb и появиться файл virtual_disk.vhd размером соответствующим созданному.
+
+На заметку:
+
+Файл виртуального диска характеризуется тремя типа файлов VHD.
+
+Образ фиксированного жёсткого диска. Образ фиксированного жёсткого диска — это файл, соответствующий размеру жёсткого диска. Например, при создании виртуального жёсткого диска объёмом 2 ГБ система создаст файл, размер которого составит около 2 ГБ. Образы фиксированных жёстких дисков рекомендуется использовать на производственных серверах и при работе с данными заказчиков. Ключ: FIXED создаёт файл виртуального диска фиксированного размера.
+Образ динамического жёсткого диска. Образ динамического жёсткого диска — это файл, размер которого совпадает с объёмом фактических данных, записанных на него в заданный период времени. При записи дополнительных данных размер файла динамически увеличивается. Например, начальный размер файла в файловой системе хоста, хранящего 2 ГБ данных виртуального жёсткого диска, составляет около 2 МБ. По мере записи данных размер образа достигает максимального значения, равного 2 ГБ. Ключ: EXPANDABLE задаёт изменяемый по мере размещения данных размер файла виртуального диска.
+create vdisk file=c:\test.vhd maximum=20000 type=expandable
+Образ разностного жёсткого диска. Образ разностного жёсткого диска описывает изменение родительского образа. Полная функциональность этого типа образа жёсткого диска зависит от другого образа жёсткого диска. Родительским образом жёсткого диска может быть один из указанных типов образов жёсткого диска, включая другой образ разностного жёсткого диска. Ключ: [PARENT=<«имя_файла»>]
+, где
+
+file=c:\virtual_disk.vhd – Указание полного пути и имени файла виртуального диска.
+maximum = 5120 – Максимальное дисковое пространство, предоставляемое виртуальным диском, заданное в мегабайтах (Mb).
+
+Переведём указатель на созданный диск:
+
+DISKPART> select vdisk file=c:\virtual_disk.vhd
+
+Файл виртуального диска успешно выбран с помощью программы DiskPart.
+
+ 
+
+Подключаем созданный виртуальный диск:
+
+DISKPART> attach vdisk
+
+Завершено (в процентах): 100
+
+Файл виртуального диска успешно присоединён с помощью программы DiskPart.
+
+ 
+
+Отобразим информацию по созданному диску:
+
+DISKPART> detail vdisk
+
+Идентификатор типа устройства: 2 (Виртуальный жёсткий диск)
+
+Идентификатор поставщика: {EC984AEC-A0F9-47E9-901F-71415A66345B} (Корпорация Майкрософт)
+
+Состояние: Присоединено, но не открыто
+
+Виртуальный размер: 5120 Mбайт
+
+Физический размер: 5120 Mбайт
+
+Имя файла: c:\virtual_disk.vhd
+
+Потомок: Нет
+
+Имя файла родительского диска:
+
+Номер связанного диска: 1
+
+ 
+
+Конвертируем созданный диск:
+
+DISKPART> convert mbr
+
+DiskPart: выбранный диск успешно преобразован к формату MBR.
+
+ 
+
+Создадим раздел на диске:
+
+DISKPART> create partition primary
+
+DiskPart: указанный раздел успешно создан.
+
+ 
+
+Присвоим букву созданному разделу, к примеру «z«:
+
+DISKPART> assign letter=z
+
+DiskPart: назначение имени диска или точки подключения выполнено успешно.
+
+ 
+
+Отформатируем раздел под файловую систему NTFS:
+
+DISKPART> format fs=ntfs label=»vhd_disk» quick
+
+
+
+
+
+
+
+
+
+
+In Windows 7, new commands have been added in DiskPart to allow for the creation and management of Virtual Hard Disks (.vhd files).  The DiskPart VHD management commands have been provided below in 2 sections – commonly used commands with examples and other commands.  It is assumed in each of the examples that DiskPart.exe has already been launched in an elevated command prompt.
+
+Creating a VHD
+The example below creates a 20GB dynamically expanding VHD called "test.vhd" and places it in the root of the C: drive.  Note that the type parameter is optional and the default type is fixed.
+
+create vdisk file=c:\test.vhd maximum=20000 type=expandable
+
+Attaching a VHD
+The following example shows how to select and attach the VHD.  It also provides steps for partitioning, formatting and assigning a drive letter to the attached VHD.
+select vdisk file=c:\test.vhd
+attach vdisk
+create partition primary
+format fs=ntfs label="Test VHD" quick
+assign letter=v
+
+
+Detaching the VHD
+To detach (i.e. unmount) the VHD, use the following example:
+select vdisk file=c:\test.vhd
+detach vdisk
+
+Note: All 3 of these VHD actions can also be performed in the Disk Management Console of Windows 7.
+
+In addition, below are some other DiskPart commands that can be used to manage VHDs:
+
+create vdisk file=c:\testdiff.vhd parent=c:\test.vhd – This will create a differencing "child" VHD (testdiff.vhd) so that the existing parent VHD (test.vhd) is not modified.  Useful when you have an image on the parent VHD that you don’t want modified.  When needing to go back to the default image, only the differencing VHD would need to be replaced.  The differencing VHD typically starts out very small – usually less than a megabyte.  As a result, it is easy to back up and replace.
+expand vdisk maximum=<size in mb> – This expands the maximum size on a VHD.  For this to work, the virtual disk must already be selected, detached and be a non-differencing VHD.  In addition, if you do have a differencing VHD and expand the parent VHD, you will need to create a new differencing VHD.  Otherwise you will encounter a VHD corruption error when trying to select/manage the differencing VHD.
+merge vdisk depth=1 – Merges a child VHD with its parent.  This command can be used to merge one or more differencing ("child") VHDs with its corresponding parent VHD.
+compact vdisk – Compacts a selected VHD to reduce the physical size.  Can only be used on VHDs that are type expandable and are either detached, or attached as read only.
+
+Resources
+
+
+В Windows 7 в DiskPart были добавлены новые команды, позволяющие создавать виртуальные жесткие диски и управлять ими (.VHD-файлы).  Команды управления VHD DiskPart были представлены ниже в 2 разделах-обычно используемые команды с примерами и другими командами.  Предполагается в каждом из примеров, что DiskPart.exe уже запущен в командной строке с повышенными правами.
+
+Создание виртуального жесткого диска
+Пример ниже создает динамически расширяемый виртуальный жесткий диск 20ГБ под названием "Тест.vhd" и помещает его в корень диска C:.  Обратите внимание, что параметр type является необязательным, а тип по умолчанию является фиксированным.
+
+создать файл vdisk=c:\test.vhd maximum=20000 тип=расширяемый
+
+Подключение виртуального жесткого диска
+В следующем примере показано, как выбрать и подключить виртуальный жесткий диск.  Он также содержит инструкции по разбиению на разделы, форматированию и назначению буквы диска для подключенного виртуального жесткого диска.
+выберите vdisk file=c:\test.VHD-файл
+присоединить виртуальный диск
+создать первичный раздел 
+формат fs=ntfs label=" Test VHD " быстрый
+назначение Буквы=в
+
+
+Отсоединение виртуального жесткого диска
+Чтобы отсоединить (т. е. размонтировать) VHD, используйте следующий пример:
+выберите vdisk file=c:\test.VHD-файл
+отсоединить виртуальный диск
+
+Примечание: все 3 из этих действий VHD также могут быть выполнены в консоли управления дисками Windows 7.
+
+Кроме того, ниже приведены некоторые другие команды DiskPart, которые можно использовать для управления виртуальными дисками:
+
+создать виртуальный диск файл=с:\testdiff.Родительский виртуальный жесткий диск=C: тест\.виртуальный жесткий диск – это позволит создать разностный "ребенок" виртуальный жесткий диск (testdiff.виртуальный жесткий диск) так, что существующие Родительский виртуальный жесткий диск (тест.vhd) не изменяется.  Полезно, когда у вас есть образ на родительском VHD, который вы не хотите изменять.  При необходимости вернуться к образу по умолчанию необходимо будет заменить только разностный VHD.  Разностный виртуальный жесткий диск, как правило, начинается очень невелики – обычно менее мегабайта.  В результате, легко сделать резервную копию и заменить.
+развернуть vdisk maximum=<размер в Мб> - это расширяет максимальный размер на VHD.  Чтобы это работало, виртуальный диск уже должен быть выбран, отсоединен и быть недифференцированным виртуальным жестким диском.  Кроме того, если у вас есть разностный виртуальный жесткий диск и расширить Родительский виртуальный жесткий диск, вам нужно создать новый разностный виртуальный жесткий диск.  В противном случае вы столкнетесь с ошибка виртуальный жесткий диск при попытке выбрать/Управление разностный виртуальный жесткий диск.
+merge vdisk depth=1-объединяет дочерний виртуальный жесткий диск с родительским.  Эта команда может использоваться для объединения одного или нескольких разностных ("дочерних") виртуальных жестких дисков с соответствующим родительским виртуальным жестким диском.
+компактный виртуальный диск – компакты выбранного виртуального жесткого диска, чтобы уменьшить физический размер.  Может использоваться только на виртуальных жестких дисках с возможностью расширения типа, которые отсоединены или присоединены только для чтения.
+
+Ресурсы
+
+
+
+
+
+create vdisk file=<file path> {[type=<fixed|expandable>] | [parent=<file path>] | [source=<file path>]} [maximum=<n>] [sd=<SDDL>] [noerr]
+
+Parameters
+Parameter
+
+Description
+
+file=<file path>
+
+Specifies the full path and file name of the VHD file to create. If type, parent, or source is not specified, a fixed VHD is created. The file path can be to a network share.
+
+type=<fixed|expandable>
+
+Specifies one of the following parameters:
+
+Fixed (default): Creates a fixed VHD, which has an allocated size that does not change. For example, if you create a fixed VHD that is 24 gigabytes (GB), the file will be approximately 24 GB (with some space used for the internal VHD structure) regardless of the data that is written to it. Creating a fixed VHD takes longer than creating an expandable VHD because the entire file is allocated at the time it is created.
+
+Expandable: Creates a dynamically expanding VHD, which expands to accommodate the data that it contains. For example, a 24 GB dynamically expanding VHD is initially around 80 megabytes (MB) on the host file system. As data is written to the VHD, the file grows, but it has a maximum size of 24 GB.
+
+parent=<file path>
+
+Specifies to create a differencing VHD file that is a child of the parent VHD at <file path>. The differencing VHD contains only the changes from the parent VHD. The parent can be any type of VHD (fixed, dynamically expanding, or differencing). The parent VHD is read-only, so you must modify the differencing VHD. When you use this parameter to create a differencing VHD, you cannot specify the type parameter. This is because the differencing VHD file always uses the type from the parent VHD.
+
+source=<file path>
+
+Specifies to create a new VHD file that is a copy of the source file at <file path>. Note that there is no parent-child relationship established between the new VHD and the source VHD.
+
+maximum=<n>
+
+The maximum amount of space that is exposed by the VHD file in megabytes (MB). You should only specify maximum when you are creating a fixed or dynamically expanding VHD file.
+
+sd=<SDDL>
+
+Sets the user filter on the VHD file. The filter string must be in the Security Descriptor Definition Language (SDDL) format. If you do not specify a security descriptor, the security descriptor from the parent directory is used.
+
+SDDL strings can be complex but in its simplest form, a security descriptor that protects access is knows as a discretionary access control list (DACL). It is of the form: D:<dacl_flags><string_ace1><string_ace2>... <string_acen>
+
+Common DACL flags are:
+
+A – Allow access
+
+D – Deny access
+
+Common rights are:
+
+GA – All access
+
+GR – Read access
+
+GW – Write access
+
+Common user accounts are:
+
+BA – Built in administrators
+
+AU – Authenticated users
+
+CO – Creator owner
+
+WD - Everyone
+
+Examples:
+
+D:P:(A;;GR;;;AU gives read-access to all authenticated users
+
+D:P:(A;;GA;;;WD gives everyone full access
+
+noerr
+
+Used for scripting only. When an error is encountered, DiskPart continues to process commands as if the error did not occur. Without this parameter, an error causes DiskPart to exit with an error code.
+
+
+
+
+
+create vdisk file=<file path> {[type=<fixed|expandable>] | [parent=<file path>] | [source=<file path>]} [maximum=<n>] [sd=<SDDL>] [noerr]
+
+Параметры
+Параметр
+
+Описание
+
+file= < путь к файлу>
+
+Указывает полный путь и имя создаваемого VHD-файла. Если тип, родитель, или источник не указан, создается фиксированный виртуальный жесткий диск. Путь к файлу может быть к сетевому ресурсу.
+
+тип= < фиксированный / расширяемый>
+
+Задает один из следующих параметров:
+
+Фиксированный (по умолчанию): создает фиксированный VHD, который имеет выделенный размер, который не изменяется. Например, если вы создадите фиксированный виртуальный жесткий диск объемом 24 гигабайта (ГБ), то размер файла составит примерно 24 ГБ (с некоторым пространством, используемым для внутренней структуры виртуального жесткого диска) независимо от записываемых в него данных. Создание фиксированного виртуального жесткого диска занимает больше времени, чем создание расширяемого виртуального жесткого диска, поскольку весь файл выделяется в момент его создания.
+
+Расширяемый: создает динамически расширяющийся виртуальный жесткий диск, который расширяется для размещения содержащихся в нем данных. Например, 24-гигабайтный динамически расширяющийся виртуальный жесткий диск изначально занимает около 80 мегабайт (МБ) в файловой системе хоста. По мере записи данных на VHD файл растет, но его максимальный размер составляет 24 ГБ.
+
+parent= < путь к файлу>
+
+Указывает на создание разностного VHD-файла, являющегося дочерним элементом родительского VHD по адресу <путь к файлу>. Разностный виртуальный жесткий диск содержит только изменения в родительский виртуальный жесткий диск. Родителем может быть любой тип VHD (фиксированный, динамически расширяющийся или разностный). Родительский виртуальный жесткий диск доступен только для чтения, поэтому необходимо изменить разностный виртуальный жесткий диск. При использовании этого параметра для создания разностного виртуального жесткого диска параметр типа указать нельзя. Это связано с тем, что разностный VHD-файл всегда использует тип из родительского VHD.
+
+source= < путь к файлу>
+
+Указывает на создание нового VHD-файла, являющегося копией исходного файла по адресу <путь к файлу>. Обратите внимание, что между новым виртуальным жестким диском и исходным виртуальным жестким диском не установлена связь "родитель-потомок".
+
+максимум=<n>
+
+Максимальный объем пространства, предоставляемого файлом VHD, в мегабайтах (МБ). Максимальное значение следует указывать только при создании фиксированного или динамически расширяющегося VHD-файла.
+
+СД=<строку sddl>
+
+Задает пользовательский фильтр для VHD-файла. Строка фильтра должна быть в формате языка определения дескриптора безопасности (SDDL). Если дескриптор безопасности не указан, используется дескриптор безопасности из родительского каталога.
+
+Строки SDDL могут быть сложными, но в своей простейшей форме дескриптор безопасности, защищающий доступ, известен как список управления доступом (DACL). Он имеет вид: D:<dacl_flags><string_ace1><string_ace2>... <string_acen>
+
+Общие флаги DACL являются:
+
+A-разрешить доступ
+
+D-запретить доступ
+
+Общие права:
+
+Га – доступ
+
+Гр – чтение
+
+GW-доступ на запись
+
+Общие учетные записи пользователей являются:
+
+BA-встроенные администраторы
+
+Пользователи, прошедшие проверку подлинности AU
+
+Совладелец создатель 
+
+WD-все
+
+Образцы:
+
+D: P:(A;; GR;;; AU предоставляет доступ для чтения всем аутентифицированным пользователям
+
+D: P:(A;; GA;;; WD предоставляет ВсеМ полный доступ
+
+юридической компании Noerr
+
+Используется только для сценариев. При обнаружении ошибки DiskPart продолжает обрабатывать команды, как если бы ошибка не произошла. Без этого параметра ошибка приводит к выходу DiskPart с кодом ошибки.
+
+
+
+
+
+

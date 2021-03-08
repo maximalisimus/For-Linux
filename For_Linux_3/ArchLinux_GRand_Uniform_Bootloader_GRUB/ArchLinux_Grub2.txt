@@ -1,0 +1,38 @@
+1. Устанавливаем пакет GRUB2 для UEFI:
+
+pacman-db-upgrade
+pacman -Syy
+pacman -S grub2-efi-x86_64
+2. Устанавливаем загрузчик в UEFI-раздел.
+
+grub_efi_x86_64-install --root-directory=/boot/efi --boot-directory=/boot/efi/efi --bootloader-id=grub --no-floppy --recheck --debug
+    
+Хотя --boot-directory и указана как /boot/efi/efi, у меня создалась почему-то /boot/efi/EFI.
+1. Осталось только сгенерировать конфигурационный файл для GRUB2 и скопировать файл grubx64.efi в нужное место:
+
+grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+cp /boot/efi/EFI/grub/grubx64.efi /boot/efi/EFI/boot/bootx64.efi
+    
+Можно загружаться в установленную систему.
+ИСПРАВЛЯЕМ ОШИБКУ ПРИ ЗАГРУЗКЕ GRUB2 ERROR: NO SUITABLE MODE FOUND [8]
+1. Копируем шрифт:
+
+cp /usr/share/grub/unicode.pf2 /boot/efi/EFI/grub/
+2. Добавляем в /boot/efi/EFI/grub/grub.cfg строки:
+
+insmod efi_gop
+insmod efi_uga
+insmod font
+if loadfont ${prefix}/unicode.pf2
+then
+    insmod gfxterm
+    set gfxmode=auto
+    set gfxpayload=keep
+    terminal_output gfxterm
+fi
+    
+    
+    
+    
+    
+    

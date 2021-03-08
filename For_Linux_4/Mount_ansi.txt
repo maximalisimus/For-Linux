@@ -1,0 +1,38 @@
+
+Mount ISO:
+# sudo mount -t iso9660 -o loop /home/file.iso /home/iso
+
+Mount SMB Network Directoryes:
+# sudo mount -t smbfs -o username=vasja,password=pupkin //pupkin_v/Video /home/user/video
+
+
+Mount CD / DVD: 
+# sudo mount -t iso9660 -o ro /dev/cdrom /cd
+
+Mount -o force :
+# sudo mount -t ext3 -o force /dev/sdb1 /home/user/Видео
+
+Mount -o rw - access write, -o ro access read:
+# sudo mount -t ext3 -o rw /dev/sdb1 /home/user/Видео
+# sudo mount -t ext3 -o rw,iocharset=utf8,codepage=866 /dev/sdb1 /home/user/Видео
+
+
+-t ntfs or -t ntfs-3g
+-t vfat
+-t iso9660
+
+
+mount -t udf filename.img ~/img -o loop
+
+mount -o loop,noatime -t ext2 /sdcard/ubuntu.img /mnt/ubuntu
+
+
+
+
+
+
+
+
+
+
+

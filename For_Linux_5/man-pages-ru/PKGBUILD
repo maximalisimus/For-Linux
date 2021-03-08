@@ -1,0 +1,32 @@
+# Maintainer: Viktor Drobot (aka dviktor) linux776 [at] gmail [dot] com
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+
+pkgname=man-pages-ru
+pkgver=5.03_2390_2390_20191017
+pkgrel=1
+_ubver=0.98
+pkgdesc="Russian Linux man pages"
+arch=(any)
+url="https://sourceforge.net/projects/man-pages-ru/"
+depends=(man)
+license=('FDL')
+source=("http://downloads.sourceforge.net/project/man-pages-ru/man-pages-ru_${pkgver//_/-}.tar.bz2"
+		"https://mirror.yandex.ru/ubuntu/pool/universe/m/manpages-ru/manpages-ru_${_ubver}.orig.tar.gz")
+
+md5sums=('SKIP'
+		'SKIP')
+
+package() {
+	cd "$srcdir"/man-pages-ru_${pkgver//_/-}
+	mkdir -p "$pkgdir"/usr/share/man/ru
+	mv man* "$pkgdir"/usr/share/man/ru/
+	cp -Rfa "$srcdir"/manpages-ru-${_ubver}.orig/man* "$pkgdir"/usr/share/man/ru/
+	
+	cd "$pkgdir"/usr/share/man/ru
+	rm -f man5/passwd.5*
+	rm -f man3/getspnam.3*
+
+	find . -type d -exec chmod 0755 {} \;
+	find . -type f -exec chmod 0644 {} \;
+}

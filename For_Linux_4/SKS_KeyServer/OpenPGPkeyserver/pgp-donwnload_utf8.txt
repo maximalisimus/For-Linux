@@ -1,0 +1,16 @@
+﻿
+FTP:
+
+wget -m -nH --cut-dirs=3 ftp://keyserver.mattrude.com/current
+
+
+
+
+wget -crp -e robots=off -l1 --no-parent --cut-dirs=3 -nH -A pgp,txt https://keyserver.mattrude.com/dump/current/
+
+
+
+
+
+
+

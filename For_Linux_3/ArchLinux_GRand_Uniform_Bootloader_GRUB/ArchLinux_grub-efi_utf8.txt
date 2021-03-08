@@ -1,0 +1,29 @@
+﻿
+genfstab /mnt >> /mnt/etc/fstab
+
+ln -sf /user/share/zoneinfo/Russia/Moscow /etc/localtime
+
+hwclock --systohc
+
+## locale.gen, vconsole.conf
+
+nano /etc/hostname
+
+## myhostname
+
+nano /etc/hosts
+
+# ....localhost myostname
+
+mkinitcpio -p linux
+
+pacman -Sy grub efibootmgr intel-ucode
+
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+
+
+

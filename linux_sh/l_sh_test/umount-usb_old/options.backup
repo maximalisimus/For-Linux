@@ -1,0 +1,9 @@
+##
+##
+## Configuration File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+ABSOLUT_FILENAME=`readlink -e "$0"`
+filesdir=`dirname "$ABSOLUT_FILENAME"`

@@ -1,0 +1,27 @@
+##
+##
+## Portuguese Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="A extracao de dispositivos USB"
+_menu_body="\nPor favor, selecione o seu dispositivo USB.\n"
+_pass_title="A introducao da palavra-passe"
+_pass_body="\nPor favor, insira a senha do usuario.\n"
+_MSG_Title="Erro"
+_MSG_Body="O dispositivo USB nao e detectado\n"
+_select_type_pass_title="Configurar a senha do usuario"
+_select_type_pass_body="\nPor favor, selecione o modo de operacao do programa.\n\n"
+_no_pass_menu="Sem senha"
+_memory_pass_menu="Lembrar senha"
+_input_pass_menu="A re-introducao de palavra-passe"
+_info_pass_type_title="Uma mensagem informativa sobre o modo de funcionamento do programa"
+_inf0="\nDeste modo depende a operacionalidade do programa\n"
+_info1="$_inf0\nNo modo 'sem introduzir a palavra-passe' - uma senha de usuario e definida em branco\n"
+_info2="No modo 'Lembrar senha' - a palavra-chave e registrado no arquivo de configuracoes\n"
+_info3="\nNo modo de 'Re-introducao de palavra-passe' - de senha sera exibido sempre que retirar\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="A configuracao inicial do"
+_info_install_body="\nE feita a configuracao inicial do programa.\nA configuracao de idioma do sistema e modo de funcionamento do aplicativo.\nBem como a instalacao de um pacote dependente para o funcionamento do subsistema de graficos de aplicacao - xdialog\n\n"

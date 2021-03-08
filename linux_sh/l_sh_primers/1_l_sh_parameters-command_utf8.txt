@@ -1,0 +1,181 @@
+﻿
+#!/bin/bash
+
+mycomputer="Lenovo G510"
+myOS=`uname -a`
+
+echo "This script name is $0"
+echo "Privet $1"
+echo "Hello $2"
+
+num1=50
+num2=45
+summa=$((num1+num2))
+
+echo "$num1 + $num2 = $summa"
+
+myhost=`hostname`
+mygtw="8.8.8.8"
+
+ping -c 4 $myhost
+ping -c 4 $mygtw
+
+echo -n "This is done..."
+echo "Really done"
+
+
+
+
+
+# Проверка параметров
+
+if [ -n "$1" ]
+then
+echo Hello $1.
+else
+echo "No parameters found. "
+fi
+
+
+
+# Подсчёт параметров
+
+echo There were $# parameters passed.
+
+# ИЛИ так не требующее знания их количества
+
+# echo The last parameter was ${!#}
+
+
+
+
+
+
+Ключи командной строки
+
+
+
+
+#!/bin/bash
+echo
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "Found the -a option" ;;
+-b) echo "Found the -b option" ;;
+-c) echo "Found the -c option" ;;
+*) echo "$1 is not an option" ;;
+esac
+shift
+done
+
+
+
+Запустим скрипт:
+
+$ ./myscript –a –b –c –d
+
+
+
+
+
+
+Как различать ключи и параметры
+
+
+
+#!/bin/bash
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "Found the -a option" ;;
+-b) echo "Found the -b option";;
+-c) echo "Found the -c option" ;;
+--) shift
+break ;;
+*) echo "$1 is not an option";;
+esac
+shift
+done
+count=1
+for param in $@
+do
+echo "Parameter #$count: $param"
+count=$(( $count + 1 ))
+done
+
+
+
+
+Обработка ключей со значениями
+
+
+
+
+./myscript -a -b test1 -d
+
+
+
+
+#!/bin/bash
+while [ -n "$1" ]
+do
+case "$1" in
+-a) echo "Found the -a option";;
+-b) param="$2"
+echo "Found the -b option, with parameter value $param"
+shift ;;
+-c) echo "Found the -c option";;
+--) shift
+break ;;
+*) echo "$1 is not an option";;
+esac
+shift
+done
+count=1
+for param in "$@"
+do
+echo "Parameter #$count: $param"
+count=$(( $count + 1 ))
+done
+
+
+
+
+
+
+Использование стандартных ключей
+
+
+
+
+-a Вывести все объекты.
+-c Произвести подсчёт.
+-d Указать директорию.
+-e Развернуть объект.
+-f Указать файл, из которого нужно прочитать данные.
+-h Вывести справку по команде.
+-i Игнорировать регистр символов.
+-l Выполнить полноформатный вывод данных.
+-n Использовать неинтерактивный (пакетный) режим.
+-o Позволяет указать файл, в который нужно перенаправить вывод.
+-q Выполнить скрипт в quiet-режиме.
+-r Обрабатывать папки и файлы рекурсивно.
+-s Выполнить скрипт в silent-режиме.
+-v Выполнить многословный вывод.
+-x Исключить объект.
+-y Ответить «yes» на все вопросы.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

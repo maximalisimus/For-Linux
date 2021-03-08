@@ -1,0 +1,60 @@
+
+https://wiki.archlinux.org/index.php/Video_game_platform_emulators_(–усский)
+https://ru.wikipedia.org/wiki/—писок_эмул€торов_игровых_приставок
+
+
+
+Citra Ч Ёмул€тор Nintendo 3DS
+DeSmuME Ч Ёмул€тор Nintendo DS - desmume - Community
+Dolphin Ч Ёмул€тор GameCube и Wii с широкими возможност€ми.
+epsxe Ч Ёмул€тор PlayStation дл€ ѕ  с архитектурой x86.
+FCEUX Ч NTSC и PAL 8-битный эмул€тор Nintendo/Famicom
+Gambatte Ч “очный эмул€тор Game Boy Color
+Gens2 Ч Ёмул€тор Sega Genesis, Sega CD и 32X - gens - Multilib
+Flycast - Sega Dreamcast
+mednafen Ч  онсольный мультисистемный эмул€тор MegaDrive, SNES - mednafen - Community
+Mupen64Plus Ч ¬ысокосовместимый эмул€тор Nintendo 64 с системой плагинов - mupen64plus - Community, Client
+pSX Ч Ёмул€тор PlayStation с относительно высокой совместимостью и без системы плагинов
+PCSXR Ч PS1
+PCSX2 Ч PS2 - pcsx2 - Multilib
+RPCS3 Ч PS3
+PPSSPP Ч PSP - ppsspp - Community
+bsnes Ч эмул€тор Super Nintendo (SNES, NES, Game Boy, WonderSwan)
+Visual Boy Advance Ч Ёмул€тор Game Boy с поддержкой Game Boy Advance, Game Boy Color и Super Game Boy - vbam-wx - Community
+XQEMU Ч ќригинальный эмул€тор Xbox
+Xenia - Xbox 360
+Yuzu Ч Ёкспериментальный свободный эмул€тор и отладчик Nintendo Switch
+
+
+
+DOSBox Ч —вободный эмул€тор DOS, в основном фокусирующийс€ на запуске DOS-игр - dosbox - Community
+DOSEmu Ч —вободный эмул€тор DOS - dosemu - Community
+
+
+
+
+Citra Ч Nintendo 3DS
+DeSmuME Ч Nintendo DS
+Dolphin Ч GameCube, Wii
+epsxe Ч PS for PC x86
+FCEUX Ч NTSC, PAL 8-bit Nintendo/Famicom
+Gambatte Ч Game Boy Color
+Gens2 Ч Sega Genesis, Sega CD
+Flycast - Sega Dreamcast
+mednafen Ч MegaDrive, SNES
+Mupen64Plus Ч Nintendo 64
+pSX Ч PS (скорее всего не нужна)
+PCSXR Ч PS1
+PCSX2 Ч PS2
+RPCS3 Ч PS3
+PPSSPP Ч PSP
+bsnes Ч Super Nintendo (SNES, NES, Game Boy, WonderSwan)
+Visual Boy Advance Ч Game Boy, Game Boy Advance, Game Boy Color, Super Game Boy
+XQEMU Ч Xbox
+Xenia - Xbox 360
+Yuzu Ч Nintendo Switch
+DOSBox Ч DOS
+DOSEmu Ч DOS
+
+
+

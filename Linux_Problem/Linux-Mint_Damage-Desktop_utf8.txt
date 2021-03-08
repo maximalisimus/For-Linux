@@ -1,0 +1,50 @@
+﻿
+### <CTRL>+<ALT>+<F2> or <CTRL>+<ALT>+<F5>
+
+# Delete to repository on error
+
+# Then autoremove subordinate-repository and update package
+
+$ sudo apt update
+
+### delete <meta> packets. If cinnamon then 
+
+# sudo apt remove mint-meta-cinnamon
+
+### If error to remove then
+
+# sudo apt remove cinnamon cinnamon-control-center
+# sudo apt remove libcinnamon*
+
+# sudo apt autoremove
+
+### When been removed all error subordinate error packets 
+### Then autoremove subordinate-repository and update package
+### And ReInstall all packets
+
+# sudo apt install mint-meta-cinnamon
+
+### Check work and don't error version
+# cinnamon --version
+
+# reboot --reboot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

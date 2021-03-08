@@ -1,0 +1,47 @@
+
+
+игнорировать часть вашего проекта (не учитывается для определения языка)
+static/* linguist-vendored
+
+считают частью проекта документации:
+docs/* linguist-documentation
+
+указать некоторые файлы с определенным расширением (например *.rb) следует считать конкретным язык:
+*.rb linguist-language=Java
+
+
+много грубой силы, но я использовал это .gitattributes file:
+* linguist-vendored
+*.js linguist-vendored=false
+Он говорит, чтобы игнорировать все файлы, за исключением .js, поэтому JavaScript становится единственным возможным языком.
+
+
+
+The following built in patterns are available:
+
+ada 		- suitable for source code in the Ada language.
+bash 		- suitable for source code in the Bourne-Again SHell language. Covers a superset of POSIX shell function definitions.
+bibtex 		- suitable for files with BibTeX coded references.
+cpp 		- suitable for source code in the C and C++ languages.
+csharp 		- suitable for source code in the C# language.
+css 		- suitable for cascading style sheets.
+dts 		- suitable for devicetree (DTS) files.
+elixir 		- suitable for source code in the Elixir language.
+fortran 	- suitable for source code in the Fortran language.
+fountain 	- suitable for Fountain documents.
+golang 		- suitable for source code in the Go language.
+html 		- suitable for HTML/XHTML documents.
+java 		- suitable for source code in the Java language.
+markdown 	- suitable for Markdown documents.
+matlab 		- suitable for source code in the MATLAB and Octave languages.
+objc 		- suitable for source code in the Objective-C language.
+pascal 		- suitable for source code in the Pascal/Delphi language.
+perl 		- suitable for source code in the Perl language.
+php 		- suitable for source code in the PHP language.
+python 		- suitable for source code in the Python language.
+ruby 		- suitable for source code in the Ruby language.
+rust 		- suitable for source code in the Rust language.
+tex 		- suitable for source code for LaTeX documents.
+
+
+

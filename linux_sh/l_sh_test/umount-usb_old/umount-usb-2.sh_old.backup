@@ -1,0 +1,50 @@
+#!/bin/bash
+ANSWER="./user.usb"
+rm -rf $ANSWER
+my_usb="./usb.dev"
+my_usb_mount="./.usb.mount"
+rm -rf $my_usb_mount
+rm -rf $my_usb
+system=$(uname -s)
+version=$(uname -r)
+archi=$(uname -m)
+_backtitle="${system} ${version} ${archi}"
+_menu_title="Извлечение устройств USB"
+_menu_body="\nПожалуйста выберите ваше USB устройство\n"
+_pass_title="Введение пароля"
+_pass_body="\nВведите пожалуйста пароль пользователя\n"
+_MSG_Title="Ошибка"
+_MSG_Body="Устройства USB не обнаружены\n"
+lsblk -o NAME,MODEL,TYPE,FSTYPE,SIZE,MOUNTPOINT | grep -v "loop" | grep -v "room" | grep -v "arch-airootfs" | grep -Ei "vfat|ntfs" | awk '{print $5}' > $my_usb_mount
+usb=""
+unset usb
+szPassword=""
+if [[ $(cat $my_usb_mount) != "" ]]; then
+	point=$(lsblk -o NAME,MODEL,TYPE,FSTYPE,SIZE,MOUNTPOINT | grep -v "loop" | grep -v "room" | grep -v "arch-airootfs" | grep -i "vfat" | awk '{print $5}' | sed 's/\/run\/media\/utv\///')
+	for i in ${point[*]}; do
+		lsblk -o NAME,MODEL,TYPE,FSTYPE,SIZE,MOUNTPOINT | grep -v "loop" | grep -v "room" | grep -v "arch-airootfs" | grep -i "$i" | grep -Ei "vfat|ntfs" | awk '{print $1}{print $4}' | sed 's/└─//' >> $my_usb
+	done
+	if [[ $(cat $my_usb) != "" ]]; then
+		for i in $(cat $my_usb); do
+			# usb="${usb} $i -"
+			usb="${usb} $i"
+		done
+		Xdialog --backtitle "$_backtitle" --title "$_menu_title" --menu "$_menu_body" 0 0 16 ${usb} 2>${ANSWER}
+		eject_usb=$(cat ${ANSWER})
+		#dialog --backtitle "$VERSION - $SYSTEM ($ARCHI)" --title "$_pass_title" --inputbox "$_pass_body" 0 0 "" 2>${ANSWER}
+		#szPassword=$(cat ${ANSWER})
+		szPassword="utv"
+		printf "%s\n" "$szPassword" | sudo --stdin umount -l /dev/$eject_usb
+	else
+		Xdialog --backtitle "$_backtitle" --title "$_MSG_Title" --msgbox "$_MSG_Body" 10 50
+	fi
+else
+	Xdialog --backtitle "$_backtitle" --title "$_MSG_Title" --msgbox "$_MSG_Body" 10 50
+fi
+clear
+rm -rf $ANSWER
+unset usb
+unset szPassword
+rm -rf $my_usb
+rm -rf $my_usb_mount
+exit 0

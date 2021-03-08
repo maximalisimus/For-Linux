@@ -1,0 +1,48 @@
+
+#!/bin/bash
+
+echo "Start ..."
+
+net=( $(ip -o link show | gawk '{print $2}' | tr -d ':') )
+mac=( $(ip -o link show | gawk "{print $17}") )
+ip=( $(ip -o address show | grep inet | gawk '{print $4}' | grep -v "::1/128" | cut -d: -f2) )
+
+count=0
+
+for letter in "${net[@]}"
+do
+if [ "${ip[$count]}" != "" ]; then
+echo "Device $letter MAC: ${mac[$count]}; IP: ${ip[$count]}"
+let count+=1
+fi
+done
+
+
+echo "Done ..."
+
+
+
+
+ip link -o show | grep ether | gawk '{print $2}' | tr -d ':'
+
+ip link -o show | grep ether | gawk '{print $17}'
+
+ip link -o show | grep ether | gawk '{print $9}' | tr -d ':'
+
+
+ip address show | grep inet | gawk '{print $2}' | cut -d: -f2
+
+ip -o addr show | grep inet | gawk '{print $4}' | grep -v "::1/128"
+
+
+
+
+
+
+
+
+
+
+
+
+

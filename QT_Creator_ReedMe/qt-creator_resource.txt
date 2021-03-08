@@ -1,0 +1,33 @@
+File: untitled.pro
+
+RESOURCES += \
+    resource.qrc
+
+
+
+
+File: resource.rqc
+
+<RCC>
+    <qresource prefix="/">
+        <file>style.css</file>
+    </qresource>
+    <qresource prefix="/QStars/Speed"/>
+    <qresource prefix="/QStars/ShowShips"/>
+</RCC>
+
+
+
+QFile styleFile(":/qss/style.qss");
+styleFile.open(QFile::ReadOnly);
+app.setStyleSheet(styleFile.readAll());
+styleFile.close();
+
+
+
+
+
+
+
+
+

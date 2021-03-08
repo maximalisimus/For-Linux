@@ -1,0 +1,179 @@
+﻿Допиливание BackTrack 5 - часть.1
+1. Устанавливаем "путем полной инсталляции"
+- либо на флешку;
+- либо на хард.
+(этот этап я пропускаю, тут все понятно)
+-----------------------------------------------------------------------------------------------------------------------------
+2. Первая загрузка рабочего стола
+login: root
+pass: toor
+Запуск иксов: startx
+Первым делом избавляемся от утомительного ввода логина - пароля, запуска иксов:
+1. Открываем терминал;
+2. apt-get update
+3. aptitude install rungetty
+4. gedit /etc/init/tty1.conf
+5. заменяем строчку: #exec /sbin/getty -8 38400 tty1 на exec /sbin/rungetty tty1 --autologin root
+6. сохраняем результат
+7. далее: gedit /root/.bash_profile  вписываем startx
+8. сохраняем.
+(если кто может сделать bash скрипт, из пункта 2 и 3 буду очень благодарен. Появится возможно одним скриптом, все этапы первой части моего мануала автоматизировать полностью)
+------------------------------------------------------------------------------------------------------------------------------
+3. Далее меняем xsplash (не знаю как вам, но тот красный который по умолчанию стоит меня раздражает)
+Ubuntu Lucid использует систему plymouth для отображения загрузочной заставки xsplash. Все темы хранятся в /lib/plymouth/themes, а по умолчанию в 10.04 используется тема ubuntu-logo. Настройки же хранятся в файле /lib/plymouth/themes/default.plymouth.
+"У него вот такое содержание:"
+    [Plymouth Theme]
+    Name=Ubuntu Logo
+    Description=A theme that features a blank background with a logo.
+    ModuleName=script[script]
+    ImageDir=/lib/plymouth/themes/ubuntu-logo
+    ScriptFile=/lib/plymouth/themes/ubuntu-logo/ubuntu-logo.script
+Как видно из файла настроек, plymouth использует скрипт ubuntu-logo.script, что позволяет очень гибко настроить свой splashscreen. Именно в этом файле можно ручками указать тему для xsplash. Но в это вникать пока не будем.
+Для начала устанавливаем дополнительные темы plymouth:
+- в "Центре приложений Ubuntu "набираем plymouth и выбираем нужную тему;
+- на http://gnome-look.org/ (обычно они называются plymouth-theme-*).
+Предварительно распаковав в папку /lib/plymouth/themes/
+1. Открываем терминал;
+2. sudo update-alternatives --config default.plymouth (На экран выведется список установленных тем. Выбираем нужную (вводим ее номер));
+3. Нажимаем Enter;
+4. Далее вводим: sudo update-initramfs -u  (это обновит образ initramfs);
+далее ...
+----------------------------------------------------------------------------------------------------------------------------------
+4. На этом этапе не вздумайте полностью обновляться !!!!
+"Открываем терминал, и вводим"
+sudo apt-get update
+
+
+----------------------------------------------------------------------------------------------------------------------------------
+5. Чистим систему
+путем создания нового текстового файла "Create Document" - "Empty File"
+"делаем BASH скрипт"
+#!/bin/bash
+OLDCONF=$(dpkg -l|grep "^rc"|awk '{print $2}')
+CURKERNEL=$(uname -r|sed 's/-*[a-z]//g'|sed 's/-386//g')
+LINUXPKG="linux-(image|headers|ubuntu-modules|restricted-modules)"
+METALINUXPKG="linux-(image|headers|restricted-modules)-(generic|i386|server|common|rt|xen)"
+OLDKERNELS=$(dpkg -l|awk '{print $2}'|grep -E $LINUXPKG |grep -vE $METALINUXPKG|grep -v $CURKERNEL)
+YELLOW="\033[1;33m"
+RED="\033[0;31m"
+ENDCOLOR="\033[0m"
+if [ $USER != root ]; then
+  echo -e $RED"Ошибка: вы должны быть root"
+  echo -e $YELLOW"Выходим..."$ENDCOLOR
+  exit 0
+fi
+echo -e $YELLOW"Очищаем кэш apt..."$ENDCOLOR
+sudo aptitude clean
+sudo aptitude autoclean
+sudo apt-get autoremove
+echo -e $YELLOW"Удаляем старые конфиги..."$ENDCOLOR
+sudo aptitude purge $OLDCONF
+echo -e $YELLOW"Удаляем старые ядра..."$ENDCOLOR
+sudo aptitude purge $OLDKERNELS
+sudo dpkg -P $OLDCONF”
+echo -e $YELLOW"Опусташаем все корзины..."$ENDCOLOR
+rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
+rm -rf /root/.local/share/Trash/*/** &> /dev/null
+echo -e $YELLOW"........................."$ENDCOLOR
+sudo apt-get update
+sudo apt-get gconf-cleaner
+sudo apt-get thumbcheck
+sudo apt-get cleaner.sh
+sudo rm -f /var/cache/apt/*.deb
+sudo apt-get -f install
+- Сохраняем на рабочий стол;
+- Кликаем в свойство файла, и делаем его "Read and write";
+- Ставим галочку на "Allow executing file as program";
+- Кликаем по файлу, запускаем в терминале;
+- Чистка началась.
+---------------------------------------------------------------------------------------------------------------------------------
+6. Русифицируем
+Для проверки всех доступных локализаций для программ достаточно просто набрать команду:
+aptitude search ~n-ru$ ~n-ru-base
+1. Перед татальной русификацией устанавливаем Open Office.org
+(после русификации установка данного пакета будет невозможна!)
+"Bash скрипт (Open Office.org)"
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install -y --force-yes openoffice.org
+sudo apt-get install -y --force-yes openoffice.org-l10n-ru
+sudo apt-get install -y --force-yes openoffice.org-help-ru
+sudo apt-get install -y --force-yes openoffice.org-hyphenation-ru
+sudo apt-get install -y --force-yes openoffice.org-thesaurus-ru
+sudo apt-get install -y --force-yes openoffice.org-spellcheck-ru
+sudo apt-get install -y --force-yes sword-language-pack-ru
+sudo apt-get install -y --force-yes myspell
+sudo apt-get install -y --force-yes myspell-ru
+sudo apt-get install -y --force-yes myspell-dictionary-ru
+"Bash скрипт (татальная руссификация)"
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install -y --force-yes language-pack-ru
+sudo apt-get install -y --force-yes language-pack-ru-base
+sudo apt-get install -y --force-yes language-pack-gnome-ru
+sudo apt-get install -y --force-yes language-pack-gnome-ru-base
+sudo apt-get install -y --force-yes gnome-user-guide-ru
+sudo apt-get install -y --force-yes language-support-ru
+sudo apt-get install -y --force-yes language-support-writing-ru
+sudo apt-get install -y --force-yes language-support-translations-ru
+sudo apt-get install -y --force-yes language-support-extra-ru
+sudo apt-get install -y --force-yes language-support-input-ru
+sudo apt-get install -y --force-yes kde-l10n-ru
+sudo apt-get install -y --force-yes kdevelop-l10n-ru
+sudo apt-get install -y --force-yes language-pack-kde-ru
+sudo apt-get install -y --force-yes console-cyrillic
+sudo apt-get install -y --force-yes ttf-arhangai
+sudo apt-get install -y --force-yes xfonts-cronyx-koi8r-misc
+sudo apt-get install -y --force-yes xfonts-cronyx-isocyr-misc
+sudo apt-get install -y --force-yes xfonts-cronyx-misc
+
+
+Поле заходим:
+- System
+- Administration
+- Longuage Support
+- Выбираем Русский, как основной.
+Проверка установленных локализаций:
+ru_RU.cp1251
+ru_RU.koi8r
+ru_RU.utf8
+
+
+1. Открываем терминал:
+2. далее: sudo locale-gen
+3. далее: sudo locale
+4. далее: sudo locale -a
+[size=11](локаль прописанна не везде, доделаем позже .... )[/size]
+----------------------------------------------------------------------------------------------------------------------------------
+7. Устанавливаем "Твикеры и дополнительный софт"
+Ailurus, Ubuntu-Tweak, Software-Center,
+"делаем BASH скрипт"
+#!/bin/bash
+sudo apt-get install -y --force-yes software-center
+echo "deb http://ppa.launchpad.net/ailurus/ppa/ubuntu `lsb_release -cs` main" | sudo tee -a /etc/apt/sources.list
+sudo apt-key adv --recv-keys --keyserver pgp.mit.edu 5A16033A9A6FE242
+sudo apt-get update
+sudo apt-get install -y --force-yes ailurus
+sudo add-apt-repository ppa:tualatrix/ppa
+sudo apt-get update
+sudo apt-get install -y --force-yes ubuntu-tweak
+sudo apt-get install update-manager-core
+
+
+- после всех установок, чистим нашим скриптом
+--------------------------------------------------------------------------------------------------------------------------------------------------
+8. Теперь можно обновиться целиком
+"Открываем терминал и вводим"
+apt-get update
+apt-get upgrade
+apt-get dist-upgrade
+aptitude update
+aptitude safe-upgrade
+aptitude full-upgrade
+sudo do-release-upgrade
+
+
+- После "Чистим скриптом"
+
+
+

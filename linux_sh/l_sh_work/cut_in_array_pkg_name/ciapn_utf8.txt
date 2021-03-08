@@ -1,0 +1,33 @@
+﻿
+
+$ echo "citra-git-r8086.35690e3ac-1" | rev | cut -d '-' -f3-9 | rev
+citra-git
+
+
+$ echo "dolphin-emu-nogui-git-5.0.r11084.a52b8759ff-1" | rev | cut -d '-' -f3-9 | rev
+dolphin-emu-nogui-git
+
+
+$ echo "yuzu-canary-git-r13012.68cb3b213-1" | rev | cut -d '-' -f3-9 | rev  
+yuzu-canary-git
+
+
+$ echo "grub-customizer-5.1.0-1" | rev | cut -d '-' -f3-9 | rev
+grub-customizer
+
+
+$ echo "p7zip-gui-16.02-4" | rev | cut -d '-' -f3-9 | rev
+p7zip-gui
+
+
+$ echo "xnviewmp-0.93.1-2" | rev | cut -d '-' -f3-9 | rev
+xnviewmp
+
+
+
+
+
+
+
+
+

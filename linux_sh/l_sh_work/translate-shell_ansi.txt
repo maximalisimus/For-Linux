@@ -1,0 +1,3 @@
+
+
+trans -b -e yandex -t en "Простые ключи."

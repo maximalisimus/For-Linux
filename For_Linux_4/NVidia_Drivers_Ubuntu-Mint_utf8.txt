@@ -1,0 +1,105 @@
+﻿
+
+Команды к видео по установка драйвера для видеокарты от NVidia в Ubuntu и в Linux Mint.
+
+*****************************************************
+******   Вместо "X" указывать версию драйвера!   ******
+******     После знака "$" идёт команда!       ******
+*****************************************************
+
+- Посмотреть какие версии драйверов доступны:
+$ ubuntu-drivers devices
+
+- Установка драйвера из основного репозитория:
+$ sudo apt-get update && sudo apt-get install nvidia-X
+
+- Перезагрузка системы:
+$ sudo reboot
+
+- Добавить новый репозиторий для установки более новой версии драйвера:
+$ sudo add-apt-repository ppa:xorg-edgers/ppa
+
+- Обновление списка репозиториев:
+$ sudo apt-get update
+
+- Установка более новой версии драйвера:
+$ sudo apt-get install nvidia-X
+
+- Перезагрузка системы:
+$ sudo reboot
+
+- Удаление репозитория:
+$ sudo add-apt-repository --remove ppa:xorg-edgers/ppa
+
+- Обновление списка репозиториев:
+$ sudo apt-get update
+
+- Удаление драйвера:
+$ sudo apt-get purge nvidia-X
+ 
+
+
+
+
+
+
+
+sudo apt-get install build-essential automake autoconf
+
+tar jxvf *.tar.bz2
+
+
+sudo apt-get install linux-headers -$(uname -r)
+cd /etc/default
+sudo nano grub
+#После удачной установки можно вернуть все конфигурации граба
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
+GRUB_TERMINAL=console
+GRUB_GFXPAYLOAD_LINUX=text
+#Редактируем этот кусок кода
+
+sudo update-grub
+# после перезагрузки все слетело, это нормально, вводим 
+sudo init 3
+# Жмакаем ALT+F1 CTRL+ALT+F1, логинимся, вводим пароль
+# Монтируем загрузки, место где находится файл <.run> (dir, cd)
+# Даем права на испольнение этому файлу
+sudo chmod 777 <nvidia...>
+# ИЛИ
+sudo chmod +x <NVIDIA...>
+# И запускаем его...
+sudo sh <NVIDIA...>
+# Выводится сообщение мол версия драйвера не совсем подходящая, все равно соглашаемся <Ignore CC Version Check>
+# Предлагают установить 32-разрядные библиотеки, соглашаемся <Yes> и ещё раз подтверждаем <Install compatibility>
+# После чего предлагают запустить Nvidia-xconfig, соглашаемся <Yes>
+# Ну и остается только войти в графическую оболочку
+startx
+# Ну а чтобы эта ошибка с открытым кодом ядра больше не вылезала, заносим пару конфигов в черный лист 
+sudo modprobe -r nouveau
+sudo nano /etc/modprobe.d/blacklist.conf
+# Ну и весь список черного листа 
+blacklist vga16fb
+blacklist nouveau
+blacklist rivafb
+blacklist nvidiafb
+blacklist rivatv 
+# Конец списка 
+
+# Или если планируется когда-либо в будущем обновлять ядро, лучше поставить <dkms> хотя и не всегда прокатывает
+sudo apt-get install dkms
+# Конфиг в авто-режиме
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

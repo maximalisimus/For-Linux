@@ -1,0 +1,681 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.0.4.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-02-19T20:34:55.400821032"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		em { font-style: italic }
+		strong { font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr">
+<div id="nekotorye-osobennosti-gpg-podpisey-chast-1" dir="ltr" style="position: absolute; top: 1.08cm; left: -0.69cm; width: 0.69cm; height: 0.69cm; border: none; padding: 0cm; background: #ffffff"><p class="western">
+	<br/>
+<br/>
+
+	</p>
+</div>
+<div id="nekotorye-osobennosti-gpg-podpisey-chast-2" dir="ltr" style="position: absolute; top: 1.08cm; left: -0.69cm; width: 0.69cm; height: 0.69cm; border: none; padding: 0cm; background: #ffffff"><p class="western">
+	<br/>
+<br/>
+
+	</p>
+</div>
+<h1 class="western" align="left"><font face="Times Newer Roman, serif"><font size="6" style="font-size: 28pt"><b>Некоторые
+особенности GPG подписей, часть 1.</b></font></font></h1>
+<p class="western" align="left" style="margin-top: 1.06cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">GNU
+Privacy Guard (GnuPG, GPG) - это инструмент
+асимметричного шифрования.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Для
+чего он может понадобиться? Для шифровки
+и дешифровки, подписей и проверки
+подписей. По сути инструмент заменяет
+подпись ручкой на бумаге, только
+электронный.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Вот
+несколько примеров, некоторые из которых
+далее будут рассмотрены более подробно:</font></font></p>
+<ul>
+	<li><p class="western" align="left" style="margin-bottom: 0.32cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">git
+	— верификация комитов, что это именно
+	ваш коммит и он не скомпрометирован.</font></font></p>
+	<li><p class="western" align="left" style="margin-bottom: 0.32cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Подпись
+	пакетов локального или удалённого
+	репозитория.</font></font></p>
+	<li><p class="western" align="left" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Шифровка/дешифровка
+	сообщений.</font></font></p>
+</ul>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Примечание:
+Если что-то забыли или не знаете — не
+стесняйтесь help и man. Адекватно и понятно,
+даже на английском языке. Не забывайте,
+что внутри утилиты также есть help.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Начнём
+с того, что уже в любом Linux присутствуют
+2 инструмента, таких как gpg и gpg2. Первый
+из них устаревший. Однако, оба работают
+со всеми командами абсолютно одинаково.
+Для git в большинстве статей рекомендуют
+настраивать на работу с gpg2.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Первое
+что может быть крайне удобным — это
+ключ для работы с утилитой gpg: «--homedir».
+Таким образом нам не обязательно вообще
+держать ключ в самой ОС.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Создадим
+ключ. Лучше всего использовать полную
+генерацию для подробной первоначальной
+настройки. Дело в том, что большинство
+git репозиториев рекомендую длину всех
+ключей 2048.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --full-generate-key --expert</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">После
+чего его необходимо настроить (в режиме
+эксперта по желанию):</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --edit-key UserName --expert</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+uid 1 # Выбор идентификатора.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">По
+окончании работы с идентификатором
+обязательно повторно набрать команду,
+чтобы сбросить селектор. Также и с
+командой key.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+trust # уровень доверия.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Рекомендую
+сразу ставить 3. Именно данный уровень,
+а не 5 — абсолютное доверие. В дальнейшем
+он понадобиться при создании собственного
+пакета с публичными ключами. Дело в том,
+что пользовательский уровень доступа
+на публичных, а также удалённых серверах
+— это 3. Если он нужен только локально,
+т.е. для себя (например верификация
+пакетов git), то выбирайте любой уровень
+доверия.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Пока
+вы находитесь внутри утилиты gpg не
+забудьте настроить уровни доверия для
+всех подключей, если таковые имеются.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+list</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+key 1</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+trust</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; orphans: 2; widows: 2">
+…</p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+key 1</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+key 2</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">...</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">И
+я не зря упомянул подключи. Дело в том,
+что вы можете использовать один и тот
+же идентификатор пользователя и пароль,
+но разные подключи для разных операций.
+Например, один подключ только для
+подписей, а другой только для шифрования.
+При создании подключа обязательно
+указываем его тип и не забываем также
+настроить для него уровень доверия.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Дело
+в том, что вы можете использовать разные
+подключи для подписи пакетов в разных
+репозиториях, что сильно повысит их
+безопасность.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Чтобы
+использовать нужный подключ, просто
+наберите «-u».</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Например:
+$ gpg --homedir /home/mikl/002/ -u 94DB5679387284B0 -b 001.txt</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Или:
+$ find&nbsp;</span></span></span></font></font></span><em><span style="font-variant: normal"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">home</span></span></span></font></font></span></em><span style="font-variant: normal"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">mikl/custom_repo/x86_64/
+-type f -exec gpg2 --homedir /home/mikl/002/ -u 94DB5679387284B0 -b
+{} \;</span></span></span></font></font></span></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Также
+стоит упомянуть и о сроке действия ключа
+и подключей. Пока вы не отозвали ключ,
+срок его годности можно бесконечно
+продлевать. Не забывайте только обновлять
+его на публичном сервере ключей. Как
+только ключ был отозван — изменить
+ничего уже будет нельзя. К сожалению
+утилита не имеет команд для того чтобы
+вернуть ключу доступ. После этого вам
+придётся создавать ключи заново (gpg
+--gen-key). Только если вы не делали резервных
+копий (смотрите далее) и не отправляли
+ключ на публичный сервер.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">По
+окончании работы внутри утилиты,
+набираем: $ save</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -k # Посмотреть публичные ключи</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -K # Посмотреть секретные ключи</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --list-secret-keys --keyid-format LONG # Перечислить
+ключи для которых есть как открытый так
+и закрытый ключ.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">С
+помощью последней команды можно найти
+короткую версию идентификатора любого
+ключа во 2 столбце после алгоритма и
+слеша. Самый первый короткий идентификатор
+и есть первичный ключ, который можно
+использовать где-то вместо других
+вариантов выбора ключа. Например при
+отправке ключа на публичный сервер.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Если
+вы готовы зарегистрируйте публичный
+ключ в публичном сервере ключей. Прямо
+каламбур.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --keyserver pgp.mit.edu --send-keys &lt;идентификатор&gt;
+# можно короткую версию.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Теперь
+создадим резервные копии ключей. Не мне
+объяснять вам зачем нужны резервные
+копии. Они также повысят ваши шансы при
+различных сбоях и косяках.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --armor --output mykey.gpg --export UserName</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">#
+Публичные ключи. Сразу после output пишется
+полная директория и названия файла куда
+он будет сохранён. После export пишется
+либо Имя пользователя ключа, либо e-mail,
+либо идентификатор ключа.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Аналогичная,
+но более понятная команда:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -a --export UserName &gt; public_key.gpg</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -a --export-secret-keys UserName &gt; secret_key # Экспорт
+секретного ключа</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -a --export-secret-subkeys UserName &gt; secret_subs.gpg #
+Экспорт секретных подключей</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --export-ownertrust &gt; trust.conf # Экспорт уровня
+доверия ключей. Нужен для создания
+собственного пакета ключей или при
+обмене с другими пользователями, а также
+для собственного репозитория.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -a --gen-revoke UserName &gt; revocation_cert.gpg</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">#
+Генерировать сертификат отзыва ключа.
+Если что-то пойдёт не так он пригодится,
+чтобы прекратить действие ваших ключей.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Как
+только вы попытаетесь его импортировать
+(добавить) с введением пароля — все ваши
+GPG ключи для указанного идентификатора
+будут отозваны. Пока только локально.
+Если вы не отправляли ключи на публичный
+сервер - их можно удалить с пк, вместе с
+публичными и импортировать заново.
+Потому что вы создавали резервную копию
+в момент когда ключи были действующими.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">После
+этого можно повторно экспортировать
+секретные и публичные ключи. В таком
+случае будет сохранён новый срок их
+годности. После чего не забудьте обновить
+на публичном сервере ключей.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Ключи
+обновляются либо с помощью сервера
+ключей, либо постепенно, т.е. пофайлово.
+Например: если у вас есть старые ключи,
+которые действуют 3 года, а прошло только
+2. И вдруг владелец отозвал их. Случайно
+обновились или добавили новые — удалите
+их и импортируйте старые ключи заново.
+Без обновлений или с их резервными
+копиями вы можете продолжать с ними
+работать, словно ключи никогда не были
+отозваны.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Импорт
+ключей, секретных ключей, секретных
+подключей. Аналогично происходит импорт
+сертификата отзыва ключей для прекращения
+действия последних.</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --import elseworld.gpg</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --import-ownertrust trust.conf # Импорт уровней
+доверия ключей</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">Создать
+отделенную, а также проверить подпись:</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg -b 001.txt</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">$
+gpg --verify 001.txt.sig 001.txt</font></font></p>
+<p class="western" align="left" style="margin-top: 0.64cm; margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt">О
+настройках git и Github, а также других
+интересных особенностях смотрите в
+следующей статье.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<h1 class="western" align="left"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="6" style="font-size: 28pt"><b>Некоторые
+особенности GPG подписей, часть 2.</b></font></font></h1>
+<div id="article_view_-153221588_38086" dir="ltr"><p class="western" style="margin-top: 1.06cm; margin-bottom: 0cm">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Продолжение
+	предыдущей статьи.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Для
+	того, чтобы настроить ваш git на созданную
+	подпись, выполните следующие команды.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	git config --global user.signingkey &lt;Идентификатор&gt;
+	# использовать для подписи указанную</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	git config --global gpg.program gpg2 # Использовать в
+	git - gpg2</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	git config --global commit.gpgsign true</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#
+	Включить глобальное подписывание
+	комитов. Без данной команды подписывать
+	комиты придётся вручную. Например: $
+	git commit -S -m &quot;Update&quot;</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Перед
+	тем, как что-либо подписывать убедитесь,
+	что e-mail и имя пользователя в настройках
+	самого git, github, а также в самих GPG ключах
+	указаны абсолютно одинаковые. Иначе
+	при верификации комитов получите
+	«Unverifed».</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Не
+	забудьте импортировать публичный ключ
+	в настройках самого github.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Для
+	того, чтобы иметь возможность проверять
+	подписи комитов у пользователя должны
+	быть импортированы публичные ключи
+	доступа (gpg —import, GPG). Не путайте с ключами
+	pacman (pacman-key, PGP).</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	git log --show-signature -1</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	git merge --verify-signatures non-verify</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Если
+	вам необходимо устанавливать пакеты
+	из репозитория без проверок ключи
+	должны быть добавлены в pacman и обязательно
+	локально подписаны.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Посмотрим
+	последнее на примере ctlos.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --init</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	cp ctlos{.gpg,-revoked,-trusted} /usr/share/pacman/keyrings/</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --add /usr/share/pacman/keyrings/ctlos.gpg</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --lsign-key 50417293016B25BED7249D8398F76D97B786E6A3</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --populate archlinux ctlos # Перезагрузить
+	ключи из указанных связок</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key —refresh-keys # обновление указанных
+	или всех ключей с сервера ключей</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Как
+	только у вас есть есть все необходимые
+	данные можно создавать отдельный
+	репозиторий со статичными данными для
+	публичных ключей, чтобы конечный
+	пользователь мог их найти и воспользоваться
+	ими для верификации данных.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Для
+	настройки Github в качестве ftp сервера для
+	ваших пакетов – зайдите в настройку
+	каждого вашего подобного репозитория
+	и в самом низу на на главной вкладке
+	«Options» найдите «GitHub Pages». Выберите ветку
+	(например master), деркторию (лучше / root) и
+	нажмите «Save». После этого у вас появится
+	ссылка на ваш репозиторий в виде https
+	ссылки при установленной ниже галочке
+	«Enforce HTTPS» или в виде http ссылки без
+	последней.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Чтобы
+	использовать удалённый репозиторий с
+	верификацией пакетов - аналогично
+	стандартным реп-ям ArchLinux — надо сделать
+	ещё несколько шагов. Ключи можно
+	добавлять в систему несколькими
+	способами: скриптом, запрашивать с
+	сервера ключей, устанавливать из пакета
+	с публичными ключами, скачивать с
+	аналогичного репозитория...</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">В
+	любом случае придётся генерировать
+	конечные пакеты с ключами и заливать
+	их в каждый репозиторий отдельно - для
+	того, чтобы конечный пользователь
+	своевременно обновлялся.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Поэтому
+	создаём несколько файлов, некоторые
+	из которых предназначаны только для
+	ускорения доступа. Не забудьте придумать
+	название для ваших публичных ключей.
+	Любое, главное короткое. У ctlos —
+	соответственно — ctlos.gpg, ctlos-revoked,
+	ctlos-trusted, ctlos--keyring.install.</span></font></font></p>
+	<ul>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">elseworld.gpg
+		— Публичные ключи.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">elseworld-id.txt
+		— Полный глобальный первичный
+		идентификатор ключа. Необязателен.
+		Файл упрощает жизнь при использовании
+		доп. скриптов, чтобы каждый раз при
+		изменении ключа лишний раз в них не
+		лазить.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">elseworld-keyring.install
+		— инсталятор ключей, используется в
+		PKGBUILD, без него он не заработает.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Elseworld-revoked
+		— Идентификатор отзыва ключа.
+		Используется только в том случае, когда
+		ваш GPG ключ отзывается, прекращает своё
+		действие. Разумеется в публичном ключе
+		должен быть новый ключ, который
+		действует. Так делают в стандартном
+		пакете «archlinux-keyring». Чаще всего этот
+		файл не используется, но должен
+		присутствовать хотя бы пустым.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Elseworld-trusted
+		— таблица доверия ключей. Помните мы
+		экспортировали уровни доверия ключей?
+		Вот сюда этот файлик и направляется.
+		Уберите только строки с решетками.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">install-keyring.sh
+		— здесь скрипт для скачивания и импорта
+		публичных ключей в pacman-key. Чтобы не
+		вводить все команды вручную, если вдруг
+		придётся. Скачиваем скрипт и запускаем
+		от имени суперпользователя. Можно даже
+		вместо установочного пакета. Значения
+		не имеет. Шикарно.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Makefile
+		— сборочник ключей, без которых не
+		может быть их правильной сборки в
+		PGKBUILD.</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">PKGBUILD</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0.32cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">README.md</span></font></font></p>
+		<li><p class="western" style="margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">md5sums.txt
+		— создавал 2 раза. 1-й когда редактировал
+		PKGBUILD, 2-й когда полностью завершил
+		работу со всеми файлами. На всякий
+		случай. Не обязательный файл. Но так,
+		верифицированный репозиторий с
+		публичными ключами будет ну совсем
+		крутой. Только удалите из него 2 строки:
+		index.html и сам md5sums.txt.</span></font></font></p>
+	</ul>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Содержимое
+	Makefile</b></font></font></strong><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">V=20200805</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">PREFIX
+	= /usr</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">install:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">install
+	-dm755 $(DESTDIR)$(PREFIX)/share/pacman/keyrings/</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">install
+	-m0644 elseworld{.gpg,-trusted,-revoked}
+	$(DESTDIR)$(PREFIX)/share/pacman/keyrings/</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">uninstall:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rm
+	-f
+	$(DESTDIR)$(PREFIX)/share/pacman/keyrings/elseworld{.gpg,-trusted,-revoked}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rmdir
+	-p --ignore-fail-on-non-empty
+	$(DESTDIR)$(PREFIX)/share/pacman/keyrings/</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Содержимое
+	elseworld-keyring.install:</span></b></font></font></strong></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">post_upgrade()
+	{</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">if
+	usr/bin/pacman-key -l &gt;/dev/null 2&gt;&amp;1; then</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">usr/bin/pacman-key
+	--populate elseworld</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">fi</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">post_install()
+	{</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">if
+	[ -x usr/bin/pacman-key ]; then</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">post_upgrade</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">fi</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Содержимое
+	install-keyring.sh:</span></b></font></font></strong></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#!/bin/bash</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#
+	maximalisimus keyring</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --init</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wget
+	https://maximalisimus.github.io/elseworld-keyring/elseworld{.gpg,-revoked,-trusted,-id.txt}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	mv elseworld{.gpg,-revoked,-trusted} /usr/share/pacman/keyrings/</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --add /usr/share/pacman/keyrings/elseworld.gpg</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">ewid=$(cat
+	elseworld-id.txt)</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --lsign-key ${ewid}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --populate archlinux elseworld</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">sudo
+	pacman-key --refresh-keys</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rm
+	-rf elseworld-id.txt</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">exit
+	0</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Содержимое
+	PKGBUILD (А вот и те самые md5sums пригодились
+	для верификации сборки):</span></b></font></font></strong></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#
+	Maximalisimus keyring gpg-key</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">pkgname=elseworld-keyring</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">pkgver=stable</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">pkgrel=1</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">pkgdesc='elseworld
+	PGP keyring'</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">arch=('any')</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">url='https://github.com/maximalisimus/elseworld-keyring'</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">license=('GPL')</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">install=&quot;${pkgname}.install&quot;</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">source=('Makefile'</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'elseworld.gpg'</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'elseworld-revoked'</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'elseworld-trusted')</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">md5sums=('547c89ef8b1c509a438dc580b08762d5'
+	# Makefile</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'284617f80ad66083b12b5cd9fa9d0ae4'
+	# *.gpg</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'d41d8cd98f00b204e9800998ecf8427e'
+	# *-revoked</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">'077744c6332a8619d0c2e8d1f68956e3')
+	# *-trusted</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">package()
+	{</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">cd
+	&quot;${srcdir}&quot;</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">make
+	PREFIX=/usr DESTDIR=${pkgdir} install</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Чтобы
+	на Github Pages появились статические данные
+	нужен ещё пакет «apindex»:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	apindex .</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Обратите
+	внимание на точку — для текущей и
+	вложенных директорий. Помощи у утилиты
+	нет.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Чтобы
+	не отображать скрытую папку «.git» для
+	текущего репозитория выполните команду:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">$
+	find ./.git/ -type f -iname &quot;index.html&quot; -exec rm -rf {}
+	\;</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Также
+	вручную отредактируйте один из самых
+	верхний файлов «index.html» и уберите из
+	него часть html таблицы с данной папкой
+	(«.git»).</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Всё,
+	собираем (makepkg -s), лишние папки (src и pkg)
+	удаляем и заливаем на github. Созданый
+	пакет ключей также заливаем во все свои
+	репозитории.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Вот
+	теперь можно подписать все пакеты своих
+	удалённых репозиториев отделённой
+	подписью ($ find ./ -type f -exec gpg2 -b {} \;) и заливать
+	всё на сервер.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Маленький
+	бонус.</b></font></font></strong><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">&nbsp;Представляю
+	вам свой скрипт для обновления баз
+	данных пакетов в одном из удалённых
+	репозиториев.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#!/bin/bash</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rm
+	-rf *.sig</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">find
+	./ -type f -exec gpg2 -b {} \;</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rm
+	-rf ./index.html.sig</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">repo-add
+	-n -R aur-package-manager.db.tar.gz *.pkg.tar{.xz,.zst}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">rm
+	-rf aur-package-manager.db</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">cp
+	-f aur-package-manager.db.tar.gz aur-package-manager.db</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">##optional-remove
+	for old repo.db##</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">#
+	rm -rf *gz.old{,.sig}</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">apindex
+	.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">wait</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">exit
+	0</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Обратите
+	внимание на вот эту конструкцию:
+	{.xz,.zst}.</span></b></font></font></strong></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">Еси
+	у вас в реп-ии только пакеты xz — то
+	скрипт завершится с ошибкой. Тоже самое
+	при zst. В таком случае указывайте
+	конкретное окончании - *.pkg.tar.xz,
+	*.pkg.tar.zst.</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">После
+	этого можно всё заливать и пользоваться:</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font size="4" style="font-size: 14pt"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif">git
+	push -u origin master</span></font></font></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><span style="display: inline-block; border: none; padding: 0cm"><font face="PT Serif, Noto Sans Armenian, Noto Sans Bengali, Noto Sans Cherokee, Noto Sans Devanagari, Noto Sans Ethiopic, Noto Sans Georgian, Noto Sans Hebrew, Noto Sans Kannada, Noto Sans Khmer, Noto Sans Lao, Noto Sans Osmanya, Noto Sans Tamil, Noto Sans Telugu, Noto Sans Thai, serif"><font size="4" style="font-size: 14pt"><b><strong>Всем
+	добра и удачи!</span></b></font></font></strong></p>
+	<p class="western" style="margin-top: 0.64cm; margin-bottom: 0cm"><br/>
+
+	</p>
+</div>
+</body>
+</html>

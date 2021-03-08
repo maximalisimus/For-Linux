@@ -1,0 +1,27 @@
+##
+##
+## Italian Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Estrazione di dispositivi USB"
+_menu_body="\nSi prega di scegliere il dispositivo USB.\n"
+_pass_title="Introduzione della password"
+_pass_body="\nInserisci la password dell'utente.\n"
+_MSG_Title="Errore"
+_MSG_Body="Dispositivo USB non rilevato\n"
+_select_type_pass_title="Impostazione della password utente"
+_select_type_pass_body="\nSi prega di scegliere la modalita di funzionamento del programma.\n\n"
+_no_pass_menu="Senza password"
+_memory_pass_menu="Ricorda password"
+_input_pass_menu="Reinserimento della password"
+_info_pass_type_title="Messaggio informativo sulla modalita di funzionamento del programma"
+_inf0="\nQuesta modalita dipende dal funzionamento del programma\n"
+_info1="$_inf0\nIn modalita 'Nessuna password' - la password dell'utente viene impostata su vuota\n"
+_info2="In modalita 'Ricorda password' - la password viene inserita nel file delle Impostazioni\n"
+_info3="In modalita 'reinserisci password' - la password verra richiesta ogni volta che viene estratta\n\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Configurazione iniziale del programma"
+_info_install_body="\nViene eseguita la configurazione iniziale del programma.\nConfigurare la lingua del sistema e la modalita di funzionamento dell'applicazione.\nE anche l'installazione di un pacchetto dipendente per il funzionamento del sottosistema grafico dell'applicazione-xdialog\n\n"

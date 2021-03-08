@@ -1,0 +1,29 @@
+﻿
+Linux GParted:
+
+Primary: /boot - ext2 - 100Mb
+Primary: /swap - OZU*2, OZU*1, OZU*0.5
+Primary: /usr - ext4 - 50Gb
+Logical: /tmp - ext4 - 10GB
+Logical: /var - ext4 - 5...10GB
+Logical: /var/log - ext4 - 2...5Gb
+Logical: /opt - ext4 - 20Gb - xampp (Denwer, Apache)
+Logical: /home - ext4 - 150Gb
+
+
+
+P.S.:
+Primary: / - ext4 - 10GB
+Primary: /media - ext4 - MediaFiles
+Logical: /tmp - ReiserFS - 10GB
+Logical: /var - ReiserFS - 5...10GB
+
+ 
+
+
+
+
+
+
+
+

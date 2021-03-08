@@ -1,0 +1,20 @@
+pkgname=ubuntu-manpages-ru
+pkgver=0.98
+pkgrel=4
+arch=('any')
+license=('GPL')
+source=("manpages-ru_0.98-4_all.deb"
+        )
+
+md5sums=('SKIP')
+
+
+package() {
+	cd "${srcdir}"
+	mkdir -p setup
+	tar -xzf data.tar.gz -C setup/
+	mkdir -p $pkgdir/usr/
+	cp -a ${srcdir}/setup/usr/* $pkgdir/usr/
+	find . -type d -exec chmod 0755 {} \;
+	find . -type f -exec chmod 0644 {} \;
+}

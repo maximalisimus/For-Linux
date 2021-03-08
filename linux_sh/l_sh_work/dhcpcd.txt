@@ -1,0 +1,15 @@
+dev: loaded udev
+DUID 00:04:d6:cc:ed:35:14:87:43:45:bd:c9:5e:43:8a:92:cd:4c
+enp0s3: IAID 27:2d:cb:b1
+enp0s3: rebinding lease of 10.0.2.15
+enp0s3: leased 10.0.2.15 for 86400 seconds
+enp0s3: adding route to 10.0.2.0/24
+enp0s3: adding default route via 10.0.2.2
+forked to background, child pid 1427
+sudo systemctl is-active dhcpcd
+inactive
+sudo systemctl start dhcpcd
+sudo systemctl is-active dhcpcd
+active
+sudo systemctl stop dhcpcd
+sudo dhcpcd

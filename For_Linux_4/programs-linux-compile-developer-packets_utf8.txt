@@ -1,0 +1,8 @@
+﻿
+
+sudo apt-get install build-essential automake autoconf
+
+
+
+
+

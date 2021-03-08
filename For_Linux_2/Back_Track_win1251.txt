@@ -1,0 +1,6 @@
+
+login:root 
+password:toor
+run:startx
+
+

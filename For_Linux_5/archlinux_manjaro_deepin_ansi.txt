@@ -1,0 +1,10 @@
+
+sudo pacman -Sy archlinux-keyring manjaro-keyring
+sudo pacman-key --populate archlinux manjaro
+sudo pacman-key --refresh-keys
+
+
+
+
+
+

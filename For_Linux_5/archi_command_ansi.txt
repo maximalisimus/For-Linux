@@ -1,0 +1,1006 @@
+
+# Backup system 
+$ tar -cvzpf backup.tar.gz --exclude=/proc --exclude=/mnt --exclude=/sys / --exclude=/lost+found --exclude=/tmp --exclude=/backup.tar.bz2 /
+
+# Recovery System
+$ tar --same-owner -xvpf backup.tar.gz -C /mnt/
+
+
+
+# tar -C /home/admin/mytar -xvf admin.tar.gz --strip-components 1
+
+# <-C /home/admin/mytar> folder is fine
+# <--strip-components 1> Skip 1 subfolder
+
+
+
+# The command <rsync> to backup system is this one:
+
+sudo rsync -aAXv --delete --exclude=/dev/* --exclude=/proc/* --exclude=/sys/* --exclude=/tmp/* --exclude=/run/* --exclude=/mnt/* --exclude=/media/* --exclude="swapfile" --exclude="lost+found" --exclude=".cache" --exclude="Downloads" --exclude=".VirtualBoxVMs" --exclude=".ecryptfs" /source /destination
+
+# The command <rsync> to restore system is shorter:
+
+sudo rsync -aAXv --delete --exclude="lost+found" /backup /system
+
+
+
+
+# partition the blocks to Xx-Mb and connect (paste, split) to one archives
+
+$ split -b 1024m archive.tar.gz "archive.tzr.gz.part"
+# tar -cvzf - wget/* | split -b 150M - "downloads-part"
+
+# split -b <size-of-Mb> m </archive-full-patch/archive> <file-name-out>
+
+$ cat archive.tar.bz2.part* > archive.tar.bz2
+
+# cat <archive-part*> > </mnt/file-name-full-patch-out>
+
+
+
+
+
+sudo apt-get install build-essential automake autoconf
+
+tar jxvf *.tar.bz2
+
+
+
+
+
+
+### If ArchLinux to bootstrap ###
+
+
+# curl -O https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-x86_64.tar.gz
+or
+# curl -O https://mirrors.kernel.org/archlinux/iso/2016.04.01/archlinux-bootstrap-2016.04.01-i686.tar.gz
+
+# cd /tmp
+# tar xzf <ISO-or-tar.gz-Archive>/archlinux-bootstrap-2016.04.01-*.tar.gz
+# nano /tmp/root.*/etc/pacman.d/mirrorlist
+
+### if bash4:
+
+then
+
+### /tmp/root.*/bin/arch-chroot /tmp/root.*/
+
+else
+
+# cd /tmp/root.*
+# cp /etc/resolv.conf etc
+# mount --rbind /proc proc
+# mount --rbind /sys sys
+# mount --rbind /dev dev
+# mount --rbind /run run
+# chroot /tmp/root.* /bin/bash
+
+
+### If ArchLinux to bootstrap ###
+
+
+
+### ISO File ###
+
+
+# unsquashfs -d /squashfs-root root-image.fs.sfs
+# mkdir /arch
+# mount -o loop /squashfs-root/root-image.fs /arc
+# mount -t proc none /arch/proc
+# mount -t sysfs none /arch/sys
+# mount -o bind /dev /arch/dev
+# mount -o bind /dev/pts /arch/dev/pts
+# cp -L /etc/resolv.conf /arch/etc
+# chroot /arch bash
+
+
+### ISO FILE ###
+
+
+### Recomended for work to ArchLinux in Russian System ###
+
+
+$ loadkeys ru
+$ setfont cyr-sun16
+$ nano /etc/locale.gen
+
+en_US.UTF-8
+en_US.ISO-8859-1
+ru_RU.KOI8-R
+ru_RU.UTF-8
+ru_RU.ISO-8859-5
+
+$ nano /etc/locale.conf
+
+LANG=ru_RU.UTF-8
+ LC_MESSAGES=ru_RU.UTF-8
+
+$ nano /etc/vconsole.conf
+
+LOCALE="ru_RU.UTF-8"
+ KEYMAP="ru"
+ HARDWARECLOCK="UTC"
+ TIMEZONE="Europe/Moscow" 
+ FONT="cyr-sun16"
+ CONSOLEFONT="cyr-sun16"
+ CONSOLEMAP=""
+USECOLOR="yes"
+
+$ locale-gen
+$ export Lang=ru_RU.UTF-8
+
+
+
+### Recomended for work to ArchLinux in Russian System ###
+
+
+# cfdisk -> dos
+
+
+### Partition Format Recomendation ###
+
+MBR:
+
+### / - root
+### /boot - kernel linux and vmlinuz
+### /usr - programs and libraries user
+### /tmp - Temp folder
+### /var - Mail, WEB-Saits, Logs System...
+### /var/log - Logs System
+### /opt - programs is extras
+### /home - User Folder to Music, Video, Downloads...
+
+
+
+### Primary /boot (ext2) - 500mb
+### Primary /swap (swap) - swapfs - OZU X 2 or OZU X 1
+### Primary /usr (ext4) - 50gb
+### Logical /tmp (ext4) - 7gb
+### Logical /var (ext4) - 5gb
+### Logical /var/log (ext4) - 2gb
+### Logical /opt (ext4) - 20gb - XAMP, WEB-Saits
+### Logical /home (ext4) - 150gb
+
+
+# If EFI then GPT partition recomended is sdX1 and sdX2
+
+# Check your load is UEFI-mode
+# if don't <"NULL"> Folder is /sys/firmware/efi/efivars then next to Setup Linux
+
+$ ls /sys/firmware/efi/efivars
+
+# gdisk, fdisk ... - <"GPT">
+
+# /dev/sdX1 - 500 Mb - EFI system - /boot/EFI
+# /dev/sdX2 - 500 Mb - Boot - /boot
+# /dev/sdX3 - XXX Mb - /
+
+# OR
+
+# /dev/sda1 - efi - /boot - FAT32 - 512MB
+# /dev/sda2 - / - 20...40GB - EXT4
+# /dev/sda3 - swap - +1GB
+# /dev/sda4 - /home - EXT4
+
+
+### Partition Format Recomendation ###
+
+
+
+### Partition Format ###
+
+
+# mkfs.ext2 -L boot /dev/sda1
+# mkfs.ext4 -L root /dev/sda3
+# mkfs.ext4 -L home /dev/sda4
+# mkswap -L swap /dev/sda2
+
+
+# If EFI then GPT partition
+
+# mkfs.fat -F 32 -n EFI /dev/sdX1
+
+
+### Partition Format ###
+
+
+### Mount Partition is install /dev/sd[XX] to setup folder
+### swapon /dev/sd[XX]
+
+# dhcpcd
+# ping -c3 ya.ru
+
+# If have you setup system the ArchLinux to "automate" (base, base-devel and minimal to config)
+$ /arch/setup
+
+### Config Files in <etc> is part setup ###
+
+LOCALE="ru_RU.UTF-8"
+HARDWARECLOCK="localtime"
+TIMEZONE="Europe/Moscow"
+KEYMAP="ru"
+CONSOLEFONT="cyr-sun16"
+CONSOLEMAP=
+USECOLOR="yes"
+
+MOD_AUTOLOAD="yes"
+#MOD_BLACKLIST=() #deprecated
+MODULES=()
+USELVM="no"
+
+HOSTNAME="4Tux.ru"
+
+eth0="dhcp"
+INTERFACES=(eth0)
+
+gateway="default gw 192.168.0.1"
+ROUTES=(!gateway)
+
+DAEMONS=(syslog-ng network netfs crond)
+
+
+
+### Config Files in <etc> is part setup ###
+
+
+#### If have you setup system the ArchLinux to manual ###
+
+$ pacstrap /mnt base base-devel
+$ genfstab -p /mnt >> /mnt/etc/fstab ### /mnt to install folder ###
+$ arch-chroot /mnt
+
+### locale is Russian Language to Internationalization
+
+# nano /etc/hostname
+localhost
+
+# pacman -S grub
+# grub-install /dev/sda
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+# EFI
+# pacman -S efibootmgr
+# 32 bit system
+# pacman -S grub-efi-i386 refind-efi
+
+# passwd
+Enter new UNIX password:
+Retype new UNIX password:
+passwd: password updated succesfully
+
+# nano /etc/pacman.conf
+
+# for work 32 bit to x64 system nocomments to multilib
+# [multilib]
+
+# [archlinuxfr]
+# SigLevel = Never
+# Server = http://repo.archlinux.fr/$arch
+# Server = http://repo.archlinux.fr/i686
+# Server = http://repo.archlinux.fr/x86_64
+
+
+# nano /etc/pacman.d/mirrorlist
+
+# Russia
+Server = http://mirror.yandex.ru/archlinux/$repo/os/$arch
+
+Server = https://mirror.yandex.ru/archlinux/$repo/os/$arch
+
+
+Server = http://mirror.rol.ru/archlinux/$repo/os/$arch
+
+Server = https://mirror.rol.ru/archlinux/$repo/os/$arch
+Server = http://archlinux.zepto.cloud/$repo/os/$arch
+Server = http://mirror.truenetwork.ru/archlinux/$repo/os/$arch
+Server = http://mirror.aur.rocks/$repo/os/$arch
+
+Server = https://mirror.aur.rocks/$repo/os/$arch
+
+
+# Server = http://archlinux.freeside.ru/$repo/os/i686
+# Server = ftp://mirror.svk.su/archlinux/$repo/os/i686
+# Server = http://mirror.svk.ru/archlinux/$repo/os/i686
+# Server = ftp://ftp.archlinux.org/community/os/i686
+
+
+
+# manjaro packets and programs and keyring
+$ sudo pacman -Sy archlinux-keyring manjaro-keyring
+$ sudo pacman-key --populate archlinux manjaro
+$ sudo pacman-key --refresh-keys
+
+
+# 32 bit to keyring
+# pacman-mirrors -c all -b {stable,testing,unstable}
+# pacman -Syy archlinux32-keyring-transition
+# pacman -S archlinux32-keyring # accept removal of archlinux32-transition-keyring
+# pacman -Syu
+
+
+$ pacman -Syu
+$ pacman-db-upgrade
+$ pacman -Syu
+
+# if problem to download packets then create file /etc/sysctl.d/40-ipv6.conf
+# net.ipv6.conf.all.disable_ipv6=1
+
+
+$ loadkeys ru
+$ setfont cyr-sun16
+$ nano /etc/locale.gen
+
+en_US.UTF-8
+en_US.ISO-8859-1
+ru_RU.KOI8-R
+ru_RU.UTF-8
+ru_RU.ISO-8859-5
+
+$ nano /etc/locale.conf
+
+LANG=ru_RU.UTF-8
+ LC_MESSAGES=ru_RU.UTF-8
+
+$ nano /etc/vconsole.conf
+
+LOCALE="ru_RU.UTF-8"
+ KEYMAP="ru"
+ HARDWARECLOCK="UTC"
+ TIMEZONE="Europe/Moscow" 
+ FONT="cyr-sun16"
+ CONSOLEFONT="cyr-sun16"
+ CONSOLEMAP=""
+USECOLOR="yes"
+
+$ locale-gen
+$ export Lang=ru_RU.UTF-8
+$ nano /etc/mkinitcpio.conf
+
+# HOOKS="base consolefont keymap udev <Ваши хуки>"
+
+# Примечание: 
+ Если вышеперечисленные способы не помогли изменить шрифт в tty, вероятно, изменения не сохраняются после KMS.  Для обхода этой проблемы. попробуйте добавить в initrd модуль, выполняющий modesetting (nouveau/radeon/i915 и  т.п.):
+
+MODULES="nouveau"
+
+# if not file and folder /etc/hal/fdi/policy/10-keymap.fdi
+# then create folder for file
+$ mkdir etc/hal/
+$ mkdir etc/hal/fdi/
+$ mkdir etc/hal/fdi/policy/
+$ nano /etc/hal/fdi/policy/10-keymap.fdi
+
+
+# Модели клавиатур в строке input.xkb.model
+# Значение этого ключа в /usr/share/X11/xkb/rules/evdev.lst
+# Например для клавиатуры Logitech Generic Keyboard строка имеет вид:
+<merge key="input.xkb.model" type="string">logitech_base</merge>
+
+# Раскладки xkb.layout и xkb.variant 
+# Переключение раскладок input.xkb.options
+# Для Ctrl-Shift, при использовании русской раскладки горит лампочка Scroll Lock: 
+# <merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<deviceinfo version="0.2">
+ <device>
+  <match key="info.capabilities" contains="input.keypad">
+    <merge key="input.xkb.rules" type="string">base</merge>
+    <merge key="input.xkb.model" type="string">pc105</merge>
+    <merge key="input.x11_driver" type="string">evdev</merge>
+    <merge key="input.xkb.layout" type="string">us,ru</merge>
+    <merge key="input.xkb.variant" type="string">,winkeys</merge>
+    <merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+  </match>
+ </device>
+</deviceinfo>
+
+
+
+# sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+
+# pacman -S kbd-ru-keymaps
+# pacman -S terminus-font
+
+# Русске Man страницы
+$ pacman -S man-pages-ru
+# LESSCHARSET должна быть со значением UTF-8. Просто закоментировать строку < export LESSCHARSET="latin1" > в /etc/profile
+
+$ mkinitcpio -p linux
+
+
+
+pacman -S ninja runc bashrun gmrun make cmake autoconf automake python
+
+
+
+git clone https://aur.archlinux.org/package-query.git
+
+# OR
+curl -o package-query.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/package-query.tar.gz
+
+$$$ tar -xvf package-query.tar.gz
+$$$ sudo chown -R username ./package-query
+$$$ sudo chmod -R 777 ./package-query
+
+cd package-query
+makepkg -si
+cd ../
+git clone https://aur.archlinux.org/yaourt.git
+
+# OR
+curl -o yaurt.tar.gz https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
+
+$$$ tar -xvf yaourt.tar.gz
+$$$ sudo chown -R username ./yaourt
+$$$ sudo chmod -R 777 ./yaourt
+
+cd yaourt
+makepkg -si
+cd ../
+
+
+### https://aur.archlinux.org/cgit/aur.git/snapshot/yaourt.tar.gz
+
+$ sudo nano /etc/bash.bashrc
+
+# Add string to finish file
+
+# alias yaourt='yaourt --noconfirm'
+#alias sudo='sudo '
+
+yaourt pamac
+# GUI yaourt ArchLinux - pamac
+
+
+
+### IF YAOURT is DON'T WORK OR ERROR INSTALLED ... ###
+
+$ curl -o install.sh https://gist.githubusercontent.com/Tadly/0e65d30f279a34c33e9b/raw/pacaur_install.sh
+$ sudo sh install.sh
+
+### IF YAOURT is DON'T WORK OR ERROR INSTALLED ... ###
+
+
+
+
+
+$ pacman -S grub-bios grub2-common
+# pacman -S grub2-bios grub2-common
+$ pacman -S deepin-grub2-theme
+# yaourt grub2-theme-archlinux
+
+$ pacman -S grub-customizer
+
+# cp -r /usr/share/grub/themes/Archlinux /boot/grub/themes/
+$ nano /etc/default/grub
+# # /etc/default/grub
+# GRUB_THEME="/boot/grub/themes/Archlinux/theme.txt"
+# GRUB_GFXMODE=1024x768x24
+# GRUB_DISABLE_LINUX_RECOVERY=true
+# if grub to error then
+# nano /etc/default/grub
+# GRUB_DISABLE_SUBMENU=y
+
+
+# BIOS
+# grub-install /dev/sda
+# EFI
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader -id=grub
+
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+
+# EFI variant 2:
+$ pacman -S refind-efi
+$ refind-install --usedefault /dev/sda1
+$ refind-mkrlconf
+
+
+# ??? sudo apt-get install grub2-splashimages
+# ??? WALLPAPER="/usr/share/images/desktop-base/moreblue-orbit-grub.png"
+# ??? sudo update-grub
+
+
+### Simple UEFI boot - <"systemd-boot"> ###
+
+$ bootctl --path=/boot install
+
+$ nano /boot/loader/loader.conf
+
+#timeout 3
+default arch
+
+$ nano /boot/loader/entries/arch.conf
+
+# /dev/sda2 - system folder is <"/">
+
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initrams-linux.img
+options root=/dev/sda2 rw
+
+
+### Simple UEFI boot - <"systemd-boot"> ###
+
+
+
+# if need <script> (/etc/grub.d/30_os-prober) to check OS (Windows, Linux, OSX, Hurd) on all partition hard disk then
+$ nano /etc/grub.d/40_custom
+# GRUB_DISABLE_OS_PROBER="true"
+
+
+# yaourt grub-customizer
+
+
+
+# pacman -S alsa-utils
+alsamixer
+alsactl store
+
+# pacman -S bash-completion
+
+$ hostnamectl set-hostname myhostname
+$ timedatectl set-timezone Europe/Moscow
+$ hwclock --systohc
+
+# Localectl set-keymap ru
+# setfont cyr-syn16
+# localectl set-locale LANG="ru_RU.UTF-8"
+
+$ useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,wheel -s /bin/bash myusername
+
+# or simple privelege
+# useradd -m -g users -s /bin/bash $myusername
+
+# passwd user
+# pacman -S sudo
+# nano /etc/sudoers
+### serach to <root ALL=(ALL) ALL> ###
+### add strings to myusername ###
+myusername ALL=(ALL) ALL
+
+
+$ pacman -S gksu
+$ gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
+
+
+### Login to user
+
+# pacman -S fish
+# chsh -s /usr/bin/fish user
+# chsh -s /usr/bin/fish root
+
+
+# sudo pacman -S xorg-server xorg-xinit xorg-utils xorg-server-utils mesa
+# sudo pacman -S xorg-twm xterm xorg-xclock
+
+# Touchpad or Touchscreen -> xf86-input-synaptics
+$ sudo pacman -S xf86-input-synaptics
+
+# lib32 setup to x86_64 system
+
+# lspci | grep VGA
+# sudo pacman -Ss | grep xf86-video
+
+
+
+# Intel
+sudo pacman -S xf86-video-intel lib32-intel-dri
+# NVIDIA
+sudo pacman -S xf86-video-nouveau lib32-nouveau-dri
+# AMD
+sudo pacman -S xf86-video-ati lib32-ati-dri
+
+
+
+Nvidia - $ sudo pacman -Ss nvidia
+# nvidia, nvidia-settings, nvidia-utils, opencl-nvidia (OpenGL), xf86-video-nouveau (Xorg)
+
+AMD/ATI - $ pacman -Ss amd # ati
+# xf86-video-amdgpu (xorg amd gpu video driver)
+#xf86-video-ati (xorg ati video driver)
+
+Intel - $ pacman -Ss video Intel
+# xf86-video-intel
+
+
+
+virtualbox 
+$ sudo pacman -S xf86-video-vesa 
+$ sudo pacman -S virtualbox-guest-utils
+# Xorg -configure
+
+$ sudo nano /etc/modules-load.d/virtualbox.conf
+vboxvideo
+vboxsf
+vboxguest
+
+$ sudo systemctl enable vboxservice 
+$ sydo systemctl reboot
+
+# sudo pacman  -S  xf86-video-[TAB]ваша_графическая_карта
+
+
+### Plasma ###
+
+
+$ sudo pacman -S plasma plasme-meta plasma-desktop kdebase kde-l10n-ru 
+# sudo pacman -S kde-applications kde-applications-meta
+
+# sudo pacman -S konsole dolphin firefox kate
+
+# install some-theme-tools
+$ sudo pacman -S breeze-gtk breeze-kde4 kde-gtk-config
+
+$ nano /etc/sddm.conf
+# Current=breeze
+
+# install plasma addons
+$ sudo pacman -S kdeplasma-addons
+
+# install Complete connection tools
+$ sudo pacman -S networkmanager plasma-nm
+
+# kdeplasma-applets-plasma-nm / KNetworkManager / kdeplasma-applets-networkmanagement / nm-applet
+
+# /etc/xdg/autostart/nm-applet.desktop 
+# NotShowIn=KDE
+
+
+
+$$$ for kde4 to plasma 5:
+$ sudo systemctl isolate multi-user.target
+$ pacman -Su sddm sddm-kcm
+$ systemstl stop kdm
+$ systemctl enable sddm
+$ systemctl start sddm
+$ pacman -R kdebase-workspace
+$ pacman -Su plasma-meta
+$$$ Plasma to Login
+
+$$$ .xinitrc
+exec startkde
+
+
+# enable audio volume control
+$ sudo pacman -S plasma-pa
+
+
+# Install some KDE specific and desktop essential applications
+
+# sudo pacman -S ark kinfocenter kwalletmanager gwenview kipi-plugins gimp spectacle libreoffice-fresh okular amarok vlc speedcrunch redshift
+# yaourt -S plasma5-applets-redshift-control-git --noconfirm
+
+# sudo pacman -S digikam kcolorchooser kruler kompare kfind ktorrent
+
+
+
+### Plasma ###
+
+
+### Cinnamon ###
+
+$ sudo pacman -S cinnamon cinnamon-control-center cinnamon-desktop cinnamon-menus cinnamon-screensaver cinnamon-session cinnamon-settings-daemon cinnamon-translation muffin nemo nemo-fileroller nemo-preview nemo-share nemo-terminal gnome-keyring libgnome-keyring
+
+# gnome gnome-extra
+
+# nemo-qt-components nemo-seahorse knemo nemo-python
+
+### Cinnamon ###
+
+
+### Mate ###
+
+
+# sudo pacman -S gdm xdm mate mate-extra openbox xfce4 xfce4-goodies sddm sddm-kcm fluxbox fluxconf
+
+$ sudo pacman -S gksu caja plum gedit
+
+
+### Mate ###
+
+
+
+### Gnome, XFCE ###
+
+# pacman -S gnome
+# pacman -S gnome-extra
+# pacman -S xfce4 xfce4-goodies dbus gnome-icon-theme
+# /etc/rc.d/hal start
+# /etc/rc.d/fam start
+
+# nano ~/.xinitrc
+# exec ck-launch-session gnome-session
+# exec startxfce4
+# startx
+
+
+### Gnome, XFCE ###
+
+
+
+
+# install some-theme-tools
+$ sudo pacman -S breeze-gtk breeze-kde4 kde-gtk-config
+
+$ nano /etc/sddm.conf
+# Current=breeze
+
+
+# gksu activate to sudo comands for shell it mate or plasma or xfce
+$ sudo gconftool-2 --set --type boolean /apps/gksu/sudo-mode true
+
+
+$ pacman -Su sddm sddm-kcm discover
+
+$ Xorg -configure
+$ nano /root/xorg.conf.new
+$ cp /root/xorg.conf.new /etc/X11/xorg.conf
+
+$ systemctl enable sddm
+$ systemctl start sddm
+
+
+### FluxBox ###
+
+
+$$$ .xinitrc
+exec fluxbox
+or
+exec startfluxbox
+$$$ startfluxbox is startup process and programm to ~/.fluxbox/startup
+
+$$$ manual edit menu fluxbox 
+$  nano ~/.fluxbox/menu
+or
+$ fluxmenu
+
+$$$ FluxBox Full Menu
+$ pacman -S menumaker
+$ mmaker -v Fluxbox
+
+$$$ walpaper fluxbox
+$ nano ~/.fluxbox/menu
+[submenu] (Backgrounds)
+[wallpapers] (~/.fluxbox/backgrounds)
+[wallpapers] (/usr/share/fluxbox/backgrounds)
+[end]
+$$$ Copy Image File to <~/.fluxbox/backgrounds>
+
+
+### FluxBox ###
+
+
+
+# autologin and theme options
+$ sudo nano /etc/sdd.conf
+
+[Autologin]
+Relogin=false
+Session=mate.desktop
+User=username
+
+[General]
+HaltCommand=
+RebootCommand=
+
+[Theme]
+Current=elarun
+CursorTheme=mate
+
+[Users]
+MaximumUid=65000
+MinimumUid=1000
+
+
+
+
+# sdd themes to: /usr/share/sddm/themes
+# themes shell to: /usr/share/themes
+
+
+
+$$$ Image Viewer and Editor $$$
+
+$$$ feh or xnview $$$
+
+# pacman -S feh eterm
+# nano ~/.fluxbox/menu
+[submenu] (Wallpaper)
+[wallpapers] (/path/to/your/wallpapers) {feh --bg-scale}
+[end]
+# chmod 770 ~/.fehbg
+# nano ~/.fluxbox/init
+session.screen0.rootCommand:	~/.fehbg
+# nano ~/.fluxbox/startup
+~/.fehbg
+
+
+$$$ Image Viewer and Editor $$$
+
+
+
+# mv /usr/share/xsessions/gnome.desktop ~/
+
+# sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+
+
+
+# nano /etc/slim.conf $$$ SLIM, XDM, GDM, KDM...
+
+$$$ comment in and out the line $$$
+
+  login_cmd exec /bin/sh - ~/.xinitrc %session
+# login_cmd exec /bin/bash - login ~/xinitrc %session
+
+$$$ comment in and out the line $$$ 
+
+# nano /home/user/.xinitrc
+exec mate-session
+
+# systemctl enable xdm $$$ slim, xdm, kdm, gdm...
+# systemctl start xdm $$$ slim, xdm, kdm, gdm...
+
+
+
+
+$ ip link
+# if adapter is <DOWN>  then
+$ ip link set enp0s3 up
+$ dhcpcd enp0s3
+$ ping -c 3 ya.ru
+
+
+
+$ sudo pacman -S netctl dialog wpa_supplicant
+$ sudo pacman -S net-tools
+$ sudo pacman -S network-manager-applet
+$ sudo pacman -S libgtop networkmanager
+$ pacman -S networkmanager-openconnect networkmanager-openvpn networkmanager-pptp networkmanager-vpnc networkmanager-l2tp networkmanager-strongswan
+$ sudo pacman -S iw wireless_tools wicd network-wireless 
+
+$ sudo systemctl stop dhcpcd
+$ sudo systemctl disable dhcpcd
+$ sudo systemctl enable NetworkManager
+$ sudo systemctl start NetworkManager
+
+# Or
+
+# sudo systemctl stop dhcpcd@enp0s3.service
+# sudo systemctl disable dhcpcd@enp0s3.service
+# sudo systemctl stop dhcpcd.service
+# sudo systemctl disable dhcpcd.service
+# sudo systemctl start NetworkManager
+# sudo systemctl enable NetworkManager
+
+
+
+# sudo pacman -S samba libwbclient smb4k smbclient smbnetfs gvfs-smb 
+
+
+
+
+
+
+
+### Programs - please select the programs to install. Don't to install it all programs ! ###
+
+
+# sudo pacman -S gedit gnome-terminal pulseaudio pulseaudio-alsa pavucontrol 
+firefox vlc eog eog-plugins chromium unzip unrar p7zip pidgin toxcore deluge 
+smplayer audacious qmmp gimp xfburn thunderbird gnome-system-monitor 
+doublecmd-gtk2 gnome-calculator pinta recoll deadbeef truecrypt bleachbit 
+shutter evince mlocate antiword catdoc unrtf djvulibre id3lib mutagen 
+python2-pychm perl-image-exiftool aspell-en aspell-sv git calibre
+
+# sudo pacman -S blender wget kget gwget transmission transmission-cli transmission-remote-cli transmission-gtk transmission-qt opera skype Krita MyPaint Inkscape XnView vim Geany Rainlendar Okular KeePassX truecrypt Rhythmbox audacity audacious Kino PiTiVi Kdenlive Brasero K3b Xarchiver Ark Nautilus AcetoneISO Mount gparted cfdisk fdisk Clonezilla Remastersys Samba TeamViewer matlab Scilab KTechLab gEDA VirtualBox Qemu
+
+$$$ CLIPBOARD $$$
+
+Parcellite
+
+$$$ CLIPBOARD $$$
+
+$$$ Antiviruses $$$
+
+ClamAV, DrWeb, Nod32, Avast, Avira AntiVir, Kaspersky Workstation, BitDefender
+
+$$$ Antiviruses $$$ 
+
+$$$ Web Servers $$$
+
+Apache, Tornado, XAMPP, lighttpd , nginx
+
+$$$ Web Servers $$$
+
+$$$ FTP Servers $$$
+
+ProFTPd, Pure-FTPd, vsftpd, freeFTPd
+
+$$$ FTP Servers $$$
+
+$$$ BASE DATA $$$
+
+MySQL, PostgreSQL, SQLite, DB2, Firebird, Oracle
+
+$$$ BASE DATA $$$
+
+$$$ Proxy Server $$$
+
+Ideco ICS, Ziproxy
+
+$$$ Proxy Server $$$
+
+$$$ KartoGraphia $$$
+
+QLandkarteGT, Quantum-GIS, JOSM
+
+$$$ KartoGraphia $$$
+
+$$$ Programing <ide, c++, html...> $$$
+
+KDevelop, Lazarus, Free Pascal, Kylix, Python, Glade, Code::Blocks, Quanta Plus, Screem
+
+$$$ Programing <ide, c++, html...> $$$
+
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore gstreamer0.10-plugins sh
+
+# sudo pacman -S openshot avidemux-gtk wine playonlinux netbeans
+# sudo pacman -S a52dec faac faad2 flac jasper lame libdca libdv libmad 
+libmpeg2 libtheora libvorbis libxv wavpack x264 xvidcore 
+gstreamer0.10-plugins
+# sudo pacman -S libreoffice-fresh libreoffice-fresh-ru
+
+# sudo pacman -S checkinstall build-essential  autoconf automake makepkg rpmbuild dpkg 
+
+
+### Programs ###
+
+
+
+# sudo pacman -S faenza-icon-theme numix-themes
+
+
+$ sudo pacman -S wine winetricks wine_gecko
+# if wine to install then and only then to install CrossOver Linux
+
+
+
+
+# curl -O https://blackarch.org/strap.sh
+# sudo bash ./strap.sh
+# sudo pacman -Syyu
+# pacman -Syu
+# pacman-db-upgrade
+# pacman -Syu
+# pacman -S blackarch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

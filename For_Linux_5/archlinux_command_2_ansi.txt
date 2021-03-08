@@ -1,0 +1,193 @@
+
+loadkeys ru
+setfont cyr-syn16
+nano /etc/locale.gen
+
+# no-comment # for ru_RU.UTF8 UTF-8
+# ctrl+x
+# y
+
+locale-gen
+export LANG=ru_RU.UTF-8
+
+ping -c 3 google.com
+
+# if problem to next for config
+
+# iwconfig
+# wifi-menu <interface>
+# pppoe-setup, pppoe-start
+
+# if problem to finish config
+
+
+cfdisk
+
+# /dev/sda1 boot 100Mb <bootable,startup>
+# /dev/sda2 swap +1Gb 
+# /dev/sda3 / 15Gb <system>
+# /dev/sda4 /home
+
+# exit
+
+
+mkfs.ext2 /dev/sda1 -L boot
+mkswap /dev/sda2 -L swap
+mkfs.ext4 /dev/sda3 -L root
+mkfs.ext4 /dev/sda4 -L home
+
+mount /dev/sda3 /mnt
+
+mkdir /mnt/{boot,home}
+# mkdir /mnt/boot
+# mkdir /mnt/home
+
+mount /dev/sda1 /mnt/boot
+mount /dev/sda4 mnt/home
+swapon /dev/sda2
+
+nano /etc/pacman.d/mirrorlist
+
+# Server = http://mirror/yandex.ru/archlinux/$repo/os/$arch
+# ctrl+x and save to exit
+
+pacstrap -i /mnt base base-devel
+pacstrap -i /mnt netctl dialog wpa_supplicant
+
+arch-chroot /mnt pacman -S grub
+
+
+
+# EFI
+# arch-chroot /mnt pacman -S efibootmgr
+# 32 bit system
+# arch-chroot /mnt pacman -S grub-efi-i386 refind-efi
+
+
+
+genfstab -p /mnt >> /mnt/etc/fstab
+arch-chroot /mnt /bin/bash
+
+nano /etc/locale.gen
+locale-gen
+# console-locale
+# /etc/mkinitcpio.conf -> <hooks> -> <keymap>
+
+
+
+# Video Card, Graphic-Card
+ 
+nano /etc/mkinitcpio.conf
+# MODULES=""
+# i915 - Intel, radeon - AMD, nouveau - NVIDIA
+
+
+# RAM-disk
+# mkinitcpio -p linux
+# BIOS
+# grub-install /dev/sda
+# EFI
+# grub-install --target=x86_64-efi --efi-directory=/boot --bootloader -id=grub
+# grub.cfg
+# grub-mkconfig -o /boot/grub/grub.cfg
+
+# if grub to error then
+# nano /etc/default/grub
+# GRUB_DISABLE_SUBMENU=y
+
+
+# EFI variant 2:
+$ pacman -S refind-efi
+$ refind-install --usedefault /dev/sda1
+$ refind-mkrlconf
+
+
+
+
+
+passwd
+exit
+umount /mnt/{boot,home}
+reboot
+
+hostnamectl set-hostname myhostname
+timedatectl set-timezone Europe/Moscow
+Localectl set-keymap ru
+setfont cyr-syn16
+localectl set-locale LANG="ru_RU.UTF-8"
+
+nano /etc/vconsole.conf
+# KEYMAP=ru
+# FONT=cyr-sun16
+
+mkinitcpio -p linux
+grub-mkconfig -o /boot/grub/grub.cfg
+
+nano /etc/pacman.conf
+
+# for work 32 bit to x64 system nocomments to multilib
+# [multilib]
+# Include = /etc/pacman.d/mirrorlist
+
+# if problem to download packets then create file /etc/sysctl.d/40-ipv6.conf
+# net.ipv6.conf.all.disable_ipv6=1
+
+
+
+useradd -m -g users -G audio,games,lp,optical,power,scanner,storage,video,wheel -s /bin/bash myusername
+passwd myusername
+chfn myusername
+
+systemctl enable dhcpd
+systemctl start dhcpd
+# wifi-menu
+pacman -Syy
+pacman -Su
+pacman -S sudo
+nano /etc/sudoers
+# nocomment %wheel ALL=(ALL) ALL
+# ctrl+x and save to exit
+#exit
+
+
+sudo pacman -S xorg-server xorg-xinit xorg-server-utils mesa xterm
+# Touchpad or Touchscreen -> xf86-input-synaptics
+
+
+# lib32 setup to x86_64 system
+
+# Intel
+sudo pacman -S xf86-video-intel lib32-intel-dri
+# NVIDIA
+sudo pacman -S xf86-video-nouveau lib32-nouveau-dri
+# AMD
+sudo pacman -S xf86-video-ati lib32-ati-dri
+
+
+sudo pacman -S xfce4 xfce-goodies sddm
+sudo systemctl enable sddm.service
+
+sudo pacman -S ttf-liberation ttf-dejavu opendesktop-fonts ttf-bitstream-vera ttf-arphic-ukai ttf-arphic-uming ttf-hanazono
+
+# English language keyboard layout for default
+nano /etc/X11/xorg.conf.d/00-keyboard.conf
+edit for string
+# Option "XkbLayout" "ru,us" 
+# to string
+# Option "XkbLayout" "us,ru"
+
+
+sudo systemctl reboot
+
+
+
+
+
+
+
+
+
+
+
+
+

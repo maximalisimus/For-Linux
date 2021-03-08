@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/usr/bin/pyinstaller", line 33, in <module>
+    sys.exit(load_entry_point('pyinstaller==4.2', 'console_scripts', 'pyinstaller')())
+  File "/usr/lib/python3.9/site-packages/PyInstaller/__main__.py", line 114, in run
+    run_build(pyi_config, spec_file, **vars(args))
+  File "/usr/lib/python3.9/site-packages/PyInstaller/__main__.py", line 65, in run_build
+    PyInstaller.building.build_main.main(pyi_config, spec_file, **kwargs)
+  File "/usr/lib/python3.9/site-packages/PyInstaller/building/build_main.py", line 725, in main
+    build(specfile, kw.get('distpath'), kw.get('workpath'), kw.get('clean_build'))
+  File "/usr/lib/python3.9/site-packages/PyInstaller/building/build_main.py", line 672, in build
+    exec(code, spec_namespace)
+  File "/home/mikl/003/test.spec", line 6, in <module>
+    a = Analysis(['test.py'],
+  File "/usr/lib/python3.9/site-packages/PyInstaller/building/build_main.py", line 242, in __init__
+    self.__postinit__()
+  File "/usr/lib/python3.9/site-packages/PyInstaller/building/datastruct.py", line 160, in __postinit__
+    self.assemble()
+  File "/usr/lib/python3.9/site-packages/PyInstaller/building/build_main.py", line 438, in assemble
+    ctypes_binaries = scan_code_for_ctypes(co)
+  File "/usr/lib/python3.9/site-packages/PyInstaller/depend/utils.py", line 145, in scan_code_for_ctypes
+    binaries = _resolveCtypesImports(binaries)
+  File "/usr/lib/python3.9/site-packages/PyInstaller/depend/utils.py", line 319, in _resolveCtypesImports
+    load_ldconfig_cache()
+  File "/usr/lib/python3.9/site-packages/PyInstaller/depend/utils.py", line 402, in load_ldconfig_cache
+    path = m.groups()[-1]
+AttributeError: 'NoneType' object has no attribute 'groups'
+
+

@@ -1,0 +1,190 @@
+SLiM (Русский)
+Эта страница нуждается в сопроводителе
+Статья не гарантирует актуальность информации. Помогите русскоязычному сообществу поддержкой подобных страниц. См. Команда переводчиков ArchWiki
+Ссылки по теме
+* Экранный менеджер
+Важно: Проект SliM заброшен (домашняя страница проекта не работает, осталось только зеркало для скачки) и SLIM не полностью совместим с systemd, в том числе с logind сеансами. Рекомендуется использовать другой Экранный менеджер или Xinitrc.
+SLiM - это акроним словосочетания Simple Login Manager (простой менеджер входа). SLIM является легковесным, легко настраеваемым, требует минимум зависимостей и не требует ни одну из зависимостей для окружений рабочего стола GNOME или KDE. Поэтому SLIM оставляет систему легковесной, что подойдёт для пользователей легковесных рабочих столов, таких как Xfce, Openbox, and Fluxbox.
+Contents
+ [hide] 
+* 1Установка
+* 2Настройка
+o 2.1Включение SLiM
+* 3Одиночные Среды
+* 4Автоматический вход
+* 5Выбор окружения
+o 5.1Версия ?1.3.5
+o 5.2Версия ?1.3.6
+* 6Темы
+* 7Советы и Хитрости
+o 7.1Изменение курсора
+o 7.2Общие темы для Slim и Рабочего Стола
+o 7.3Выключение, перезагрузка, режим сна, выход, запуск терминала из SLIM
+o 7.4Ошибка с выключением заставки
+o 7.5Информация сесий в Slim
+o 7.6Настройка DPI в Slim
+o 7.7Используйте случайные темы
+o 7.8Автомонтирование шифрованной /home при входе в систему
+* 8Ссылки
+Установка
+Установите slim из официальных репозиториев.
+Настройка
+Примечание: SLiM больше не поддерживает сессию 'по умолчанию', если включено несколько сессий. Это не заметно, если пытаетесь выйти, п потом обратно войти в ту же сессию.
+Начиная с версии 1.3.6-2, SLiM может автоматически определить установленные окружения рабочего стола и оконные менеджеры. Это достигается с помощью использования sessiondir /usr/share/xsessions/ в /etc/slim.conf. Поэтому тем, кто устанавливал прошлую версию SLiM будет необходимо внести изменения в /etc/slim.conf и xinitrc, соответственно.
+Включение SLiM
+Примечание: slim зависит от systemd-logind.
+Включите SLiM сервис slim.service:
+# systemctl enable slim.service
+Предполагается, что до этого вы отключили включённый ранее дисплейный менеджер. Если это не так, измените цель по умолчанию.
+Одиночные Среды
+Чтобы настроить загрузку определенной среды в SLIM , просто отредактируйте ~/.xinitrc чтобы он выглядел следующим образом:
+#!/bin/sh
+
+#
+# ~/.xinitrc
+#
+# Executed by startx (запустите ваш оконный менеджер отсюда)
+#
+
+exec [команда сеанса]
+* Примечание: Если у вас нет файла ~/.xinitrc, вы можете создать его (например с помощью nano). По умолчанию slim ищет этот файл для всех пользователей и будет жаловаться что "не может выполнить команду login " если нет такого файла в домашнем каталоге пользователя.
+Замените [команду сеанса] соответствующей командой вашей вашего сеанса.Для примера:
+Для запуска Openbox:
+exec openbox-session
+Для запуска Fluxbox:
+exec fluxbox
+или
+exec startfluxbox
+Для запуска Xfce:
+exec startxfce4
+Для запуска LXDE:
+exec startlxde
+Для запуска GNOME:
+exec gnome-session
+Для запуска KDE:
+exec startkde
+Для запуска FVWM2:
+exec fvwm2
+Для запуска FVWM-crystal:
+exec fvwm-crystal
+Для запуска Awesome:
+exec awesome
+Для запуска i3:
+exec i3
+Для запуска Enlightenment
+exec enlightenment_start
+Если ваше рабочее окружение, не перечислено здесь, обратитесь к документации по программному обеспечению
+Автоматический вход
+Для того, чтобы сделать возможным автоматический вход в систему(без ввода пароля), необходимо раскомментировать следующие строки в /etc/slim.conf
+# default_user        simone
+Раскомментируйте эту строку и замените simone на имя Вашего пользователя.
+# auto_login          no
+Расскоментируйте эту строку и замените no на yes. Это позволит использовать автоматический вход.
+Выбор окружения
+Версия ?1.3.5
+Если вам нужна возможность выбора окружения рабочего стола из списка, SLiM нужно настроить следующим образом.
+Поместите правило, подобное этому в ваш файл ~/.xinitrc и отредактируйте переменную сессий в /etc/slim.conf, соответственно именам ваших сессий. Вы можете выбрать рабочее окружение во времени входа нажав F1.
+# сессия, которая начнётся если пользователь не выбрал рабочее окружение
+DEFAULT_SESSION=twm
+
+case $1 in
+kde)
+	exec startkde
+	;;
+xfce4)
+	exec startxfce4
+	;;
+icewm)
+	icewmbg &
+	icewmtray &
+	exec icewm
+	;;
+wmaker)
+	exec wmaker
+	;;
+blackbox)
+	exec blackbox
+	;;
+*)
+	exec $DEFAULT_SESSION
+	;;
+esac
+Скачать: http://svn.berlios.de/svnroot/repos/slim/trunk/xinitrc.sample
+Документация Slim: http://slim.berlios.de/manual.php
+Версия ?1.3.6
+Примечание: As of version 1.3.6-2 SLiM makes use of /usr/share/xsessions/ in order to find currently available desktop environments. If you have a prior version of SLiM installed you will have to add this directory as the value of the 'sessiondir' option to your slim.conf file. SLiM then passes the appropriate executable to ~/.xinitrc as an argument. Instead of a case statement, a basic multiple environments setup now only requires the addition of this to ~/.xinitrc:
+exec $1
+Темы
+Установка тем для Slim:
+# pacman -S slim-themes archlinux-themes-slim
+archlinux-themes-slim пакеты содержат различные темы.Проверте /usr/share/slim/themes чтобы увидеть доступные темы и просмотреть их.
+Измените строку current_theme в /etc/slim.conf из "default" на название темы на ваш выбор:
+# nano /etc/slim.conf
+#current_theme       default
+current_theme       archlinux-simplyblack
+Для предварительного просмотра тем, если не установлен Xorg server, выполните команду:
+slim -p /usr/share/slim/themes/<theme name>
+Для того, чтобы закрыть просмотр, наберите "exit" в поле логина и нажмите Enter. Дополнительные пакеты тем могут быть найдены в AUR.
+Советы и Хитрости
+Изменение курсора
+Если вам не нравится курсор "Х", и вы хотите его изменить, например на стрелку, используйте slim-cursor пакет из AUR.
+После установки, отредактируйте / ETC / slim.conf и раскомментируйте строку:
+cursor   left_ptr
+Это даст вам нормальную стрелку взамен. Эти настройки сделаны для курсора xsetroot .Вы можете посмотреть доступные курсоры здесь или в /usr/share/icons/<your-cursor-theme>/cursors/.
+Для того, чтобы изменять тему курсора на экране входа, добавьте в фаил /usr/share/icons/default/index.theme следующее содержание:
+[Icon Theme]
+Inherits=<your-cursor-theme>
+Замените <your-cursor-theme> на имя темы курсоров которую вы хотите использовать, например whiteglass.
+Общие темы для Slim и Рабочего Стола
+Простой способ обмена темами между Slim и вашим рабочим столом, это создание символической ссылки от вашего файла тем рабочего стола до дефолтной темы в Slim.
+# mv /usr/share/slim/themes/default/background.jpg /usr/share/slim/themes/default/background.old.jpg
+# ln -s /path/to/mywallpaper.jpg /usr/share/slim/themes/default/background.jpg
+Теперь ваши темы, обои Slim и рабочего стола будут одинаковыми,будет видно сглаживание и переход при загрузке настольной системы. (Вы должны держать дефолтную тему в файле настроек /etc/slim.conf чтобы этот трюк работал)
+Выключение, перезагрузка, режим сна, выход, запуск терминала из SLIM
+Вы можете выключать, перезагружать, выходить, и даже запускать терминал с экрана входа SLIM.Для этого введите соответствующее значение в поле имя пользователя и пароля, в поле пароля:
+* Для того, чтобы запускать терминал, введите console как имя пользователя(устанавливается по умолчанию на xterm, которое должно настраиваться отдельно.В файле /etc/slim.conf можно изменить предпочитаемый терминал)
+* Для выключения, введите halt как имя пользователя
+* Для перезагрузки, введите reboot как имя пользователя
+* Для выхода, введите exit как имя пользователя
+* Для режима сна, введите suspend как имя пользователя (Suspend отключён по умолчанию, отредактируйте /etc/slim.conf раскомментируйте строку suspend_cmd , если необходимо модифицировать приостановить саму команду (e.g. change /usr/sbin/suspend to sudo /usr/sbin/pm-suspend))
+Ошибка с выключением заставки
+Если вы используете заставку и slim,и иногда вы не можете выключить или перезагрузить из меню в gnome, xfce, lxde or others. и т.д Проверьте ваши файлы настроек /etc/slim.conf и /etc/splash.conf, установите DEFAULT_TTY=7 также, как xserver_arguments vt07.
+Информация сесий в Slim
+По умолчанию, Slim не регистрирует сесии в utmp и wtmp какие причины, кто, последний раз.. на недостоверную информацию. Чтобы это исправить, отредактируйте ваш slim.conf следующим образом:
+ sessionstart_cmd    /usr/bin/sessreg -a -l $DISPLAY %user
+ sessionstop_cmd     /usr/bin/sessreg -d -l $DISPLAY %user
+Настройка DPI в Slim
+Если вы установили DPI с аргументом -dpi 96 in /etc/X11/xinit/xserverrc и это не работает со slim. Отредактируйте ваш slim.conf следующим образом:
+ xserver_arguments   -nolisten tcp vt07 
+to
+ xserver_arguments   -nolisten tcp vt07 -dpi 96
+Используйте случайные темы
+Используйте current_theme переменную как запятую, для разделения списка произвольного набора тем.
+Автомонтирование шифрованной /home при входе в систему
+Можете использовать pam_mount[broken link: invalid section]
+Пример файла /etc/pam.d/slim:
+ auth            requisite       pam_nologin.so
+ auth            required        pam_env.so
+ auth            required        pam_unix.so
+ auth   required  pam_ecryptfs.so unwrap
+ auth            optional        pam_mount.so
+ account         required        pam_unix.so
+ password  required  pam_ecryptfs.so
+ password        required        pam_unix.so
+ password        optional        pam_mount.so
+ session         required        pam_limits.so
+ session         required        pam_unix.so
+ session         optional        pam_mount.so
+ session         optional        pam_loginuid.so
+ session         optional        pam_ck_connector.so
+
+Примечание: Важно помнить, что в настоящее время нет команды отображения меню в SLIM. Нужно запомнить стандартные команды, перечисленые в "Выключение, перезагрузка,...." и т.д. Эти команды используются в поле Имя пользователя, которое всегда отображается.
+Ссылки
+* SLiM домашняя страница
+    
+    
+    
+    
+    
+    
+    

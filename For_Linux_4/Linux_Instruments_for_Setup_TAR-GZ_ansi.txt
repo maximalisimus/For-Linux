@@ -1,0 +1,43 @@
+
+checkinstall build-essential  autoconf automake makepkg rpmbuild
+
+For start is :
+
+$ ./bootstrap
+$ ./autogen.sh
+
+If Error Then :
+
+$ aclocal
+$ autoheader
+$ automake --gnu --add-missing --copy --foreign
+$ autoconf -f -Wall
+
+And Configure: 
+
+$ ./configure
+
+IF Lib-Package is Not-Found Then Search to Google or Yandex,
+then copy file folder and Finish :
+
+$ make
+$ checkinstall
+$ dpkg -i $Name.deb
+
+
+
+
+
+
+makepkg -g >> PKGBUILD
+
+or
+
+rpm -ivh $Name.src.rpm
+
+or
+
+rpmbuild -bb –target=i386 $Name.spec
+
+
+

@@ -1,0 +1,2913 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="archlinux-kernel.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Олег</o:Author>
+  <o:LastAuthor>Олег</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>2018-12-28T08:12:00Z</o:LastPrinted>
+  <o:Created>2018-12-28T08:12:00Z</o:Created>
+  <o:LastSaved>2018-12-28T08:12:00Z</o:LastSaved>
+  <o:Pages>6</o:Pages>
+  <o:Words>4495</o:Words>
+  <o:Characters>25623</o:Characters>
+  <o:Company>Reanimator Extreme Edition</o:Company>
+  <o:Lines>213</o:Lines>
+  <o:Paragraphs>60</o:Paragraphs>
+  <o:CharactersWithSpaces>30058</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="archlinux-kernel.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="archlinux-kernel.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:516624190;
+	mso-list-template-ids:-196543348;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:690910654;
+	mso-list-template-ids:-1478824748;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2
+	{mso-list-id:840195812;
+	mso-list-template-ids:722735400;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:1103455418;
+	mso-list-template-ids:-394878856;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l4
+	{mso-list-id:1885675570;
+	mso-list-template-ids:-1392862882;}
+@list l4:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l4:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Kernel (Русский)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Ссылки по теме<o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/%D0%9C%D0%BE%D0%B4%D1%83%D0%BB%D0%B8_%D1%8F%D0%B4%D1%80%D0%B0"
+     title="Модули ядра"><b>Модули ядра</b></a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="https://wiki.archlinux.org/index.php/Compile_kernel_module"
+     title="Compile kernel module"><b>Compile kernel module</b></a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="https://wiki.archlinux.org/index.php/Kernel_Panics"
+     title="Kernel Panics"><b>Kernel Panics</b></a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+     title="Linux-ck (Русский)"><b>Linux-ck (Русский)</b></a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l0 level1 lfo1;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="https://wiki.archlinux.org/index.php/Sysctl" title=Sysctl><b>sysctl</b></a><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Состояние
+перевода:</span></b><b><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;</span></b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>На этой странице представлен перевод
+статьи</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Kernels" title=Kernels><b>Kernels</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>. Дата последней
+синхронизации: 29 марта 2016. Вы можете</span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/ArchWiki_Translation_Team_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="ArchWiki Translation Team (Русский)"><b><span lang=RU style='mso-ansi-language:
+RU'>помочь</span></b></a>&nbsp;</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>синхронизировать перевод, если в английской версии
+произошли</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php?title=Kernels&amp;diff=0&amp;oldid=428531"><b><span
+lang=RU style='mso-ansi-language:RU'>изменения</span></b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Из</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://ru.wikipedia.org/wiki/%D0%AF%D0%B4%D1%80%D0%BE_%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D0%BE%D0%B9_%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B"><b>Wikipedia</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро&#769;
+— центральная часть операционной системы (ОС), обеспечивающая приложениям
+координированный доступ к ресурсам компьютера, таким как процессорное время,
+память, внешнее аппаратное обеспечение, внешнее устройство ввода и вывода
+информации. Также обычно ядро предоставляет сервисы файловой системы и сетевых
+протоколов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Существуют
+различные альтернативные доступные ядра </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Arch</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+в дополнение к основным </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> ядрам. В этой
+статье перечислены некоторые из вариантов имеющихся в репозиториях, с кратким
+описанием каждого из них. Существует также описание патчей, которые могут быть
+применены к ядру. Статья заканчивается обзором пользовательской компиляции ядра
+со ссылками на различные методы.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Contents<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;[hide]&nbsp;<o:p></o:p></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9F%D1%80%D0%B5%D0%B4%D0%B2%D0%B0%D1%80%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE_%D1%81%D0%BA%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5_%D1%8F%D0%B4%D1%80%D0%B0">1Предварительно
+     скомпилированные ядра</a><o:p></o:p></span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9E%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D1%8B">1.1Официальные
+      пакеты</a><o:p></o:p></span></li>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9D%D0%B5%D0%BE%D1%84%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D0%B5_%D1%80%D0%B5%D0%BF%D0%BE%D0%B7%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D0%B8_%D1%81_%D0%B"><span
+      lang=RU style='mso-ansi-language:RU'>1.2Неофициальные пользовательские
+      репозитории с готовыми, собранными ядрами </span>Linux</a></span><span
+      style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></li>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#AUR_%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D1%8B">1.3AUR
+      пакеты</a><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9F%D0%B0%D1%82%D1%87%D0%B8_%D0%B8_%D0%BD%D0%B0%D0%B1%D0%BE%D1%80%D1%8B_%D0%BF%D0%B0%D1%82%D1%87%D0%B5%D0%B9_(%D0%BF%D0%B0%D1%82%D1%87%D1%81%D0%B5%D1%82%D1%8B)"><span
+     lang=RU style='mso-ansi-language:RU'>2Патчи и наборы патчей (патчсеты)</span></a></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9A%D0%B0%D0%BA_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%B8%D1%82%D1%8C">2.1Как
+      установить</a><o:p></o:p></span></li>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5_%D0%BF%D0%B0%D1%82%D1%87%D0%B8_%D0%B8_%D0%BF%D0%B0%D1%82%D1%87%D1%81%D0%B5%D1%82%D1%8B">2.2Основные
+      патчи и патчсеты</a><o:p></o:p></span></li>
+  <ul style='margin-top:0cm' type=square>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#-ck">2.2.1-ck</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#-rt">2.2.2-rt</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#-bld">2.2.3-bld</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#-grsecurity">2.2.4-grsecurity</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Tiny-%D0%9F%D0%B0%D1%82%D1%87%D0%B8">2.2.5Tiny-Патчи</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#-pf">2.2.6-pf</a><o:p></o:p></span></li>
+  </ul>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%98%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5_%D0%BF%D0%B0%D1%82%D1%87%D0%B8">2.3Индивидуальные
+      патчи</a><o:p></o:p></span></li>
+  <ul style='margin-top:0cm' type=square>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Reiser4">2.3.1Reiser4</a><o:p></o:p></span></li>
+   <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+       line-height:normal;mso-list:l3 level3 lfo2;tab-stops:list 108.0pt'><span
+       lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+       mso-ansi-language:EN'><a
+       href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#fbsplash">2.3.2fbsplash</a><o:p></o:p></span></li>
+  </ul>
+ </ul>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9A%D0%BE%D0%BC%D0%BF%D0%B8%D0%BB%D1%8F%D1%86%D0%B8%D1%8F_%D1%8F%D0%B4%D1%80%D0%B0">3Компиляция
+     ядра</a><o:p></o:p></span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%98%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D1%83%D1%8F_Arch_Build_System_(ABS)">3.1Используя
+      Arch Build System (ABS)</a><o:p></o:p></span></li>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A2%D1%80%D0%B0%D0%B4%D0%B8%D1%86%D0%B8%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4">3.2Традиционный
+      метод</a><o:p></o:p></span></li>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%9F%D1%80%D0%BE%D0%BF%D0%B8%D0%B5%D1%82%D0%B0%D1%80%D0%BD%D1%8B%D0%B9_NVIDIA_%D0%B4%D1%80%D0%B0%D0%B9%D0%B2%D0%B5%D1%80">3.3Пропиетарный
+      NVIDIA драйвер</a><o:p></o:p></span></li>
+ </ul>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A1%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82%D0%B5_%D1%82%D0%B0%D0%BA%D0%B6%D0%B5">4Смотрите
+     также</a><o:p></o:p></span></li>
+ <ul style='margin-top:0cm' type=circle>
+  <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;
+      line-height:normal;mso-list:l3 level2 lfo2;tab-stops:list 72.0pt'><span
+      lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+      mso-ansi-language:EN'><a
+      href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#%D0%A2%D0%B5%D1%81%D1%82%D1%8B_%D0%B8_%D0%BE%D0%B1%D0%B7%D0%BE%D1%80%D1%8B">4.1Тесты
+      и обзоры</a><o:p></o:p></span></li>
+ </ul>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Предварительно скомпилированные
+ядра<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Официальные пакеты<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://www.archlinux.org/packages/?name=linux">linux</a><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> ядро и модули из
+репозитория [</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>core</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]. Ванильное ядро с</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux"><b><span
+lang=RU style='mso-ansi-language:RU'>некоторыми патчами</span></b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://www.archlinux.org/packages/?name=linux-lts">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>lts</a></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Версия
+ядра </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модулей с долгосрочной поддержкой (</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>LTS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+- </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Long</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Term</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Support</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>)
+из репозитория [</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>core</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>].<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://www.archlinux.org/packages/?name=linux-grsec">linux-grsec</a><sup>[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: replaced by&nbsp;<a
+href="https://www.archlinux.org/packages/?name=linux-hardened">linux-hardened</a>]</sup><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> ядро и модули с</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://wiki.archlinux.org/index.php/Grsecurity_Patchset"
+title="Grsecurity Patchset"><b>Grsecurity</b><b><span style='mso-ansi-language:
+RU'> </span>Patchset</b></a>&nbsp;</span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>и </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>PaX</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> патчами для
+повышения безопасности.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://www.archlinux.org/packages/?name=linux-zen">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>zen</a></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://github.com/zen-kernel/zen-kernel"><b>ZEN</b><b><span lang=RU
+style='mso-ansi-language:RU'>-ядро</span></b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>результат
+совместной работы проекта </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Zen</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>kernel</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Для
+создания этого ядра берётся свежее стабильное официальное ядро </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.
+И вносятся изменения проектом </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Zen</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>kernel</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+(планировщик </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>CPU</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>BFS</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>BFQ</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-планировщик
+(</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>I</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>O</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>)
+ввода-вывода, </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Aufs</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Unionfs</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Reiser</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>4,
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>TuxOnIce</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>PHC</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> и многие другие),
+которые улучшают отзывчивость и производительность системы.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Неофициальные
+пользовательские репозитории с готовыми, собранными ядрами </span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Рекомендуется
+посмотреть</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories"
+title="Unofficial user repositories"><b><span lang=RU style='mso-ansi-language:
+RU'>этот раздел</span></b></a></span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>AUR</span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> пакеты<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-aufs_friendly/">linux<span
+lang=RU style='mso-ansi-language:RU'>-</span>aufs<span lang=RU
+style='mso-ansi-language:RU'>_</span>friendly</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>AUFS</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-совместимое ядро </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+и модули, полезно при использовании</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Docker_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Docker (Русский)"><b>Docker</b></a></span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-apparmor/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>apparmor</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> ядро с
+включенными возможностями</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/AppArmor" title=AppArmor><b>AppArmor</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-bfs/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>bfs</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: сохранено в</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="http://pkgbuild.com/git/aur-mirror.git/tree/linux-bfs">aur<span
+lang=RU style='mso-ansi-language:RU'>-</span>mirror</a></span></sup></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули с</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://en.wikipedia.org/wiki/ru:Brain_Fuck_Scheduler"
+title="wikipedia:ru:Brain Fuck Scheduler"><b>Brain</b><b><span
+style='mso-ansi-language:RU'> </span>Fuck</b><b><span style='mso-ansi-language:
+RU'> </span>Scheduler</b></a>&nbsp;</span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>(</span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>BFS</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>) - созданное
+Коном Коливасом (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Con</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Kolivas</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>) для </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>PC</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+с меньшим, чем 4096 ядрами, и </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>BFQ</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>I</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>O</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+планировщиком в качестве дополнительного<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-chromebook/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>chromebook</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: сохранено в</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="http://pkgbuild.com/git/aur-mirror.git/tree/linux-chromebook">aur<span
+lang=RU style='mso-ansi-language:RU'>-</span>mirror</a></span></sup></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> с добавлением аппаратной поддержки</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://wiki.archlinux.org/index.php/Chromebook"
+title=Chromebook><b>chromebook</b></a></span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/Linux-ck/"><b>Linux</b><b><span
+lang=RU style='mso-ansi-language:RU'>-</span>ck</b></a><sup>AUR</sup></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, доступное в</span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Arch_User_Repository_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Arch User Repository (Русский)"><b>AUR</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, которое
+позволяет пользователям запускать</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://en.wikipedia.org/wiki/Linux-ck_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="wikipedia:Linux-ck (Русский)"><b><span lang=RU style='mso-ansi-language:
+RU'>ядро с набором патчей Кона Коливаса</span></b></a></span><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a href="https://en.wikipedia.org/wiki/Wikipedia:Link_rot"
+title="wikipedia:Wikipedia:Link rot"><b><span lang=RU style='mso-ansi-language:
+RU'>устаревшая ссылка</span></b></a>&nbsp;</span></sup><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>2015-08-29]</span></sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, включая &quot;</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Brain</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Fuck</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Scheduler</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>&quot; (</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>BFS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Эти
+патчи предназначены для улучшения отклика системы с особым упором на </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>PC</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+подходят для любого </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>PC</span><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-eee-ck/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>eee<span lang=RU style='mso-ansi-language:
+RU'>-</span>ck</a><sup>AUR</sup></span></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: сохранено в</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="http://pkgbuild.com/git/aur-mirror.git/tree/linux-eee-ck">aur<span
+lang=RU style='mso-ansi-language:RU'>-</span>mirror</a></span></sup></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули для </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Asus</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Eee</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>PC</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+701, собранные с </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>ck</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>1-патчами
+Кона Коливаса (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Con</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Kolivas</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-fbcondecor/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>fbcondecor</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули с</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Fbsplash_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Fbsplash (Русский)"><b>fbcondecor</b><b><span lang=RU style='mso-ansi-language:
+RU'> поддержкой</span></b></a></span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-git/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>git</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули собранное с</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git"><b>Linus</b><b><span
+style='mso-ansi-language:RU'> </span>Torvalds</b><b><span lang=RU
+style='mso-ansi-language:RU'>' </span>Git</b><b><span lang=RU style='mso-ansi-language:
+RU'> репозитория</span></b></a></span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-ice/">linux-ice</a><sup>AUR[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: package not found]</sup><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Ядро Linux и модули с
+gentoo-sources патчами и&nbsp;<a
+href="https://wiki.archlinux.org/index.php/TuxOnIce" title=TuxOnIce><b>TuxOnIce</b></a>&nbsp;поддержкой.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-libre/">linux-libre</a><sup>AUR</sup>,&nbsp;<a
+href="https://aur.archlinux.org/packages/linux-libre-lts/">linux-libre-lts</a><sup>AUR[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: package not found]</sup>,&nbsp;<a
+href="https://aur.archlinux.org/packages/linux-libre-grsec/">linux-libre-grsec</a><sup>AUR[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: package not found]</sup>,&nbsp;<a
+href="https://aur.archlinux.org/packages/linux-libre-rt/">linux-libre-rt</a><sup>AUR[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: package not found]</sup>,&nbsp;<a
+href="https://aur.archlinux.org/packages/linux-libre-xen/">linux-libre-xen</a><sup>AUR[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests">ссылка недействительна</a>: package not found]</sup><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Ядро Linux с &quot;binary
+blobs&quot;.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-lqx/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>lqx</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a href="http://liquorix.net/"><b>Liquorix</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>- ядро,
+построенное с использованием </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Debian</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-конфигурации и </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>ZEN</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-патчей.
+Предназначено для рабочего стола, мультимедийных, игровых и рабочих станций,
+часто используется в качестве замены ядра </span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Debian</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Damentz</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, - сопровождающий
+набор патчей </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Liquorix</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, является также разработчиком для набора патчей </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>ZEN</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-lts34/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>lts<span lang=RU style='mso-ansi-language:
+RU'>34</span></a><sup>AUR</sup></span></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: сохранено в</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="http://pkgbuild.com/git/aur-mirror.git/tree/linux-lts34">aur<span
+lang=RU style='mso-ansi-language:RU'>-</span>mirror</a></span></sup></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> 3.4 с долгосрочной поддержкой (</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>LTS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+- </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Long</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Term</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Support</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-lts310/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>lts<span lang=RU style='mso-ansi-language:
+RU'>310</span></a><sup>AUR</sup></span></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> 3.10 с долгосрочной поддержкой (</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>LTS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+- </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Long</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Term</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Support</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-lts312/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>lts<span lang=RU style='mso-ansi-language:
+RU'>312</span></a><sup>AUR</sup></span></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> 3.12 с долгосрочной поддержкой (</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>LTS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+- </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Long</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Term</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Support</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-mainline/">linux-mainline</a><sup>AUR</sup><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Ядро Linux-mainline.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-mptcp/">linux-mptcp</a><sup>AUR</sup><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Ядро Linux и модули с
+поддержкой&nbsp;<a href="http://multipath-tcp.org/"><b>Multipath TCP</b></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/kernel-netbook/">kernel<span lang=RU
+style='mso-ansi-language:RU'>-</span>netbook</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: сохранено в</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="http://pkgbuild.com/git/aur-mirror.git/tree/kernel-netbook">aur<span
+lang=RU style='mso-ansi-language:RU'>-</span>mirror</a></span></sup></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Статичное
+ядро для нетбуков с </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Intel</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Atom</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>N</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>270/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>N</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>280/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>N</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>450/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>N</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>550,
+таких как </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Eee</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>PC</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, с добавлением
+внешней прошивки (</span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://www.archlinux.org/packages/?name=broadcom-wl"><b>broadcom</b><b><span
+lang=RU style='mso-ansi-language:RU'>-</span>wl</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>) и наборами
+патчей (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BFS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
++ </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>TuxOnIce</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> + </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>BFQ</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> опцией); только
+для </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Intel</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>GPU</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-pax/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>pax</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули с</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/PaX" title=PaX><b>PaX</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>патчами для
+повышенной безопасности.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-pf/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>pf</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и модули с </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>pf</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-патчами ядра [-</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>ck</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+патчи (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BFS</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>included</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>), </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>TuxOnIce</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BFQ</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>]
+и </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>aufs</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>3.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Это
+ядро также доступно (уже собранное)</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Unofficial_user_repositories#Linux-pf"
+title="Unofficial user repositories"><b><span lang=RU style='mso-ansi-language:
+RU'>из неофициального пользовательского репозитория</span></b></a></span><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links"
+title="ArchWiki:Requests"><b>broken</b><b><span style='mso-ansi-language:RU'> </span>link</b></a></span></sup><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>: </span></sup><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>invalid</span></sup><sup><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> </span></sup><sup><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>section</span></sup><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>]</span></sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-tresor/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>tresor</a><sup>AUR</sup></span></b><b><sup><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>/</span></b><b><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a href="https://aur.archlinux.org/packages/linux-lts-tresor/">linux<span
+lang=RU style='mso-ansi-language:RU'>-</span>lts<span lang=RU style='mso-ansi-language:
+RU'>-</span>tresor</a><sup>AUR</sup></span></b><b><sup><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'>[</span></sup></b><b><sup><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_package_links"
+title="ArchWiki:Requests"><span lang=RU style='mso-ansi-language:RU'>ссылка
+недействительна</span></a></span></sup></b><b><sup><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>: </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>package</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>not</span></sup></b><b><sup><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span></sup></b><b><sup><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>found</span></sup></b><b><sup><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>]</span></sup></b><b><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Текущее/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>LTS</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> ядро и модули со встроенным</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://www1.informatik.uni-erlangen.de/tresor"><b><span
+lang=RU style='mso-ansi-language:RU'>патчем </span>TRESOR</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-vfio/">linux<span lang=RU
+style='mso-ansi-language:RU'>-</span>vfio</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>/</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a href="https://aur.archlinux.org/packages/linux-vfio-lts/">linux<span
+lang=RU style='mso-ansi-language:RU'>-</span>vfio<span lang=RU
+style='mso-ansi-language:RU'>-</span>lts</a><sup>AUR</sup></span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Ядро
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Linux</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> и несколько патчей написанных Алексом Уильямсон (</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Alex</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Williamson</span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>) (переопределяющих </span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>acs</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+и </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>i</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>915)
+предоставляющих возможность сделать </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>PCI</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Passthrough</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+с </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>KVM</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+на некоторых машинах.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Используется
+для хранения ключей шифрования </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>AES</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> не в ОЗУ, а в
+регистрах </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>CPU</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="http://www.opennet.ru/tips/2617_tresor_aes_crypt_cpu_cryptsetup_dmcrypt.shtml"><b><span
+lang=RU style='mso-ansi-language:RU'>подробнее тут</span></b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Патчи
+и наборы патчей (патчсеты)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Есть
+много причин, чтобы пропатчить ядро, основные из них для работы или для
+поддержки не-магистральных функций, таких как поддержка файловой системы </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Reiser</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>4.
+Другие причины могут включать в себя забаву и посмотреть, как это делается и
+какие улучшения при этом появляются.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Однако,
+важно отметить, что лучшим способом увеличить скорость работы вашей системы
+будет сконфигурированное ядро именно для вашей системы, особенно под конкретную
+архитектуру и тип процессора. По этой причине использовать заранее упакованные
+версии пользовательских ядер с общими настройками архитектуры не рекомендуется,
+или не стоит. Еще одним приемуществом является то, что вы можете уменьшить
+размер вашего ядра (и, следовательно время сборки). Для этого не включая
+поддержку тех модулей, которыми вы не пользуетесь. Например вы можете убрать
+поддержку </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>bluetooth</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>video</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>4</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+1000</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Mbit</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>ethernet</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> и т.д. Т.е.
+убрать тот ненужный для вас функционал и/или поддержку того оборудования
+которого у вас нет. Хотя эта статья не о конфигурации ядра, тем не менее
+рекомендуется в качестве первого шага, основы, чтобы понять какой набор патчей
+использовать.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Конфигурационные
+файлы для пакетов ядра </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Arch</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> можно
+использовать в качестве отправной точки. Они находятся в </span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Arch</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+исходных файлов пакета, например</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux"><b><span
+lang=RU style='mso-ansi-language:RU'>[1]</span></b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>связано с</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://www.archlinux.org/packages/?name=linux"><b>linux</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>. Файл
+конфигурации вашего текущего ядра также всегда доступны в файловой системе в</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>proc</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>/</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>config</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>gz</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Как
+установить<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Процесс
+установки пользовательских пакетов ядра опирается на систему сборки </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Arch</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+(</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>ABS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>).
+Если вы не собирали какие-либо пользовательские пакеты самостоятельно, вы
+можете обратиться к следующим статьям:</span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Arch Build System (Русский)"><b>Arch</b><b><span style='mso-ansi-language:
+RU'> </span>Build</b><b><span style='mso-ansi-language:RU'> </span>System</b><b><span
+lang=RU style='mso-ansi-language:RU'> (Русский)</span></b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>и</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Creating_packages_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Creating packages (Русский)"><b>Creating</b><b><span style='mso-ansi-language:
+RU'> </span>packages</b><b><span lang=RU style='mso-ansi-language:RU'>
+(Русский)</span></b></a></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Если
+вы не патчили или настраивали ядро ранее, то это не так сложно, и есть много </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>PKGBUILD</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>’ов
+на форуме для отдельных пакетов. Тем не менее, мы советуем вам начать с нуля, с
+некоторым исследованием преимуществах каждого набора патчей, а не просто
+произвольной выборки из всего множества. Таким образом, вы узнаете гораздо
+больше о том, что вы делаете, а не просто выберите ядро при запуске, а потом
+будите гадать, что же там изменилось.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Смотрите&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)#Compilation"><b>#Compilation</b></a><sup>[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links"
+title="ArchWiki:Requests"><b>broken link</b></a>: invalid section]</sup>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Примечание:</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;</span></b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Не
+забудьте изменить параметры загрузки в загрузчике</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://wiki.archlinux.org/index.php/GRUB" title=GRUB><b>GRUB</b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>, чтобы
+использовать новое ядро.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Основные
+патчи и патчсеты<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Прежде
+всего важно отметить, что патчи и патчсеты разработаны различными людьми.
+Некоторые из этих людей на самом деле участвует в производстве ядра </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.
+Но есть и любители, которые могут поменять функции ядра надежности и стабильности
+в лучшую/худшую сторону.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Стоит
+также отметить, что некоторые патчи строятся на старых версиях ядра и (или)
+патчах (которые могут или не могут быть отражены в названии патча). Патчсеты (и
+обновления ядра) часто и зачастую не идут в ногу со временем. Так что не стоит
+сходить с ума, если это не ваше хобби.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Вы
+можете воспользоваться поиском </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Google</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> для поиска других
+видов патчей.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Примечание:</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;</span></b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Этот
+раздел</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;</span><b><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>только для ознакомления</span></b><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-
+никаких гарантий о надёжности или стабильности на этой странице.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>ck</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Linux-ck" title=Linux-ck><b>Linux</b><b><span
+lang=RU style='mso-ansi-language:RU'>-</span>ck</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>содержит патчи,
+предназначенные для улучшения отклика системы с особым упором на рабочем столе,
+подходят для любой нагрузки. Патчи создаются и поддерживаются Коном Коливасом (</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Con</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Kolivas</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>). Его сайт</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="http://users.on.net/~ckolivas/kernel/"><b>http</b><b><span lang=RU
+style='mso-ansi-language:RU'>://</span>users</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>on</b><b><span lang=RU style='mso-ansi-language:
+RU'>.</span>net</b><b><span lang=RU style='mso-ansi-language:RU'>/~</span>ckolivas</b><b><span
+lang=RU style='mso-ansi-language:RU'>/</span>kernel</b><b><span lang=RU
+style='mso-ansi-language:RU'>/</span></b></a></span><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'>. Кон поддерживает полный набор
+патчей, но также обеспечивает одиночные патчи, так что вы можете добавить
+только те, которые Вы предпочитаете.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>ck</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+можно найти на</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a href="http://ck.kolivas.org/patches/4.0/"><b>http</b><b><span
+lang=RU style='mso-ansi-language:RU'>://</span>ck</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>kolivas</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>org</b><b><span lang=RU style='mso-ansi-language:
+RU'>/</span>patches</b><b><span lang=RU style='mso-ansi-language:RU'>/4.0/</span></b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>rt</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Это
+набор патчей поддерживается небольшой группой разработчиков ядра, во главе с
+Инго Молнар (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Ingo</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Molnar</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>). Позволяет
+превратить обычный </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> в ОС реального
+времени. Главное применение такой системы – промышленные и встроенные системы,
+но на обычном компьютере она тоже может быть интересна. Например тем, кто часто
+занимается обработкой звука и видео или постоянно грузит систему какими-нибудь
+ресурсоемкими вычислениями. Также есть положительный эффект от применения этого
+ядра на </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>highload</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>-серверах.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Патч
+на</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a
+href="https://www.kernel.org/pub/linux/kernel/projects/rt/"><b>https</b><b><span
+lang=RU style='mso-ansi-language:RU'>://</span>www</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>kernel</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>org</b><b><span lang=RU style='mso-ansi-language:
+RU'>/</span>pub</b><b><span lang=RU style='mso-ansi-language:RU'>/</span>linux</b><b><span
+lang=RU style='mso-ansi-language:RU'>/</span>kernel</b><b><span lang=RU
+style='mso-ansi-language:RU'>/</span>projects</b><b><span lang=RU
+style='mso-ansi-language:RU'>/</span>rt</b><b><span lang=RU style='mso-ansi-language:
+RU'>/</span></b></a></span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>bld</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Важно:</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;</span></b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Этот
+патч находится в разработке.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://code.google.com/p/bld/"><b>BLD</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>(</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Barbershop</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Load</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Distribution</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>) лучше всего
+описывается как </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>O</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>(1)
+техника сортировки процессов. Это реализация альтернативного алгоритма
+планирования задач. </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>BLD</span><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'> ограничивается решением задачи по
+корректному распределению нагрузки путем отслеживания не всех привязанных к </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>CPU</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+очередей, а только наиболее и наименее загруженных очередей выполнения (</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>rq</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>runqueue</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>). </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>BLD</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> не пытается
+балансировать нагрузку на систему в контексте отслеживания бездействующих </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>idle</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-процессов,
+а акцентирует внимание на распределении всей нагрузки между имеющимися
+процессорами наиболее простым путём с минимальным числом усложнений. Главным
+достоинством </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BLD</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+является сам подход, показывающий что достаточно простыми методами можно
+добиться равномерного распределения нагрузки, не заботясь особенно о том
+сколько </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>CPU</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+используется в системе и соответственно без лавинообразного падения
+производительности на накладные расходы при увеличении числа </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>CPU</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+(</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BLD</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+обеспечивает уровень производительности </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>O</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>(</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>i</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>),
+где </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>i</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+- число </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>CPU</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>По
+материалам</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a
+href="http://www.opennet.ru/opennews/art.shtml?num=33070%7C"><b><span lang=RU
+style='mso-ansi-language:RU'>этой новости</span></b></a></span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>grsecurity</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Grsecurity" title=Grsecurity><b>Grsecurity</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Из</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://ru.wikipedia.org/wiki/Grsecurity"><b><span lang=RU
+style='mso-ansi-language:RU'>[2]</span></b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Это проект для </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+который включает в себя некоторые улучшения связанные с безопасностью, включая
+принудительный контроль доступа, рандомизацию ключевых локальных и сетевых
+информативных данных, ограничения /</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>proc</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> и </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>chroot</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>()
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>jail</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, контроль сетевых сокетов, контроль возможностей, и
+добавочные функции аудита. Типичной областью применения являются </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>web</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-сервера
+и системы, которые принимают удалённые соединения из сомнительных мест, такие
+как сервера, которые обеспечивают </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>shell</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-доступ для
+пользователей. Патч </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>grsecurity</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> выпущен под </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>GPL</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>,
+является свободным ПО и включает в себя набор патчей </span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>PaX</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.
+Создатель и ведущий разработчик </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>grsecurity</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> — </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Brad</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Spengler</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>aka</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>. </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Spender</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Grsecurity</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> патчи можно
+посмотреть на</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>&nbsp;<a href="https://grsecurity.net/"><b>https</b><b><span
+lang=RU style='mso-ansi-language:RU'>://</span>grsecurity</b><b><span lang=RU
+style='mso-ansi-language:RU'>.</span>net</b></a></span><span style='font-size:
+12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Tiny</span></b><b><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>-Патчи<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Цель</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a href="http://elinux.org/Linux_Tiny"><b>Linux</b><b><span
+style='mso-ansi-language:RU'> </span>Tiny</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>использование
+минимального дискового пространства и оперативной памяти, а также облегчение
+труда маломощных компьютеров. Целевые пользователи являются разработчиками
+встраиваемых систем и пользователями маломощных или устаревших машин, таких как
+386/<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Патч-релизы
+против господствующего </span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Linux</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> ядра были
+прекращены. Разработчики решили сосредоточиться на нескольких патчах и попытках
+поставить их в официальное ядро.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>-</span></b><b><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>pf</span></b><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://aur.archlinux.org/packages/linux-pf/"><b>linux</b><b><span
+lang=RU style='mso-ansi-language:RU'>-</span>pf</b></a><sup>AUR</sup>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>Это набор патчей,
+поверх официального ядра, обеспечивающих повышенную отзывчивость системы,
+предоставляющих альтернативную подсистему гибернации (более быстрая, по
+сравнению с основной), а также уменьшают использование памяти с помощью техники
+объединения одинаковых страниц. Набор патчей включает в себя: планировщик
+процессов </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>BFS</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+от Кона Коливаса (</span><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Con</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Kolivas</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>)
+с дополнительными исправлениями от Альфреда Чена (</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Alfred</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Chen</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>), планировщик ввода-вывода </span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>BFQ</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+Паоло Валенте (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Paolo</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Valente</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>), Арианны
+Аванзини (</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Arianna</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Avanzini</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>) и Мауро Маринони
+(</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Mauro</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif'> </span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Marinoni</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>), подсистема
+гибернации </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>TuxOnIce</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> от Найджела Каннингема (</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Nigel</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+</span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Cunningham</span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>), реализация техники слияния одинаковых
+страниц в памяти </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>UKSM</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'> от Най Ся (</span><span lang=EN style='font-size:
+12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:EN'>Nai</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Xia</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>),
+патч от </span><span lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;
+mso-ansi-language:EN'>Graysky</span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>, расширяющий список процессоров для оптимизации ядра
+компилятором.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Смотрите</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a href="https://wiki.archlinux.org/index.php/Linux-pf"
+title=Linux-pf><b>linux</b><b><span lang=RU style='mso-ansi-language:RU'>-</span>pf</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>для большей
+информации.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Индивидуальные
+патчи<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Эти
+патчи могут быть просто включены в любую сборку ванильного ядра или включены
+(возможно, с какой-то крупной тонкой настройки) в другой набор патчей.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Reiser4<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Reiser4" title=Reiser4><b>Reiser4</b></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>fbsplash<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'><a
+href="https://wiki.archlinux.org/index.php/Fbsplash" title=Fbsplash><b>fbsplash</b></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Компиляция ядра<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Arch</span><span lang=EN
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> </span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>Linux</span><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>
+предусматривает несколько методов компиляции ядра.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Используя Arch Build
+System (ABS)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Используя</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Arch_Build_System_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Arch Build System (Русский)"><b>ABS</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>воспользуетесь
+высоким качеством существующих</span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>&nbsp;<a
+href="https://www.archlinux.org/packages/?name=linux"><b>linux</b></a>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/PKGBUILD_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="PKGBUILD (Русский)"><b>PKGBUILD</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>и преимущества</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Pacman (Русский)"><b><span lang=RU style='mso-ansi-language:RU'>менеджера
+пакетов </span>Pacman</b></a></span><span style='font-size:12.0pt;font-family:
+"Times New Roman",serif'>. </span><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>PKGBUILD</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'> структурирован
+таким образом, что вы можете остановить сборку после получения исходного кода, и
+сконфигурировать ядро.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Смотрите&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Kernels/Arch_Build_System"
+title="Kernels/Arch Build System"><b>Kernels/Arch Build System</b></a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Традиционный
+метод<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Это
+загрузка архива с исходным кодом, распаковка, и компиляция. После компиляции
+доступны два способа установки: традиционный ручной метод, или</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'><a
+href="https://wiki.archlinux.org/index.php/Makepkg_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Makepkg (Русский)"><b>Makepkg</b></a>&nbsp;</span><span
+style='font-size:12.0pt;font-family:"Times New Roman",serif'>+</span><span
+lang=EN style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+EN'>&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Pacman_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+title="Pacman (Русский)"><b>Pacman</b></a></span><span style='font-size:12.0pt;
+font-family:"Times New Roman",serif'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'>Преимуществом
+установки традиционным методом является то, что вы не привязаны к какому-либо
+дистрибутиву.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Смотрите&nbsp;<a
+href="https://wiki.archlinux.org/index.php/Kernels/Compilation/Traditional"
+title="Kernels/Compilation/Traditional"><b>Kernels/Compilation/Traditional</b></a>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Пропиетарный NVIDIA
+драйвер<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Смотрите<a
+href="https://wiki.archlinux.org/index.php/NVIDIA#Alternate_install:_custom_kernel"
+title=NVIDIA><b>NVIDIA#Alternate install: custom kernel</b></a><sup>[<a
+href="https://wiki.archlinux.org/index.php/ArchWiki:Requests#Broken_section_links"
+title="ArchWiki:Requests"><b>broken link</b></a>: invalid section]</sup>&nbsp;инструкцию
+по использованию пропиетарного драйвера NVIDIA с патченным ядром.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN style='font-size:12.0pt;font-family:
+"Times New Roman",serif;mso-ansi-language:EN'>Смотрите также<o:p></o:p></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l4 level1 lfo3;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="http://www.kroah.com/lkn/"><b>O'Reilly - Linux Kernel in a
+     Nutshell</b></a>&nbsp;(свободная электронная книга)<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><b><span lang=EN style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN'>Тесты и обзоры<o:p></o:p></span></b></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="http://habrahabr.ru/post/131263/"><b><span lang=RU
+     style='mso-ansi-language:RU'>Есть ли польза от кастомных ядер</span></b></a></span><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a href="http://www.youtube.com/watch?v=J-e7LnJblm8"><b>Тест
+     планировщика ввода/вывода BFQ</b></a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l1 level1 lfo4;tab-stops:list 36.0pt'><span lang=EN
+     style='font-size:12.0pt;font-family:"Times New Roman",serif;mso-ansi-language:
+     EN'><a
+     href="http://algogroup.unimore.it/people/paolo/disk_sched/results.php"><b>бенчмарки
+     BFQ</b></a><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
+href="https://wiki.archlinux.org/index.php/Special:Categories"
+title="Special:Categories">Categories</a>:&nbsp;<o:p></o:p></span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l2 level1 lfo5;tab-stops:list 36.0pt'><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
+     href="https://wiki.archlinux.org/index.php/Category:Kernel_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+     title="Category:Kernel (Русский)">Kernel (Русский)</a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l2 level1 lfo5;tab-stops:list 36.0pt'><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
+     href="https://wiki.archlinux.org/index.php/Category:Lists_of_software_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
+     title="Category:Lists of software (Русский)">Lists of software (Русский)</a><o:p></o:p></span></li>
+ <li class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+     normal;mso-list:l2 level1 lfo5;tab-stops:list 36.0pt'><span
+     style='font-size:12.0pt;font-family:"Times New Roman",serif'><a
+     href="https://wiki.archlinux.org/index.php/Category:%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9"
+     title="Category:Русский">Русский</a><o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.25pt;line-height:normal'><span lang=EN-US style='font-size:12.0pt;
+font-family:"Times New Roman",serif;mso-ansi-language:EN-US'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

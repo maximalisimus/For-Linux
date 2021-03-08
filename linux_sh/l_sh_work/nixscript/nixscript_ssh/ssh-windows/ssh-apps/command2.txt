@@ -1,0 +1,5 @@
+cd /data/data/com.termux/files/home/downloads/
+
+rm -rf tips.txt
+rm -rf vk.png
+exit

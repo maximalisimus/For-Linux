@@ -1,0 +1,51 @@
+﻿
+Табуляция:
+
+expand -t4 file > new_file
+
+
+
+Кодировка:
+
+
+
+$ file -bi [filename]
+
+-b, --brief	Не печатать имя файла (краткий режим)
+-i, --mime	Определить тип файла и кодировку
+
+Определить кодировку файлы in.txt:
+
+$ file -bi in.txt
+text/plain; charset=utf-8
+
+$ iconv -f [encoding] -t [encoding] -o [newfilename] [filename]
+
+-f, --from-code	Изменить с кодировки
+-t, --to-code	Изменить на кодировку
+-o, --output	Сохранить результат в файл
+
+Изменить кодировку файла с CP1251 (Windows-1251, Кириллица) на UTF-8:
+
+$ iconv -f cp1251 -t utf-8 in.txt
+
+Изменить кодировку файла с ISO-8859-1 на UTF-8 и сохранить результат в out.txt:
+
+$ iconv -f iso-8859-1 -t utf-8 -o out.txt in.txt
+
+Изменить кодировку файла с ASCII на UTF-8:
+
+$ iconv -f utf-8 -t ascii -o out.txt in.txt
+
+-c	Исключить из вывода недопустимые символы
+
+$ iconv -c -f utf-8 -t ascii -o out.txt in.txt
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,490 @@
+#######################
+#                                                 #
+#   Maximalisimus Package    #
+#                                                 #
+#######################
+
+##############
+#                            #
+#      System         #
+#                            #
+##############
+
+base
+base-devel
+cmake
+btrfs-progs
+
+ntp
+
+f2fs-tools
+
+dialog
+
+htop
+
+mc
+
+ntfs-3g
+
+gparted
+
+net-tools
+
+mlocate
+ipcalc
+pacman-contrib
+acpid
+avahi
+cups
+cronie
+alacarte
+squashfs-tools
+upower
+mlocate
+testdisk
+
+##############
+#                             #
+#      Headers        #
+#                             #
+##############
+
+linux
+linux-api-headers
+linux-atm
+linux-firmware
+linux-headers
+linux-lts
+linux-lts-headers
+linux-lts-docs
+
+#############
+#                         #
+#       Shell         #
+#                         #
+#############
+
+xterm
+xfce4-terminal
+bash
+bash-completion
+zsh
+zsh-completions
+grml-zsh-config
+fish
+
+##############
+#                             #
+#     Archivers       #
+#                             #
+##############
+
+bzip2
+gzip
+tar
+pbzip2
+lbzip2
+lz4
+lzo
+lzop
+xz
+zip
+unzip
+unrar
+geany
+wipe
+ark
+xarchiver
+p7zip
+
+##############
+#                            #
+#       Loader         #
+#                            #
+##############
+
+grub
+os-prober
+syslinux
+efibootmgr
+dosfstools
+refind-efi
+
+#############
+#                         #
+#        LIB           #
+#                         #
+#############
+
+libaio
+libarchive
+libassuan
+libatomic_ops
+libcap
+libcap-ng
+libcroco
+libedit
+libelf
+libevent
+libffi
+libgcrypt
+libgpg-error
+libidn
+libidn2
+libjpeg-turbo
+libksba
+libldap
+libmnl
+libnetfilter_conntrack
+libnewt
+libnfnetlink
+libnftnl
+libnghttp2
+libnl
+libnsl
+libotr
+libpcap
+libpipeline
+libproxy
+libpsl
+libsasl
+libseccomp
+libsecret
+libssh2
+libtasn1
+libtirpc
+libunistring
+libxml2
+zlib
+
+###############
+#                              #
+#      Network         #
+#                              #
+###############
+
+samba
+libwbclient
+smb4k
+smbclient
+smbnetfs
+libgtop
+networkmanager
+network-manager-applet
+rp-pppoe
+pptpclient
+ppp
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-pptp
+networkmanager-vpnc
+wicd-gtk
+iw
+wireless_tools
+wpa_actiond
+wpa_supplicant
+wicd
+broadcom-wl
+b43-fwcutter
+ipw2100-fw
+ipw2200-fw
+chromium
+opera
+transmission-gtk
+curl
+git
+wget
+gwget
+ntp
+openconnect
+wireless-regdb
+sshfs
+tcl
+dnssec-anchors
+geoip
+geoip-database
+nettle
+openresolv
+openssh
+openssl
+openssl-1.0
+openvpn
+vpnc
+wvdial
+xl2tpd
+tcpdump
+iptables
+
+#############
+#                          #
+#      XORG         #
+#                          #
+#############
+
+xorg-server
+xorg-server-common
+xorg-setxkbmap
+xorg-xauth
+xorg-xinput
+xorg-xrandr
+xorg-apps
+
+#############
+#                          #
+#       Video         #
+#                          #
+#############
+
+mesa
+xf86-video-vesa
+xf86-video-vmware
+xf86-video-ati
+xf86-video-fbdev
+xf86-video-intel
+xf86-video-nouveau
+xf86-video-openchrome
+
+#############
+#                         #
+#       Input        #
+#                         #
+#############
+
+xf86-input-keyboard
+xf86-input-synaptics
+xf86-input-vmmouse
+xf86-input-mouse
+
+##############
+#                            #
+#       Audio          #
+#                            #
+##############
+
+alsa-utils
+alsa-plugins
+volumeicon
+pavucontrol
+pulseaudio
+pulseaudio-alsa
+pulseaudio-bluetooth
+pulseaudio-equalizer
+pulseaudio-jack
+pulseeffects
+pulsemixer
+pasystray
+pamixer
+pulseview
+rhythmbox
+audacious
+audacity
+
+##############
+#                            #
+#       Theme         #
+#                            #
+##############
+
+hicolor-icon-theme
+gnome-icon-theme
+breeze
+breeze-grub
+breeze-icons
+faenza-icon-theme
+adwaita-icon-theme
+
+###########
+#                     #
+#    FONTS    #
+#                     #
+###########
+
+ttf-liberation
+ttf-dejavu
+opendesktop-fonts
+ttf-bitstream-vera
+ttf-arphic-ukai
+ttf-arphic-uming
+ttf-hanazono
+terminus-font
+fontforge
+
+#############
+#                         #
+#         GUI         #
+#                         #
+#############
+
+###
+#sddm
+#sddm-kcm
+###
+#lxdm
+###
+###
+#cinnamon
+###
+###
+#mate
+#mate-extra
+###
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+xfce4
+xfce4-goodies
+polkit-gnome
+xfce4-pulseaudio-plugin
+
+#############
+#                          #
+#        vbox         #
+#                          #
+#############
+
+virtualbox-guest-modules-arch
+virtualbox-guest-utils
+virtualbox-guest-dkms
+
+###############
+#                               #
+#    Permissions      #
+#                               #
+###############
+
+gnome-keyring
+dconf
+dconf-editor
+python2-xdg
+xdg-user-dirs
+xdg-utils
+rp-pppoe
+polkit
+gvfs
+gvfs-afc
+gvfs-smb
+print-manager
+system-config-printer
+accountsservice
+
+################
+#                                 #
+#    Environment      #
+#                                 #
+################
+
+ncdu
+speedtest-cli
+screenfetch
+
+##########
+#                   #
+# Office       #
+#                   #
+##########
+
+libreoffice-fresh
+libreoffice-fresh-en-gb
+libreoffice-fresh-en-za
+libreoffice-fresh-it
+libreoffice-fresh-ru
+libreoffice-fresh-tr
+libreoffice-fresh-nl
+libreoffice-fresh-el
+libreoffice-fresh-da
+libreoffice-fresh-hu
+libreoffice-fresh-de
+libreoffice-fresh-fr
+libreoffice-fresh-pt
+okular
+gedit
+geany
+leafpad
+
+#########
+#                #
+# Media    #
+#                 #
+#########
+
+gimp
+gimp-help-en
+gimp-help-en_gb
+gimp-help-fr
+gimp-help-it
+gimp-help-ru
+gimp-help-nl
+gimp-help-el
+gimp-help-da
+gimp-help-de
+gimp-help-pt_br
+grub-customizer
+brasero
+acetoneiso2
+fuseiso
+blender
+vlc
+inkscape
+smplayer
+supertuxkart
+
+##########
+#                   #
+# System     #
+#                   #
+##########
+
+ksysguard
+doublecmd-gtk2
+krusader
+parcellite	
+keepassxc
+veracrypt
+virtualbox
+
+###############
+#                              #
+#    Electronics      #
+#                              #
+###############
+
+kicad
+kicad-library
+kicad-library-3d
+
+
+#############
+#                          #
+#       Wine          #
+#                          #
+#############
+
+wine
+
+wine-mono
+
+wine_gecko
+winetricks
+
+##############
+#                            #
+#        AUR           #
+#                            #
+##############
+
+package-query
+pamac-aur
+timeshift
+github-desktop
+pikaur
+yay
+gksu
+libgksu
+google-chrome
+xnviewmp
+rpcs3
+citra
+yuzu
+dolphin-emu
+

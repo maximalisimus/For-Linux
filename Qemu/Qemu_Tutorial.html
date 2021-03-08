@@ -1,0 +1,729 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.0.4.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-02-19T22:24:00.718239108"/>
+	<style type="text/css">
+		@page { margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2 }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2 }
+		h1.western { font-family: "Liberation Serif", serif; so-language: ru-RU }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN }
+		a:link { so-language: zxx }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" dir="ltr"><h1 class="western" style="margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2">
+<font color="#444444"><font face="Source Sans Pro"><font size="6" style="font-size: 22pt"><b>КАК
+ПОЛЬЗОВАТЬСЯ QEMU</b></font></font></font></h1>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; line-height: 100%; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Преимущество
+виртуализации в том, что она позволяет
+запустить на одном компьютере несколько
+разных операционных систем на одном
+компьютере одновременно и при этом
+неважно какой они будут архитектуры.
+Среди домашних пользователей достаточно
+часто используются такие программы для
+эмуляции компьютера, как Virtualbox и VMware,
+это мощные программы с графическим
+интерфейсом и множеством возможностей,
+которые очень просто настроить.</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; orphans: 2; widows: 2">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Содержание
+статьи:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Что
+такое qemu?</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Установка
+qemu</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Как
+пользоваться qemu?</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">1.
+Использование qemu-system</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">2.
+Использование эмуляции окружения</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Выводы</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">ЧТО
+ТАКОЕ QEMU?</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Qemu
+- это бесплатный инструмент с открытым
+исходным кодом для эмуляции и виртуализации
+работы операционных систем на компьютере.
+Программа может работать в Windows, Linux,
+MacOS и даже на Android. Ресурсы хоста, такие
+как процессор, жесткий диск, память,
+разделяются между виртуальными машинами.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Qemu
+использует аппаратную виртуализацию,
+поэтому может выполнять гостевые
+операционные системы почти так же
+быстро, как и на основном железе. Может
+использоваться гипервизор XEN или модуль
+ядра KVM в Linux. Qemu может работать в двух
+режимах работы:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Полная
+эмуляция системы - в этом режиме qemu
+полностью эмулирует устройство, например,
+компьютер, включая все его компоненты,
+процессор и различные периферийные
+устройства. Он может использоваться
+для запуска нескольких операционных
+систем без перезагрузки или отладки
+системного кода.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Эмуляция
+пользовательского режима - работает
+только для Linux хоста, позволяет запускать
+процессы Linux, скомпилированные для одной
+архитектуры в другой, например, ARM
+программы в x86. Полезно для разработки,
+кросс-компиляции и отладки.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Эмулировать
+можно такие архитектуры: x86 (32 и 64 бит),
+PowerPC (32 и 64 бит), ARM, MIPS (32 бит), Sprac (32 и 64
+бит), Alpha, ColdFire(m68k), CRISv2 и MicroBlaze. Этот список
+уже более внушительный чем у Virtualbox.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">УСТАНОВКА
+QEMU</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Перед
+тем как мы сможем использовать программу,
+необходимо ее установить. Если вы
+используете дистрибутив Linux, например,
+Ubuntu, то сможете найти программу в
+официальных репозиториях. Для Ubuntu
+команда будет выглядеть вот так:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+ <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">sudo
+apt install qemu-kvm qemu</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Для
+Fedora и других систем RedHat можно установить
+группу Virtualization:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+ <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">sudo
+dnf install @virtualization</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">В
+ArchLinux используйте Pacman:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+ <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">pacman
+-S qemu</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Для
+Windows или MacOS вам нужно скачать исполняемый
+файл из официального сайта. Программа
+управляется только через терминал, так
+что вы главном меню системы ничего не
+появиться после установки. А теперь
+перейдем к тому как настроить qemu.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">КАК
+ПОЛЬЗОВАТЬСЯ QEMU?</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Теперь,
+когда программа установлена и готова
+к использованию попытаемся разобраться
+как ее запустить и применять. Но сначала
+нужно разобраться какие команды и для
+чего используются. Эмулятор qemu создает
+много команд, но их можно разделить на
+группы:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-архитектура
+- эмуляция окружения пользователя для
+указанной архитектуры;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-system-архитектура
+- эмуляция полной системы для архитектуры;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-img
+- утилита для работы с дисками;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-io
+- утилита для работы с вводом/выводом
+на диск;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-user
+- оболочка для qemu-архитектура, позволяет
+запускать программы других архитектур
+в этой системе;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">qemu-system
+- оболочка для qemu-system-архитектура,
+позволяет полностью эмулировать систему
+нужной архитектуры.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Сначала
+разберемся с эмуляцией полной системы,
+поскольку для решения этой задачи
+виртуальная машина qemu используется
+чаще всего, а уже потом перейдем к режиму
+пользователя.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">1.
+ИСПОЛЬЗОВАНИЕ QEMU-SYSTEM</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Чтобы
+вы понимали что и откуда берется для
+начала рассмотрим опции утилиты
+qemu-system. Синтаксис команды такой:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system параметры</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Куда
+сложнее здесь синтаксис каждого из
+параметров:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-имя_параметра
+имя_опции=значение:значение2</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Мы
+рассмотрим только основные параметры,
+и их опции, которые нам понадобятся:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-machine
+указывает тип компьютера, который вы
+собрались эмулировать, можно выбрать
+ubuntu, pc, pc-q35 и другие варианты, смотрите
+подробнее командой -machine help;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-cpu
+- тип процессора, можно передать
+непосредственно тип процессора, а также
+дополнительные флаги;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-smp
+- включает симуляцию мультипроцессорной
+архитектуры;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-boot
+- позволяет настроить порядок загрузки
+устройств, a,b - дискета, с - первый жесткий
+диск, d - CDROM, n-p - загрузка через сеть, по
+умолчанию виртуальная машина загружается
+из жесткого диска;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-m
+- указывает количество оперативной
+памяти, доступной машине;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-k
+- раскладка клавиатуры по умолчанию;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-soundhw
+- подключить звуковую карту к системе;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-device
+- подключить указанное устройство к
+машине, нужно указать драйвер и его
+опции;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-name
+- имя гостевой системы, будет отображаться
+в верху окна;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-uuid
+- установить UUID для системы;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-fda,
+fdb - подключить дискету из файла;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-hda,
+hdb - подключить жесткий диск из файла;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-cdrom
+- подключить оптический диск;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-usb
+- включить поддержку USB;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-usbdevice
+- подключить USB устройство;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-display
+- выбрать тип отображения, доступно sdl,
+curses, gtk, none, vga и другие;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-full-screen
+- запустить в полный экран;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-no-acpi
+- отключить поддержку ACPI;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-net
+- создать сетевой интерфейс;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-realtime
+включить режим реального времени, опции
+mclock нужно передать значение on;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-gdb
+- ожидать подключения отладчика gdb;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-enable-kvm
+- включить поддержку kvm;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-loadvm
+- загрузить сохраненное состояние;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-daemonize
+- сделать процесс фоновым;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-snapshot
+- записывать изменения не в файл жесткого
+диска, а в отдельные файлы;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-nographic
+- отключить графический вывод.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-kernel
+- использовать указанный образ ядра
+linux.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-append
+- командная строка для ядра;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-initrd
+- файл initrd для загрузки Linux.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Мы
+рассмотрели опции для qemu-system-x86-64, для
+других архитектур, они могут немного
+отличаться. А теперь разберем несколько
+простых примеров как использовать qemu,
+как создать машину qemu и настроить ее.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Сначала
+нужно создать жесткий диск для установки.
+Вы можете использовать реальные жесткие
+диски, но работать с образами намного
+удобнее. Можно просто создать пустой
+файл, заполненный нулями, а затем
+форматировать его в нужную файловую
+систему во время установки, но также
+можно создать файл формата qcow2, этот
+формат используется по умолчанию в
+qemu. Воспользуемся командой qemu-img:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-img create -f qcow2 ubuntu.qcow 10G</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<img src="Qemu_Tutorial_html_a0d0497c570ec07e.png" name="Изображение1" align="left" width="642" height="339" border="0"/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Опция
+-f указывает формат нового файла. Теперь
+мы можем непосредственно перейти к
+запуску qemu-system. Вот так будет выглядеть
+самая простая команда запуска системы:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -boot d -cdrom
+~/downloads/ubuntu-17.04-server-amd64.iso -m 640</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<img src="Qemu_Tutorial_html_55e6ce46da325a5a.png" name="Изображение2" align="left" width="642" height="329" border="0"/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Здесь
+мы подключаем наш жесткий диск как hda,
+затем указываем что нужно загружаться
+с cdrom и подключаем образ системы ubuntu к
+нему. Последний параметр указывает
+сколько оперативной памяти будет
+выделено для машины.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Дальше
+откроется окно, похожее на VritualBox и
+начнется установка системы. После того
+как установка будет завершена, вы сможете
+запускать машину командой:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.img -m 640</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Создавать
+виртуальную машину с другой архитектурой
+не очень сложно, достаточно изменить
+команду. Например, сделаем виртуальную
+машину ppc:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-ppc -hda ubuntu.qcow -boot d -cdrom
+~/downloads/ubuntu-17.04-server-amd64.iso -m 640</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Поскольку
+сейчас мы не используем kvm, то система
+будет работать очень медленно все можно
+очень сильно ускорить, если его включить
+с помощью опции -enable-kvm:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">По
+умолчанию в гостевой системе не будет
+звука, но вы можете подключить туда
+звуковую карту:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Не
+всегда мы запускаем машину только в
+качестве сервера, иногда нужно запустить
+обычную десктопуную систему, в таком
+случае нам придется настроить виртуальную
+видеокарту, потому что того, что идет
+по умолчанию хватит только на консоль.
+Для этого используется опция -vga:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97
+-vga qxl</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<img src="Qemu_Tutorial_html_1d56068e2021a699.png" name="Изображение3" align="left" width="637" height="343" border="0"/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">С
+помощью опции -global qxl-vga.vram_size можно задать
+объем видеопамяти, доступный машине,
+значение указывается в байтах, например:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -soundhw ac97
+-vga qxl -global qxl-vga.vram_size=4294967</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Для
+многих машин важно чтобы из них был
+доступ в сеть интернет. Настройка сети
+qemu - это достаточно обширная тема, которую
+мы не будем полностью раскрывать в этой
+статье. Если кратко, то, в qemu используется
+специальный виртуальный шлюз vlan, который
+позволяет соединять машины с внешней
+сетью или между собой. Каждый vlan имеет
+свой номер. Самый простой способ настроить
+сеть - использовать такие параметры:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-system-x86_64 -hda ubuntu.qcow -m 640 -enable-kvm -net
+nic,vlan=0 -net user,vlan=0</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<img src="Qemu_Tutorial_html_979de5bc573ec37d.png" name="Изображение4" align="left" width="636" height="346" border="0"/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Здесь
+мы два раза вызываем опцию -net, в первый
+раз создаем виртуальную сетевую карту
+с помощью параметра -nic и подключаем ее
+к vlan с номером 0. Вторая же опция -net
+создает наш vlan 0 с типом конфигурации
+user, которая не требует дополнительной
+настройки и автоматически подключается
+к сети хоста.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">2.
+ИСПОЛЬЗОВАНИЕ ЭМУЛЯЦИИ ОКРУЖЕНИЯ</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Теперь
+рассмотрим использование qemu для эмуляции
+архитектуры в окружении пользователя.
+Команда qemu-user или qemu-архитектура позволяет
+выполнять программы, собранные для
+другой архитектуры прямо в вашей системе.
+Это очень часто используется для отладки
+программ, собранных для arm на компьютере
+или других подобных задач. Команде
+достаточно передать команду и ее
+параметры:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+qemu-x86_64 /bin/ls</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<img src="Qemu_Tutorial_html_895590d735140499.png" name="Изображение5" align="left" width="642" height="340" border="0"/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Точно
+так же вы можете выполнить arm программу
+или программу для любой из поддерживаемых
+архитектур.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">ВЫВОДЫ</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">В
+этой статье мы очень кратко рассмотрели
+как пользоваться qemu, основные настройки
+этой утилиты и опции. На самом деле там
+намного больше опций и возможностей.
+Одна только возможность эмулировать
+такое огромное количество архитектур
+чего стоит. Если для вас эмулятор qemu
+слишком сложен через терминал, то можно
+использовать графический интерфейс,
+например, virt-manager. А вы используете qemu?
+Или предпочитаете другие виртуальные
+машины? Почему? Напишите в комментариях!</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

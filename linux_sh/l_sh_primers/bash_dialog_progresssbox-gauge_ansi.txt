@@ -1,0 +1,57 @@
+
+#!/bin/sh
+SETCOLOR_SUCCESS="echo -en \\033[1;32m"
+SETCOLOR_FAILURE="echo -en \\033[1;31m"
+SETCOLOR_NORMAL="echo -en \\033[0;39m"
+DIALOG=${DIALOG=dialog}
+myls=( $(ls /dev/) )
+#step=$(( 100 / ${#myls[*]} ))
+#counter=0
+#COUNT=0
+(
+#while test $COUNT -le 100
+#do
+#echo $COUNT
+#echo "XXX"
+for letter in "${myls[@]}"; do
+echo "ls /dev/$letter"
+sleep 0.1
+done
+echo ""
+echo "ls /home:"
+echo ""
+ls -l
+echo ""
+#echo "File to: ${myls[$counter]}"
+#let counter+=1
+#echo "XXX"
+#COUNT=`expr $COUNT + $step`
+#COUNT=`expr $COUNT + 1`
+#sleep 0.1
+#done
+) |
+$DIALOG --title "My Dialog" --sleep 5 --progressbox "Hello! It's information dialog" 30 100
+# $DIALOG --title "My Dialog" --sleep 5 --gauge "Hello! It's information dialog" 30 100 0
+clear
+echo -e "\n\e[1;30mDelete \e[1;39mfile of \e[1;37mcmd.bat\e[0m"
+rm cmd.bat
+if [ $? -eq 0 ]; then
+    $SETCOLOR_SUCCESS
+    echo -n "$(tput hpa $(tput cols))$(tput cub 6)[OK]"
+    $SETCOLOR_NORMAL
+    echo
+else
+    $SETCOLOR_FAILURE
+    echo -n "$(tput hpa $(tput cols))$(tput cub 6)[fail]"
+    $SETCOLOR_NORMAL
+    echo
+fi
+echo -n "${reset}"
+echo
+echo -e "\nScript is Done ..."
+exit 0
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿
+touch /root/ntp.sh
+
+#!/bin/bash
+sleep 30
+ping -c 3 ya.ru 1> /dev/null 2> /dev/null
+if [ $? == 0  ]; then
+	timedatectl set-ntp true 1> /dev/null 2> /dev/null
+	sleep 1
+	ntpd -qg 1> /dev/null 2> /dev/null
+else 
+	echo "Error to start timedatectl ntp!"
+	exit 1
+fi
+exit 0
+
+
+
+
+touch /etc/systemd/system/ntp.service
+
+[Unit]
+Description=Service to start ntp on timedatectl
+
+[Service]
+Type=oneshot
+ExecStart=/root/ntp.sh
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+systemctl enable ntp
+systemctl start ntp
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,111 @@
+﻿
+# Create disk. bs=1M - speed write/read of disk. count=1200 - 1GB size disk
+dd if=/dev/zero of=~/vhd.img bs=1M count=10240
+
+# Linux FAT32 - vfat fylesystem
+# mkfs.ext2 or mkfs.ext4 or mkfs.vfat = mkfs -t ext2 (ext4, vfat)
+mkfs -t vfat /home/utv/vhd.img
+
+# Create directoryes to mount virtual disk and privilege
+# pwd - ~/
+mkdir vhd
+chown utv /home/utv/vhd.img
+chown utv /home/utv/vhd
+chmod 777 /home/utv/vhd.img
+chmod 777 /home/utv/vhd
+
+
+id -g $(whoami)
+id -u $(whoami)
+# Mounting disk to directoryes
+mount -t auto -o,gid=985,uid=1000 /home/utv/vhd.img /home/utv/vhd
+
+# Umounting disk
+umount /home/utv/vhd
+
+
+Далее чтобы раздел монтировался при перезагрузке системы надо 
+в /etc/fstab добавить строчку типа:
+
+/mnt/storage1       /virtual /mnt/virt       ext4       loop      0      0
+
+
+
+
+
+Виртуальные диски в Linux.
+
+Пусть я пользователь mikl и вхожу в группу users. Рекомендую все перенаправления в домашнюю директорию ~ менять на полный путь, хотя должно работать и так. У меня работает.
+Для начала определимся с размером диска. Пусть будет 1 ГБ.
+
+$ dd if=/dev/zero of=~/vhd.img bs=1M count=1024
+
+Форматируем:
+
+$ mkfs -t ext4 ~/vhd.img
+
+Создаём папку в которую будем монтировать. Пусть в домашней директории.
+
+$ mkdir -p ~/image
+
+Права на папку и виртуальный диск менять не нужно. 
+Мне удобнее сразу всё делать от суперпользователя. 
+В таком случае права придётся поменять. 
+Однако, если вы выполняете все команды от обычного пользователя — менять права на папку и вирт. диск не нужно.
+
+$ sudo chown mikl:users ~/vhd.img
+$ sudo chown mikl:users ~/image
+$ sudo chmod 777 ~/vhd.img
+$ sudo chmod 777 ~/image
+
+Не обязательно 777 — 7 уровень — разрешить выполнение, а 6 — чтение и запись, можно и 666.
+Монтируем, от имени суперпользователя, потому что от имени пользователя выдаст ошибку.
+
+$ id -g mikl
+$ id -u mikl
+$ sudo mount -t auto -o,rw,gid=985,uid=1000 ~/vhd.img ~/image
+
+По окончании работы с диском, размонтируем так:
+
+$ sudo umount -l ~/image
+
+Теперь, если хотим, чтобы раздел монтировался при перезагрузке системы надо в /etc/fstab добавить строчку типа:
+
+/home/mikl/vhd.img /home/mikl/image/ ext4 defaults 0 0
+
+defaults - по умолчанию использует - rw,suid,dev,exec,auto,nouser,async;
+
+Или можно так
+
+/home/mikl/vhd.img /home/mikl/image ext4 rw,gid=985,uid=1000,users 0 0
+
+Если очень нужно использовать этот диск в виртуальной машине, то нам понадобится всемогущий QEMU.
+Однако, запомните что раздел виртуального диска в формате raw, т.е. он пригоден для считывания данных только для Linux систем. Но если очень нужно передать что-то windows-машине — лучше создайте из папки iso образ с помощью AcetoneISO или консольной утилиты mkisofs.
+Далее, определимся с форматом, в котором будем использовать этот диск в виртуальной машине. Взглянем на табличку:
+
+Типы форматов — Параметр
+
+raw (bin формат) — raw
+
+qcow2 — qcow2
+
+VDI (VirtualBox) — vdi
+
+VMDK (VMware) — vmdk
+
+VHD (Hyper-V) — vpc
+
+Пусть будет диск vdi для VirtualBox. Он мне больше нравится.
+Самое главное это понимать, что наш виртуальный диск - это всё таки dd образ, т.е. имеет формат raw.
+Преобразуем, и на выходе получаем диск для vbox:
+
+qemu-img convert -f raw vhd.img -O vdi vbox.vdi
+
+Нужны другие преобразования - таблица выше: -f исходный формат, -O - конечный.
+Всё, можно радоваться жизни.
+Удачи!
+
+
+
+
+

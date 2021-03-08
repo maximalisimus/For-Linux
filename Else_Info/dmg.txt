@@ -1,0 +1,10 @@
+
+cat CodeResources | grep "<key>" | sed 's/<key>//g' | sed 's/<\/key>//g' | grep -E "Resources" | sed 's/^[ \t]*//' | grep -Ev "\^" >> code.txt
+
+
+cat code.txt | rev | cut -d "/" -f2-11 | rev | sort | uniq -u
+
+cat code.txt | rev | cut -d "/" -f2-11 | rev | sort | uniq -d
+
+
+

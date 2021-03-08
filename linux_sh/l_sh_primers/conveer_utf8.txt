@@ -1,0 +1,5 @@
+﻿
+cat ./.bashrc 1>/dev/null 2>/dev/null && echo "File opened successfully" || echo "Failed to open File"
+
+
+

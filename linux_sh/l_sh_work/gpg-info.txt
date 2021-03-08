@@ -1,0 +1,64 @@
+
+
+/usr/share/pacman/keyrings/
+
+# --homedir /Мой/путь/
+gpg --full-generate-key
+# gpg --full-generate-key --expert
+
+gpg --edit-key UserName
+# gpg --edit-key UserName --expert
+trust
+5
+y
+save
+
+gpg -k
+gpg -K
+
+$ gpg  --keyserver pgp.mit.edu --send-keys <идентификатор>
+
+
+BackUp:
+gpg --armor --output mykey.gpg --export UserName
+# gpg -a --export UserName > public_key.gpg
+gpg -a --export-secret-keys UserName > secret_key
+gpg -a --gen-revoke UserName > revocation_cert.gpg
+gpg -a --export-secret-subkeys UserName > secret_subs.gpg
+gpg --list-secret-keys --keyid-format LONG
+
+gpg --import maximalisimus.gpg
+
+
+gpg -b имя_файла
+gpg --verify textfile.sig textfile
+
+
+gpg --delete-secret-keys UserName
+
+
+
+gpg --import secret_subs.gpg
+gpg --import laptop_keys_public.gpg
+
+
+
+
+git config --global user.signingkey <GPG-User-Identificator>
+git config --global commit.gpgsign true
+git config --global gpg.program $(which gpg2)
+
+git commit -a -S -m 'signed commit'
+git log --show-signature -1
+git merge --verify-signatures non-verify
+
+
+
+
+pacman-key --init
+pacman-key --add /usr/share/pacman/keyrings/ctlos.gpg
+pacman-key --lsign-key 50417293016B25BED7249D8398F76D97B786E6A3
+pacman-key --populate archlinux ctlos
+pacman-key --refresh-keys
+
+

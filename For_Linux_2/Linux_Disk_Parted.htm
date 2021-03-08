@@ -1,0 +1,1146 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 12">
+<meta name=Originator content="Microsoft Word 12">
+<link rel=File-List href="Linux_Disk_Parted.files/filelist.xml">
+<link rel=Edit-Time-Data href="Linux_Disk_Parted.files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Doctor_Who</o:Author>
+  <o:LastAuthor>Doctor_Who</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2016-04-29T03:21:00Z</o:Created>
+  <o:LastSaved>2016-04-29T03:21:00Z</o:LastSaved>
+  <o:Pages>2</o:Pages>
+  <o:Words>769</o:Words>
+  <o:Characters>4389</o:Characters>
+  <o:Lines>36</o:Lines>
+  <o:Paragraphs>10</o:Paragraphs>
+  <o:CharactersWithSpaces>5148</o:CharactersWithSpaces>
+  <o:Version>12.00</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]-->
+<link rel=themeData href="Linux_Disk_Parted.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="Linux_Disk_Parted.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 3 9 2 2 5 2 4 4;
+	mso-font-charset:204;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-1593833729 1073750107 16 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h2
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 2 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Текст выноски Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"Заголовок 2 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 2";
+	mso-ansi-font-size:18.0pt;
+	mso-bidi-font-size:18.0pt;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:13.5pt;
+	mso-bidi-font-size:13.5pt;
+	font-family:"Times New Roman","serif";
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
+p.wp-caption-text, li.wp-caption-text, div.wp-caption-text
+	{mso-style-name:wp-caption-text;
+	mso-style-unhide:no;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	mso-fareast-font-family:"Times New Roman";}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Стандартный HTML";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.a
+	{mso-style-name:"Текст выноски Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-link:"Текст выноски";
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma","sans-serif";
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	mso-ascii-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-bidi-font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink=purple style='tab-interval:35.4pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;mso-outline-level:1;background:#D2D9DC'><span style='font-size:12.5pt;
+font-family:"Arial","sans-serif";color:black;mso-font-kerning:18.0pt'><a
+href="http://www.oldnix.org/file-systems-disc-linux/"><span class=SpellE><span
+style='mso-bidi-font-size:11.0pt;color:black'>Linux</span></span><span
+style='mso-bidi-font-size:11.0pt;color:black'> разметка диска (файловые системы
+<span class=SpellE>Linux</span>)</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:5.5pt;font-family:"Arial","sans-serif";
+color:#4E4E4E'>14. 06. 2013<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Linux</span></span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'> разметка диска&nbsp;- В этом посте я расскажу о файловых системах
+и поделюсь своим мнением о том, как же лучше разметить диск. На данный момент в</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<span class=SpellE><b>Linux</b></span>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>существует
+множество файловых систем и вариантов как разметить диск. Но, активно
+используются далеко не все.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:17.0pt;margin-right:20.4pt;margin-bottom:
+10.2pt;margin-left:0cm;line-height:normal;mso-outline-level:2'><b><i><span
+style='font-family:"Arial","sans-serif";color:black'>Файловые системы <span
+class=SpellE>Linux</span>.<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:0cm;margin-bottom:.0001pt;
+text-align:center;line-height:12.25pt;background:#F1F1F1'><span
+style='font-size:8.0pt;font-family:"Times New Roman","serif";color:#888888;
+mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype id="_x0000_t75" coordsize="21600,21600"
+ o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f"
+ stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Рисунок_x0020_1" o:spid="_x0000_i1025" type="#_x0000_t75"
+ alt="Linux разметка диска" style='width:78.75pt;height:78.75pt;visibility:visible;
+ mso-wrap-style:square'>
+ <v:imagedata src="Linux_Disk_Parted.files/image001.jpg" o:title="Linux разметка диска"/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=105 height=105
+src="Linux_Disk_Parted.files/image002.jpg" alt="Linux разметка диска" v:shapes="Рисунок_x0020_1"><![endif]></span><span
+style='font-size:8.0pt;font-family:"Times New Roman","serif";color:#888888'><o:p></o:p></span></p>
+
+<p class=MsoNormal align=center style='margin-bottom:2.7pt;text-align:center;
+line-height:normal;background:#F1F1F1'><span class=SpellE><span
+style='font-size:7.0pt;font-family:"Arial","sans-serif";color:#6E6E6E'>Linux</span></span><span
+style='font-size:7.0pt;font-family:"Arial","sans-serif";color:#6E6E6E'>
+разметка диска<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:
+"Verdana","sans-serif";color:black'>ext2</span></b><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;— Главный недостаток, он
+же плюс&nbsp;— это</span><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;<span class=SpellE><i>отсутствиежурналирования</i></span></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>,
+благодаря чему</span><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;<i>высокая</i>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>производительность.
+Идеально подходит для загрузочного раздела</span><span style='font-size:9.5pt;
+mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:navy'>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>boot</span></span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:blue'>.</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:
+"Verdana","sans-serif";color:black'>ext4</span></b><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;— Это&nbsp;</span><span
+class=SpellE><b><i><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>журналируемая</span></i></b></span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>файловая система, основная файловая система, используется во всех
+остальных разделов кроме</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:navy'>/<span class=SpellE>boot</span></span><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:blue'>.</span><span style='font-size:
+9.5pt;font-family:"Verdana","sans-serif";color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.8pt;line-height:normal'><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>Помимо
+этих двух братьев, есть еще менее популярные, <span class=GramE>о</span> всех
+файловых системах рассказывать смысла нет. Ниже те, что часто используются:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>ReiserFS</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;— <span
+class=SpellE>Журналируемая</span> файловая система, в некоторых случаях</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<i>быстрее</i>&nbsp;<span class=GramE><i>ext4</i></span></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;
+но менее</span><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;<i>стабильна</i></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>. Быстро
+работает с мелкими файлами, хорошо подходит для хранения и работы с
+&nbsp;мультимедиа, <span class=SpellE>торрентами</span>. В основном
+используется для разделов</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:navy'>&nbsp;/<span class=SpellE>home</span>, /<span class=SpellE>var</span>,
+/<span class=SpellE>tmp</span></span><span style='font-size:9.5pt;font-family:
+"Verdana","sans-serif";color:blue'>.</span><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:
+"Verdana","sans-serif";color:black'>Reiser4</span></b><span style='font-size:
+9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;— 4-ая версия&nbsp;</span><span
+class=SpellE><i><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>ReiserFS</span></i></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>, тоже
+быстрая файловая система, хорошо работает с большим количеством мелких файлов,
+но есть</span><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>&nbsp;<i>минус</i></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;—
+&nbsp;</span><i><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>отсутствие файловой системы в
+основной ветви ядра.</span></i><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>Tmpfs</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;—
+Временное файловое хранилище</span><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>tmp</span></span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>, помещенное в ОЗУ, а не на физический диск. Подобное еще называют</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<i>«<span class=SpellE>ram</span> <span class=SpellE>drive</span>»</i></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>. Многие
+*<span class=SpellE>nix</span> дистрибутивы используют ее по умолчанию.</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<span class=SpellE><span class=GramE><i>Tmpfs</i></span></span></span><span
+class=GramE><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;— особенно</span><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;<i>полезна</i>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>для тех,</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<i>кто использует SSD</i></span><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>, она продлевает жизнь, храня
+временные файл в ОЗУ.</span></span><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;<span
+class=SpellE><i>Tmpfs</i></span></span><span style='font-size:9.5pt;font-family:
+"Verdana","sans-serif";color:black'>&nbsp;— &nbsp;варьируется в размерах и при
+необходимости расширяется <span class=SpellE>swap-ом</span>. Советую, всем
+обладателям большого объема оперативной памяти.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>swap</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;—
+стоящий отдельно от файловых систем, это разде<span class=GramE>л(</span>файл)
+подкачки. Используется в случаи нехватке ОЗУ.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.8pt;line-height:normal'><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>Итак, с
+файловыми системами, более-менее разобрались, кому нужна более &nbsp;подробная
+информация&nbsp;— есть <span class=SpellE>википедия</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:17.0pt;margin-right:20.4pt;margin-bottom:
+10.2pt;margin-left:0cm;line-height:normal;mso-outline-level:2'><span
+class=SpellE><b><i><span style='font-family:"Arial","sans-serif";color:black'>Linux</span></i></b></span><b><i><span
+style='font-family:"Arial","sans-serif";color:black'> разметка диска<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:6.8pt;line-height:normal'><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>Теперь
+поделюсь своим&nbsp;субъективным мнением, о <span class=GramE>том</span> как
+лучше разметить диск. Начну с того какие бывают основные разделы и для чего они
+нужны:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><b><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/</span></b><span style='font-size:10.0pt;font-family:Courier;
+color:#222222'> - Это корневой раздел, он же <span class=SpellE><b>root</b></span>.
+Самый главный, к нему монтируются все последующие разделы и в нем хранятся самые
+важные файлы ОС.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>boot</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Содержит <b>ядро</b>&nbsp;<b>OC</b>&nbsp;и
+файлы для загрузки.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>usr</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Все <i>важные программы </i>и библиотеки
+пользователя.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>tmp</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Раздел содержит временные файлы.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>var</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Хранит <span class=SpellE><i>log</i></span>,
+<span class=SpellE><span class=GramE><i>ce</i></span><i>сh</i>-файлы</span>, а
+также <b>почту</b>, иногда <span class=SpellE><i>web</i></span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>opt</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Туда устанавливаются дополнительные -
+сторонние программы.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span style='font-size:10.0pt;font-family:Courier;
+color:blue'>/<span class=SpellE>home</span></span><span style='font-size:10.0pt;
+font-family:Courier;color:#222222'> - Сюда помещаются все домашние каталоги
+пользователей.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Вот и все основные разделы, есть еще такие как:</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:blue'>/<span class=SpellE>etc</span>,/<span class=SpellE>bin</span>,/<span
+class=SpellE>llib</span>,/<span class=SpellE>mnt</span></span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>и многие другие, но это уже другая тема...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Существует множество вариантов, как разметить диск для <span
+class=SpellE>Linux</span> &nbsp;и среди них&nbsp;</span><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>нет 100% <span class=GramE>правильного</span>.</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;Чтобы
+выбрать наиболее подходящий вариант, нужно определиться с целью. Будит это
+web-сервер, email-сервер, <span class=SpellE>ftp</span>, <span class=SpellE>desktop</span>
+или что-то еще.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-top:17.0pt;margin-right:20.4pt;margin-bottom:
+10.2pt;margin-left:0cm;line-height:normal;mso-outline-level:3'><b><i><span
+style='font-family:"Arial","sans-serif";color:black'>Нужно упомянуть, что диск
+делить до бесконечности&nbsp;нельзя.<o:p></o:p></span></i></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Существуют всего 4-ре <span class=GramE>первичных</span> раздела (</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>Primary</span></b></span><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'> <span class=SpellE>partition</span></span></b><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>). Если
+нужно,&nbsp;один из первичных&nbsp;разделов, можно объявить расширенным (</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>Extended</span></b></span><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'> <span class=SpellE>partition</span></span></b><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>) и</span><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;</span></i><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>в <span class=GramE>расширенном</span></span><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>,</span></i><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;можно создать логические (</span><span class=SpellE><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>Logical</span></b></span><b><span style='font-size:9.5pt;
+mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:black'> <span
+class=SpellE>partition</span></span></b><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>) разделы, до&nbsp;</span><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>15шт. (если не ошибаюсь)</span></i><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Дистрибутив&nbsp;</span><span class=SpellE><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>Linux</span></b></span><span style='font-size:9.5pt;font-family:
+"Verdana","sans-serif";color:black'>, роли выбора не играет, будто это&nbsp;</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>Ubuntu</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>,&nbsp;</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>Fedora</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>,&nbsp;</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>OpenSUS</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;или
+что-то еще. Даже, по большому счету, разметку диска, можно&nbsp;доверить
+инсталлятору&nbsp;дистрибутива&nbsp;или использовать все пространство диска.</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<b>Разметить <span class=SpellE>диск<span style='mso-bidi-font-size:
+9.5pt;font-weight:normal'>руками</span></span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'> нужно
+для того, чтобы иметь возможность, при</span><i><span style='font-size:9.5pt;
+mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;выходе
+из строя</span></i><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;одного раздела, спасти информацию других разделов и систему
+в целом (для хранения информации достаточно&nbsp;</span><span style='font-size:
+9.5pt;font-family:"Verdana","sans-serif";color:blue'>/<span class=SpellE>home</span></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:6.8pt;line-height:normal'><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>(<span
+class=SpellE>Linux</span> разметка диска) &nbsp;Покажу мой работающий пример,
+на ноутбуке, <span class=SpellE>desktop</span>&nbsp;(настольная). Винчестер на
+250gb, операционная система -&nbsp;<span class=SpellE>ArchLinux</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Primary</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>boot</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext2</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) - 100mb<span
+class=GramE> Э</span>то потолок, более 50mb у меня никогда не грузилось.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Primary</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>swap</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;-
+рекомендуют&nbsp;ОЗУ&nbsp;<span class=SpellE>х</span>&nbsp;2, но если у вас<i>&nbsp;6
+и более</i>&nbsp;<span class=SpellE><span class=GramE>gb</span></span> то можно
+ОЗУ <span class=SpellE>х</span> <i>1 или ОЗУ <span class=SpellE>x</span> 0.5.</i><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Primary</span></i></span><b><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span></b><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>usr</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext4</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) &nbsp;50gb - Это
+основной <span class=GramE>раздел</span> где будет&nbsp;ОС&nbsp;и программы, у
+меня при установленных&nbsp;<b>KDE</b>&nbsp;+&nbsp;куча программ,
+более&nbsp;15gb&nbsp;не превышало.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Logical</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>tmp</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext4</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) 7gb - &nbsp;Тоже
+пока хватало.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Logical</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>var</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext4</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) 5gb - Хватает за
+глаза, если не хранить&nbsp;<i>почту дома</i>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Logical</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>var</span>/<span
+class=SpellE>log</span></span><span style='font-size:10.0pt;font-family:Courier;
+color:#222222'>&nbsp;(</span><i><span style='font-size:10.0pt;font-family:Courier;
+color:red'>ext4</span></i><span style='font-size:10.0pt;font-family:Courier;
+color:#222222'>) 2gb - Так сделал, чтобы ограничить место <span class=GramE>под
+<span class=SpellE>логи</span></span> (журнал событий).<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Logical</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>opt</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext4</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) 20gb - На нем <span
+class=GramE>установлен</span>&nbsp;<span class=SpellE><b>xampp</b></span>&nbsp;и
+лежат сайты.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+12.25pt;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F7F7F7'><span class=SpellE><i><span style='font-size:10.0pt;
+font-family:Courier;color:green'>Logical</span></i></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;</span><span
+style='font-size:10.0pt;font-family:Courier;color:blue'>/<span class=SpellE>home</span></span><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>&nbsp;(</span><i><span
+style='font-size:10.0pt;font-family:Courier;color:red'>ext4</span></i><span
+style='font-size:10.0pt;font-family:Courier;color:#222222'>) ~150gb (<span
+class=GramE>оставшиеся</span> место) под домашнею директорию.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Многие предпочитают отделять раздел&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>usr</span></span><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>от</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;</span><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:navy'>/</span></b><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;(<span class=SpellE>root</span>)</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>, якобы
+безопаснее и создавать еще</span><i><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>media</span></span><i><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>для
+хранения <span class=SpellE>медиатеки</span>.&nbsp;Также многие
+форматируют&nbsp;</span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:navy'>/<span class=SpellE>tmp</span></span><i><span style='font-size:
+9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;и</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>var</span></span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;в&nbsp;</span><span class=SpellE><b><span style='font-size:
+9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:black'>ReiserFS</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>, так
+якобы быстрее, <span class=GramE>но</span> на мой взгляд, все-таки лучше&nbsp;</span><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>ext4</span></b><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Если у вас 6gb&nbsp;и более&nbsp;ОЗУ,&nbsp;и есть&nbsp;SSD</span><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>,</span></b><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;то рекомендовал бы раздел&nbsp;</span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:navy'>/<span
+class=SpellE>tmp</span></span><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;поместить в&nbsp;</span><span class=SpellE><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>tmpfs</span></b></span><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'>.</span></b><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;Будет&nbsp;быстрее&nbsp;и&nbsp;SSD&nbsp;<span
+class=GramE>на</span> дольше хватит.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal'><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>Например, если делать под &nbsp;email-сервер</span><i><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>,</span></i><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;то раздел&nbsp;</span><i><span style='font-size:9.5pt;
+mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";color:black'>/<span
+class=SpellE>var</span></span></i><span style='font-size:9.5pt;font-family:
+"Verdana","sans-serif";color:black'>&nbsp;должен занимать самое&nbsp;большое
+место</span><i><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";color:black'>.</span></i><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='line-height:normal'><span style='font-size:9.5pt;
+font-family:"Verdana","sans-serif";color:black'>Про то, как и чем</span><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>&nbsp;<b>разметить&nbsp;диск для <span class=SpellE>linux</span></b></span><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>, в этой
+теме говорить не буду. У каждого дистрибутива&nbsp;</span><span class=SpellE><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'>Linux</span></b></span><b><span style='font-size:9.5pt;mso-bidi-font-size:
+11.0pt;font-family:"Verdana","sans-serif";color:black'> есть</span></b><span
+style='font-size:9.5pt;font-family:"Verdana","sans-serif";color:black'>&nbsp;свой&nbsp;инсталлятор
+и свои программы, хотя есть и общие, такие как:&nbsp;</span><span class=SpellE><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+color:black'><a href="http://www.oldnix.org/fdisk-linux/"
+title="fdisk&nbsp;— Работа с утилитой fdisk в Linux"><span style='color:#3C3C3C'>fdisk</span></a></span></b></span></p>
+
+<b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+color:black;mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'>,</span></b><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+color:black;mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'>&nbsp;<span class=SpellE><b>sfdisk</b></span><b>,</b>&nbsp;</span><span
+class=SpellE><b><span style='font-size:9.5pt;mso-bidi-font-size:11.0pt;
+font-family:"Verdana","sans-serif";mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:"Times New Roman";color:black;mso-ansi-language:RU;
+mso-fareast-language:RU;mso-bidi-language:AR-SA'>cfdisk</span></b></span><b><span
+style='font-size:9.5pt;mso-bidi-font-size:11.0pt;font-family:"Verdana","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+color:black;mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'>.</span></b><span style='font-size:9.5pt;font-family:"Verdana","sans-serif";
+mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:"Times New Roman";
+color:black;mso-ansi-language:RU;mso-fareast-language:RU;mso-bidi-language:
+AR-SA'><o:p></o:p></span>
+
+<p class=MsoNormal><a href="http://www.oldnix.org/fdisk-linux/"
+title="fdisk&nbsp;— Работа с утилитой fdisk в Linux"><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p>&nbsp;</o:p></span></a></p>
+
+<p class=MsoNormal><a href="http://www.oldnix.org/fdisk-linux/"
+title="fdisk&nbsp;— Работа с утилитой fdisk в Linux"><span style='color:windowtext;
+text-decoration:none;text-underline:none'><o:p>&nbsp;</o:p></span></a></p>
+
+</div>
+
+</body>
+
+</html>

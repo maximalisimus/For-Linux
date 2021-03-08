@@ -1,0 +1,61 @@
+﻿
+Fonts
+
+
+
+
+# if mount for windows to link-label fonts ntfs disk
+
+ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
+fc-cache
+
+
+# or copy fonts windows to fonts linux
+
+# mkdir /usr/share/fonts/WindowsFonts
+# cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
+# chmod 755 /usr/share/fonts/WindowsFonts/*
+
+fc-cache
+
+
+pacman -S 
+
+ttf-office-2007-fonts- AUR Office 2007 fonts
+ttf-win7-fonts - AUR fonts Windows 7
+ttf-ms-win8AUR — fonts Windows 8.1
+ttf-ms-win10AUR — fonts Windows 10
+
+ttf-ms-fonts - AUR
+ttf-vista-fonts - AUR
+
+
+# for all browser to replace fonts - it create file
+
+nano /etc/fonts/conf.d/30-metric-aliases-free.conf
+
+<?xml version="1.0"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+       <alias binding="same">
+         <family>Helvetica</family>
+         <accept>
+         <family>Arial</family>
+         </accept>
+       </alias>
+       <alias binding="same">
+         <family>Times</family>
+         <accept>
+         <family>Times New Roman</family>
+         </accept>
+       </alias>
+       <alias binding="same">
+         <family>Courier</family>
+         <accept>
+         <family>Courier New</family>
+         </accept>
+       </alias>
+</fontconfig>
+
+
+

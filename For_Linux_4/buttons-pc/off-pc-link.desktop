@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Выключение компьютера
+Comment=Power off PC
+Exec=/home/mikl/programs/buttons-pc/off-pc.sh
+Icon=/home/mikl/programs/buttons-pc/shutdown.png
+Type=Application
+Categories=GNOME;GTK;Utility;
+StartupNotify=false
+NoDisplay=false

@@ -1,0 +1,28 @@
+
+
+User login and ip: u0_a387@192.168.0.100
+Password: mikl
+
+# termux to run
+sshd
+
+# Send to file tips.txt
+pscp.exe -pw mikl -P 8022 tips.txt u0_a387@192.168.0.100:/data/data/com.termux/files/home/downloads/
+
+# Download to file vk.png on directory: D:\Temp5\
+pscp.exe -pw mikl -P 8022 u0_a387@192.168.0.100:/data/data/com.termux/files/home/downloads/vk.png D:Temp5
+
+# Run to script on ssh
+putty.exe -ssh u0_a387@192.168.0.100  -pw mikl  -P 8022 -m "C:\Users\Doctor_Who\Downloads\putty\putty_x86\sshtips.sh"
+
+
+# command to putty on ssh
+cd /data/data/com.termux/files/home/downloads/
+
+./sshtips.sh
+
+
+
+
+
+

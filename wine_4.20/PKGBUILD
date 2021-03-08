@@ -1,0 +1,48 @@
+# This is an example PKGBUILD file. Use this as a start to creating your own,
+# and remove these comments. For more information, see 'man PKGBUILD'.
+# NOTE: Please fill out the license field for your package! If it is unknown,
+# then please put 'unknown'.
+
+# Maintainer: Your Name <youremail@domain.com>
+pkgname=wine
+pkgver=4.20
+pkgrel=1
+pkgdesc="wine"
+arch=('x86_64')
+url="https://github.com/Kron4ek"
+license=('GPL')
+depends=(glibc gcc-libs libgl gnutls lib32-gnutls)
+source=("https://github.com/Kron4ek/Wine-Builds/releases/download/4.20/$pkgname-$pkgver-staging-amd64.tar.xz")
+md5sums=('SKIP')
+
+package() {
+	mkdir -p $pkgdir/usr/bin/
+	mkdir -p $pkgdir/usr/lib/wine/fakedlls/
+	mkdir -p $pkgdir/usr/lib64/wine/fakedlls/
+	mkdir -p $pkgdir/usr/share/wine/fonts/
+	mkdir -p $pkgdir/usr/share/applications/
+
+	cp -a ${srcdir}/$pkgname-$pkgver-staging-amd64/bin/* $pkgdir/usr/bin/
+	cp -a ${srcdir}/$pkgname-$pkgver-staging-amd64/lib/* $pkgdir/usr/lib/
+	cp -a ${srcdir}/$pkgname-$pkgver-staging-amd64/lib64/* $pkgdir/usr/lib64/
+	cp -a ${srcdir}/$pkgname-$pkgver-staging-amd64/share/* $pkgdir/usr/share/
+	
+	touch $pkgdir/usr/share/applications/$pkgname.desktop
+	
+	echo "[Desktop Entry]" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Exec=/usr/bin/wine64" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Name=wine64" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Name[en]=wine64" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Name[ru]=wine64" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Type=Application" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Terminal=true" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	# echo "Icon=$_icon" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Comment=$pkgdesc" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Comment[en]=$pkgdesc" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Comment[ru]=$pkgdesc" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "Categories=Game;" >> $pkgdir/usr/share/applications/$pkgname.desktop
+	echo "X-GNOME-UsesNotifications=true" >> $pkgdir/usr/share/applications/$pkgname.desktop
+
+	chmod ugo+x $pkgdir/usr/share/applications/$pkgname.desktop
+	
+}

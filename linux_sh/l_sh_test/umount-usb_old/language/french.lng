@@ -1,0 +1,27 @@
+##
+##
+## French Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Extraction de périphériques USB"
+_menu_body="\nVeuillez choisir votre périphérique USB.\n"
+_pass_title="Introduction de mot de passe"
+_pass_body="\nVeuillez entrer le mot de passe de l'utilisateur.\n"
+_MSG_Title="Erreur"
+_MSG_Body="Périphérique USB non détecté\n"
+_select_type_pass_title="Configuration du mot de passe utilisateur"
+_select_type_pass_body="\nVeuillez sélectionner le mode de fonctionnement du programme.\n\n"
+_no_pass_menu="Sans mot de passe"
+_memory_pass_menu="Mémoriser le mot de passe"
+_input_pass_menu="Réinitialisation du mot de passe"
+_info_pass_type_title="Message d'information sur le mode de fonctionnement du programme"
+_inf0="\nLe fonctionnement du programme dépend de ce mode\n"
+_info1="$_inf0\nEn mode "sans mot de passe", le mot de passe de l'utilisateur est vide\n"
+_info2="En mode Mémoriser le mot de passe , le mot de passe est entré dans le fichier de configuration\n"
+_info3="En mode "réinitialiser le mot de passe", le mot de passe sera demandé à chaque récupération\n\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Configuration initiale du programme"
+_info_install_body="\nLa configuration initiale du programme est effectuée.\nConfigurer la langue du système et le mode de fonctionnement de l'application.\nAinsi que l'installation d'un package dépendant pour le fonctionnement du sous - système graphique de l'application- xdialog\n\n"

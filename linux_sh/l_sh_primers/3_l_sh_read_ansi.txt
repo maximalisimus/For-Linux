@@ -1,0 +1,84 @@
+
+#!/bin/bash
+
+if [ "$1" == "Vasya" ]; then
+		echo "Privet $1"
+elif [ "$1" == "Trump" ]; then
+		echo "Hello $1"
+else echo "Zdarova $1"
+fi
+
+read -p "Enter something: "  x
+
+echo "Starting CASE selection..."
+case $x in
+		1) echo "This is one";;
+	[2-9]) echo "Two-Nine";;
+  "Petya") echo "Privet $x";;
+		*) echo "Parameter Unknown, sorry!"
+esac
+
+
+
+
+
+Если скрипт должен продолжать выполнение независимо от того, введёт пользователь какие-то данные или нет, 
+вызывая команду read можно воспользоваться ключом -t. А именно, параметр ключа задаёт время ожидания ввода в секундах:
+
+
+#!/bin/bash
+if read -t 5 -p "Enter your name: " name
+then
+echo "Hello $name, welcome to my script"
+else
+echo "Sorry, too slow! "
+fi
+
+
+Если данные не будут введены в течение 5 секунд, скрипт выполнит ветвь условного оператора else, выведя извинения.
+
+
+
+
+
+
+Ввод паролей
+
+
+#!/bin/bash
+read -s -p "Enter your password: " pass
+echo "Is your password really $pass? "
+
+
+
+
+
+Чтение данных из файла
+
+
+
+#!/bin/bash
+count=1
+cat myfile | while read line
+do
+echo "Line $count: $line"
+count=$(( $count + 1 ))
+done
+echo "Finished"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

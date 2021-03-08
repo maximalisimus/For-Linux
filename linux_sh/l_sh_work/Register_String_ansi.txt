@@ -1,0 +1,16 @@
+
+$ echo "$a" | tr '[:upper:]' '[:lower:]'
+hi all
+
+
+
+$ echo "$a" | awk '{print tolower($0)}'
+hi all
+
+
+
+
+
+
+
+

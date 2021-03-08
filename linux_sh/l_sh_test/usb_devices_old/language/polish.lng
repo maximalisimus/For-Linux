@@ -1,0 +1,27 @@
+##
+##
+## Polish Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Wyjmowanie urzadzenia USB"
+_menu_body="\nProsze, wybierz swoje urzadzenie USB.\n"
+_pass_title="Wprowadzenie hasla"
+_pass_body="\n, Prosze wprowadzic haslo uzytkownika.\n"
+_MSG_Title="Blad"
+_MSG_Body="Urzadzenie USB nie jest wykrywane\n"
+_select_type_pass_title="Konfigurowanie hasla uzytkownika"
+_select_type_pass_body="\nProsze, wybierz tryb pracy programu.\n\n"
+_no_pass_menu="Bez hasla"
+_memory_pass_menu="Zapamietaj haslo"
+_input_pass_menu="Ponowne wprowadzenie hasla"
+_info_pass_type_title="Komunikat informacyjny o trybie pracy programu"
+_inf0="\nOd tego trybu zalezy dzialanie programu\n"
+_info1="$_inf0\nW trybie "bez wprowadzenia hasla' - haslo uzytkownika ustawiana jest puste\n"
+_info2="W trybie "Zapamietaj haslo" - haslo zapisane w pliku ustawien\n"
+_info3="\nW trybie 'Ponowne wprowadzenie hasla' - haslo bedzie wymagane przy kazdym wyjeciu\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Wstepna konfiguracja programu"
+_info_install_body="\nOdbywa sie wstepna konfiguracja programu.\nUstawienia jezyka systemu i trybu pracy aplikacji.\nA takze instalacja zaleznej pakietu do pracy graficznej podsystemu aplikacji - xdialog\n\n"

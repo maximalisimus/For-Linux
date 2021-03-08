@@ -1,0 +1,26 @@
+﻿
+
+dialog --create-rc "dialog.rc"
+
+
+$HOME/.dialogrc
+
+/etc/dialogrc
+
+/root/.dialogrc
+
+
+
+DIALOGRC=/usr/local/etc/nixcraft/config/dialog.installer
+
+OR
+
+#!/bin/bash
+# set config file 
+DIALOGRC=/usr/local/etc/nixcraft/config/dialog.installer
+
+dialog ...
+
+
+
+

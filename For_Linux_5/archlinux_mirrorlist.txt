@@ -1,0 +1,23 @@
+## Russia
+Server = http://archlinux.zepto.cloud/$repo/os/$arch
+Server = http://mirror.truenetwork.ru/archlinux/$repo/os/$arch
+Server = http:// mirror.aur.rocks/$repo/os/$arch
+
+
+##
+## Arch Linux repository mirrorlist
+
+## Generated on 2016-04-24
+
+##
+
+## Russia
+
+#Server = http://mirror.rol.ru/archlinux/$repo/os/$arch
+
+#Server = https://mirror.rol.ru/archlinux/$repo/os/$arch
+
+#Server = http://mirror.yandex.ru/archlinux/$repo/os/$arch
+
+#Server = https://mirror.yandex.ru/archlinux/$repo/os/$arch
+

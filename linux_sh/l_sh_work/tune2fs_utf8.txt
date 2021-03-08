@@ -1,0 +1,29 @@
+﻿#!/bin/bash
+function reserved_block()
+{
+	_block_count=$(tune2fs -l $1 | grep -Ei "^(Block count:)" | sed 's/Block count://' | tr -d ' ')
+	_reserved_block_count=$(tune2fs -l $1 | grep -Ei "^(Reserved block count:)" | sed 's/Reserved block count://' | tr -d ' ')
+	bc=${_block_count[*]}
+	unset _block_count
+	rbc=${_reserved_block_count[*]}
+	unset _reserved_block_count
+	_reserv_procent=$(awk 'BEGIN{print ('"$rbc"'*100/'"$bc"')}' | sed 's/\./,/')
+	unset bc
+	unset rbc
+	# round
+	_rnd_reserv_procent=$(printf "%.0f" $_reserv_procent)
+	unset _reserv_procent
+	echo "$_rnd_reserv_procent"
+}
+_reserved_size=$(reserved_block "/dev/sda1")
+echo "${_reserved_size[*]}"
+exit 0
+
+
+
+
+
+
+
+
+

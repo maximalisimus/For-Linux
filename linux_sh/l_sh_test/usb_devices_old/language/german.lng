@@ -1,0 +1,27 @@
+##
+##
+## German Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Entfernen von USB-Geraten"
+_menu_body="\nBitte wahlen Sie Ihr USB-Gerat.\n"
+_pass_title="Einfuhrung des Passworts"
+_pass_body="\nBitte geben Sie das Passwort des Benutzers ein.\n"
+_MSG_Title="Fehler"
+_MSG_Body="USB-Gerat nicht erkannt\n"
+_select_type_pass_title="Benutzerpasswort konfigurieren"
+_select_type_pass_body="\nBitte wahlen Sie den Betriebsmodus des Programms.\n\n"
+_no_pass_menu="Kein Passwort"
+_memory_pass_menu="Passwort merken"
+_input_pass_menu="Passwort erneut eingeben"
+_info_pass_type_title="Informationsmeldung uber den Betriebsmodus des Programms"
+_inf0="\nDie Funktionsfahigkeit des Programms hangt von diesem Modus ab\n"
+_info1="$_inf0\nIm Modus 'kein Passwort eingeben' - das Passwort des Benutzers ist leer\n"
+_info2="Im Modus "Passwort Speichern" - das Passwort wird in die Einstellungsdatei eingefugt\n"
+_info3="\nIm Modus 'Passwort erneut eingeben' - das Passwort wird bei jeder Extraktion angefordert\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Erstkonfiguration des Programms"
+_info_install_body="\nDie Erstkonfiguration des Programms erfolgt.\nKonfigurieren der Systemsprache und des Anwendungsmodus.\nUnd auch die Installation eines abhangigen Pakets fur den Betrieb des grafischen Subsystems der Anwendung - xdialog\n\n"

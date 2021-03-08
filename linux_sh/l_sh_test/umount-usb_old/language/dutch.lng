@@ -1,0 +1,27 @@
+##
+##
+## Dutch Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="USB-apparaten worden verwijderd"
+_menu_body="\nSelecteer uw USB-apparaat.\n"
+_pass_title="Wachtwoord"
+_pass_body="\nVoer uw gebruikerswachtwoord in.\n"
+_MSG_Title="Fout"
+_MSG_Body="Het USB-apparaat is niet gedetecteerd\n"
+_select_type_pass_title="Wachtwoord instellen"
+_select_type_pass_body="\nSelecteer de programmamodus.\n\n"
+_no_pass_menu="Zonder wachtwoord"
+_memory_pass_menu="Wachtwoord onthouden"
+_input_pass_menu="Wachtwoord opnieuw invoeren"
+_info_pass_type_title="Informatiebericht over de operatiemodus van het programma"
+_inf0="\nVanaf deze modus is afhankelijk van de prestaties van het programma\n"
+_info1="$_inf0\nIn' no password ' mode - user wachtwoord is ingesteld op leeg\n"
+_info2="In de' Geheugenwachtwoord ' - modus wordt het wachtwoord ingevoerd in het instellingenbestand\n"
+_info3="In de' re-enter password ' - modus wordt het wachtwoord elke keer gevraagd wanneer u het opzoekt.\n\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Begininstelling van het programma"
+_info_install_body="\nDe eerste setup van het programma wordt uitgevoerd.\nConfigureer de systeemtaal en toepassingsmodus.\nNaast het installeren van een afhankelijk pakket voor het application graphics subsysteem-xdialog\n\n"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceinfo version="0.2">
+ <device>
+  <match key="info.capabilities" contains="input.keypad">
+    <merge key="input.xkb.rules" type="string">base</merge>
+    <merge key="input.xkb.model" type="string">pc105</merge>
+    <merge key="input.x11_driver" type="string">evdev</merge>
+    <merge key="input.xkb.layout" type="string">us,ru</merge>
+    <merge key="input.xkb.variant" type="string">,winkeys</merge>
+    <merge key="input.xkb.options" type="string">grp:ctrl_shift_toggle</merge>
+  </match>
+ </device>
+</deviceinfo>
+
+# if not file and folder /etc/hal/fdi/policy/10-keymap.fdi
+# then create folder for file
+# mkdir etc/hal/
+# mkdir etc/hal/fdi/
+# mkdir etc/hal/fdi/policy/
+# nano /etc/hal/fdi/policy/10-keymap.fdi
+
+# Модели клавиатур в строке input.xkb.model
+# Значение этого ключа в /usr/share/X11/xkb/rules/evdev.lst
+# Например для клавиатуры Logitech Generic Keyboard строка имеет вид:
+# <merge key="input.xkb.model" type="string">logitech_base</merge>
+
+# Раскладки xkb.layout и xkb.variant 
+# Переключение раскладок input.xkb.options
+# Для Ctrl-Shift, при использовании русской раскладки горит лампочка Scroll Lock: 
+# <merge key="input.xkb.options"
+# type="string">grp:ctrl_shift_toggle,grp_led:scroll</merge>
+

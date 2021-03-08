@@ -1,0 +1,2 @@
+Server = http://mirror.yandex.ru/archlinux32/i686/$repo/
+Server = https://mirror.yandex.ru/archlinux32/i686/$repo/

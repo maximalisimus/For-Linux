@@ -1,0 +1,27 @@
+##
+##
+## Danish Translation File
+##
+##
+## Written by "usverj" (31th Juile 2019)
+##
+
+_menu_title="Fjerner USB-enheder"
+_menu_body="\nVælg venligst din USB-enhed.\n"
+_pass_title="En adgangskode"
+_pass_body="\nIndtast venligst din brugerkodeord.\n"
+_MSG_Title="Fejl"
+_MSG_Body="USB-enheden er ikke detekteret\n"
+_select_type_pass_title="Indstilling af brugeradgangskode"
+_select_type_pass_body="\nVælg programtilstand.\n\n"
+_no_pass_menu="Uden adgangskode"
+_memory_pass_menu="Husk adgangskode"
+_input_pass_menu="Indtast adgangskode igen"
+_info_pass_type_title="Informationsmeddelelse om programoperationstilstand"
+_inf0="\nFra denne tilstand afhænger af programmets ydelse\n"
+_info1="$_inf0\nI' ingen adgangskodetilstand ' - brugerens adgangskode sættes til Tom\n"
+_info2="I' Husk adgangskode ' - tilstand indtastes adgangskoden i indstillingsfilen\n"
+_info3="I' Genindtast adgangskode ' - tilstand vil adgangskoden blive anmodet hver gang du henter den\n\n"
+_info_pass_type_body="$_info1 $_info2 $_info3"
+_info_install_title="Initial opsætning af programmet"
+_info_install_body="\nProgrammets indledende opsætning udføres.\nIndstil systemsprog og programtilstand.\nUd over at installere en afhængig pakke til delsystemet programgrafik - xdialog\n\n"

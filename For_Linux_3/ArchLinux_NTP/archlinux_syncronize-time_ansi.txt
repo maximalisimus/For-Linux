@@ -1,0 +1,47 @@
+
+/etc/ntp.conf
+server 0.it.pool.ntp.org
+server 1.it.pool.ntp.org
+server 2.it.pool.ntp.org
+server 3.it.pool.ntp.org
+server 127.127.1.0
+fudge  127.127.1.0 stratum 10
+
+
+systemctl enable ntpd
+systemctl start ntpd
+
+# groupadd ntp
+# useradd -r -d /var/lib/ntp -g ntp -s /bin/false ntp
+chown -R ntp:ntp /var/lib/ntp
+
+
+ln -sf /usr/share/zoneinfo/Europe/Moscow /etc/localtime
+
+hwclock --systohc --localtime
+
+hwclock --systohc --utc
+
+timedatectl set-ntp true 
+
+timedatectl status
+
+timedatectl set-local-rtc 0
+
+systemctl enable systemd-timesyncd
+systemctl start systemd-timesyncd
+
+systemctl enable systemd-networkd
+systemctl start systemd-networkd
+
+
+
+ntpd -qg
+
+
+
+
+
+
+
+

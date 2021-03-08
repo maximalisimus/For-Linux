@@ -1,0 +1,16 @@
+Xorg error
+# Comment comment
+#bash #xorg #pacman
+-------------------
+$ #!/bin/bash
+  error_list=$(pacman -Qdt | cut -d " " -f1)
+  for i in ${error_list[*]}; do
+    pacman -Rns $i --noconfirm
+  done
+  pacman -Syyu --noconfirm &amp;&amp; mkinitcpio -P
+  pacman -Rdd libdmx libxxf86dga --noconfirm
+  pacman -Rdd libxxf86misc xorgproto --noconfirm
+  grub-mkconfig -o /boot/grub/grub.cfg
+# Comment comment
+Read more
+maximalisimus

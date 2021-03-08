@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<!-- saved from url=(0222)https://proggear.ru/%D0%BF%D0%B8%D1%88%D0%B5%D0%BC-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%8B-%D0%B2-linux-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85-711/ -->
+<html lang="ru-RU"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+
+		<title>Пишем скрипты в Linux (обучение на примерах) | ProGGear.ru</title>
+
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="https://proggear.ru/xmlrpc.php">
+
+		<!-- IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+		<script src="https://proggear.ru/wp-content/themes/ifeature/inc/js/html5.js" type="text/javascript"></script>
+		<![endif]-->
+
+		
+<!-- SEO Ultimate (http://www.seodesignsolutions.com/wordpress-seo/) -->
+<!-- /SEO Ultimate -->
+
+<link rel="alternate" type="application/rss+xml" title="ProGGear.ru » Лента" href="https://proggear.ru/feed/">
+<link rel="alternate" type="application/rss+xml" title="ProGGear.ru » Лента комментариев" href="https://proggear.ru/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="ProGGear.ru » Лента комментариев к «Пишем скрипты в Linux (обучение на примерах)»" href="https://proggear.ru/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d1%8b-%d0%b2-linux-%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d0%b0%d1%85-711/feed/">
+		<script async="" src="./Bash_Scripting_Tutorial_1_files/saved_resource"></script><script type="text/javascript" async="" src="./Bash_Scripting_Tutorial_1_files/watch.js"></script><script src="./Bash_Scripting_Tutorial_1_files/ca-pub-6997571929739262.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"https:\/\/proggear.ru\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.5.1"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./Bash_Scripting_Tutorial_1_files/wp-emoji-release.min.js" type="text/javascript"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="bootstrap-style-css" href="./Bash_Scripting_Tutorial_1_files/bootstrap.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="bootstrap-responsive-style-css" href="./Bash_Scripting_Tutorial_1_files/bootstrap-responsive.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="cyberchimps_responsive-css" href="./Bash_Scripting_Tutorial_1_files/cyberchimps-responsive.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="core-style-css" href="./Bash_Scripting_Tutorial_1_files/core.css" type="text/css" media="all">
+<link rel="stylesheet" id="style-css" href="./Bash_Scripting_Tutorial_1_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="elements_style-css" href="./Bash_Scripting_Tutorial_1_files/elements.css" type="text/css" media="all">
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/jquery.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/q2w3-fixed-widget.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/jquery.slimbox.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/jquery.jcarousel.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/swipe-call.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/core.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/elements.min.js"></script>
+<link rel="https://api.w.org/" href="https://proggear.ru/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://proggear.ru/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://proggear.ru/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.5.1">
+<link rel="canonical" href="https://proggear.ru/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d1%8b-%d0%b2-linux-%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d0%b0%d1%85-711/">
+<link rel="shortlink" href="https://proggear.ru/?p=711">
+<link rel="alternate" type="application/json+oembed" href="https://proggear.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fproggear.ru%2F%25d0%25bf%25d0%25b8%25d1%2588%25d0%25b5%25d0%25bc-%25d1%2581%25d0%25ba%25d1%2580%25d0%25b8%25d0%25bf%25d1%2582%25d1%258b-%25d0%25b2-linux-%25d0%25be%25d0%25b1%25d1%2583%25d1%2587%25d0%25b5%25d0%25bd%25d0%25b8%25d0%25b5-%25d0%25bd%25d0%25b0-%25d0%25bf%25d1%2580%25d0%25b8%25d0%25bc%25d0%25b5%25d1%2580%25d0%25b0%25d1%2585-711%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://proggear.ru/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fproggear.ru%2F%25d0%25bf%25d0%25b8%25d1%2588%25d0%25b5%25d0%25bc-%25d1%2581%25d0%25ba%25d1%2580%25d0%25b8%25d0%25bf%25d1%2582%25d1%258b-%25d0%25b2-linux-%25d0%25be%25d0%25b1%25d1%2583%25d1%2587%25d0%25b5%25d0%25bd%25d0%25b8%25d0%25b5-%25d0%25bd%25d0%25b0-%25d0%25bf%25d1%2580%25d0%25b8%25d0%25bc%25d0%25b5%25d1%2580%25d0%25b0%25d1%2585-711%2F&amp;format=xml">
+<script type="text/javascript">
+	window._wp_rp_static_base_url = 'https://rp.zemanta.com/static/';
+	window._wp_rp_wp_ajax_url = "https://proggear.ru/wp-admin/admin-ajax.php";
+	window._wp_rp_plugin_version = '3.6';
+	window._wp_rp_post_id = '711';
+	window._wp_rp_num_rel_posts = '6';
+	window._wp_rp_thumbnails = false;
+	window._wp_rp_post_title = '%D0%9F%D0%B8%D1%88%D0%B5%D0%BC+%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%8B+%D0%B2+Linux+%28%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BD%D0%B0+%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85%29';
+	window._wp_rp_post_tags = [];
+</script>
+<style type="text/css">.ie8 .container {max-width: 1920px;width:auto;}</style>
+	<style type="text/css">
+		body {
+		background-color: #f7f7f7;background-image: none;		}
+	</style>
+	
+<style type="text/css" id="syntaxhighlighteranchor"></style>
+
+		<style type="text/css" media="all">
+						body {
+			                             font-size : 14px;
+                                                     font-family : 'Tahoma, Geneva, sans-serif';
+                                                     font-weight : normal;
+                                                     color : #000000;
+                        			}
+
+												a			{
+				color:
+			#006eb8			;
+			}
+						a:hover			{
+				color:
+			#771cff			;
+			}
+												.container {
+			 max-width : 1920px;
+						}
+
+			
+						h1, h2, h3, h4, h5, h6 {
+			font-family : 'Tahoma, Geneva, sans-serif';
+						}
+
+			
+		</style>
+			<script type="text/javascript" async="" src="./Bash_Scripting_Tutorial_1_files/embed.js"></script><script async="" type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/count.js"></script><script src="./Bash_Scripting_Tutorial_1_files/count-data.js"></script><script src="./Bash_Scripting_Tutorial_1_files/alfie.f51946af45e0b561c60f768335c9eb79.js" async="" charset="UTF-8"></script></head>
+
+<body class="single single-post postid-711 single-format-standard cc-responsive">
+
+<!-- ---------------- Top Header ------------------- -->
+	<div class="container-full-width" id="top_header">
+		<div class="container">
+			<div class="container-fluid">
+				<div class="row-fluid">
+					<div class="span6">
+						<div class="top-head-description">
+							Секреты SEO, Вебмастера, Системного администратора						</div>
+					</div>
+					<div class="top-head-social span6">
+							<div id="social">
+		<div class="default-icons">
+					</div>
+	</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- ---------------- Header --------------------- -->
+
+<div id="header_section" class="container-full-width">
+
+	<div class="container">
+
+		
+		<div class="container-fluid">
+
+				<header id="cc-header" class="row-fluid">
+		<div class="span7">
+				<div class="hgroup">
+		<h2 class="site-title"><a href="https://proggear.ru/" title="ProGGear.ru" rel="home">ProGGear.ru</a></h2>
+	</div>
+		</div>
+	</header>
+
+		</div>
+		<!-- container fluid -->
+
+	</div>
+	<!-- container -->
+
+</div>
+<!-- container full width -->
+
+
+<!-- ---------------- Menu ----------------------- -->
+
+<div class="container-full-width" id="main_navigation">
+	<div class="container">
+		<div class="container-fluid">
+			<nav id="navigation" role="navigation">
+				<div class="main-navigation navbar navbar-inverse">
+					<div class="navbar-inner">
+						<div class="container">
+														<div class="nav-collapse collapse">
+																<div class="menu-naymen-container"><ul id="menu-naymen" class="nav"><li id="menu-item-ifeature-home"><a href="https://proggear.ru/"><img src="./Bash_Scripting_Tutorial_1_files/home.png" alt="Home"></a></li><li id="menu-item-1309" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1309"><a href="https://proggear.ru/category/apache2/">Apache2</a></li>
+<li id="menu-item-1310" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1310"><a href="https://proggear.ru/category/bind/">Bind</a></li>
+<li id="menu-item-1311" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1311"><a href="https://proggear.ru/category/ddos/">DDOS</a></li>
+<li id="menu-item-1312" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1312"><a href="https://proggear.ru/category/debian-linux/">Debian</a></li>
+<li id="menu-item-1313" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1313"><a href="https://proggear.ru/category/git/">GIT</a></li>
+<li id="menu-item-1314" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1314"><a href="https://proggear.ru/category/ispconfig/">ISPConfig</a></li>
+<li id="menu-item-1315" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1315"><a href="https://proggear.ru/category/joomla/">Joomla</a></li>
+<li id="menu-item-1316" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1316"><a href="https://proggear.ru/category/mysql/">Mysql</a></li>
+<li id="menu-item-1317" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1317"><a href="https://proggear.ru/category/nginx/">Nginx</a></li>
+<li id="menu-item-1318" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1318"><a href="https://proggear.ru/category/php/">PHP</a></li>
+<li id="menu-item-1319" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1319"><a href="https://proggear.ru/category/seo-raskrutka/">SEO</a></li>
+<li id="menu-item-1320" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1320"><a href="https://proggear.ru/category/ubuntu/">Ubuntu</a></li>
+<li id="menu-item-1324" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1324"><a href="https://proggear.ru/category/dolzhnostnye-instrukcii-it-specialisto/">Инструкции</a></li>
+<li id="menu-item-1325" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1325"><a href="https://proggear.ru/category/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b5%d1%81%d0%bd%d0%be%d1%81%d1%82%d0%b8/">Интересности</a></li>
+<li id="menu-item-1326" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1326"><a href="https://proggear.ru/category/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%b5%d1%81%d0%bd%d1%8b%d0%b5-%d1%81%d0%b0%d0%b9%d1%82%d1%8b/">Интересные сайты</a></li>
+<li id="menu-item-1327" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1327"><a href="https://proggear.ru/category/%d0%b8%d0%bd%d1%82%d0%b5%d1%80%d0%bd%d0%b5%d1%82-%d0%bf%d1%80%d0%be%d0%b5%d0%ba%d1%82%d1%8b/">Интернет проекты</a></li>
+<li id="menu-item-1328" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1328"><a href="https://proggear.ru/category/%d0%ba%d0%b8%d0%bd%d0%be/">Кино</a></li>
+<li id="menu-item-1329" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1329"><a href="https://proggear.ru/category/%d0%ba%d0%bd%d0%b8%d0%b3%d0%b8/">Книги</a></li>
+<li id="menu-item-1330" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1330"><a href="https://proggear.ru/category/kompyuternye-seti/">Компьютерные сети</a></li>
+<li id="menu-item-1331" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1331"><a href="https://proggear.ru/category/%d1%80%d0%b5%d0%b7%d0%b5%d1%80%d0%b2%d0%bd%d0%be%d0%b5-%d0%ba%d0%be%d0%bf%d0%b8%d1%80%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5/">Резервное копирование</a></li>
+<li id="menu-item-1332" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1332"><a href="https://proggear.ru/category/servera/">Сервера</a></li>
+<li id="menu-item-1333" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1333"><a href="https://proggear.ru/category/%d1%81%d0%b5%d1%82%d0%b5%d0%b2%d0%be%d0%b5-%d0%be%d0%b1%d0%be%d1%80%d1%83%d0%b4%d0%be%d0%b2%d0%b0%d0%bd%d0%b8%d0%b5/">Сетевое оборудование</a></li>
+<li id="menu-item-1334" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1334"><a href="https://proggear.ru/category/%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%bd%d1%8b%d0%b9-%d0%b0%d0%b4%d0%bc%d0%b8%d0%bd%d0%b8%d1%81%d1%82%d1%80%d0%b0%d1%82%d0%be%d1%80/">Системный администратор</a></li>
+</ul></div>
+								
+									
+<form method="get" id="searchform" class="navbar-search pull-right" action="https://proggear.ru/" role="search">
+	<input type="text" class="search-query input-medium" name="s" placeholder="Поиск">
+</form>
+<div class="clear"></div>
+								
+															</div>
+						<!-- collapse -->
+
+						<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+							<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</a>
+												</div>
+						<!-- container -->
+					</div>
+					<!-- .navbar-inner .row-fluid -->
+				</div>
+				<!-- main-navigation navbar -->
+			</nav>
+			<!-- #navigation -->
+		</div>
+		<!-- container-fluid -->
+	</div>
+	<!-- container -->
+</div>
+<!-- container full width -->
+
+
+	<div id="single_page" class="container-full-width">
+
+		<div class="container">
+
+			<div class="container-fluid">
+
+				
+				<div id="container" class="row-fluid">
+
+					
+					<div id="content" class=" span9 content-sidebar-right">
+
+						
+						
+							
+<article id="post-711" class="post-711 post type-post status-publish format-standard hentry category-debian-linux category-ubuntu">
+
+	<header class="entry-header">
+
+		<h1 class="entry-title">					Пишем скрипты в Linux (обучение на примерах)				</h1>			<div class="entry-meta">
+				Опубликовано <a href="https://proggear.ru/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d1%8b-%d0%b2-linux-%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d0%b0%d1%85-711/" title="11:30" rel="bookmark">
+							<time class="entry-date updated" datetime="2011-08-24T11:30:32+00:00">24.08.2011</time>
+						</a><span class="byline"> По <span class="author vcard">
+								<a class="url fn n" href="https://proggear.ru/author/Naymen/" title="Посмотреть все сообщения от Naymen" rel="author">Naymen</a>
+							</span>
+						</span>				<span class="cat-links">
+				Опубликовано в <a href="https://proggear.ru/category/debian-linux/" rel="category tag">Debian</a>, <a href="https://proggear.ru/category/ubuntu/" rel="category tag">Ubuntu</a>			</span>
+				<span class="sep">   </span>
+							<span class="comments-link"><a href="https://proggear.ru/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d1%8b-%d0%b2-linux-%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d0%b0%d1%85-711/#disqus_thread" data-disqus-identifier="711 http://www.proggear.ru/?p=711">0 Comments</a></span>
+				<span class="sep">  </span>
+						</div><!-- .entry-meta -->
+			</header>
+	<!-- .entry-header -->
+
+	
+		<div class="entry-content">
+						
+<!-- Easy Plugin for AdSense V8.60 -->
+<!-- [leadin: 0 urCount: 0 urMax: 0] -->
+<div class="ezAdsense adsense adsense-leadin" style="text-align:center;margin:12px;"><script async="" src="./Bash_Scripting_Tutorial_1_files/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6997571929739262" data-ad-slot="8258193634" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<!-- Easy Plugin for AdSense V8.60 -->
+<p>Автор: Кузнецов Константин</p>
+<p>Пишем скрипты в Linux (обучение на примерах)</p>
+<p>Содержание:<br>
+1. Введение<br>
+2. Обучение написанию сценариев на внутреннем языке BASH (Перевод с англ.)<br>
+3. Используемая и рекомендуемая литература<span id="more-711"></span></p>
+<p>———————————————————————————-</p>
+<p>1. Введение</p>
+<p>Что нужно, чтобы писать скрипты<br>
+Владение инструментами командной строки и их необходимыми опциями.<br>
+Базовые знания английского языка уровня начальной школы не помешают.</p>
+<p>Зачем нужны скрипты<br>
+Во-первых, администрирование linux-сервера в той или иной степени сводится к систематическому выполнению одних и тех же команд. Причем не обязательно, чтобы эти команды выполнял человек. Их можно запрограммировать на выполнение машиной.<br>
+Во-вторых, даже просто выполнение обычной задачи, которая (вдруг) составляет 20-1000… однообразных операций ГОРАЗДО проще реализовать в скрипте.</p>
+<p>Что такое скрипт<br>
+Скрипт — набор инструкций, которые должен в определенном порядке и в определенное время выполнить компьютер. Инструкциями могут быть как внутренние команды оболочки (циклы, условия, обработка текстовой информации, работа с переменными окружения и прочее), так и любая программа, выполняемая нами в консоли с необходимыми параметрами.</p>
+<p>Как писать скрипт<br>
+В нашем случае скрипт будет представлять из себя текстовый файл с атрибутами выполнения. Если файл сценария начинается с последовательности #!, которая в мире UNIX называется sha-bang, то это указывает системе какой интерпретатор следует использовать для исполнения сценария. Если это трудно понять, то просто запомните, что все скрипты мы будем начинать писать именно со строчки #!/bin/bash или #!/bin/sh, а далее пойдут команды и комментарии к ним.</p>
+<p>Напутствие<br>
+Я Вам искренне советую писать как можно больше комментариев чуть ли ни к каждой строчке в скрипте. Пройдет время и Вам понадобится изменить или модернизировать написанный когда-то скрипт. Если не помнишь или не понимаешь, что написано в скрипте, то становится сложно его изменять, проще писать с нуля.</p>
+<p>Какие скрипты могут нам понадобиться:</p>
+<ul>
+</ul>
+<ul>устанавливающий правила файервола при загрузке системы.</ul>
+<p>&nbsp;</p>
+<ul>
+</ul>
+<ul>выполняющий backup настроек и данных.</ul>
+<p>&nbsp;</p>
+<ul>
+</ul>
+<ul>добавляющий почтовые ящики в почтовый сервер (точнее в базу mysql)</ul>
+<p>&nbsp;</p>
+<ul>
+</ul>
+<ul>запускающий в определенное время (лучше каждую ночь) программу, которая сканирует логи прокси-сервера и выдает удобный web-отчет по количеству скачанного трафика.</ul>
+<p>&nbsp;</p>
+<ul>отправляющий нам на почту информацию о том, что кто-то получил доступ к нашему серверу по ssh, время подключения и адрес клиента.</ul>
+<p>О методике написания скриптов<br>
+Создаем текстовый файл, редактируем его, устанавливаем права на выполнение, запускаем, смотрим ошибки, исправляем, запускаем, смотрим ошибки…<br>
+Когда все вылизано и работает правильно, ставим его в автозагрузку либо в планировщик на определенное время.</p>
+<p>———————————————————————————-</p>
+<p>2. Обучение написанию сценариев на внутреннем языке BASH<br>
+оригинал: <a href="https://www.linuxconfig.org/Bash_scripting_Tutorial" rel="nofollow">https://www.linuxconfig.org/Bash_scripting_Tutorial</a></p>
+<p>Это руководство предполагает отсутствие предварительных знаний о методике написания сценариев (далее скриптов) с помощью внутреннего языка Bash. С помощью данного руководства вы обнаружите в скором времени, что написание скриптов очень простая задача. Давайте начнем наше обучение с простого сценария, выполняющего вывод строки «Hello World!» (в перев. с англ. — Всем привет!)</p>
+<p>1. Сценарий «Всем привет»<br>
+Вот ваш первый пример bash-скрипта:</p>
+<blockquote>
+<div>#!/bin/bash<br>
+echo «Hello World»</div>
+</blockquote>
+<p>Переходим в директорию, содержащую наш файл hello_world.sh и делаем его исполняемым:</p>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ chmod +x hello_world.sh<br>
+</code></dd>
+</dl>
+<p>Запускаем скрипт на выполнение</p>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./hello_world.sh</code></dd>
+</dl>
+<p>2. Простой архивирующий bash-скрипт</p>
+<blockquote>
+<div>#!/bin/bash<br>
+tar -czf myhome_directory.tar.gz /home/user</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./backup.sh<br>
+tar: Removing leading '\' from member names<br>
+$ du -sh myhome_directory.tar.gz<br>
+41M myhome_directory.tar.gz</code></dd>
+</dl>
+<p>3. Работа с переменными<br>
+В данном примере мы объявляем простую переменную и выводим её на экран с помощью команды echo</p>
+<blockquote>
+<div>#!/bin/bash<br>
+STRING=»HELLO WORLD!!!»<br>
+echo $STRING</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./hello_world.sh<br>
+HELLO WORLD!!!</code></dd>
+</dl>
+<p>Наш архивирующий скрипт с переменными:</p>
+<blockquote>
+<div>#!/bin/bash<br>
+OF=myhome_directory_$(date +%Y%m%d).tar.gz<br>
+IF=/home/user<br>
+tar -czf $OF $IF</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./backup.sh<br>
+tar: Removing leading '\' from member names<br>
+$ du -sh *tar.gz<br>
+41M myhome_directory_20100123.tar.gz</code></dd>
+</dl>
+<p>3.1 Глобальные и локальные переменные</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем глобальную переменную<br>
+# Такая переменная может использоваться в любом месте этого скрипта<br>
+VAR=»global variable»<br>
+function bash {<br>
+# Объявляем локальную переменную<br>
+# Такая переменная действительна только для функции, в которой её объявили<br>
+local VAR=»local variable»<br>
+echo $VAR<br>
+}<br>
+echo $VAR<br>
+bash<br>
+# Обратите внимание, что глобальная переменная не изменилась<br>
+echo $VAR</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./variables.sh<br>
+global variable<br>
+local variable<br>
+global variable</code></dd>
+</dl>
+<p>4. Передаем аргументы в скрипт</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Используйте предопределенные переменные для доступа к аргументам<br>
+# Выводим аргументы на экран<br>
+echo $1 $2 $3 ‘ -&gt; echo $1 $2 $3’<p></p>
+<p>#Мы так же можем получить доступ к аргументам через специальный массив args=(«$@»)<br>
+# Выводим аргументы на экран<br>
+echo ${args[0]} ${args[1]} ${args[2]} ‘ -&gt; args=(«$@»); echo ${args[0]} ${args[1]} ${args[2]}’</p>
+<p># Используйте переменную $@ для вывода всех аргументов сразу<br>
+echo $@ ‘ -&gt; echo $@’</p>
+<p>Используйте переменную $# для вывода количества переданный в скрипт аргументов<br>
+echo Number of arguments passed: $# ‘ -&gt; echo Number of arguments passed: $#’</p></div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./arguments.sh Bash Scripting Tutorial<br>
+Bash Scripting Tutorial -&gt; echo $1 $2 $3<br>
+Bash Scripting Tutorial -&gt; args=("$@"); echo ${args[0]} ${args[1]} ${args[2]}<br>
+Bash Scripting Tutorial -&gt; echo $@<br>
+Number of arguments passed: 3&nbsp; -&gt; echo Number of arguments passed: $#</code></dd>
+</dl>
+<p>5. Выполнение в скрипте команд оболочки</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# используйте обратные кавычки » ` ` » для выполнения команды оболочки<br>
+echo `uname -o`<br>
+# теперь попробуем без кавычек<br>
+echo uname -o</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ uname -o<br>
+GNU/Linux<br>
+$ ./bash_backtricks.sh<br>
+GNU/Linux<br>
+uname -o</code></dd>
+</dl>
+<p>Как видим, во втором случае вывелась сама команда, а не результат её выполнения</p>
+<p>6. Читаем пользовательский ввод (интерактивность)</p>
+<blockquote>
+<div>#!/bin/bash<br>
+echo -e «Hi, please type the word: \c »<br>
+read word<br>
+echo «The word you entered is: $word»<br>
+echo -e «Can you please enter two words? »<br>
+read word1 word2<br>
+echo «Here is your input: \»$word1\» \»$word2\»»<br>
+echo -e «How do you feel about bash scripting? »<br>
+# read command now stores a reply into the default build-in variable $REPLY<br>
+read<br>
+echo «You said $REPLY, I’m glad to hear that! »<br>
+echo -e «What are your favorite colours ? »<br>
+# -a makes read command to read into an array<br>
+read -a colours<br>
+echo «My favorite colours are also ${colours[0]}, ${colours[1]} and ${colours[2]}:-)»</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./read.sh<br>
+Hi, please type the word: something<br>
+The word you entered is: something<br>
+Can you please enter two words?<br>
+Debian Linux<br>
+Here is your input: "Debian" "Linux"<br>
+How do you feel about bash scripting?<br>
+good<br>
+You said good, I'm glad to hear that!<br>
+What are your favorite colours ?<br>
+blue green black<br>
+My favorite colours are also blue, green and black&nbsp; :-)</code></dd>
+</dl>
+
+<!-- Easy Plugin for AdSense V8.60 -->
+<!-- [midtext: 1 urCount: 1 urMax: 0] -->
+<div class="ezAdsense adsense adsense-midtext" style="text-align:center;margin:12px;"><script async="" src="./Bash_Scripting_Tutorial_1_files/adsbygoogle.js"></script>
+<!-- Середина сообщения -->
+<ins class="adsbygoogle" style="display: inline-block; width: 300px; height: 250px;" data-ad-client="ca-pub-6997571929739262" data-ad-slot="5119597238" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px;background-color:transparent"><iframe width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<!-- Easy Plugin for AdSense V8.60 -->
+<p>7. Использование ловушки</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# объявляем ловушку<br>
+trap bashtrap INT<br>
+# очищаем экран<br>
+clear;<br>
+# функция ловушки выполняется, когда пользователь нажимает CTRL-C:<br>
+# На экран будет выводиться =&gt; Executing bash trap subrutine !<br>
+# но скрипт будет продолжать выполняться<br>
+bashtrap()<br>
+{<br>
+echo «CTRL+C Detected !…executing bash trap !»<br>
+}<br>
+# скрипт будет считать до 10<br>
+for a in `seq 1 10`; do<br>
+echo «$a/10 to Exit.»<br>
+sleep 1;<br>
+done<br>
+echo «Exit Bash Trap Example!!!»</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./trap.sh<br>
+1/10<br>
+2/10<br>
+3/10<br>
+4/10<br>
+5/10<br>
+6/10<br>
+CTRL+C Detected !...executing bash trap !<br>
+7/10<br>
+8/10<br>
+9/10<br>
+CTRL+C Detected !...executing bash trap !<br>
+10/10<br>
+Exit Bash Trap Example!!!</code></dd>
+</dl>
+<p>Как видим, сочетание клавишь Ctrl-C не остановило выполнение скрипта.</p>
+<p>8. Массивы<br>
+8.1 Объявляем простой массив</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем простой массив с 4 элементами<br>
+ARRAY=( ‘Debian Linux’ ‘Redhat Linux’ Ubuntu Linux )<br>
+# Получаем количество элементов в массиве<br>
+ELEMENTS=${#ARRAY[@]}<p></p>
+<p># выводим в цикле каждый элемент массива<br>
+for (( i=0;i&lt;$ELEMENTS;i++)); do<br>
+echo ${ARRAY[${i}]}<br>
+done</p></div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$./arrays.sh<br>
+Debian Linux<br>
+Redhat Linux<br>
+Ubuntu<br>
+Linux</code></dd>
+</dl>
+<p>8.2 Заполняем массив значениями из файла</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем массив<br>
+declare -a ARRAY<br>
+# Команда exec &lt;filename перенаправляет ввод со stdin на файл. С этого момента весь ввод, вместо<br>
+# stdin (обычно это клавиатура), будет производиться из этого файла. Это дает возможность читать<br>
+# содержимое файла, строку за строкой, и анализировать каждую введенную строку с помощью sed и/или awk.<br>
+exec 10&lt;bash.txt<br>
+let count=0<p></p>
+<p>while read LINE &lt;&amp;10; do</p>
+<p>ARRAY[$count]=$LINE<br>
+((count++))<br>
+done</p>
+<p>echo Number of elements: ${#ARRAY[@]}<br>
+# Вывод значений массива<br>
+echo ${ARRAY[@]}<br>
+# закрываем файл<br>
+exec 10&gt;&amp;-</p></div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ cat bash.txt<br>
+Debian Linux<br>
+Redhat Linux<br>
+Ubuntu<br>
+Linux<br>
+$ ./arrays.sh<br>
+Number of elements: 4<br>
+Debian Linux Redhat Linux Ubuntu Linux</code></dd>
+</dl>
+<p>9. Условия «если-то-иначе»<br>
+9.1. Простое использование «если-иначе» условий<br>
+Обратите внимание на пробелы в квадратных скобках, без которых условие работать не будет.</p>
+<blockquote>
+<div>#!/bin/bash<br>
+directory=»./BashScripting»<p></p>
+<p># проверяем наличие директории<br>
+if [ -d $directory ]; then<br>
+echo «Directory exists»<br>
+else<br>
+echo «Directory does not exists»<br>
+fi</p></div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./if_else.sh<br>
+Directory does not exists<br>
+$ mkdir BashScripting<br>
+$ ./if_else.sh<br>
+Directory exists</code></dd>
+</dl>
+<p>9.2 Вложенные «если-иначе» условия</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем переменную со значением 4<br>
+choice=4<br>
+# Выводим на экран<br>
+echo «1. Bash»<br>
+echo «2. Scripting»<br>
+echo «3. Tutorial»<br>
+echo -n «Please choose a word [1,2 or 3]? »<br>
+# Выполняем, пока переменная равна четырем<br>
+# Зацикливание<br>
+while [ $choice -eq 4 ]; do<p></p>
+<p># читаем пользовательский ввод<br>
+read choice<br>
+# вложенное «если-иначе» условие<br>
+if [ $choice -eq 1 ] ; then</p>
+<p>echo «You have chosen word: Bash»</p>
+<p>else</p>
+<p>if [ $choice -eq 2 ] ; then<br>
+echo «You have chosen word: Scripting»<br>
+else</p>
+<p>if [ $choice -eq 3 ] ; then<br>
+echo «You have chosen word: Tutorial»<br>
+else<br>
+echo «Please make a choice between 1-3 !»<br>
+echo «1. Bash»<br>
+echo «2. Scripting»<br>
+echo «3. Tutorial»<br>
+echo -n «Please choose a word [1,2 or 3]? »<br>
+choice=4<br>
+fi<br>
+fi<br>
+fi<br>
+done</p></div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./nested.sh<br>
+1. Bash<br>
+2. Scripting<br>
+3. Tutorial<br>
+Please choose a word [1,2 or 3]?<br>
+5<br>
+Please make a choice between 1-3 !<br>
+1. Bash<br>
+2. Scripting<br>
+3. Tutorial<br>
+Please choose a word [1,2 or 3]?<br>
+4<br>
+Please make a choice between 1-3 !<br>
+1. Bash<br>
+2. Scripting<br>
+3. Tutorial<br>
+Please choose a word [1,2 or 3]?<br>
+3<br>
+You have chosen word: Tutorial</code></dd>
+</dl>
+<p>Таким образом сначала тело цикла «while» выполняется, т.к. переменная choice изначально равна четырем. Потом читаем в неё пользовательский ввод, и если ввод не равен 1,2 или 3 то делаем нашу переменную снова равную 4, в связи с чем тело цикла повторяется (снова необходимо вводить 1,2 или 3).</p>
+<p>10. Сравнения<br>
+10.1 Арифметические сравнения</p>
+<blockquote>
+<div>-lt &lt;<br>
+-gt &gt;<br>
+-le &lt;=<br>
+-ge &gt;=<br>
+-eq ==<br>
+-ne !=</div>
+</blockquote>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем переменные с целочисленными значениями<br>
+NUM1=2<br>
+NUM2=2<br>
+if [ $NUM1 -eq $NUM2 ]; then<br>
+echo «Both Values are equal»<br>
+else<br>
+echo «Values are NOT equal»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./equals.sh<br>
+Both Values are equal</code></dd>
+</dl>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем переменные с целочисленными значениями<br>
+NUM1=2<br>
+NUM2=3<br>
+if [ $NUM1 -eq $NUM2 ]; then<br>
+echo «Both Values are equal»<br>
+else<br>
+echo «Values are NOT equal»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./equals.sh<br>
+Values are NOT equal</code></dd>
+</dl>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем переменные с целочисленными значениями<br>
+NUM1=2<br>
+NUM2=1<br>
+if [ $NUM1 -eq $NUM2 ]; then<br>
+echo «Both Values are equal»<br>
+elif [ $NUM1 -gt $NUM2 ]; then<br>
+echo «$NUM1 is greater then $NUM2»<br>
+else<br>
+echo «$NUM2 is greater then $NUM1»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./equals.sh<br>
+2 is greater then 1</code></dd>
+</dl>
+<p>10.2 Символьно-текстовые сравнения</p>
+<blockquote>
+<div>= одинаковые<br>
+!= не одинаковые<br>
+&lt; меньще чем<br>
+&gt; больше чем<br>
+-n s1 переменная s1 не пустая<br>
+-z s1 переменная s1 пустая</div>
+</blockquote>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем символьную переменную S1<br>
+S1=»Bash»<br>
+# Объявляем символьную переменную S2<br>
+S2=»Scripting»<br>
+if [ $S1 = $S2 ]; then<br>
+echo «Both Strings are equal»<br>
+else<br>
+echo «Strings are NOT equal»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./statement.sh<br>
+Strings are NOT equal</code></dd>
+</dl>
+<blockquote>
+<div>#!/bin/bash<br>
+# Объявляем символьную переменную S1<br>
+S1=»Bash»<br>
+# Объявляем символьную переменную S2<br>
+S2=»Bash»<br>
+if [ $S1 = $S2 ]; then<br>
+echo «Both Strings are equal»<br>
+else<br>
+echo «Strings are NOT equal»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./statement.sh<br>
+Both Strings are equal</code></dd>
+</dl>
+<p>11. Проверка файлов</p>
+<blockquote>
+<div>-b filename Block special file<br>
+-c filename Special character file<br>
+-d directoryname Check for directory existence<br>
+-e filename Check for file existence<br>
+-f filename Check for regular file existence not a directory<br>
+-G filename Check if file exists and is owned by effective group ID.<br>
+-g filename true if file exists and is set-group-id.<br>
+-k filename Sticky bit<br>
+-L filename Symbolic link<br>
+-O filename True if file exists and is owned by the effective user id.<br>
+-r filename Check if file is a readable<br>
+-S filename Check if file is socket<br>
+-s filename Check if file is nonzero size<br>
+-u filename Check if file set-ser-id bit is set<br>
+-w filename Check if file is writable<br>
+-x filename Check if file is executable</div>
+</blockquote>
+<blockquote>
+<div>#!/bin/bash<br>
+file=»./file»<br>
+if [ -e $file ]; then<br>
+echo «File exists»<br>
+else<br>
+echo «File does not exists»<br>
+fi</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ls<br>
+file.sh<br>
+$ ./file.sh<br>
+File does not exists<br>
+$ touch file<br>
+$ ls<br>
+file&nbsp; file.sh<br>
+$ ./file.sh<br>
+File exists</code></dd>
+</dl>
+<p>Аналогично для примера мы можем использовать «в то время как» петли, чтобы проверить, если файл не существует. Этот сценарий будет спать, пока файл не существует. Обратите внимание на Bash отрицатель «!» что сводит на нет (инвертирует) -e опцию.</p>
+<p>12. Циклы<br>
+12.1. Цикл For</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# for цикл<br>
+for f in $( ls /var/ ); do<br>
+echo $f<br>
+done</div>
+</blockquote>
+<p>Запуск for-цикла из командной строки bash:</p>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ for f in $( ls /var/ ); do echo $f; done </code></dd>
+</dl>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ for f in $( ls /var/ ); do echo $f; done<br>
+backups<br>
+cache<br>
+crash<br>
+games<br>
+lib<br>
+local<br>
+lock<br>
+log<br>
+mail<br>
+opt<br>
+run<br>
+spool<br>
+tmp<br>
+www</code></dd>
+</dl>
+<p>12.2. While цикл</p>
+<blockquote>
+<div>#!/bin/bash<br>
+COUNT=6<br>
+# while цикл<br>
+while [ $COUNT -gt 0 ]; do<br>
+echo Value of count is: $COUNT<br>
+let COUNT=COUNT-1<br>
+done</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./while_loop.sh<br>
+Value of count is: 6<br>
+Value of count is: 5<br>
+Value of count is: 4<br>
+Value of count is: 3<br>
+Value of count is: 2<br>
+Value of count is: 1</code></dd>
+</dl>
+<p>12.3. Until цикл</p>
+<blockquote>
+<div>#!/bin/bash<br>
+COUNT=0<br>
+# until цикл<br>
+until [ $COUNT -gt 5 ]; do<br>
+echo Value of count is: $COUNT<br>
+let COUNT=COUNT+1<br>
+done</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./until_loop.sh<br>
+Value of count is: 0<br>
+Value of count is: 1<br>
+Value of count is: 2<br>
+Value of count is: 3<br>
+Value of count is: 4<br>
+Value of count is: 5</code></dd>
+</dl>
+<p>12.4. Циклы с неявными условиями<br>
+В следующем примере условием while-цикла является наличие стандартного ввода.<br>
+Тело цикла будет выполняться пока есть чему перенаправляться из стандартного вывода в команду read.</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Данный скрипт будет искать и удалять пробелы<br>
+# в файлах, заменяя их на подчеркивания<br>
+DIR=».»<br>
+Управление циклом с командой read путем перенаправления вывода в цикле.<br>
+find $DIR -type f | while read file; do<br>
+# используем POSIX-класс [:space:] чтобы найти пробелы в именах файлов<br>
+if [[ «$file» = *[[:space:]]* ]]; then<br>
+# замена пробелов подчеркиваниями<br>
+mv «$file» `echo $file | tr ‘ ‘ ‘_’`<br>
+fi;<br>
+done</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ls -1<br>
+script.sh<br>
+$ touch "file with spaces"<br>
+$ ls -1<br>
+file with spaces<br>
+script.sh<br>
+$ ./script.sh<br>
+$ ls -1<br>
+file_with_spaces<br>
+script.sh</code></dd>
+</dl>
+<p>13. Функции</p>
+<blockquote>
+<div>#!/bin/bash<br>
+# Функции могут быть объявлены в любом порядке<br>
+function function_B {<br>
+echo Function B.<br>
+}<br>
+function function_A {<br>
+echo $1<br>
+}<br>
+function function_D {<br>
+echo Function D.<br>
+}<br>
+function function_C {<br>
+echo $1<br>
+}<br>
+# Вызываем функции<br>
+# передаем параметр в функцию function A<br>
+function_A «Function A.»<br>
+function_B<br>
+# передаем параметр в функцию function C<br>
+function_C «Function C.»<br>
+function_D</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./functions.sh<br>
+Function A.<br>
+Function B.<br>
+Function C.<br>
+Function D.</code></dd>
+</dl>
+<p>14. Оператор выбора — Select</p>
+<blockquote>
+<div>#!/bin/bash<br>
+PS3=’Choose one word: ‘<br>
+# select<br>
+select word in «linux» «bash» «scripting» «tutorial»<br>
+do<br>
+echo «The word you have selected is: $word»<br>
+# Прерываем, в противном случае цикл будет бесконечный.<br>
+break<br>
+done<br>
+exit 0</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./select.sh<br>
+1) linux<br>
+2) bash<br>
+3) scripting<br>
+4) tutorial<br>
+Choose one word: 4<br>
+The word you have selected is: tutorial</code></dd>
+</dl>
+<p>15. Оператор выбора — Case</p>
+<blockquote>
+<div>#!/bin/bash<br>
+echo «What is your preferred programming / scripting language»<br>
+echo «1) bash»<br>
+echo «2) perl»<br>
+echo «3) phyton»<br>
+echo «4) c++»<br>
+echo «5) I do not know !»<br>
+read case;<br>
+# простая структура case-выбора<br>
+# обратите внимание, что в данном примере $case — всего лишь переменная<br>
+# и не обязана так называться. Это лишь пример<br>
+case $case in<br>
+1) echo «You selected bash»;;<br>
+2) echo «You selected perl»;;<br>
+3) echo «You selected phyton»;;<br>
+4) echo «You selected c++»;;<br>
+5) exit<br>
+esac</div>
+</blockquote>
+<dl>
+<dt>Код: <a href="https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296#">Выделить всё</a></dt>
+<dd><code>$ ./case.sh<br>
+What is your preferred programming / scripting language<br>
+1) bash<br>
+2) perl<br>
+3) phyton<br>
+4) c++<br>
+5) I do not know !<br>
+4<br>
+You selected c++</code></dd>
+</dl>
+<p>———————————————————————————-</p>
+<p>3. Используемая и рекомендуемая литература</p>
+<p>Более подробную информацию можно получить из различных источников, например отсюда<br>
+оригинал: <a href="https://www.linuxconfig.org/Bash_scripting_Tutorial" rel="nofollow">https://www.linuxconfig.org/Bash_scripting_Tutorial</a><br>
+<a href="https://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/" rel="nofollow">https://ruslandh.narod.ru/howto_ru/Bash-Prog-Intro/</a><br>
+<a href="https://bug.cf1.ru/2005-03-17/programming/bash/abs-book.html" rel="nofollow">https://bug.cf1.ru/2005-03-17/programmin … -book.html</a></p>
+<p>https://ubuntologia.ru/forum/viewtopic.php?f=109&amp;t=2296
+</p><p class="bawpvc-ajax-counter" data-id="711"><br>Просмотров: 8887</p>
+
+<!-- Easy Plugin for AdSense V8.60 -->
+<!-- [leadout: 2 urCount: 2 urMax: 0] -->
+<div class="ezAdsense adsense adsense-leadout" style="text-align:center;margin:12px;"><script async="" src="./Bash_Scripting_Tutorial_1_files/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-6997571929739262" data-ad-slot="8258193634" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+<!-- Easy Plugin for AdSense V8.60 -->
+
+<div class="wp_rp_wrap  wp_rp_vertical" id="wp_rp_first"><div class="wp_rp_content"><h3 class="related_post_title">Похожие посты</h3><ul class="related_post wp_rp"><li data-position="0" data-poid="in-687" data-post-type="none"><a href="https://proggear.ru/linux-%d0%b2-%d0%bf%d0%be%d0%b4%d0%b0%d1%80%d0%be%d0%ba-%d0%ba-%d1%81%d0%b2%d0%be%d0%b5%d0%bc%d1%83-%d0%b4%d0%b2%d0%b0%d0%b4%d1%86%d0%b0%d1%82%d0%b8%d0%bb%d0%b5%d1%82%d0%b8%d1%8e-%d0%bf%d0%be%d0%bb-687/" class="wp_rp_title">Linux в подарок к своему двадцатилетию получил видеоролик от Microsoft</a></li><li data-position="1" data-poid="in-582" data-post-type="none"><a href="https://proggear.ru/%d0%be%d1%87%d0%b8%d1%81%d1%82%d0%ba%d0%b0-%d1%81%d0%b2%d0%be%d0%bf%d0%b0-swap-%d0%b2-debian-582/" class="wp_rp_title">Очистка свопа (swap) в Debian</a></li><li data-position="2" data-poid="in-646" data-post-type="none"><a href="https://proggear.ru/pochemu-zhe-vse-taki-linux-i-pochemu-debian-646/" class="wp_rp_title">Почему же все-таки Linux и почему Debian? </a></li><li data-position="3" data-poid="in-873" data-post-type="none"><a href="https://proggear.ru/%d0%b2%d0%be%d0%bf%d1%80%d0%be%d1%81%d1%8b-%d0%bf%d0%be-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d1%8b%d0%bc-%d0%ba%d0%be%d0%bc%d0%b0%d0%bd%d0%b4%d0%b0%d0%bc-linux-%d0%ba%d0%be%d1%82%d0%be%d1%80%d1%8b%d0%b5-873/" class="wp_rp_title">Вопросы по базовым командам Linux, которые вам могут задать на собеседовании</a></li><li data-position="4" data-poid="in-1027" data-post-type="none"><a href="https://proggear.ru/%d0%ba%d0%b0%d0%ba-%d0%bf%d0%b5%d1%80%d0%b5%d0%bd%d0%b5%d1%81%d1%82%d0%b8-debian-%d0%bd%d0%b0-%d0%bd%d0%be%d0%b2%d0%be%d0%b5-%d0%b6%d0%b5%d0%bb%d0%b5%d0%b7%d0%be-1027/" class="wp_rp_title">Как перенести Debian на новое железо?</a></li><li data-position="5" data-poid="in-952" data-post-type="none"><a href="https://proggear.ru/%d1%83%d1%87%d0%b8%d0%bc%d1%81%d1%8f-%d0%b2%d1%8b%d1%81%d1%82%d0%b0%d0%b8%d0%b2%d0%b0%d1%82%d1%8c-%d0%bf%d0%be%d0%b4-%d0%b4%d0%b4%d1%81%d0%be%d0%bc-%d1%81%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b2%d0%b0-952/" class="wp_rp_title">Учимся выстаивать под ддсом средствами nginx</a></li></ul></div></div>
+								</div><!-- .entry-content -->
+
+	
+			<footer class="entry-meta">
+
+					</footer><!-- #entry-meta -->
+	</article><!-- #post-711 -->
+							<div class="more-content">
+								<div class="row-fluid">
+									<div class="span6 previous-post">
+										« <a href="https://proggear.ru/%d0%bd%d0%b5%d0%ba%d0%b0%d1%87%d0%b5%d1%81%d1%82%d0%b2%d0%b5%d0%bd%d0%bd%d1%8b%d0%b5-%d0%ba%d0%b0%d0%b1%d0%b5%d0%bb%d0%b8-sata-707/" rel="prev">Некачественные кабели SATA?</a>									</div>
+									<div class="span6 next-post">
+										<a href="https://proggear.ru/%d0%ba%d0%b0%d0%ba-%d0%bd%d0%b0%d0%b9%d1%82%d0%b8-%d1%85%d0%be%d1%80%d0%be%d1%88%d0%b5%d0%b3%d0%be-seo-%d1%81%d0%bf%d0%b5%d1%86%d0%b8%d0%b0%d0%bb%d0%b8%d1%81%d1%82%d0%b0-%d0%bd%d0%b0-%d1%80%d0%b0-713/" rel="next">Как найти хорошего SEO-специалиста на работу в офис</a> »									</div>
+								</div>
+							</div>
+
+							
+<div id="disqus_thread"><iframe id="dsq-app2" name="dsq-app2" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="./Bash_Scripting_Tutorial_1_files/saved_resource.html" style="width: 1px !important; min-width: 100% !important; border: none !important; overflow: hidden !important; height: 321px !important;" horizontalscrolling="no" verticalscrolling="no"></iframe></div>
+
+
+						
+						
+					</div>
+					<!-- #content -->
+
+					
+<div id="secondary" class="widget-area span3">
+
+	
+	<div id="sidebar">
+		<aside id="wp_related_posts_widget" class="widget-container widget_wp_related_posts">
+<div class="wp_rp_wrap  wp_rp_vertical"><div class="wp_rp_content"><h3 class="widget-title">Похожие посты</h3><ul class="related_post wp_rp"><li data-position="0" data-poid="in-687" data-post-type="none"><a href="https://proggear.ru/linux-%d0%b2-%d0%bf%d0%be%d0%b4%d0%b0%d1%80%d0%be%d0%ba-%d0%ba-%d1%81%d0%b2%d0%be%d0%b5%d0%bc%d1%83-%d0%b4%d0%b2%d0%b0%d0%b4%d1%86%d0%b0%d1%82%d0%b8%d0%bb%d0%b5%d1%82%d0%b8%d1%8e-%d0%bf%d0%be%d0%bb-687/" class="wp_rp_title">Linux в подарок к своему двадцатилетию получил видеоролик от Microsoft</a></li><li data-position="1" data-poid="in-582" data-post-type="none"><a href="https://proggear.ru/%d0%be%d1%87%d0%b8%d1%81%d1%82%d0%ba%d0%b0-%d1%81%d0%b2%d0%be%d0%bf%d0%b0-swap-%d0%b2-debian-582/" class="wp_rp_title">Очистка свопа (swap) в Debian</a></li><li data-position="2" data-poid="in-646" data-post-type="none"><a href="https://proggear.ru/pochemu-zhe-vse-taki-linux-i-pochemu-debian-646/" class="wp_rp_title">Почему же все-таки Linux и почему Debian? </a></li><li data-position="3" data-poid="in-873" data-post-type="none"><a href="https://proggear.ru/%d0%b2%d0%be%d0%bf%d1%80%d0%be%d1%81%d1%8b-%d0%bf%d0%be-%d0%b1%d0%b0%d0%b7%d0%be%d0%b2%d1%8b%d0%bc-%d0%ba%d0%be%d0%bc%d0%b0%d0%bd%d0%b4%d0%b0%d0%bc-linux-%d0%ba%d0%be%d1%82%d0%be%d1%80%d1%8b%d0%b5-873/" class="wp_rp_title">Вопросы по базовым командам Linux, которые вам могут задать на собеседовании</a></li><li data-position="4" data-poid="in-1027" data-post-type="none"><a href="https://proggear.ru/%d0%ba%d0%b0%d0%ba-%d0%bf%d0%b5%d1%80%d0%b5%d0%bd%d0%b5%d1%81%d1%82%d0%b8-debian-%d0%bd%d0%b0-%d0%bd%d0%be%d0%b2%d0%be%d0%b5-%d0%b6%d0%b5%d0%bb%d0%b5%d0%b7%d0%be-1027/" class="wp_rp_title">Как перенести Debian на новое железо?</a></li><li data-position="5" data-poid="in-952" data-post-type="none"><a href="https://proggear.ru/%d1%83%d1%87%d0%b8%d0%bc%d1%81%d1%8f-%d0%b2%d1%8b%d1%81%d1%82%d0%b0%d0%b8%d0%b2%d0%b0%d1%82%d1%8c-%d0%bf%d0%be%d0%b4-%d0%b4%d0%b4%d1%81%d0%be%d0%bc-%d1%81%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b2%d0%b0-952/" class="wp_rp_title">Учимся выстаивать под ддсом средствами nginx</a></li></ul></div></div>
+</aside>	</div>
+	<!-- #sidebar -->
+
+	
+</div><!-- #secondary .widget-area .span3 -->
+				</div>
+				<!-- #container .row-fluid-->
+
+				
+			</div>
+			<!--container fluid -->
+
+		</div>
+		<!-- container -->
+
+	</div><!-- container full width -->
+
+
+	<div id="footer_widgets_wrapper" class="container-full-width">
+		<div id="footer_wrapper" class="container">
+			<div id="wrapper" class="container-fluid">
+
+				
+				<div id="footer-widgets" class="row-fluid">
+					<div id="footer-widget-container" class="span12">
+						<div class="row-fluid">
+
+							<aside id="text-9" class="widget-container span3 widget_text">			<div class="textwidget"><a href="https://galaxydata.ru/hosting/wordpress/"><img src="./Bash_Scripting_Tutorial_1_files/Banner_WordPress_HOsting.png" width="728px" height="90px"></a></div>
+		</aside>						</div>
+						<!-- .row-fluid -->
+					</div>
+					<!-- #footer-widget-container -->
+				</div>
+				<!-- #footer-widgets .row-fluid  -->
+
+				
+			</div>
+			<!-- container fluid -->
+		</div>
+		<!-- container -->
+	</div><!-- container full width -->
+
+
+
+	<div class="container-full-width" id="after_footer">
+		<div class="container">
+			<div class="container-fluid">
+				<footer class="site-footer row-fluid">
+					<div class="span6">
+						<div id="credit">
+															<a href="http://cyberchimps.com/" target="_blank" title="CyberChimps Themes">
+																			<h4 class="cc-credit-text">CyberChimps WordPress Themes</h4></a>
+																	
+													
+						</div>
+					</div>
+					<!-- Adds the afterfooter copyright area -->
+					<div class="span6">
+												<div id="copyright">
+							© ProGGear.ru						</div>
+					</div>
+				</footer>
+				<!-- row-fluid -->
+			</div>
+			<!-- .container-fluid-->
+		</div>
+		<!-- .container -->
+	</div>    <!-- #after_footer -->
+
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter1254085 = new Ya.Metrika({id:1254085,
+                    webvisor:true,
+                    clickmap:true,
+                    trackLinks:true,
+                    accurateTrackBounce:true,
+                    trackHash:true});
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>&lt;div&gt;&lt;img src="//mc.yandex.ru/watch/1254085" style="position:absolute; left:-9999px;" alt="" /&gt;&lt;/div&gt;</noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit;galaxy?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+
+";"+Math.random();//--></script><!--/LiveInternet--><script type="text/javascript">
+jQuery(document).ready(function(){
+  var q2w3_sidebar_1_options = { "sidebar" : "sidebar-right", "margin_top" : 10, "margin_bottom" : 0, "screen_max_width" : 0, "width_inherit" : false, "widgets" : ['ezadswidget-3'] };
+  q2w3_sidebar(q2w3_sidebar_1_options);
+  setInterval(function () { q2w3_sidebar(q2w3_sidebar_1_options); }, 1500);
+});
+</script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/retina-1.1.0.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/comment-reply.min.js"></script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/wp-embed.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var embedVars = {"disqusConfig":{"platform":"wordpress@4.5.1","language":"","remote_auth_s3":"W10= 760bbb525182a8eeba271bc7bd1a6c9dd3cb3943 1462413777","api_key":"NJPnqKteE14F5tICYOvVWqwdROsmS58MJVpEYOxeqHYkwZAAu1FEXXI7BKyluRDg","sso":{"name":"ProGGear.ru","button":false,"url":"https:\/\/proggear.ru\/wp-login.php","logout":"https:\/\/proggear.ru\/wp-login.php?action=logout","width":"800","height":"700"}},"disqusIdentifier":"711 http:\/\/www.proggear.ru\/?p=711","disqusShortname":"proggear","disqusTitle":"\u041f\u0438\u0448\u0435\u043c \u0441\u043a\u0440\u0438\u043f\u0442\u044b \u0432 Linux (\u043e\u0431\u0443\u0447\u0435\u043d\u0438\u0435 \u043d\u0430 \u043f\u0440\u0438\u043c\u0435\u0440\u0430\u0445)","disqusUrl":"https:\/\/proggear.ru\/%d0%bf%d0%b8%d1%88%d0%b5%d0%bc-%d1%81%d0%ba%d1%80%d0%b8%d0%bf%d1%82%d1%8b-%d0%b2-linux-%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5-%d0%bd%d0%b0-%d0%bf%d1%80%d0%b8%d0%bc%d0%b5%d1%80%d0%b0%d1%85-711\/","options":{"manualSync":false},"postId":"711"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/disqus.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var countVars = {"disqusShortname":"proggear"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Bash_Scripting_Tutorial_1_files/count(1).js"></script>
+<script>
+jQuery( document ).ready( function($) {
+	$('.bawpvc-ajax-counter').each( function( i ) {
+		var $id = $(this).data('id');
+		var t = this;
+		var n = 1;
+		$.get('https://proggear.ru/wp-admin/admin-ajax.php?action=bawpvc-ajax-counter&p='+$id+'&n='+n, function( html ) {
+			$(t).html( html );
+		})
+	});
+});
+</script>
+
+
+<div id="lbOverlay" style="display: none;"></div><div id="lbCenter" style="display: none;"><div id="lbImage"><div style="position: relative;"><a id="lbPrevLink" href="https://proggear.ru/%D0%BF%D0%B8%D1%88%D0%B5%D0%BC-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%8B-%D0%B2-linux-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85-711/#"></a><a id="lbNextLink" href="https://proggear.ru/%D0%BF%D0%B8%D1%88%D0%B5%D0%BC-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%8B-%D0%B2-linux-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85-711/#"></a></div></div></div><div id="lbBottomContainer" style="display: none;"><div id="lbBottom"><a id="lbCloseLink" href="https://proggear.ru/%D0%BF%D0%B8%D1%88%D0%B5%D0%BC-%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D1%8B-%D0%B2-linux-%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BD%D0%B0-%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%B0%D1%85-711/#"></a><div id="lbCaption"></div><div id="lbNumber"></div><div style="clear: both;"></div></div></div></body></html>

@@ -1,0 +1,2099 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1251">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="apache2-proxypass.files/filelist.xml">
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Doctor_Who</o:Author>
+  <o:LastAuthor>Doctor_Who</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:LastPrinted>2019-01-12T13:26:00Z</o:LastPrinted>
+  <o:Created>2019-01-12T13:26:00Z</o:Created>
+  <o:LastSaved>2019-01-12T13:26:00Z</o:LastSaved>
+  <o:Pages>7</o:Pages>
+  <o:Words>1680</o:Words>
+  <o:Characters>9579</o:Characters>
+  <o:Company>diakov.net</o:Company>
+  <o:Lines>79</o:Lines>
+  <o:Paragraphs>22</o:Paragraphs>
+  <o:CharactersWithSpaces>11237</o:CharactersWithSpaces>
+  <o:Version>15.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=themeData href="apache2-proxypass.files/themedata.thmx">
+<link rel=colorSchemeMapping
+href="apache2-proxypass.files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>RU</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2010TableStyleRules/>
+   <w:DontGrowAutofit/>
+   <w:DontUseIndentAsNumberingTabStop/>
+   <w:FELineBreak11/>
+   <w:WW11IndentRules/>
+   <w:DontAutofitConstrainedTables/>
+   <w:AutofitLikeWW11/>
+   <w:HangulWidthLikeWW11/>
+   <w:UseNormalStyleForList/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="39" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073711037 9 0 511 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520092929 1073786111 9 0 415 0;}
+@font-face
+	{font-family:helveticaneuecyrthin;
+	panose-1:0 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-format:other;
+	mso-font-pitch:auto;
+	mso-font-signature:0 0 0 0 0 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:204;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	line-height:107%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:EN-US;}
+h1
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 1 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+h3
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Заголовок 3 Знак";
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:#954F72;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
+pre
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Стандартный HTML Знак";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.1
+	{mso-style-name:"Заголовок 1 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 1";
+	mso-ansi-font-size:24.0pt;
+	mso-bidi-font-size:24.0pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:18.0pt;
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.3
+	{mso-style-name:"Заголовок 3 Знак";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Заголовок 3";
+	mso-ansi-font-size:13.5pt;
+	mso-bidi-font-size:13.5pt;
+	font-family:"Times New Roman",serif;
+	mso-ascii-font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman";
+	mso-fareast-language:RU;
+	font-weight:bold;}
+span.HTML
+	{mso-style-name:"Стандартный HTML Знак";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
+	mso-style-parent:"";
+	mso-style-link:"Стандартный HTML";
+	mso-ansi-font-size:10.0pt;
+	mso-bidi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-ascii-font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	mso-fareast-language:RU;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-fareast-font-family:Calibri;
+	mso-hansi-font-family:Calibri;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 42.5pt 2.0cm 3.0cm;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:769815256;
+	mso-list-template-ids:734983778;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1
+	{mso-list-id:1240142347;
+	mso-list-template-ids:-906199086;}
+@list l1:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l1:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l1:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l1:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2
+	{mso-list-id:1609041029;
+	mso-list-template-ids:354315438;}
+@list l2:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l2:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l2:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l2:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3
+	{mso-list-id:1788499814;
+	mso-list-template-ids:1555590324;}
+@list l3:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:36.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Symbol;}
+@list l3:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:72.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:"Courier New";
+	mso-bidi-font-family:"Times New Roman";}
+@list l3:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+@list l3:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;
+	mso-ansi-font-size:10.0pt;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Обычная таблица";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-bidi-font-family:"Times New Roman";}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=RU link=blue vlink="#954F72" style='tab-interval:35.4pt'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='mso-margin-top-alt:auto;mso-margin-bottom-alt:auto;
+line-height:normal;mso-outline-level:1;background:white'><span
+style='font-size:24.0pt;font-family:"helveticaneuecyrthin",serif;mso-fareast-font-family:
+"Times New Roman";color:#32384B;mso-font-kerning:18.0pt;mso-fareast-language:
+RU'>Как использовать <span class=SpellE>Apache</span> в качестве обратного
+прокси при помощи <span class=SpellE>mod_proxy</span> на <span class=SpellE>Ubuntu</span>
+16.04<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#7B7F8B;mso-fareast-language:
+RU'>04.04.2017 11:23<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>&nbsp;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'><a href="https://timeweb.com/ru/community/search/tag/apache"><span
+style='color:#548295'>#<span class=SpellE>Apache</span></span></a>&nbsp;<a
+href="https://timeweb.com/ru/community/search/tag/linux-ubuntu"><span
+style='color:#548295'>#<span class=SpellE>Linux</span>/<span class=SpellE>Ubuntu</span></span></a>&nbsp;<a
+href="https://timeweb.com/ru/community/search/tag/python"><span
+style='color:#548295'>#<span class=SpellE>Python</span></span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Введение<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Обратный прокси-сервер – это тип прокси-сервера, который ретранслирует
+HTTP/HTPPS-запросы на один или несколько <span class=SpellE>бэкенд</span>-серверов.
+Обратные прокси-серверы полезны, так как многие современные веб-приложения для
+обработки HTTP-запросов используют <span class=SpellE>бэкенд</span>-серверы
+приложений (к которым пользователи не должны иметь доступ напрямую), а также
+часто поддерживают только базовые функции HTTP.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Поэтому вы можете использовать обратный прокси-сервер для того, чтобы
+предупредить возможность пользователям получить прямой доступ к основным
+серверам приложений. Также использование обратного прокси-сервера поможет вам
+перераспределить нагрузку от поступающих запросов на несколько других серверов
+приложений. Благодаря этому улучшится производительность и увеличится
+отказоустойчивость.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Из этой статьи вы узнаете о том, как настроить <span class=SpellE>Apache</span>
+для использования в качестве обратного прокси-сервера при помощи <span
+class=SpellE>mod_proxy</span> – модуля <span class=SpellE>Apache</span> для
+перенаправления соединений на один или несколько <span class=SpellE>бэкенд</span>-серверов
+в этой же сети. В этом руководстве используется простой <span class=SpellE>бэкенд</span>,
+написанный с использованием <span class=SpellE>фреймворка</span> <span
+class=SpellE>Flask</span>, но вы можете использовать любой <span class=SpellE>бэкенд</span>
+на ваше усмотрение.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Требования<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Для того, чтобы выполнить необходимые действия, вам понадобится:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l2 level1 lfo1;tab-stops:list 36.0pt;
+     background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+     mso-fareast-font-family:"Times New Roman";mso-fareast-language:RU'>сервер
+     с установленной ОС <span class=SpellE>Ubuntu</span> 16.04 и пользователем,
+     который может выполнять команды <span class=SpellE>sudo</span>;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;margin-bottom:
+     0cm;margin-bottom:.0001pt;line-height:normal;mso-list:l2 level1 lfo1;
+     tab-stops:list 36.0pt;background:white'><span style='font-size:12.0pt;
+     font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'>установленный на вашем сервере <span
+     class=SpellE>Apache</span>.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Шаг 1: включение необходимых модулей <span
+class=SpellE>Apache</span><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Существует множество модулей <span class=SpellE>Apache</span>, которые идут
+в комплекте и доступны к использованию, но не активированы после установки.
+Поэтому необходимо включить те модули, которые будут использоваться в этом
+руководстве.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Нужный нам модуль – это <span class=SpellE>mod_proxy</span>, а также
+несколько дополнений, которые расширяют его функционал и позволяют поддерживать
+различные сетевые протоколы. Если перечислять более конкретно, то понадобятся:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt;
+     background:white'><span class=SpellE><span style='font-size:12.0pt;
+     font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'>mod_proxy</span></span><span style='font-size:
+     12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'> – главный модуль <span class=SpellE>Apache</span>
+     для перенаправления соединений; благодаря ему <span class=SpellE>Apache</span>
+     может выступать в качестве шлюза для основных серверов приложений;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l3 level1 lfo2;tab-stops:list 36.0pt;
+     background:white'><span class=SpellE><span style='font-size:12.0pt;
+     font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'>mod_proxy_http</span></span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'> – позволит использовать прокси
+     для HTTP;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;margin-bottom:
+     0cm;margin-bottom:.0001pt;line-height:normal;mso-list:l3 level1 lfo2;
+     tab-stops:list 36.0pt;background:white'><span class=SpellE><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>mod_proxy_balancer</span></span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'> и <span class=SpellE>mod_lbmethod_byrequests</span>
+     – добавляют функции балансировки нагрузки для <span class=SpellE>бэкенд</span>-серверов.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Для того, чтобы активировать модули, выполните команды ниже в
+соответствующем порядке:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo a2enmod proxy<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo a2enmod proxy_http<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo a2enmod proxy_balancer<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo a2enmod
+lbmethod_byrequests<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Затем перезапустите <span class=SpellE>Apache</span> для того, чтобы
+изменения вступили в силу.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>sudo</span> <span class=SpellE>systemctl</span> <span
+class=SpellE>restart</span> apache2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь <span class=SpellE>Apache</span> будет выступать в качестве
+обратного прокси-сервера для HTTP-запросов. Следующий шаг не является
+обязательным, но он поможет протестировать работу <span class=SpellE>Apache</span>
+и убедиться, что все работает так, как нужно. Для этого необходимо создать два
+базовых <span class=SpellE>бэкенд</span>-сервера, однако если у вас они уже
+есть в наличии, то вы можете сразу перейти к шагу 3.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Шаг 2: создание тестовых <span class=SpellE>бэкенд</span>-серверов<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Запуск нескольких базовых <span class=SpellE>бэкенд</span>-серверов –
+отличная возможность протестировать, корректно ли работает <span class=SpellE>Apache</span>.
+Поэтому необходимо создать два сервера, которые будут отвечать на HTTP-запросы,
+печатая строку текста. Один будет отвечать “<span class=SpellE>Hello</span> <span
+class=SpellE>world</span>!”, другой <span class=GramE>“ <span class=SpellE>Hello</span></span>
+<span class=SpellE>Timeweb</span>!”.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.75pt;background:#E4F1F7'><b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#548295;mso-fareast-language:
+RU'>Примечание.</span></b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#548295;mso-fareast-language:
+RU'>&nbsp;Если говорить не о тестовом запуске, то обычно <span class=SpellE>бэкенд</span>-серверы
+отдают одинаковый тип контента. Однако для тестирования будет удобнее, если это
+будет два сервера с разными сообщениями, потому что так будет проще отследить,
+что балансировка нагрузки работает корректно.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span class=SpellE><span style='font-size:12.0pt;font-family:
+"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Flask</span></span><span style='font-size:12.0pt;
+font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> – это <span class=SpellE>микрофреймворк</span>
+<span class=SpellE>Python</span>, который используется для создания
+веб-приложений. В этом руководстве мы будем использовать <span class=SpellE>Flask</span>,
+так как для написания базового приложения требуется всего несколько строк. Вам
+необязательно знать <span class=SpellE>Python</span> для того, чтобы выполнить
+дальнейшие действия.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Для начала обновите список доступных пакетов:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>sudo</span> <span class=SpellE>apt-get</span> <span
+class=SpellE>update</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь установите <span class=SpellE>Pip</span>, рекомендованная система
+управления пакетами <span class=SpellE>Python</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo apt-get -y install
+python3-pip<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>И уже при помощи <span class=SpellE>Pip</span> установите <span
+class=SpellE>Flask</span>:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><span class=SpellE><b><span style='font-size:10.5pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>sudo</span></b></span><b><span style='font-size:10.5pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'> pip3 <span class=SpellE>install</span> <span
+class=SpellE>flask</span><o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь, когда все необходимые компоненты установлены, можно перейти к
+созданию файла, в котором будет находиться необходимый для первого <span
+class=SpellE>бэкенд</span>-сервера код.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Файл можно создать в домашней директории пользователя, под которым вы
+авторизованы.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>nano</span> ~/backend1.py<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Скопируйте в файл текст, который приведен ниже, а затем сохраните и
+закройте файл.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>from flask import Flask<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>app = Flask(__name__)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>@app.route('/')<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>def home():<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span></span></b><span class=SpellE><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'>return</span></b></span><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> '<span class=SpellE>Hello</span> <span
+class=SpellE>world</span>!'<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Первые две строчки инициализируют <span class=SpellE>фреймворк</span> <span
+class=SpellE>Flask</span>. Единственная функция <span class=SpellE><span
+class=GramE>home</span></span><span class=GramE>(</span>) будет отдавать строку
+текста (“<span class=SpellE>Hello</span> <span class=SpellE>world</span>!”). А
+за то, чтобы этот текст появлялся в ответ на HTTP-запросы, отвечает @<span
+class=SpellE>app.route</span>('/').<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Второй <span class=SpellE>бэкенд</span>-сервер будет точно таким же, как и
+первый, кроме единственного отличия в тексте.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Поэтому для начала необходимо скопировать первый файл:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>cp</span> ~/backend1.py ~/backend2.py<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь откройте новый скопированный файл:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>nano</span> ~/backend2.py<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>И в последней строчке вместо “<span class=SpellE>Hello</span> <span
+class=SpellE>world</span>!” напишите, к примеру, “<span class=SpellE>Hello</span>
+<span class=SpellE>Timeweb</span>!”:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><span class=SpellE><b><span style='font-size:10.5pt;
+font-family:"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>return</span></b></span><b><span style='font-size:
+10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> '<span class=SpellE>Hello</span> <span
+class=SpellE>Timeweb</span>!'<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Команда ниже запустит первый <span class=SpellE>бэкенд</span>-сервер, его
+порт 8080.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ FLASK_APP=~/backend1.py
+flask run --port=8080 &gt;/dev/null 2&gt;&amp;1 &amp;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Второй сервер тоже необходимо запустить, его порт 8081:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ FLASK_APP=~/backend2.py
+flask run --port=8081 &gt;/dev/null 2&gt;&amp;1 &amp;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь протестируем работу обоих серверов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Сначала первого:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>curl</span> http://127.0.0.1:8080/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>В ответ вы должны получить “<span class=SpellE>Hello</span> <span
+class=SpellE>world</span>!”.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Затем второй:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>curl</span> http://127.0.0.1:8081/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>В этом случае вы увидите в терминале надпись “<span class=SpellE>Hello</span>
+<span class=SpellE>Timeweb</span>!”.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+18.75pt;background:#E4F1F7'><b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#548295;mso-fareast-language:
+RU'>Примечание.</span></b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#548295;mso-fareast-language:
+RU'>&nbsp;Для того, чтобы закрыть оба тестовых сервера (например, после
+выполнения всех действий в этом руководстве), вы можете просто выполнить
+следующую команду: <span class=SpellE>killall</span> <span class=SpellE>flask</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Далее мы изменим конфигурационный файл <span class=SpellE>Apache</span> для
+того, чтобы появилась возможность использовать его в качестве обратного
+прокси-сервера.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Шаг 3: изменение изначальных установок для включения
+прокси<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>В этой части необходимо внести изменения для того, чтобы изначальный
+виртуальный хост <span class=SpellE>Apache</span> выполнял роль обратного
+прокси-сервера для одного или нескольких <span class=SpellE>бэкенд</span>-серверов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Сначала нужно открыть конфигурационный файл <span class=SpellE>Apache</span>
+в редакторе <span class=SpellE>nano</span> (или в другом редакторе на ваш
+выбор):<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>$ sudo nano
+/etc/apache2/sites-available/000-default.conf<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Внутри этого файла найдите блок с первой строкой &lt;<span class=SpellE>VirtualHost</span>
+*:80<span class=GramE>&gt; .</span> Первый пример ниже продемонстрирует, как
+изменить этот файл так, чтобы использовать обратный прокси для одного <span
+class=SpellE>бэкенд</span>-сервера, а второй пример – для установки балансировки
+нагрузки для нескольких <span class=SpellE>бэкенд</span>-серверов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>1 пример: обратное прокси для одного <span class=SpellE>бэкенд</span>-сервера</span></b><span
+style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#32384B;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Скопируйте текст ниже&nbsp;<b>вместо</b>&nbsp;всего текста, расположенного
+в блоке <span class=SpellE>VirtualHost</span>, то есть чтобы в итоге блок
+выглядел вот так:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>&lt;VirtualHost *:80&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>ProxyPreserveHost On<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>ProxyPass / http://127.0.0.1:8080/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span></span></b><span class=SpellE><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'>ProxyPassReverse</span></b></span><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> / http://127.0.0.1:8080/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>&lt;/<span class=SpellE>VirtualHost</span>&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Если вы продолжаете следовать этому руководству и используете тестовые
+серверы, которые создали ранее, то скопируйте 127.0.0.1:8080, как и написано в
+примере. Если у вас есть свои собственные серверы приложений, то используйте их
+адреса.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>В блоке используется три директивы:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt;
+     background:white'><span class=SpellE><span style='font-size:12.0pt;
+     font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'>ProxyPreserveHost</span></span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'> – заставляет <span
+     class=SpellE>Apache</span> передать оригинальный заголовок <span
+     class=SpellE>Host</span> <span class=SpellE>бэкенд</span>-серверу. Это
+     полезно, так как в этом случае <span class=SpellE>бэкенд</span>-сервер
+     получает адрес, который используется для доступа к приложению;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l1 level1 lfo3;tab-stops:list 36.0pt;
+     background:white'><span class=SpellE><span style='font-size:12.0pt;
+     font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'>ProxyPass</span></span><span style='font-size:
+     12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+     mso-fareast-language:RU'> – основная директива для настройки прокси. В
+     данном случае она указывает, что все, что идет после корневого адреса URL
+     (/), должно быть отправлено на <span class=SpellE>бэкенд</span>-сервер по
+     указанному адресу. Например, если <span class=SpellE>Apache</span> получит
+     запрос /<span class=SpellE>primer</span>, то он подключится к
+     http://ваш_бэкенд-сервер/primer и отправит соответствующий ответ;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;margin-bottom:
+     0cm;margin-bottom:.0001pt;line-height:normal;mso-list:l1 level1 lfo3;
+     tab-stops:list 36.0pt;background:white'><span class=SpellE><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>ProxyPassReverse</span></span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'> – должна иметь такие же
+     настройки, как и <span class=SpellE>ProxyPass</span>. Она сообщает <span
+     class=SpellE>Apache</span>, как изменить заголовки в ответе от <span
+     class=SpellE>бэкенд</span>-сервера. Таким образом гарантируется, что
+     браузер клиента будет перенаправлен на прокси-адрес, а не на адрес <span
+     class=SpellE>бэкенд</span>-сервера.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>После внесения изменений <span class=SpellE>Apache</span> необходимо
+перезапустить:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>sudo</span> <span class=SpellE>systemctl</span> <span
+class=SpellE>restart</span> apache2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь, если вы наберете в браузере адрес своего сервера, вы увидите ответ
+от вашего <span class=SpellE>бэкенд</span>-сервера вместо приветственной
+страницы <span class=SpellE>Apache</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><b><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>2 пример: балансировка нагрузки между несколькими <span class=SpellE>бэкенд</span>-серверами</span></b><span
+style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:#32384B;mso-fareast-language:RU'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Если у вас есть несколько <span class=SpellE>бэкенд</span>-серверов, будет
+хорошей идеей при использовании прокси распределить трафик между ними; сделать
+это можно при помощи функции балансировки нагрузки утилиты <span class=SpellE>mod_proxy</span>.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Как и в первом примере, тут вам тоже необходимо заменить текст в блоке <span
+class=SpellE>VirtualHost</span> на следующий:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>&lt;VirtualHost *:80&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>&lt;Proxy
+balancer://mycluster&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>BalancerMember http://127.0.0.1:8080<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>BalancerMember http://127.0.0.1:8081<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'>&lt;/Proxy&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>ProxyPreserveHost On<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span>ProxyPass / balancer://mycluster/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span lang=EN-US style='font-size:10.5pt;font-family:
+"Courier New";mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-ansi-language:EN-US;mso-fareast-language:RU'><span
+style='mso-spacerun:yes'> </span></span></b><span class=SpellE><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'>ProxyPassReverse</span></b></span><b><span
+style='font-size:10.5pt;font-family:"Courier New";mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> / balancer://mycluster/<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>&lt;/<span class=SpellE>VirtualHost</span>&gt;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>В целом текст похож на предыдущий, однако вместо указания одного <span
+class=SpellE>бэкенд</span>-сервера появляется новый блок <span class=SpellE>Proxy</span>,
+в котором указано несколько серверов. Блок называется balancer://mycluster
+(название можно изменить) и состоит из одного или нескольких <span
+class=SpellE>BalancerMembers</span>, которые определяют адреса лежащих в основе
+<span class=SpellE>бэкенд</span>-серверов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Директивы <span class=SpellE>ProxyPass</span> и <span class=SpellE>ProxyPassReverse</span>
+используют пул балансировки нагрузки под названием <span class=SpellE>mycluster</span>
+вместо конкретного сервера.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Вы можете использовать адреса тестовых серверов (как указано выше), либо
+заменить их на адреса своих серверов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Для того, чтобы изменения вступили в силу, перезапустите <span
+class=SpellE>Apache</span>:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;line-height:
+normal;tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+background:#F2F2F2'><b><span style='font-size:10.5pt;font-family:"Courier New";
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>$ <span class=SpellE>sudo</span> <span class=SpellE>systemctl</span> <span
+class=SpellE>restart</span> apache2<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь проведите такой же тест, как и в первом примере: введите IP-адрес
+вашего сервера в браузер и вместо стандартного приветствия <span class=SpellE>Apache</span>
+вы увидите один из ответов <span class=SpellE>бэкенд</span>-серверов. Если вы
+используете тестовые серверы, то это будет либо “<span class=SpellE>Hello</span>
+<span class=SpellE>world</span>!”, либо “<span class=SpellE>Hello</span> <span
+class=SpellE>Timeweb</span>!”. Обновите страницу несколько раз и, если вы
+увидели оба текста, значит все работает корректно.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:normal;
+mso-outline-level:3;background:white'><span style='font-size:13.5pt;font-family:
+"Helvetica",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>Заключение<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Теперь вы знаете, как настроить <span class=SpellE>Apache</span> в качестве
+обратного прокси-сервера для одного или нескольких внутренних серверов. <span
+class=SpellE>mod_proxy</span> можно эффективно использоваться для того, чтобы
+настраивать обратный прокси для серверов с приложениями, написанных на различных
+языках программирования и технологиях, таких как <span class=SpellE>Python</span>,
+<span class=SpellE>Django</span> или <span class=SpellE>Ruby</span> и <span
+class=SpellE>Ruby</span> <span class=SpellE>on</span> <span class=SpellE>Rails</span>.
+Также <span class=SpellE>mod_proxy</span> можно использовать для балансировки
+нагрузки между несколькими <span class=SpellE>бэкенд</span>-серверами для
+сайтов с большой нагрузкой, чтобы обеспечить высокую доступность таких
+ресурсов.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span class=SpellE><span style='font-size:12.0pt;font-family:
+"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";color:#32384B;
+mso-fareast-language:RU'>mod_proxy</span></span><span style='font-size:12.0pt;
+font-family:"Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";
+color:#32384B;mso-fareast-language:RU'> и <span class=SpellE>mod_proxy_http</span>
+самая популярная комбинация модулей, однако есть несколько других, которые
+поддерживают другие сетевые протоколы. Хотя в этом руководстве они не
+использовались, их тоже можно выделить отдельным списком:<o:p></o:p></span></p>
+
+<ul type=disc>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt;
+     background:white'><span lang=EN-US style='font-size:12.0pt;font-family:
+     "Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+     EN-US;mso-fareast-language:RU'>mod_proxy_ftp </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>для</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'> FTP;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt;
+     background:white'><span lang=EN-US style='font-size:12.0pt;font-family:
+     "Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+     EN-US;mso-fareast-language:RU'>mod_proxy_connect </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>для</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'> SSL-</span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>туннеля</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'>;<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;mso-margin-bottom-alt:
+     auto;line-height:normal;mso-list:l0 level1 lfo4;tab-stops:list 36.0pt;
+     background:white'><span lang=EN-US style='font-size:12.0pt;font-family:
+     "Tahoma",sans-serif;mso-fareast-font-family:"Times New Roman";mso-ansi-language:
+     EN-US;mso-fareast-language:RU'>mod_proxy_ajp </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>для</span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>протокола</span><span
+     lang=EN-US style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+     mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;
+     mso-fareast-language:RU'> AJP (Apache JServ Protocol);<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:#32384B;mso-margin-top-alt:auto;margin-bottom:
+     0cm;margin-bottom:.0001pt;line-height:normal;mso-list:l0 level1 lfo4;
+     tab-stops:list 36.0pt;background:white'><span class=GramE><span
+     lang=EN-US style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+     mso-fareast-font-family:"Times New Roman";mso-ansi-language:EN-US;
+     mso-fareast-language:RU'>mod_proxy_wstunnel</span></span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>для</span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'> </span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>веб</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'>-</span><span
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-fareast-language:RU'>сокетов</span><span lang=EN-US
+     style='font-size:12.0pt;font-family:"Tahoma",sans-serif;mso-fareast-font-family:
+     "Times New Roman";mso-ansi-language:EN-US;mso-fareast-language:RU'>.<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal style='mso-margin-bottom-alt:auto;line-height:18.75pt;
+background:white'><span style='font-size:12.0pt;font-family:"Tahoma",sans-serif;
+mso-fareast-font-family:"Times New Roman";color:#32384B;mso-fareast-language:
+RU'>Узнать более подробно о них вы можете в официальной документации <span
+class=SpellE>mod_proxy</span> <span class=SpellE>Apache</span>:&nbsp;<a
+href="https://timeweb.com/go?url=http%3A%2F%2Fhttpd.apache.org%2Fdocs%2Fcurrent%2Fmod%2Fmod_proxy.html&amp;hash=b7ff59d63e5e50bb64c42560a91a055382dfa46f"
+target="_blank"><span style='color:#548295'>http://httpd.apache.org/docs/current/mod/mod_proxy.html</span></a><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt;text-indent:
+21.3pt;line-height:150%'><span style='font-size:12.0pt;line-height:150%;
+font-family:"Times New Roman",serif'><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

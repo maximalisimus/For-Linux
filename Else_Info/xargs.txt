@@ -1,0 +1,14 @@
+
+http://cht.sh/xargs
+
+https://habr.com/ru/company/selectel/blog/248207/
+
+http://blog.sedicomm.com/2018/11/21/12-prakticheskih-primerov-komandy-xargs-dlya-nachinayushhih-v-linux/
+
+
+
+
+
+
+
+

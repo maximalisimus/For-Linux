@@ -1,0 +1,23 @@
+﻿
+# Russia
+Server = http://mirror.yandex.ru/archlinux/$repo/os/$arch
+
+Server = https://mirror.yandex.ru/archlinux/$repo/os/$arch
+
+
+Server = http://mirror.rol.ru/archlinux/$repo/os/$arch
+
+Server = https://mirror.rol.ru/archlinux/$repo/os/$arch
+Server = http://archlinux.zepto.cloud/$repo/os/$arch
+Server = http://mirror.truenetwork.ru/archlinux/$repo/os/$arch
+Server = http://mirror.aur.rocks/$repo/os/$arch
+
+Server = https://mirror.aur.rocks/$repo/os/$arch
+
+
+# Server = http://archlinux.freeside.ru/$repo/os/i686
+# Server = ftp://mirror.svk.su/archlinux/$repo/os/i686
+# Server = http://mirror.svk.ru/archlinux/$repo/os/i686
+# Server = ftp://ftp.archlinux.org/community/os/i686
+
+

@@ -1,0 +1,68 @@
+﻿
+$ timedatectl
+
+$ sudo ntpq -c lpeer
+
+### if return terminal table to <reach> and <delay> and <offset> and <jitter> is <0>
+### then pool is false (error, bad)
+
+
+
+$ sudo nano /etc/ntp.conf
+
+### search to string is 
+
+pool 0.ubuntu.pool.ntp.org iburst
+pool 1.ubuntu.pool.ntp.org iburst
+pool 2.ubuntu.pool.ntp.org iburst
+pool 3.ubuntu.pool.ntp.org iburst
+
+### search alternate pool to website <http://www.pool.ntp.org/>
+
+### For example <Russian Federation — ru.pool.ntp.org>
+
+server 0.ru.pool.ntp.org
+server 1.ru.pool.ntp.org
+server 2.ru.pool.ntp.org
+server 3.ru.pool.ntp.org
+
+
+### Add and save to servers the file </etc/ntp.conf> and edit string is:
+
+# pool 0.ubuntu.pool.ntp.org iburst
+# pool 1.ubuntu.pool.ntp.org iburst
+# pool 2.ubuntu.pool.ntp.org iburst
+# pool 3.ubuntu.pool.ntp.org iburst
+
+pool 0.ru.pool.ntp.org
+pool 1.ru.pool.ntp.org
+pool 2.ru.pool.ntp.org
+pool 3.ru.pool.ntp.org
+
+
+### Reset NTP Service and check service
+
+$ sudo service ntp restart
+
+$ timedatectl
+
+$ sudo ntpq -c lpeer
+
+
+# man timedatectl
+### q to exit
+
+$ timedatectl --adjust-system-clock
+
+
+
+
+
+
+
+
+
+
+
+
+
