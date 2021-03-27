@@ -17,6 +17,8 @@ qemu-system-x86_64
 -usb --device usb-host,vendorid=0x125f,productid=0xdb8a
 -boot d
 -bios /usr/share/edk2-ovmf/x64/OVMF_CODE.fd
+-device e1000,netdev=net0
+-netdev user,id=net0,hostfwd=tcp::22-:22,hostfwd=tcp::80-:80,hostfwd=tcp::443-:443
 
 
 

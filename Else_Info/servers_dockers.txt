@@ -1,0 +1,102 @@
+
+
+sudo sysctl -w net.ipv4.ip_forward=1
+
+nano /etc/sysctl.conf
+
+
+sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release wget curl bash-completion net-tools
+
+
+
+sudo ln -s /var/lib/snapd/snap /snap
+
+sudo systemctl enable --now snapd.socket
+
+
+
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+
+curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+# sudo curl -L "https://github.com/docker/compose/release/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+wget "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-Linux-x86_64"
+
+sudo cp -f ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
+rm -rf ./docker-compose-Linux-x86_64
+sudo chmod +x /usr/local/bin/docker-compose
+
+sudo docker ps
+sudo docker exec -i -t 6ee6223a3ce3 bash
+
+
+sudo groupadd docker
+sudo usermod -aG docker mikl
+
+sudo docker volume create portainer_data
+
+sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+
+openssl rand -base64 48
+If3VUCE75QBEbbhervInaHvfJcPC5/g3k4C5gli1hU6BTZfp3mOKTTOEjqhegl1l
+
+
+
+https://download.nextcloud.com/server/releases/nextcloud-21.0.0.zip
+
+
+
+Create a docker-compose.yml file similar to this:
+
+version: '3'
+services:
+  app:
+    image: 'jc21/nginx-proxy-manager:latest'
+    ports:
+      - '80:80'
+      - '81:81'
+      - '443:443'
+    environment:
+      DB_MYSQL_HOST: "db"
+      DB_MYSQL_PORT: 3306
+      DB_MYSQL_USER: "npm"
+      DB_MYSQL_PASSWORD: "npm"
+      DB_MYSQL_NAME: "npm"
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+  db:
+    image: 'jc21/mariadb-aria:latest'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'npm'
+      MYSQL_DATABASE: 'npm'
+      MYSQL_USER: 'npm'
+      MYSQL_PASSWORD: 'npm'
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+
+
+docker-compose up -d
+
+http://127.0.0.1:81
+
+Default Admin User:
+
+Email:    admin@example.com
+Password: changeme
+
+Upgrading to new versions
+docker-compose pull
+docker-compose up -d
+
+
