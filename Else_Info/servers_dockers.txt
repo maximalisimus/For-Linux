@@ -105,34 +105,6 @@ docker-compose up -d
 
 
 
-OwnCloud:
-
-version: '3.1'
-
-services:
-
-  owncloud:
-    image: owncloud
-    restart: always
-    ports:
-      - 8080:80
-    environment:
-      - OWNCLOUD_DB_NAME=mysql
-      - OWNCLOUD_DB_USERNAME=owncloud
-      - OWNCLOUD_DB_PASSWORD=owncloud
-      - OWNCLOUD_ADMIN_USERNAME=admin
-      - OWNCLOUD_ADMIN_PASSWORD=maiklson
-
-  mysql:
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: owncloud
-      MYSQL_DATABASE: mysql
-      MYSQL_USER: owncloud
-      MYSQL_PASSWORD: owncloud
-
-
 
 
 
