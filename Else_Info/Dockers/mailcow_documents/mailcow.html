@@ -1,0 +1,323 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-03-10T21:17:01"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", sans-serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", sans-serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		pre { direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		pre.western { font-family: "Liberation Mono", serif; font-size: 10pt; so-language: ru-RU }
+		pre.cjk { font-family: "Liberation Mono"; font-size: 10pt; so-language: zh-CN }
+		pre.ctl { font-family: "Liberation Mono"; font-size: 10pt; so-language: hi-IN }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		strong { font-weight: bold }
+		code.western { font-family: "Liberation Mono", serif }
+		code.cjk { font-family: "Liberation Mono" }
+		code.ctl { font-family: "Liberation Mono" }
+		em { font-style: italic }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="left">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Почтовый
+сервер mailcow через docker за 30 минут</font></font></h1>
+<p class="western" style="margin-bottom: 0cm">Posted on by<a href="https://itc-life.ru/author/human/" target="_blank">
+human</a></p>
+<p class="western"><img src="mailcow_html_1d1b25655e224162.png" name="Изображение1" align="bottom" width="256" height="154" border="0"/>
+</p>
+<h2 class="western">Почтовый сервер mailcow через
+docker за 30 минут</h2>
+<p class="western">Недавно наткнулся на довольно
+интересный комбаин из postfix-sogo-gui-панели
+для управления почтовыми сервисом.
+Называется он mailcow. В этой статье решил
+кратко описать как это все работает.
+Итак, приступим. Представим что нам надо
+настроить почтовый домен em.linux2be.com</p>
+<p class="western"><strong>Требования:</strong></p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">- OS linux</code></pre><p class="western">
+<strong>Пакеты</strong></p>
+<pre class="western"><code class="western">- docker-ce</code>
+<code class="western">- docker-compose</code></pre><p class="western">
+<strong>Доступные порты:</strong></p>
+<pre class="western"><code class="western">SMTP_PORT=25</code>
+<code class="western">SMTPS_PORT=465</code>
+<code class="western">SUBMISSION_PORT=587</code>
+<code class="western">IMAP_PORT=143</code>
+<code class="western">IMAPS_PORT=993</code>
+<code class="western">POP_PORT=110</code>
+<code class="western">POPS_PORT=995</code>
+<code class="western">SIEVE_PORT=4190</code>
+<code class="western">DOVEADM_PORT=127.0.0.1:19991</code>
+<code class="western">HTTP=80</code>
+<code class="western">HTTPS=443</code></pre><p class="western">
+Эти порты можно поменять ниже в
+mailcow.conf, если они у вас уже заняты, например
+другими докер контейнерами.</p>
+<p class="western"><strong>Приступаем к установке</strong></p>
+<p class="western">Клонируем репозиторий</p>
+<pre class="western"><code class="western">git clone https://github.com/mailcow/mailcow-dockerized.git</code>
+<code class="western">cd mailcow-dockerized</code></pre><p class="western">
+Запускаем генератор конфига.</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">./generate_config.sh</code></pre><p class="western">
+Вводим</p>
+<p class="western"><a href="https://itc-life.ru/wp-content/uploads/2017/10/%D0%92%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_068.png">
+  <font color="#000080">
+    <img src="mailcow_html_a394ed046e9f937d.png" name="Изображение2" align="bottom" width="662" height="409" border="1"/>
+  </font>
+</a>
+</p>
+<p class="western">Мы сгенерировали конфиг на
+основе которого будет собираться наша
+связка из докер-контейнеров</p>
+<p class="western">Посмотреть его можно в файле</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">nano mailcow.conf</code></pre><p class="western">
+<a href="https://itc-life.ru/wp-content/uploads/2017/10/%D0%92%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_069.png">
+  <font color="#000080">
+    <img src="mailcow_html_2fc7dfa4d6b80484.png" name="Изображение3" align="bottom" width="1019" height="944" border="1"/>
+  </font>
+</a>
+</p>
+<p class="western"><strong>Теперь приступим к сборке</strong></p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">docker-compose pull</code></pre><p class="western">
+Запускаем</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">docker-compose up -d</code></pre><p class="western">
+Часть персистентных данных хранится в
+докерах volumes</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">docker volume ls | grep mail</code></pre><p class="western">
+Есле сервер на виртулке, и есть впс
+сервер, можно все спроксировать на него
+через nginx. Конфиг nginx тут.<br/>
+Кладем его
+в /etc/nginx/conf.d/http_em.linux2be.com.conf</p>
+<pre class="western"><code class="western">upstream backend-em.linux2be.com {</code>
+<code class="western">server 10.47.0.15:80;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 80;</code>
+<code class="western">    </code><code class="western">server_name</code>
+<code class="western">    </code><code class="western">em.linux2be.com</code>
+<code class="western">    </code><code class="western">www.em.linux2be.com</code>
+<code class="western">    </code><code class="western">;</code>
+<code class="western">    </code><code class="western">location ^~ /.well-known/acme-challenge/ {</code>
+<code class="western">    </code><code class="western">root /var/www/letsencrypt;</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">    </code><code class="western">location / {</code>
+<code class="western">    </code><code class="western">return 301 https://em.linux2be.com$request_uri;</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 443 http2 ssl;</code>
+<code class="western">    </code><code class="western">server_name</code>
+<code class="western">    </code><code class="western">em.linux2be.com</code>
+<code class="western">    </code><code class="western">;</code>
+<code class="western">    </code><code class="western">include /etc/nginx/ssl.d/linux2be.com/ssl.linux2be.com.conf;</code>
+<code class="western">    </code><code class="western">#return 200;</code>
+<code class="western">    </code><code class="western">location / {</code>
+<code class="western">      </code><code class="western">proxy_pass http://backend-em.linux2be.com/; # change this</code>
+<code class="western">      </code><code class="western">proxy_connect_timeout       100;</code>
+<code class="western">      </code><code class="western">proxy_send_timeout          100;</code>
+<code class="western">      </code><code class="western">proxy_read_timeout          100;</code>
+<code class="western">      </code><code class="western">send_timeout                100;</code>
+<code class="western">    </code><code class="western">}</code>
+<code class="western">}</code></pre><p class="western">
+Это для http.</p>
+<p class="western">Для почтовых сервисов делаем
+такой конфиг.</p>
+<p class="western">Добавляем эту часть конфига
+вниз файла /etc/nginx/nginx.conf</p>
+<pre class="western"><code class="western">stream {</code>
+<code class="western">    </code><code class="western">log_format json_combined escape=json</code>
+<code class="western">        </code><code class="western">'{'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.time&quot;:&quot;$time_local&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.host&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.http_host&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.remote_addr&quot;:&quot;$remote_addr&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.http_x_forwarded_for&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.request_method&quot;:&quot;$protocol&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.request&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.status&quot;:&quot;$status&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_status&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.body_bytes_sent&quot;:&quot;$bytes_sent, $bytes_received&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.http_referer&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.request_time&quot;:&quot;$session_time&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_response_time&quot;:&quot;$upstream_connect_time&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_http_x_cache&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.uri&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_addr&quot;:&quot;$upstream_addr&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_response_length&quot;:&quot;$upstream_bytes_sent, $upstream_bytes_received&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.server_name&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.upstream_cache_status&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.user_agent&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.request_uri&quot;:&quot;&quot;,'</code>
+<code class="western">                   </code><code class="western">'&quot;nginx.request_body&quot;:&quot;&quot;'</code>
+<code class="western">        </code><code class="western">'}';</code>
+<code class="western">    </code><code class="western">error_log /dev/stdout;</code>
+<code class="western">    </code><code class="western">access_log /dev/stdout json_combined;</code>
+<code class="western">    </code><code class="western">#access_log /var/log/nginx/stream.log json_combined;</code>
+<code class="western">    </code><code class="western">include /etc/nginx/stream.d/*.conf;</code>
+<code class="western">}</code></pre><p class="western">
+Создаем каталог каталог /etc/nginx/stream.d</p>
+<p class="western">И создаем конфиг
+/etc/nginx/stream.d/mail_proxy.conf</p>
+<p class="western">Содержимое</p>
+<pre class="western">
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 25 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:25;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 587 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:587;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 465 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:465;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 110 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:110;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 143 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:143;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 993 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:993;</code>
+<code class="western">}</code>
+<code class="western">server {</code>
+<code class="western">    </code><code class="western">listen 995 reuseport;</code>
+<code class="western">    </code><code class="western">proxy_pass 10.47.0.15:995;</code>
+<code class="western">}</code></pre><p class="western">
+Заходим по адресу <a href="https://em.linux2be.com/" target="_blank">https://em.linux2be.com</a></p>
+<p class="western">&lt;a
+href=&quot;<a href="https://itc-life.ru/wp-content/uploads/2017/10/%D0%92%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_070.png&amp;quot;&amp;gt;&amp;lt;img" target="_blank">https://itc-life.ru/wp-content/uploads/2017/10/Выделение_070.png&quot;&gt;&lt;img</a>
+class=&quot;alignnone size-large wp-image-3924&quot;
+src=&quot;<a href="https://itc-life.ru/wp-content/uploads/2017/10/%D0%92%D1%8B%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_070-1024x561.png&amp;quot" target="_blank">https://itc-life.ru/wp-content/uploads/2017/10/Выделение_070-1024×561.png&amp;quot</a>;
+alt=&quot;&quot; width=&quot;1024&quot; height=&quot;561&quot; /&gt;&lt;/a&gt;</p>
+<p class="western"><strong>Данные для входа</strong></p>
+<p class="western"><strong>Логин</strong> – <em>admin</em></p>
+<p class="western"><strong>Пароль</strong> – <em>moohoo</em></p>
+<p class="western">Меняем его после входа</p>
+<p class="western">ЗАмена серфиката postfix на свой</p>
+<p class="western">Чтобы не ругалось на сертификат
+– меняем его в конфиге postfix
+data/conf/postfix/main.cf на свой.</p>
+<pre class="western"><code class="western">smtpd_tls_cert_file = /ssl.d/linux2be.com/certificate.crt</code>
+<code class="western">smtpd_tls_key_file = /ssl.d/linux2be.com/private.key</code></pre><p class="western">
+<strong>Далее добавляем почтовые домены</strong></p>
+<p class="western"><img src="mailcow_html_11745aed4319d354.png" name="Изображение4" align="bottom" width="1650" height="892" border="0"/>
+<br/>
+<strong>Создаем
+почтовые ящики</strong><br/>
+<img src="mailcow_html_6ed638ac16284382.png" name="Изображение5" align="bottom" width="1610" height="870" border="0"/>
+</p>
+<p class="western"><strong>Далее добавлем dkim. Выбираем
+длину ключа 2048</strong></p>
+<p class="western"><img src="mailcow_html_189358ac1ac65be0.png" name="Изображение6" align="bottom" width="1610" height="888" border="0"/>
+</p>
+<p class="western"><strong>Добавляем сгенерированный
+ящик в relay host – не обязательно</strong></p>
+<p class="western"><img src="mailcow_html_189358ac1ac65be0.png" name="Изображение7" align="bottom" width="1610" height="888" border="0"/>
+</p>
+<p class="western"><strong>Добавляем пароль для
+rspamd – не обязательно</strong></p>
+<p class="western"><img src="https://itc-life.ru/wp-content/uploads/2017/10/Выделение_342.png" name="Изображение8" align="bottom" width="1690" height="344" border="0"/>
+</p>
+<p class="western"><strong>Заходим в сгерерированнй
+почтовые ящики через</strong></p>
+<p class="western"><img src="mailcow_html_4b2cb848e2ff1156.png" name="Изображение9" align="bottom" width="1174" height="517" border="0"/>
+</p>
+<p class="western">Теперь остается настроить
+нашу почту чтобы она не попадала в спам.
+Настройка dns записей. Почтовый домен
+будет em.linux2be.com</p>
+<p class="western">Добавляем записи A</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">em.linux2be.com server_ip</code>
+
+<code class="western">mx.linux2be.com server_ip</code></pre><p class="western">
+Где сервере ip – ip вашего сервера или
+прокси</p>
+<p class="western">Dkim текстовые записи c именем
+селектора – dkim</p>
+<pre class="western"><code class="western">dkim._domainkey.em.linux2be.com</code>
+<code class="western"> </code><code class="western">v=DKIM1;k=rsa;t=s;s=email;p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCg34KCAQEAqgkUMOXb7pIYVXxs3TMUgL/MyVubJB2Br6iJIIegR+9d+ucssa4y0pUs4LfzdqkoU8YjlX+V19osdk3EsjZYGYHddnzUkNwzVXOkyZx71rMiLvQhLpp3bFLHWiHixDR5ggN/07zz4OWRV6XApl51Ae2mNmu3S5R0NMePVe7lN6DRIuEDtDTSbVKg/avFM3YWQQe5/YH8dJLXf4UoOhKjhsLPsuiptexH7qkfSEMOGGo5hCyHMbeRoySksi829ZOE9YAlgbv/EyNpAHzTNM2kdlRugurc7W5pd9CG7E5G0bgY7grI37Apd/8eOpEYHSVCwXjattL6Bo3lYqGRrUYWpDzQIDAQAB</code></pre><p class="western">
+Dmarc текстовые записи</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">_dmarc.em.linux2be.com &quot;v=DMARC1;p=reject;rua=mailto:webmaster@em.linux2be.com;ruf=mailto:webmaster@em.linux2be.com;&quot;</code></pre><p class="western">
+Adsp текстовые записи(deprecated in 2013)</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">_adsp.em.linux2be.co dkim=all</code></pre><p class="western">
+Настраиваем запись mx для почтового
+домена em.linux2be.com</p>
+<p class="western">Добавим A запись (если нет)</p>
+<pre class="western">
+<code class="western">mx.linux2be.com IP_ADDRESS</code></pre><p class="western">
+Добавим mx запись (если нет)</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">em.linux2be.com IN MX 10 mx.linux2be.com</code></pre><p class="western">
+Добавим spf записи</p>
+<p class="western">Есть мастер генерации spf
+записей – можете воспользоваться им.</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">https://www.spfwizard.net/</code></pre><p class="western">
+Создаем spf запись</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">em.linux2be.com &quot;v=spf1 mx a a:mx.linux2be.com&quot;</code></pre><p class="western">
+Проверяем записи</p>
+<p class="western">Проверка spf</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">https://www.dmarcanalyzer.com/spf/checker/</code></pre><p class="western">
+Проверка mx записи</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">host -tMX em.linux2be.com</code></pre><p class="western">
+Должно вернуть</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">em.linux2be.com mail is handled by 10 mx.linux2be.com.</code></pre><p class="western">
+Проверка _dmarc записи</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">dig TXT _dmarc.linux2be.com</code></pre><p class="western">
+или</p>
+<pre class="western">
+<code class="western">https://www.dmarcanalyzer.com/dmarc/dmarc-record-check/</code></pre><p class="western">
+Проверка DKIM</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">https://www.dmarcanalyzer.com/dkim/dkim-check/</code></pre><p class="western">
+Регистрируем свой сервер в почтовом
+сервисе google</p>
+<p class="western">Регистрируем по ссылке тут
+<a href="https://postmaster.google.com/" target="_blank">https://postmaster.google.com/</a></p>
+<p class="western">Добавляем txt запись
+предоставленную google и нажимаем далее.</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">em &quot;запись google&quot;</code></pre><p class="western">
+Еще один докер.</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">https://github.com/tomav/docker-mailserver</code></pre><p class="western">
+Чекаем сервер здесь</p>
+<pre class="western" style="margin-bottom: 0.5cm"><code class="western">https://mxtoolbox.com</code></pre><p class="western">
+Posted in <a href="https://itc-life.ru/posts/linux/administrirovanie/pochtovyj-servis/" target="_blank">Почтовый
+сервис</a> 
+</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

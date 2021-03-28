@@ -1,0 +1,979 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-03-11T21:22:01.896708772"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; so-language: ru-RU; font-weight: bold }
+		h3.cjk { font-family: "AR PL New Sung"; font-size: 14pt; so-language: zh-CN; font-weight: bold }
+		h3.ctl { font-family: "DejaVu Sans"; font-size: 14pt; so-language: hi-IN; font-weight: bold }
+		pre { direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: ru-RU }
+		pre.cjk { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: zh-CN }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: hi-IN }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU; font-weight: bold }
+		h4.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN; font-weight: bold }
+		h4.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN; font-weight: bold }
+		strong { font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		code { font-family: "Liberation Mono", monospace }
+		em { font-style: italic }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">curl
+-sSL https://get.docker.com/ | CHANNEL=stable sh</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">#
+After the installation process is finished, you may need to enable
+the service and make sure it is started (e.g. CentOS 7)</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">systemctl
+enable docker.service</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">systemctl
+start docker.service</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Warning</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">mailcow
+requires the latest version of docker-compose. It is highly
+recommended to use the commands below to install docker-compose.
+Package managers (e.g. apt, yum) likely won't give you the latest
+version. Note: This command downloads docker-compose from the
+official Docker Github repository and is a safe method. The snippet
+will determine the latest supported version by mailcow. In almost all
+cases this is the latest version available (exceptions are broken
+releases or major changes not yet supported by mailcow).</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">curl
+-L https://github.com/docker/compose/releases/download/$(curl -Ls
+https://www.servercow.de/docker-compose/latest.php)/docker-compose-$(uname
+-s)-$(uname -m) &gt; /usr/local/bin/docker-compose</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">chmod
++x /usr/local/bin/docker-compose</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">2.
+Clone the master branch of the repository, make sure your umask
+equals 0022. Please clone the repository as root user and also
+control the stack as root. We will modify attributes - if necessary -
+while boostrapping the containers automatically and make sure
+everything is secured. The update.sh script must therefore also be
+run as root. It might be necessary to change ownership and other
+attributes of files you will otherwise not have access to. We drop
+permissions for every exposed application and will not run an exposed
+service as root! Controlling the Docker daemon as non-root user does
+not give you additional security. The unprivileged user will spawn
+the containers as root likewise. The behaviour of the stack is
+identical.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+su</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">#
+umask</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">0022
+# &lt;- Verify it is 0022</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">#
+cd /opt</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">#
+git clone https://github.com/mailcow/mailcow-dockerized</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">#
+cd mailcow-dockerized</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">3.
+Generate a configuration file. Use a FQDN (host.domain.tld) as
+hostname when asked.</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">./generate_config.sh</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">4.
+Change configuration if you want or need to.</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">nano
+mailcow.conf</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">4.1.
+Users with a MTU not equal to 1500 (e.g. OpenStack):</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">Whenever
+you run into trouble and strange phenomena, please check your MTU.</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">Edit
+docker-compose.yml and change the network settings according to your
+MTU. Add the new driver_opts parameter like this:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">networks:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<strong>  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">mailcow-network:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<strong>    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">...</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<strong>    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">driver_opts:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<strong>      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">com.docker.network.driver.mtu:
+1450</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<strong>    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><span style="font-weight: normal">...</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">4.2.
+Users without an IPv6 enabled network on their host system:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">Enable
+IPv6. Finally.</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">If
+you do not have an IPv6 enabled network on your host and you don't
+care for a better internet (thehe), it is recommended to disable IPv6
+for the mailcow network to prevent unforeseen issues.</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">5.
+Pull the images and run the compose file. The parameter -d will start
+mailcow: dockerized detached:</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">docker-compose
+pull</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><strong><span style="font-weight: normal">docker-compose
+up -d</span></strong></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%; page-break-before: always">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Redirect
+HTTP to HTTPS (<b>$ cd /opt/mailcow-dockerized/</b>)</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Since
+February the 28th 2017 mailcow does come with port 80 and 443
+enabled.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Do
+not use the config below for reverse proxy setups, please see our
+reverse proxy guide for this, which includes a redirect from HTTP to
+HTTPS.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Open
+mailcow.conf and set HTTP_BIND= - if not already set.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Create
+a new file data/conf/nginx/redirect.conf and add the following server
+config to the file:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">server
+{</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">root
+/web;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">listen
+80 default_server;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">listen
+[::]:80 default_server;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">include
+/etc/nginx/conf.d/server_name.active;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">if
+( $request_uri ~* &quot;%0A|%0D&quot; ) { return 403; }</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">location
+^~ /.well-known/acme-challenge/ {</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">allow
+all;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">default_type
+&quot;text/plain&quot;;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">}</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">location
+/ {</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">return
+301 https://$host$uri$is_args$args;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">}</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">}</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">In
+case you changed the HTTP_BIND parameter, recreate the container:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">docker-compose
+up -d</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; font-style: normal; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><b>Otherwise
+restart Nginx:</b></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; font-weight: normal; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+cd /opt/mailcow-dockerized/</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">$
+docker-compose restart nginx-mailcow</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<h1 class="western" align="left" style="font-variant: normal; font-style: normal; font-weight: normal">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="3" style="font-size: 12pt">dvanced
+SSL</font></font></h1>
+<h2 class="western" style="line-height: 140%; orphans: 2; widows: 2"><a name="lets-encrypt-out-of-the-box"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Let's
+Encrypt (out-of-the-box)<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#lets-encrypt-out-of-the-box">¶</a></span></span></font></font></span></h2>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">The
+&quot;acme-mailcow&quot; container will try to obtain a LE
+certificate for </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>${MAILCOW_HOSTNAME}</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>autodiscover.ADDED_MAIL_DOMAIN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>autoconfig.ADDED_MAIL_DOMAIN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><b><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif">Warning</span></b></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">mailcow
+</span></span></span></font></span><span style="font-variant: normal"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><strong>must</span></span></span></font></span></strong><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">
+be available on port 80 for the acme-client to work. Our reverse
+proxy example configurations do cover that. You can also use any
+external ACME client (certbot for example) to obtain certificates,
+but you will need to make sure, that they are copied to the correct
+location and a post-hook reloads affected containers. See more in the
+Reverse Proxy documentation.</span></span></span></span></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">By
+default, which means </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">0
+domains</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+are added to mailcow, it will try to obtain a certificate for
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>${MAILCOW_HOSTNAME}</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">For
+each domain you add, it will try to resolve
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>autodiscover.ADDED_MAIL_DOMAIN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>autoconfig.ADDED_MAIL_DOMAIN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to its IPv6 address or - if IPv6 is not configured in your domain -
+IPv4 address. If it succeeds, a name will be added as SAN to the
+certificate request.</span></span></span></font></font></font></span></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Only
+names that can be validated, will be added as SAN.</font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">For
+every domain you remove, the certificate will be moved and a new
+certificate will be requested. It is not possible to keep domains in
+a certificate, when we are not able validate the challenge for those.</font></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">If
+you want to re-run the ACME client, use </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+restart acme-mailcow</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and monitor its logs with </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+logs --tail=200 -f acme-mailcow</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="additional-domain-names"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Additional
+domain names<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#additional-domain-names">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Edit
+&quot;mailcow.conf&quot; and add a parameter </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+like this:</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Do
+not use quotes (</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>&quot;</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">)
+and do not use spaces between the names!</span></span></span></font></font></font></span></p>
+<pre class="western" style="margin-bottom: 0.5cm; line-height: 140%; orphans: 2; widows: 2"><a name="__code_0"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN=smtp.*,cert1.example.com,cert2.example.org,whatever.*</span></span></span></span></font></font></font></span></code></pre><p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Each
+name will be validated against its IPv6 address or - if IPv6 is not
+configured in your domain - IPv4 address.</font></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">A
+wildcard name like </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>smtp.*</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+will try to obtain a smtp.DOMAIN_NAME SAN for each domain added to
+mailcow.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Run
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to recreate affected containers automatically.</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; border-top: none; border-bottom: none; border-left: 1px solid #00b8d4; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #00b8d4; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><b><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif">Info</span></b></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #00b8d4; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">Using
+names other name </span></span></span></span></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>MAILCOW_HOSTNAME</span></span></span></span></font></span></code><span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #00b8d4; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">
+to access the mailcow UI may need further configuration.</span></span></span></span></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">If
+you plan to use a server name that is not </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>MAILCOW_HOSTNAME</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to access the mailcow UI (for example by adding </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>mail.*</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+make sure to populate that name in mailcow.conf via
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SERVER_NAMES</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+Names must be separated by commas and </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">must
+not</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+contain spaces. If you skip this step, mailcow may respond with an
+incorrect site.</span></span></span></font></font></font></span></p>
+<pre class="western" style="margin-bottom: 0.5cm; line-height: 140%; orphans: 2; widows: 2"><a name="__code_1"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SERVER_NAMES=webmail.domain.tld,other.example.tld</span></span></span></span></font></font></font></span></code></pre><p class="western" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Run
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to apply.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="force-renewal"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Force
+renewal<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#force-renewal">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">To
+force a renewal, you need to create a file named </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>force_renew</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and restart the </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>acme-mailcow</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+container:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 140%; orphans: 2; widows: 2"><a name="__code_2"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>cd /opt/mailcow-dockerized</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>touch data/assets/ssl/force_renew</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose restart acme-mailcow</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code># Now check the logs for a renewal</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose logs --tail=200 -f acme-mailcow</span></span></span></span></font></font></font></span></code></pre><p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">The
+file will be deleted automatically.</font></font></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="validation-errors-and-how-to-skip-validation"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Validation
+errors and how to skip validation<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#validation-errors-and-how-to-skip-validation">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">You
+can skip the </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">IP
+verification</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+by setting </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>SKIP_IP_CHECK=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+in mailcow.conf (no quotes). Be warned that a misconfiguration will
+get you ratelimited by Let's Encrypt! This is primarily useful for
+multi-IP setups where the IP check would return the incorrect source
+IP address. Due to using dynamic IPs for acme-mailcow, source NAT is
+not consistent over restarts.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">If
+you encounter problems with &quot;HTTP validation&quot;, but your IP
+address confirmation succeeds, you are most likely using firewalld,
+ufw or any other firewall, that disallows connections from </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>br-mailcow</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to your external interface. Both firewalld and ufw disallow this by
+default. It is often not enough to just stop these firewall services.
+You'd need to stop mailcow (</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+down</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">),
+stop the firewall service, flush the chains and restart Docker.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">You
+can also skip this validation method by setting
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>SKIP_HTTP_VERIFICATION=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+in &quot;mailcow.conf&quot;. Be warned that this is discouraged. In
+most cases, the HTTP verification is skipped to workaround unknown
+NAT reflection issues, which are not resolved by ignoring this
+specific network misconfiguration. If you encounter problems
+generating TLSA records in the DNS overview within mailcow, you are
+most likely having issues with NAT reflection you should fix.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">If
+you changed a SKIP_* parameter, run </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to apply your changes.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="disable-lets-encrypt"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Disable
+Let's Encrypt<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#disable-lets-encrypt">¶</a></span></span></font></font></span></h3>
+<h4 class="western" style="orphans: 2; widows: 2"><a name="disable-lets-encrypt-completely"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="font-style: normal"><span style="font-weight: normal">Disable
+Let's Encrypt completely<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#disable-lets-encrypt-completely">¶</a></span></span></font></font></font></span></h4>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Set
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>SKIP_LETS_ENCRYPT=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+in &quot;mailcow.conf&quot; and recreate &quot;acme-mailcow&quot; by
+running </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<h4 class="western" style="orphans: 2; widows: 2"><a name="skip-all-names-but-mailcow_hostname"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="font-style: normal"><span style="font-weight: normal">Skip
+all names but ${MAILCOW_HOSTNAME}<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#skip-all-names-but-mailcow_hostname">¶</a></span></span></font></font></font></span></h4>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Add
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ONLY_MAILCOW_HOSTNAME=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to &quot;mailcow.conf&quot; and recreate &quot;acme-mailcow&quot; by
+running </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="the-lets-encrypt-subjectaltname-limit-of-100-domains"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">The
+Let's Encrypt subjectAltName limit of 100 domains<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#the-lets-encrypt-subjectaltname-limit-of-100-domains">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Let's
+Encrypt currently has <a href="https://letsencrypt.org/docs/rate-limits/">a
+limit of 100 Domain Names per Certificate</a>.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">By
+default, &quot;acme-mailcow&quot; will create a single SAN
+certificate for all validated domains (see the <a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#lets-encrypt-out-of-the-box">first
+section</a> and <a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#additional-domain-names">Additional
+domain names</a>). This provides best compatibility but means the
+Let's Encrypt limit exceeds if you add too many domains to a single
+mailcow installation.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">To
+solve this, you can configure </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ENABLE_SSL_SNI</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to generate:</span></span></span></font></font></font></span></p>
+<ul type="disc">
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">A
+	main server certificate with </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>MAILCOW_HOSTNAME</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	and all fully qualified domain names in the </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	config</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">One
+	additional certificate for each domain found in the database with
+	autodiscover.</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+	autoconfig.</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	and any other </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	configured in this format (subdomain.*).</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Limitations:
+	A certificate name </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN=test.example.com</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	will be added as SAN to the main certificate. A separate
+	certificate/key pair will </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">not</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	be generated for this format.</span></span></span></font></font></font></span></p>
+</ul>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Postfix,
+Dovecot and Nginx will then serve these certificates with SNI.</font></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Set
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ENABLE_SSL_SNI=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+in &quot;mailcow.conf&quot; and recreate &quot;acme-mailcow&quot; by
+running </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><b><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif">Warning</span></b></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">Not
+all clients support SNI, <a href="https://wiki.dovecot.org/SSL/SNIClientSupport">see
+Dovecot documentation</a> or <a href="https://en.wikipedia.org/wiki/Server_Name_Indication#Support">Wikipedia</a>.
+You should make sure these clients use the </span></span></span></span></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>MAILCOW_HOSTNAME</span></span></span></span></font></span></code><span style="display: inline-block; border-top: none; border-bottom: none; border-left: 1px solid #ff9100; border-right: none; padding-top: 0cm; padding-bottom: 0cm; padding-left: 0.05cm; padding-right: 0cm"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">
+for secure connections if you enable this feature.</span></span></span></span></font></span></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Here
+is an example:</font></font></p>
+<ul type="disc">
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>MAILCOW_HOSTNAME=server.email.tld</span></span></span></span></font></font></font></span></code></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>ADDITIONAL_SAN=webmail.email.tld,mail.*</span></span></span></span></font></font></font></span></code></p>
+	<li><p class="western" style="border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Mailcow
+	email domains: &quot;domain1.tld&quot; and &quot;domain2.tld&quot;</font></font></p>
+</ul>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">The
+following certificates will be generated:</font></font></p>
+<ul type="disc">
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>server.email.tld,
+	webmail.email.tld</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	-&gt; this is the default certificate, all clients can connect with
+	these domains</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>mail.domain1.tld,
+	autoconfig.domain1.tld, autodiscover.domain1.tld</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	-&gt; individual certificate for domain1.tld, cannot be used by
+	clients without SNI support</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>mail.domain2.tld,
+	autoconfig.domain2.tld, autodiscover.domain2.tld</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	-&gt; individual certificate for domain2.tld, cannot be used by
+	clients without SNI support</span></span></span></font></font></font></span></p>
+</ul>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="how-to-use-your-own-certificate"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">How
+to use your own certificate<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#how-to-use-your-own-certificate">¶</a></span></span></font></font></span></h3>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Make
+sure you disable mailcows internal LE client (see above).</font></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">To
+use your own certificates, just save the combined certificate
+(containing the certificate and intermediate CA/CA if any) to
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>data/assets/ssl/cert.pem</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and the corresponding key to </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>data/assets/ssl/key.pem</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">IMPORTANT:</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+Do not use symbolic links! Make sure you copy the certificates and do
+not link them to </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>data/assets/ssl</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">Restart
+affected services afterwards:</font></font></p>
+<pre class="western" style="line-height: 140%; orphans: 2; widows: 2"><a name="__code_3"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker restart $(docker ps -qaf name=postfix-mailcow)</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker restart $(docker ps -qaf name=nginx-mailcow)</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker restart $(docker ps -qaf name=dovecot-mailcow)</span></span></span></span></font></font></font></span></code></pre><p class="western" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">See
+<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-rp/#optional-post-hook-script-for-non-mailcow-acme-clients">Post-hook
+script for non-mailcow ACME clients</a> for a full example script.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="test-against-staging-acme-directory"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Test
+against staging ACME directory<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#test-against-staging-acme-directory">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Edit
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>mailcow.conf</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and add </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>LE_STAGING=y</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Run
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to activate your changes.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="custom-directory-url"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Custom
+directory URL<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#custom-directory-url">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Edit
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>mailcow.conf</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+and add the corresponding directory URL to the new variable
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>DIRECTORY_URL</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">:</span></span></span></font></font></font></span></p>
+<pre class="western" style="margin-bottom: 0.5cm; line-height: 140%; orphans: 2; widows: 2"><a name="__code_4"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>DIRECTORY_URL=https://acme-custom-v9000.api.letsencrypt.org/directory</span></span></span></span></font></font></font></span></code></pre><p class="western" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">You
+cannot use </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>LE_STAGING</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+with </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>DIRECTORY_URL</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+If both are set, only </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>LE_STAGING</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+is used.</span></span></span></font></font></font></span></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Run
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+up -d</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to activate your changes.</span></span></span></font></font></font></span></p>
+<h3 class="western" style="line-height: 150%; orphans: 2; widows: 2"><a name="check-your-configuration"></a>
+<span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><span style="font-style: normal"><span style="font-weight: normal">Check
+your configuration<a href="https://mailcow.github.io/mailcow-dockerized-docs/firststeps-ssl/#check-your-configuration">¶</a></span></span></font></font></span></h3>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Run
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>docker-compose
+logs acme-mailcow</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+to find out why a validation fails.</span></span></span></font></font></font></span></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">To
+check if nginx serves the correct certificate, simply use a browser
+of your choice and check the displayed certificate.</font></font></p>
+<p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">To
+check the certificate served by Postfix, Dovecot and Nginx we will
+use </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>openssl</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#000000"><font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 140%; orphans: 2; widows: 2"><a name="__code_5"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code># Connect via SMTP (587)</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>echo &quot;Q&quot; | openssl s_client -starttls smtp -crlf -connect mx.mailcow.email:587</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code># Connect via IMAP (143)</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>echo &quot;Q&quot; | openssl s_client -starttls imap -showcerts -connect mx.mailcow.email:143</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code># Connect via HTTPS (443)</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>echo &quot;Q&quot; | openssl s_client -connect mx.mailcow.email:443</span></span></span></span></font></font></font></span></code></pre><p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Source Sans Pro, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt">To
+validate the expiry dates as returned by openssl against
+MAILCOW_HOSTNAME, you are able to use our helper script:</font></font></p>
+<pre class="western" style="line-height: 140%; orphans: 2; widows: 2"><a name="__code_6"></a><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>cd /opt/mailcow-dockerized</span></span></span></span></font></font></font></span></code>
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#000000"><font face="var md-code-font-family, SFMono-Regular, Consolas, Menlo, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>bash helper-scripts/expiry-dates.sh</span></span></span></span></font></font></font></span></code></pre><p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><a href="https://www.mail-tester.com/">https://www.mail-tester.com/</a></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">https://pi-hole.net/</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Установка:
+curl -sSL https://install.pi-hole.net | bash</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Heimdall.
+Крутой Dashboard (панель приложений)</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Heimdall
+- это настраиваемая панель приложений
+с очень классным дизайном и простой
+настройкой.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Heimdall:
+<a href="https://heimdall.site/">https://heimdall.site/</a></font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Установка
+и настройка Контейнера Heimdall.</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Команды
+в виде:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">apt
+update</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">DOCKER
+Insatall:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">https://docs.docker.com/engine/instal...​</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">docker
+--version</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">docker
+run hello-world</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Compose
+Install:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">https://docs.docker.com/compose/install/​</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">docker-compose
+--version</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Пользователь
+и папки:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">useradd
+-s /bin/false heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">id
+heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">cd
+/opt/</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">mkdir
+-p heimdall/config</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">chown
+-R heimdall.heimdall heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">mkdir
+-p composeFiles/heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">cd
+composeFiles/heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">vi
+docker-compose.yml</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Временные
+зоны: https://en.wikipedia.org/wiki/List_of...​</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">version:
+&quot;3.3&quot;</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">services:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+  <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">heimdall:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">image:
+linuxserver/heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">container_name:
+heimdall</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">environment:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+PUID=####</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+PGID=####</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+TZ=Europe/Berlin</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">volumes:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+/opt/heimdall/config:/config</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">ports:</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+9001:80</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+      <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">-
+9002:443</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+    <font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">restart:
+always</font></font></p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

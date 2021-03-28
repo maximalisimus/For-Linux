@@ -1,0 +1,574 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-03-11T20:45:13.703757686"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; so-language: ru-RU; font-weight: bold }
+		h3.cjk { font-family: "AR PL New Sung"; font-size: 14pt; so-language: zh-CN; font-weight: bold }
+		h3.ctl { font-family: "DejaVu Sans"; font-size: 14pt; so-language: hi-IN; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		strong { font-weight: bold }
+		code { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" style="margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2">
+<font color="#444444"><font face="Source Sans Pro"><font size="6" style="font-size: 22pt"><b>КАК
+ПОЛУЧИТЬ СЕРТИФИКАТ LET'S ENCRYPT</b></font></font></font></h1>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">В
+последнее время забота о безопасности
+и приватности пользователей набирает
+обороты. Когда проектировался интернет
+и протокол HTTP, о таких понятиях не думали.
+Поэтому весь трафик, передаваемый между
+веб-сервером и пользователем по протоколу
+HTTP, может быть просмотрен кем угодно,
+кто находится на пути этого трафика,
+например провайдером или хакерами.</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2"><a name="more-24348"></a>
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Поэтому
+был придуман протокол HTTPS, который
+позволяет шифровать трафик и таим
+образом обезопасить его от перехвата.
+Для шифрования используются SSL-сертификаты.
+Раньше эти сертификаты стояли денег,
+но благодаря компании Let's Encrypt теперь
+любой веб-сайт может установить
+SSL-сертификат и настроить шифрование
+абсолютно бесплатно. В этой статье мы
+рассмотрим, как получить сертификат
+Let's Encrypt с помощью официального клиента
+Certbot.</font></font></font></p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2">
+<font color="#444444"><font face="Source Sans Pro"><font size="5" style="font-size: 19pt"><b>ПОЛУЧЕНИЕ
+СЕРТИФИКАТА LET'S ENCRYPT</b></font></font></font></h2>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Вообще,
+нам не обязательно использовать именно
+Certbot, мы могли бы создать сертификат в
+OpenSSL, а затем просто подписать его с
+помощью ACME API от Let's Encrypt. Но к этому API
+надо выполнять запросы в формате JSON,
+что очень неудобно делать из командной
+строки, поэтому лучше использовать один
+из клиентов. Например Certbot. К тому же,
+большинство клиентов ACME уже включают
+автоматическую генерацию сертификата
+в OpenSSL.</font></font></font></p>
+<h3 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2"><a name="1_%D0%A1%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81_%D0%B8_%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D1%8B_Certbot"></a>
+<font color="#444444"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>1.
+СИНТАКСИС И КОМАНДЫ CERTBOT</b></font></font></font></h3>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Прежде
+чем перейти к работе, давайте рассмотрим
+синтаксис утилиты Certbot и её команды. Они
+выглядят достаточно просто:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#99cc00"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>certbot</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>
+</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#ff9900"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>команда</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>
+</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3366ff"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>опции</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>
+</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3366ff"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>-d</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>
+</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#800080"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>домен</span></b></span></span></font></font></font></span></strong></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Команды
+используются для того, чтобы сообщить
+утилите, что именно надо сделать. Вот
+основные из них:</font></font></font></p>
+<ul type="square">
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>run</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- используется по умолчанию, если никакая
+	команда не указана, получает и
+	устанавливает сертификат;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>certonly</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- только получает или обновляет
+	сертификат, но не устанавливает его;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>renew</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- обновляет сертификат;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>enhance</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- добавляет настройки безопасности для
+	существующих сертификатов;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>certificates</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- отображает установленные сертификаты;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>revoke</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- отзывает сертификат;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>delete</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- удаляет сертификат;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>register</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- создает ACME-аккаунт;</span></span></span></font></font></font></span></p>
+</ul>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Как
+видите, команд не так много, и теперь вы
+в них точно не запутаетесь, а теперь
+разберём основные опции:</font></font></font></p>
+<ul type="square">
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>-d</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- указывает домен или список доменов,
+	разделённых запятыми, для которых надо
+	получить сертификаты;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--apache</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- использовать плагин apache для установки
+	сертификата;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--nginx</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- использовать плагин nginx;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--standalone</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- запускать собственный веб-сервер для
+	аутентификации при получении сертификата;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--preferred-challenges</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- позволяет выбрать способ аутентификации,
+	по умолчанию http, но можно выбрать dns;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--server</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- позволяет указать адрес ACME-сервера,
+	нужно для WildCard-сертификатов, поскольку
+	они поддерживаются только второй
+	версией ACME;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--webroot</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- поместить файлы аутентификации в
+	папку веб-сервера;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>-w</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- указывает папку веб-сервера, куда надо
+	поместить файлы аутентификации;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--manual</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- создание сертификата в ручном режиме;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>-n</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- запустить утилиту в не интерактивном
+	режиме;</span></span></span></font></font></font></span></p>
+	<li><p class="western" style="border: none; padding: 0cm; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>--dry-run</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	- тестовый запуск без сохранения
+	изменений на диск.</span></span></span></font></font></font></span></p>
+</ul>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Теперь
+мы готовы к тому, чтобы перейти к работе
+с утилитой. Сначала установим её.</font></font></font></p>
+<h3 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2"><a name="2_%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_Certbot"></a>
+<font color="#444444"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>2.
+УСТАНОВКА CERTBOT</b></font></font></font></h3>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Сначала
+необходимо установить утилиту Certbot. Это
+официальный клиент, и он есть в репозиториях
+большинства дистрибутивов. Установка
+Certbot в Ubuntu выполняется из PPA:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+apt install software-properties-common</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+add-apt-repository ppa:certbot/certbot</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+apt update</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+apt install certbot</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_d563699c63584a1e.png" name="Изображение1" align="left" width="665" height="374" border="0"/>
+<img src="Certboot_html_20f1d8136c57ee59.png" name="Изображение2" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Если
+вы знаете, для какой платформы будут
+генерироваться сертификаты, то можно
+установить отдельные расширения для
+них, они позволяют автоматически
+редактировать конфигурацию. Например,
+вы можете установить модуль для apache или
+nginx:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+apt install python-certbot-apache</span></span></span></span></font></font></font></span></code><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+apt install python-certbot-nginx</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Эти
+плагины нужны, если вы собираетесь
+использовать соответствующие опции
+для автоматической установки.</font></font></font></p>
+<h3 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2"><a name="3_%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_%D1%81%D0%B5%D1%80%D1%82%D0%B8%D1%84%D0%B8%D0%BA%D0%B0%D1%82%D0%B0_%D0%B1%D0%B5%D0%B7_%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8"></a>
+<font color="#444444"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>3.
+СОЗДАНИЕ СЕРТИФИКАТА БЕЗ УСТАНОВКИ</b></font></font></font></h3>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Если
+вам нужен сертификат для веб-сервера,
+который не поддерживается программой,
+вам придётся устанавливать его вручную.
+Получить такой сертификат можно с
+помощью команды certonly:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot certonly --webroot -w /var/www/test.losst.ru -d test.losst.ru
+-d www.test.losst.ru</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_96ff513dadc6ba92.png" name="Изображение3" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Эта
+команда получает сертификат для доменов
+test.losst.ru и www.test.losst.ru. Файлы для подтверждения
+аутентификации будут размещены в
+каталоге /var/www/example/. Также вы можете
+использовать встроенный веб-сервер для
+аутентификации:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot certonly --standalone -d test.losst.ru -d www.test.losst.ru</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Во
+время генерации сертификата утилита
+спросит ваш Email-адрес для аккаунта ACME,
+на который будут приходить уведомления
+о необходимости продления и другая
+информация:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">З<img src="Certboot_html_96ff513dadc6ba92.png" name="Изображение4" align="left" width="665" height="374" border="0"/>
+атем
+вам предложат подтвердить, что вы
+прочитали правила использования сервиса,
+ответьте <span style="display: inline-block; border: none; padding: 0cm"><strong><b>А</span></b></strong>:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_303060937bfe234c.png" name="Изображение5" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Далее
+вас спросят, хотите ли вы сделать ваш
+Email публичным:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_af30cefadd8068f4.png" name="Изображение6" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Только
+после этого начнётся получение
+сертификата. Если всё прошло успешно,
+то ваш сертификат будет сохранён в
+<span style="display: inline-block; border: none; padding: 0cm"><strong><b>/etc/letsencrypt/live/имя_домена/,</span></b></strong>
+оттуда вы уже можете использовать их в
+своих приложениях. Если же возникли
+ошибки, то утилита сообщит об этом.</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_a27f6233c27f2e4c.png" name="Изображение7" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<h3 class="western" style="text-transform: uppercase; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"> <font face="Open Sans"><font size="3" style="font-size: 12pt"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>СОЗДАНИЕ
+СЕРТИФИКАТА ДЛЯ NGINX</b></font></font></font></font></font></h3>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Вам
+не обязательно вручную устанавливать
+сертификаты, вы можете использовать
+один из доступных плагинов для
+автоматического обновления конфигурации.
+Например, рассмотрим использование
+плагина для Nginx:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot run --nginx</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Дополнительные
+параметры задавать не надо, потому что
+утилита сама прочитает конфигурацию и
+выведет список доступных доменов:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_53182af4a5a9fbb.png" name="Изображение8" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Введите
+цифру нужного домена или несколько
+цифр, разделённых запятой. Утилита сама
+установит всё, что нужно, а затем спросит
+вас, нужно ли перенаправлять http-трафик
+на https:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_29981ae8ded367c7.png" name="Изображение9" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Затем
+утилита выдаст ту же информацию, что и
+в предыдущем варианте:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_dc24855391487291.png" name="Изображение10" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<h3 class="western" style="text-transform: uppercase; letter-spacing: normal; font-style: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>5.
+ОБНОВЛЕНИЕ СЕРТИФИКАТА LET'S ENCRYPT</b></font></font></font></h3>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Чтобы
+выполнить обновление сертификата Let's
+Encrypt, достаточно запустить команду
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>certbot</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+с опцией </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>certonly</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+Учитывая, что сертификат находится в
+папке certbot, а конфигурация веб-сервера
+настроена именно на эту папку, то этой
+операции достаточно. Если же сертификаты
+копируются в другую папку, то вам
+понадобится скрипт для их автоматического
+копирования после обновления.</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot certonly -d test.losst.ru -d www.test.losst.ru</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_24cee0cfdc7d4874.png" name="Изображение11" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Если
+срок службы сертификата ещё не вышел и
+обновление не требуется, утилита спросит
+вас, действительно ли это надо сделать.</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Если
+вы хотите обновлять сертификат в не
+интерактивном режиме, например с помощью
+скрипта, то нужно использовать опцию
+</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>-n</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+также при использовании этой опции надо
+передать плагин, который будет
+использоваться для аутентификации:</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot certonly --nginx -n -d test.losst.ru -d www.test.losst.ru</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_61d506b9faddf160.png" name="Изображение12" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Теперь
+можно добавить эту команду в планировщик
+cron, например раз в неделю:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>crontab
+-e</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>0
+0 * * 0 /usr/bin/certbot certonly --nginx -n -d test.losst.ru -d
+www.test.losst.ru</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Если
+вы хотите обновить сертификаты для всех
+доменов одной командной в не интерактивном
+режиме, достаточно выполнить команду:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot renew</span></span></span></span></font></font></font></span></code></p>
+<h3 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2">
+<font color="#444444"><font face="Source Sans Pro"><font size="4" style="font-size: 15pt"><b>6.
+ПОЛУЧЕНИЕ WILDCARD СЕРТИФИКАТА LET'S ENCRYPT</b></font></font></font></h3>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Let's
+Encrypt Wildcard-сертификаты появились
+относительно недавно. Они позволяют
+использовать один сертификат для всех
+поддоменов определённого домена,
+например *.test.losst.ru. Но и работает это всё
+сложнее - вам надо будет подтвердить,
+что этот домен принадлежит именно вам.
+Для этого надо добавить TXT-запись к зоне
+домена.</font></font></font></p>
+<p class="western" style="margin-bottom: 0.66cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Вы
+можете сделать это вручную или же
+использовать dns-плагин для Certbot, чтобы
+добавить её автоматически. Правда,
+плагин поддерживается только для
+популярных сервисов, таких, как
+DigitalOcean, Linode, Cloudflare и так далее. В этой
+статье рассмотрим ручной вариант.
+Команда для генерации сертификата будет
+выглядеть вот так:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; line-height: 150%; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><code>sudo
+certbot certonly --agree-tos -d test.losst.ru -d *.test.losst.ru
+--preferred-challenges dns --manual --server
+https://acme-v02.api.letsencrypt.org/directory</span></span></span></span></font></font></font></span></code></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_6fe5cc450c336df.png" name="Изображение13" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Вам
+надо будет разрешить публикацию вашего
+IP-адреса, а потом добавить TXT-запись с
+нужным именем и значением к вашей
+доменной зоне. В моем случае это 
+<span style="display: inline-block; border: none; padding: 0cm"><strong><b>_acme-challenge.test.losst.ru</span></b></strong>
+со специальным хэшем:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_b2dcb963d1f491ed.png" name="Изображение14" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">Нужная
+TXT-запись в службе dmains.webmoney.ru выглядит
+вот так:</font></font></font></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<img src="Certboot_html_27319f09d25fb0ee.png" name="Изображение15" align="left" width="665" height="374" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt">На
+обновление доменной зоны может уйти
+несколько часов, поэтому команду придётся
+выполнить ещё пару раз позже. После
+генерации сертификата вы можете
+использовать его как обычный сертификат
+для всех поддерживаемых доменов.</font></font></font></p>
+<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.4cm; border: none; padding: 0cm; text-transform: uppercase; letter-spacing: normal; font-style: normal; line-height: 140%; orphans: 2; widows: 2"><a name="%D0%92%D1%8B%D0%B2%D0%BE%D0%B4%D1%8B"></a>
+<font color="#444444"><font face="Source Sans Pro"><font size="5" style="font-size: 19pt"><b>ВЫВОДЫ</b></font></font></font></h2>
+<p class="western" style="margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+этой статье мы рассмотрели, как получить
+сертификат Let's Encrypt с помощью клиента
+Certbot. Если у вас есть полный доступ к
+вашему серверу, то сделать это достаточно
+просто. Поэтому бесплатный сертификат
+Let's Encrypt может получить каждый. На </span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#444444"><font face="inherit"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><strong>losst.ru</span></b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#444444"><font face="Open Sans"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+тоже используются SSL-сертификаты от
+этого удостоверяющего центра, только
+создаются они с помощью автоматического
+скрипта панели управления Vesta. А для
+чего вы используете Let's Encrypt? Напишите
+в комментариях!</span></span></span></font></font></font></span></p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+<p class="western" style="font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<br/>
+<br/>
+
+</p>
+</body>
+</html>

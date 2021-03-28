@@ -1,0 +1,48 @@
+
+
+https://www.youtube.com/playlist?list=PLhMI0SExGwfAU-UMeKxd1Lu5_a60AlA9N
+
+- Raspberry Pi4 8GB
+- Argon One M.2 Case
+- Silicon Power 256GB Boot Drive
+- Sabrent 2TB Rocket NVMe PCIe M.2 Storage Drive
+- Sabrent USB 3.2 Tool-Free NVMe Enclosure
+
+Install the OpenMediaVault.
+Install the docker and Portainer through Dashboard OpenMediaVault (OMV).
+
+Docker and Components - Open Source
+- Portainer - Docker Dashboard
+- Overclock - Full PC info on Dashboard
+- CloudFlare - DDNS - Reverse DNS Dashboard
+- NextCloud - Cloud storage
+- BitWardenRS - Server Password Manager
+- Pihole - DNS ADBlocker
+- Heimdall Dashboard - Dashboard panel to dockers
+- MacVLAN - Linux switch for dockers
+- ADGuard MacVLAN
+- Mailcow - Mail Server
+- nginx-proxy-manager
+- Letsencrypt
+
+Do I need to install it?
+- Transmission with VPN - Torrent Client
+- Plex - Home media server with remote access
+
+We have an Overclock program. It contains basic information. Do I need another monitoring?
+- Docker Dashboard Using:
+	Grafana - Monitoring system
+	Prometheus - Monitoring metrics
+ 	Node Exporter - Plugin for Prometheus
+
+
+
+
+
+
+
+
+
+
+
+

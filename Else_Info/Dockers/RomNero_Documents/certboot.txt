@@ -1,0 +1,15 @@
+
+
+./certbot-auto certonly --authenticator manual
+
+sudo certbot certonly --nginx
+sudo certbot --apache
+sudo certbot certonly --apache
+sudo certbot certonly --standalone
+sudo certbot certonly --webroot
+
+
+
+sudo certbot renew --dry-run
+sudo certbot renew --dry-run
+

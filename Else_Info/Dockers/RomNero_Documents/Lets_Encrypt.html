@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-03-11T20:26:40.355432390"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		code { font-family: "Liberation Mono", monospace }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h1 class="western">
+Let's Encrypt: получение сертификата по шагам</h1>
+<ul>
+	<li><p class="western"><a href="https://habr.com/ru/hub/crypto/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'Криптография'); }">Криптография</a>,</p>
+	<li><p class="western"><a href="https://habr.com/ru/hub/asp/" onclick="if (typeof ga === 'function') { ga('send', 'event', 'hub', 'post page', 'ASP'); }">ASP</a></p>
+</ul>
+<div id="post-content-body" dir="ltr"><p class="western"><a name="habracut"></a>
+	В данной статье будет описан реальный
+	способ получения сертификата от <a href="https://letsencrypt.org/">Let's
+	Encrypt</a> в ручном режиме для его дальнейшей
+	установки на веб-сервер Windows (IIS/Microsoft
+	Azure) или Linux (полностью ручной режим).
+	Из-за отсутствия официального клиента
+	под Windows для генерации сертификата
+	будет использоваться дистрибутив
+	Linux.<br/>
+<br/>
+<img src="Lets_Encrypt_html_37b23d6e6a7cb787.png" name="Изображение1" align="bottom" width="1067" height="560" border="0"/>
+<br/>
+<br/>
+В
+	первые дни открытия заявок на
+	бета-тестирование и было принято решение
+	записаться и вот недавно пришло письмо,
+	которое сообщает о том, что теперь
+	программа ACME сгенерирует валидный
+	сертификат для нашего домена.<br/>
+<br/>
+Далее
+	мы решили опубликовать статью с пошаговой
+	инструкцией процесса, чтобы к моменту
+	релиза вы уже смогли оперативно создать
+	и начать пользоваться своим сертификатом.</p>
+	<h2 class="western">Как это работает</h2>
+	<p class="western"><br/>
+Полное описание процесса
+	доступно по <a href="https://letsencrypt.org/howitworks/technology/">этой
+	ссылке</a>.<br/>
+Важно лишь знать, что для
+	подтверждения владения доменом и
+	успешной генерации сертификата нужно
+	будет иметь доступ к записям DNS или к
+	серверу куда ссылается A-запись, что
+	вполне логично.<br/>
+<br/>
+Смысл программного
+	набора <a href="https://github.com/letsencrypt/acme-spec">Automated
+	Certificate Management Environment (ACME)</a> (написан на
+	Python) в том, чтобы автоматизировать
+	генерацию и установку сертификата в
+	Linux-окружении.<br/>
+<br/>
+Существует
+	неофициальный <a href="https://github.com/ebekker/letsencrypt-win">Windows-клиент</a>
+	с открытыми исходными кодами, который
+	может генерировать и устанавливать
+	сертификаты на Windows IIS и Amazon Web Services, но
+	у нас была задача получить ключи и
+	установить их вручную. Предлагаю любому
+	желающему написать статью по работе с
+	ним.</p>
+	<h2 class="western">Процесс по шагам</h2>
+	<p class="western"><br/>
+Внимание: эта инструкция
+	учит создавать сертификат в ручном
+	режиме, существуют и более простые
+	способы автоматической генерации и
+	обновления сертификатов. Надеюсь, что
+	скоро их опишут на этом ресурсе.<br/>
+<br/>
+[11/01/17]
+	Новый клиент CertBot<br/>
+<br/>
+Небольшое
+	обновление статьи в 2017 году.<br/>
+Теперь
+	можно установить CertBot и получить
+	сертификат в ручном режиме.<br/>
+<br/>
+Краткая
+	инструкция:<br/>
+<br/>
+1. Скачиванием
+	дистрибутив<br/>
+<br/>
+<code>wget
+	https://dl.eff.org/certbot-auto</code><br/>
+<br/>
+2. Установка
+	прав на файл<br/>
+<br/>
+<code>chmod a+x certbot-auto</code><br/>
+<br/>
+3.
+	Запуск для получения сертификата в
+	ручном режиме<br/>
+<br/>
+<code>./certbot-auto certonly
+	--authenticator manual</code><br/>
+<br/>
+4. Следуйте
+	указаниям программы (подробнее смотрите
+	в полной инструкции ниже с шага №
+	4).<br/>
+<br/>
+Подробная инструкция (старый
+	клиент — всё ещё работает)<br/>
+<br/>
+Использовалась
+	<a href="https://letsencrypt.readthedocs.org/en/latest/using.html#installation">официальная
+	инструкция</a>.<br/>
+Пользователи Linux могут
+	использовать текст ниже как пример
+	генерации сертификата в ручном
+	режиме.<br/>
+<br/>
+1. Запустите ваш любимый
+	дистрибутив Linux (мы использовали Debian
+	8).<br/>
+<br/>
+либо 2. <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Установите
+	Git</a> и выполните команды ниже:<br/>
+<br/>
+<code>git
+	clone https://github.com/letsencrypt/letsencrypt</code><br/>
+<code>cd
+	letsencrypt</code><br/>
+<br/>
+или 2. Скачайте и
+	распакуйте в папку <a href="https://github.com/letsencrypt/letsencrypt/archive/master.zip">данный
+	архив</a> и перейдите в эту папку<br/>
+<br/>
+3.
+	Запустите установку и генерацию с
+	помощью<br/>
+<br/>
+<code>./letsencrypt-auto
+	--agree-dev-preview --server
+	\https://acme-v01.api.letsencrypt.org/directory -a manual auth</code><br/>
+<br/>
+Вам
+	будет предложено ввести электронную
+	почту для восстановления в будущем.<br/>
+Ключ
+	-a manual позволит сгенерировать ключи в
+	ручном режиме без их автоматической
+	установки на веб-сервер.<br/>
+<br/>
+4. Далее
+	введите домены для которых вы хотите
+	создать сертификаты<br/>
+<img src="Lets_Encrypt_html_db41eb7d548b861b.png" name="Изображение2" align="bottom" width="1316" height="761" border="0"/>
+<br/>
+<br/>
+5.
+	Подтвердите сохранение вашего адреса
+	в логах Let's Encrypt<br/>
+<img src="Lets_Encrypt_html_34a11125aef47608.png" name="Изображение3" align="bottom" width="1316" height="761" border="0"/>
+<br/>
+<br/>
+6.
+	Подтвердите владение доменом<br/>
+<img src="Lets_Encrypt_html_5dd994ead4aac11.png" name="Изображение4" align="bottom" width="1316" height="761" border="0"/>
+<br/>
+<br/>
+В
+	сентябре 2016 года произошли небольшие
+	изменения в порядке получения сертификата.
+	Спасибо <a href="https://habr.com/users/toxi_roman/">toxi_roman</a>
+	за обновление.</p>
+	<p class="western">Старый способ подтверждения
+	с text/plain (не актуально по состоянию на
+	октябрь 2016 г.)</p>
+	<p class="western"><br/>
+<br/>
+Если у вас сервер на
+	Windows (с поддержкой Razor Views, аналогично и
+	с MVC), то самый простой способ создания
+	правильного ответа:<br/>
+а) создать папку
+	.well-known и в ней папку acme-challenge<br/>
+б)
+	поместить туда файл [запрос].cshtml<br/>
+в)
+	в содержание этого файла
+	добавить:<br/>
+<code>@{Response.ContentType =
+	&quot;text/plain&quot;;Response.Charset = &quot;&quot;;}здесь
+	проверочный код</code><br/>
+<br/>
+7. После
+	успешной проверки, будут созданы
+	следующие сертификаты в папке
+	/etc/letsencrypt/live/[имя домена]:<br/>
+<br/>
+privkey.pem
+	— приватный ключ для сертификата<br/>
+Используется
+	Apache для SSLCertificateKeyFile и nginx для
+	ssl_certificate_key.<br/>
+<br/>
+cert.pem (сертификат
+	сервера)<br/>
+Используется Apache для
+	SSLCertificateFile.<br/>
+<br/>
+chain.pem (сертификат
+	цепочки)<br/>
+Он же используется Apache для
+	SSLCertificateChainFile.<br/>
+<br/>
+fullchain.pem (соединение
+	chain.pem и cert.pem)<br/>
+Он же используется nginx
+	для ssl_certificate.<br/>
+<br/>
+7. Теперь пришло
+	время сконвертировать его в родной для
+	Windows .pfx формат.<br/>
+Перейдите в папку
+	/etc/letsencrypt/live/[имя домена] (откройте
+	терминал в режиме администратора с
+	помощью команды su):<br/>
+<br/>
+<code>cd
+	/etc/letsencrypt/live/[имя домена]</code><br/>
+<br/>
+Запустите
+	OpenSSL с помощью команды:<br/>
+<br/>
+<code>openssl</code><br/>
+<br/>
+и
+	начните конвертацию с помощью
+	команды:<br/>
+<br/>
+<code>pkcs12 -inkey privkey.pem -in
+	fullchain.pem -export -out mydomain.pfx</code><br/>
+<br/>
+Вас
+	попросят ввести пароль и подтвердить
+	его.<br/>
+<br/>
+<img src="Lets_Encrypt_html_5c7af2831bb5dcf1.png" name="Изображение5" align="bottom" width="947" height="103" border="0"/>
+<br/>
+<br/>
+7.2
+	Выходим из OpenSSL с помощью команды
+	quit<br/>
+<br/>
+7.3 Копируем итоговый файл в
+	директорию нашего пользователя<br/>
+<code>cp
+	--no-preserve=all mydomain.pfx /home/(имя
+	пользователя)/Documents</code><br/>
+<br/>
+8. Мы
+	получили сертификат mydomain.pfx, который
+	теперь можем использовать в
+	Windows-окружении.<br/>
+<br/>
+Для обновления
+	сертификата в ручном режиме:<br/>
+<code>./letsencrypt-auto
+	certonly --renew-by-default -a manual</code><br/>
+<br/>
+Важно
+	знать, что сертификаты Let's Encrypt валидны
+	90 дней. Рекомендуется обновлять их
+	каждые 60 дней. На электронную почту,
+	которую вы указали для генерации, будут
+	приходить уведомления об истечении
+	сертификата.<br/>
+<br/>
+Буду рад услышать
+	ваши замечания или пожелания к статье.</p>
+</div>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+</body>
+</html>
