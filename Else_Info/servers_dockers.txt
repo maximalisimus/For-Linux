@@ -106,6 +106,46 @@ docker-compose up -d
 
 
 
+version: "2"
+
+services:
+
+  bitwardenrs:
+    image: bitwardenrs/server:latest
+    container_name: bitwardenrs
+    volumes:
+      - BitWardenRS:/data/
+    ports:
+      - 8100:80
+    restart: unless-stopped
+
+
+
+sudo mkdir /var/www/test.com/
+echo "<h1 style='color: green;'>Test com</h1>" | sudo tee /var/www/test.com/index.html
+
+
+openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
+openssl x509 -signkey domain.key -in domain.csr -req -days 365 -out domain.crt
+
+openssl req -newkey rsa:2048 -nodes -keyout domain.key -x509 -days 365 -out domain.crt
+
+
+
+proxy_ssl.conf
+
+server {
+  listen 443;
+  ssl on;
+  ssl_certificate /etc/nginx/conf.d/domain.crt;
+  ssl_certificate_key /etc/nginx/conf.d/domain.key;
+  location / {
+     #proxy_pass http://192.168.0.120:8005;
+     root /var/www/test.com/;
+  }
+}
+
+docker run --name nginx_proxy -d -v ./ssl/:/etc/nginx/conf.d -p 8443:443 nginx
 
 
 
