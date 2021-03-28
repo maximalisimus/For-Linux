@@ -146,7 +146,7 @@ version: "2"
 services:
 
   nginx_proxy:
-    image: bitwardenrs/server:latest
+    image: nginx
     container_name: nginx_proxy
     volumes:
       - ./ssl:/etc/nginx/conf.d
