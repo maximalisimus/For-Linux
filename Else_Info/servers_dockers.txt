@@ -121,9 +121,6 @@ services:
 
 
 
-sudo mkdir /var/www/test.com/
-echo "<h1 style='color: green;'>Test com</h1>" | sudo tee /var/www/test.com/index.html
-
 
 openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
 openssl x509 -signkey domain.key -in domain.csr -req -days 365 -out domain.crt
@@ -140,10 +137,22 @@ server {
   ssl_certificate /etc/nginx/conf.d/domain.crt;
   ssl_certificate_key /etc/nginx/conf.d/domain.key;
   location / {
-     #proxy_pass http://192.168.0.120:8005;
-     root /var/www/test.com/;
+     proxy_pass http://192.168.0.120:8005;
   }
 }
+
+version: "2"
+
+services:
+
+  nginx_proxy:
+    image: bitwardenrs/server:latest
+    container_name: nginx_proxy
+    volumes:
+      - ./ssl:/etc/nginx/conf.d
+    ports:
+      - 8443:443
+
 
 docker run --name nginx_proxy -d -v ./ssl/:/etc/nginx/conf.d -p 8443:443 nginx
 
