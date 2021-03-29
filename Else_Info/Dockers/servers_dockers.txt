@@ -122,6 +122,26 @@ services:
 
 
 
+openssl genrsa -out rootCA.key 2048
+openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt
+openssl genrsa -out localhost.key 2048
+openssl req -new -key localhost.key -out question.csr
+openssl x509 -req -in question.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 5000
+openssl rsa -in localhost.key -out localhost.nopass.key
+openssl dhparam -out dhparam.pem 2048
+
+
+/usr/local/share/ca-certificates/
+sudo update-ca-certificates
+sudo update-ca-trust
+
+
+sudo apt-get install libnss3-tools
+sudo openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -keyout /home/mikl/ssl/localhost.key -out /home/mikl/ssl/localhost.crt -config /home/mikl/ssl/openssl.cnf
+mkdir -p $HOME/.pki/nssdb
+certutil -d sql:$HOME/.pki/nssdb -A -t "P,," -n localhost.crt -i /home/mikl/ssl/localhost.crt
+
+
 
 mkdir ~/nginx_proxy/ssl && cd ~/nginx_proxy/ssl
 openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
