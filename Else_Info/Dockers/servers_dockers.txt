@@ -124,12 +124,51 @@ services:
 
 openssl genrsa -out rootCA.key 2048
 openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt
-openssl genrsa -out localhost.key 2048
-openssl req -new -key localhost.key -out question.csr
-openssl x509 -req -in question.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out localhost.crt -days 5000
-openssl rsa -in localhost.key -out localhost.nopass.key
+openssl genrsa -out domain.key 2048
+openssl req -new -key domain.key -out domain.req
+openssl x509 -req -in domain.req -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out domain.crt -days 5000
+rm -rf domain.req
+cat rootCA.crt domain.crt > server.crt
+
+openssl rsa -in domain.key -out domain.nopass.key
 openssl dhparam -out dhparam.pem 2048
 
+wget https://github.com/FiloSottile/mkcert/releases/download/v1.4.3/mkcert-v1.4.3-linux-amd64
+sudo cp mkcert-v1.4.3-linux-amd64 /usr/local/bin/mkcert
+rm -rf mkcert-v1.4.3-linux-amd64
+sudo chmod +x /usr/local/bin/mkcert
+mkcert -key-file key.pem -cert-file cert.pem -p12-file pks.p12 warden.vps.com "*.wrden.vps.com" localhost 127.0.0.1
+
+
+sudo a2enmod headers
+sudo a2enmod ssl
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2enmod proxy_balancer
+sudo a2enmod lbmethod_byrequests
+
+sudo systemctl restart apache2
+
+<VirtualHost *:80>
+ ProxyPreserveHost On
+
+ ProxyPass / http://127.0.0.1:8080/
+ ProxyPassReverse / http://127.0.0.1:8080/
+</VirtualHost>
+
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+<VirtualHost *:443>
+    
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/domain.crt
+    SSLCertificateKeyFile /etc/ssl/domain.key
+    SSLCACertificateFile /etc/ssl/rootCA.crt
+    
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:8005/
+    ProxyPassReverse / http://localhost:8005/
+</VirtualHost>
 
 /usr/local/share/ca-certificates/
 sudo update-ca-certificates
