@@ -38,7 +38,7 @@ update-ca-certificates
 
 echo 'now for the server specific material'
 openssl genrsa -out server.key 2048
-OPENSSL_CONF=~/openssl.conf openssl req -new -key server.key -out server.csr
+openssl req -new -key server.key -out server.csr -config ./openssl.conf
 openssl x509 -req -in server.csr -CA IntermediateCA.crt -CAkey IntermediateCA.key -set_serial 01 -out server.crt -days 500 -sha1
 
 echo 'verification of sort here'
@@ -53,20 +53,23 @@ openssl x509 -in server.crt -noout -text |grep 'host.localism'
 
 openssl s_client -connect 192.168.0.17:443
 
-contents OPENSSL.conf
-[req]
-prompt = no
-default_md = sha1 #for​ video use only, sha256 onwards
-req_extensions = req_ext
-distinguished_name = dn
+nano openssl.conf
+[ req ]
+default_md         = sha1
+prompt             = no
+distinguished_name = req_distinguished_name
+req_extensions     = v3_req
 
-[ dn ]
-C=US
-ST=North Carolina
-O=LazyTree
-localityName=Redacted
-OU=HomeLab
-emailAddress=kondor6c@lazytree.us
-CN=www.lazytree.us
+[ req_distinguished_name ]
+countryName            = "RU"                    	   # C=
+stateOrProvinceName    = "Europe Moscow"          	   # ST=
+localityName           = "Redacted"                	   # L=
+organizationName       = "Warden"	            	   # O=
+organizationalUnitName = "HomeLab"                	   # OU=
+commonName             = "warden.vps.com"        	   # CN=
+emailAddress           = "maximalisimus127@gmail.com"  # CN/emailAddress=
+
+[ v3_req ]
+subjectAltName  = DNS:warden.vps.com # multidomain certificate
 
 
