@@ -1,0 +1,1316 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-03-30T23:25:56.411742396"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		td p { margin-bottom: 0cm; direction: ltr; color: #000000; text-align: left; orphans: 0; widows: 0; background: transparent }
+		td p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		td p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		td p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", serif; font-size: 14pt; so-language: ru-RU; font-weight: bold }
+		h3.cjk { font-family: "AR PL New Sung"; font-size: 14pt; so-language: zh-CN; font-weight: bold }
+		h3.ctl { font-family: "DejaVu Sans"; font-size: 14pt; so-language: hi-IN; font-weight: bold }
+		pre { direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: ru-RU }
+		pre.cjk { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: zh-CN }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt; so-language: hi-IN }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<table width="100%" cellpadding="2" cellspacing="2">
+	<tr>
+		<td valign="top" style="border: none; padding: 0cm"><h2 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm">
+			Глава 16 Серверное программное
+			обеспечение (Сетевой сервис шифрования)
+			- OPENSSL сервер</h2>
+			<p class="western"><span style="display: inline-block; border: none; padding: 0cm"><font size="5" style="font-size: 18pt">В
+			этой главе</span></font><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_1.html#1">Linux
+			OPENSSL сервер</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_1.html#2">Конфигурации</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_1.html#3">Команды</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_1.html#4">Организация
+			защиты Openssl</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_2.html#5">Linux
+			FreeS/WAN VPN</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_2.html#6">Настройка
+			RSA private keys secrets</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_3.html#7">Требования
+			по настройке сети для IPSec</span></span></font></a><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#0000aa"><span style="text-decoration: none"><a href="http://linux.yaroslavl.ru/docs/conf/security/sec_book/ch16_3.html#8">Тестирование
+			инсталляции</span></span></font></a></p>
+		</td>
+		<td valign="bottom" style="border: none; padding: 0cm"><p class="western">
+			<img src="openssl_html_b50bc6c2d30342a.jpg" name="Изображение1" align="bottom" width="210" height="163" border="0"/>
+</p>
+		</td>
+	</tr>
+</table>
+<h2 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; text-decoration: none"><a name="1"></a>
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font color="#0000aa">Linux
+OPENSSL сервер</span></font></font></h2>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Краткий
+обзор</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Большинство
+серверов подобных IMAP &amp; POP, Samba, OpenLDAP,
+FTP, Apache и других, которым необходима
+аутентификация пользователей перед
+разрешением использования сервиса, по
+умолчанию, передают имя пользователя
+и пароль в простом текстовом виде.
+Альтернативные механизмы шифрования
+подобные SSL гарантируют надежность и
+безопасность транзакций. С этой
+технологией, данные передаются через
+сеть в зашифрованном виде. Однажды
+установив OpenSSL на своем сервере, вы
+можете использовать его как стороннюю
+утилиту в других приложениях, для
+включения в них возможностей SSL.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Из
+описания OpenSSL:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Проект
+OpenSSL √ это совместная попытка разработать
+надежную, коммерчески независимую,
+полнофункциональную и распространяемую
+с открытыми кодами реализацию протоколов
+Secure Sockets Layer (SSL v2/v3) и Transport Layer Security (TLS v1)
+с полной криптографией. Проект управляется
+добровольцами всемирного сообщества,
+которые используют Интернет для общения,
+планирования и разработки инструментария
+OpenSSL и связанной с ним документацией.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2"><img src="openssl_html_f6eb7e68ba192e4e.jpg" name="Изображение2" align="bottom" width="477" height="251" border="0"/>
+<br/>
+<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">Преимущества
+криптографии</span></span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Основные
+преимущества использования технологий
+шифрования следующие:</font></font></p>
+<ul>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Конфиденциальность
+	данных</font></font></p>
+	<p class="western" align="justify" style="margin-right: 0.53cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Когда
+	сообщение зашифровано, входной открытый
+	текст трансформируется по алгоритму
+	в зашифрованный текст, который скрывает
+	смысл сообщения и может быть отправлен
+	через общедоступный механизм. В этот
+	процесс вовлекается секретный ключ,
+	который используется при шифровании,
+	а позже при расшифровании данных. Без
+	этого ключа, зашифрованные данные
+	становятся бессмысленными.</span></font></font></p>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Целостность
+	данных</font></font></p>
+	<p class="western" align="justify" style="margin-right: 0.53cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Криптографическая
+	контрольная сумма, называемая message
+	authentication code (MAC), может рассчитываться
+	на произвольном определенном пользователем
+	тексте для защиты целостности данных.
+	Результат (текст и MAC) отправляется
+	принимающей стороне, который может
+	проверить контрольный MAC присоединенный
+	к сообщению пересчитывая MAC для сообщения,
+	используя соответствующий секретный
+	ключ и проверяя, что полученный MAC
+	эквивалентен контрольному.</span></font></font></p>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Аутентификация</font></font></p>
+	<p class="western" align="justify" style="margin-right: 0.53cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Персональная
+	идентификация √ это другое применение
+	криптографии, где пользователь/отправитель
+	знает ключ, который может служить для
+	установления его/ее подлинности.</span></font></font></p>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Электронные
+	подписи</font></font></p>
+	<p class="western" align="justify" style="margin-right: 0.53cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Цифровые
+	подписи заверяет отправителя и
+	получателя, что сообщение подлинное и
+	что только владелец ключа мог создать
+	цифровую подпись.</span></font></font></p>
+</ul>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Патенты</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Несколько
+юридических проблем существует при
+использовании SSL технологии. Если вы
+планируете использовать OpenSSL для
+коммерческих целей, то необходимо
+получить у RSA лицензию на использование
+RSA библиотек.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Здесь
+приведено извлечение из файла README
+OpenSSL:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Разные
+компании владеют патентами на разные
+алгоритмы в разных местах мира. Вы сами
+отвечаете за то, что бы использование
+любых алгоритмов для вас было юридически
+законно, проверяя имеются ли какие-либо
+патенты у вас в стране. Этот файл включает
+некоторые патенты о которых мы точно
+или ⌠по слухам■ знаем. Это не точный
+список.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">RSA
+Data Security держит программный патент на
+алгоритмы RSA и RC5. Если принадлежащий им
+код используется в США (и Японии?), вы
+должны контактировать с RSA Data Security об
+условиях лицензии. Их
+веб-сервер:&nbsp;</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#0000aa"><span style="text-decoration: none"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><a href="http://www.rsa.com/" target="_blank">http://www.rsa.com/</span></span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">RC4
+√ это торговая марка RSA Data Security, так что
+его использование возможно только с
+разрешения RSA Data Security.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Алгоритм
+IDEA патентован Ascom в Австрии, Франции,
+Германии, Италии, Японии, Нидерландах,
+Испании, Швеции, Швейцарии, Соединенном
+Королевстве и США. С ними нужно войти в
+контакт если вы используете этот
+алгоритм; их веб-сервер:&nbsp;</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#0000aa"><span style="text-decoration: none"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><a href="http://www.ascom.ch/" target="_blank">http://www.ascom.ch/</span></span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">Эти
+инструкции предполагают.</span></b><br/>
+Unix-совместимые
+команды.<br/>
+Путь к исходным кодам
+⌠/var/tmp■ (возможны другие варианты).<br/>
+Инсталляция
+была проверена на Red Hat Linux 6.1 и 6.2.<br/>
+Все
+шаги инсталляции осуществляются
+суперпользователем ⌠root■.<br/>
+OpenSSL версии
+0.9.5a</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b><span style="font-variant: normal">Пакеты.</span></b></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Домашняя
+страница OpenSSL:&nbsp;</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#0000aa"><span style="text-decoration: none"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><a href="http://www.openssl.org/" target="_blank">http://www.openssl.org/</span></span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Вы
+должны скачать: openssl-0.9.5a.tar.gz</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">Тарболы.</span></b></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Хорошей
+идеей будет создать список файлов
+установленных в вашей системе до
+инсталляции Sendmail и после, в результате,
+с помощью утилиты diff вы сможете узнать
+какие файлы были установлены. Например,<br/>
+До
+инсталляции:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">find
+/* &gt; OpenSSL1</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">После
+инсталляции:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">find
+/* &gt; OpenSSL2</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Для
+получения списка установленных
+файлов:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">diff
+OpenSSL1 OpenSSL2 &gt; OpenSSL-Installed</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Раскройте
+тарбол:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+/]# cp openssl-version.tar.gz /var/tmp<br/>
+[root@deep /]# cd
+/var/tmp<br/>
+[root@deep tmp]# tar xzpf openssl-version.tar.gz</span></font></font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Компиляция
+и оптимизация.</font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Перейдите
+в новый Openssl каталог и введите следующие
+команды на вашем терминале:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Шаг
+1</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл c_rehash (vi +11 tools/c_rehash) и измените
+следующую строку:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font color="#008080"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">DIR=/usr/local/ssl</span></font></font><br/>
+Должен
+быть:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">DIR=/usr</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Изменение
+этой строки будет создавать и инсталлировать
+OpenSSL в ⌠/usr■.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Шаг
+2</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">По
+умолчанию, исходные файлы OpenSSL предполагают
+что Perl расположен в каталоге
+⌠/usr/local/bin/perl■. Мы должны модифицировать
+строку ⌠#!/usr/local/bin/perl■ во всех скриптах,
+которые зависят от perl, на месторасположение
+Perl в Red Hat Linux - ⌠/usr/bin■.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2"><span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">[root@deep
+openssl-0.9.5a]# perl util/perlpath.pl /usr/bin</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><span style="letter-spacing: normal">&nbsp;</span></font></span><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">(где
+находится ваша программа perl).</span></span></span></font></font></font></span><br/>
+<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">Шаг
+3</span></span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">OpenSSL
+должен знать где находится необходимые
+OpenSSL исходные библиотеки. Командой
+приведенной ниже, мы устанавливаем
+переменную окружения PATH в каталог по
+умолчанию, где мы разместили исходные
+файлы OpenSSL.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2"><span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">[root@deep
+openssl-0.9.5a]# export LD_LIBRARY_PATH=`pwd`</span></span></span></span></font></font></font></span><br/>
+<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">Шаг
+4</span></span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сейчас,
+мы должны сконфигурировать OpenSSL под
+нашу систему:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">CC=&quot;egcs&quot;
+\<br/>
+./Configure linux-elf -DSSL_FORBID_ENULL \<br/>
+--prefix=/usr
+\<br/>
+--openssldir=/etc/ssl</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Опция
+⌠-DSSL_FORBID_ENULL■ нужна, чтобы запретить
+нулевое шифрование из соображений
+безопасности.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Шаг
+5</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл Makefile.ssl (vi +50 Makefile.ssl) и внесите
+следующие изменения:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font color="#008080"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">CC=
+gcc</span></font></font><br/>
+Должен быть:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">CC=
+egcs</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл Makefile.ssl (vi +52 Makefile.ssl) и добавьте/измените
+следующие строки:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">CFLAG=
+-DTHREADS -D_REENTRANT -DSSL_FORBID_ENULL -DL_ENDIAN -DTERMIO -O9
+-funroll-loops -ffast-math -malign-double -mcpu=pentiumpro
+-march=pentiumpro -fomit-frame-pointer -fno-exceptions -Wall
+-DSHA1_ASM -DMD5_ASM -DRMD160_ASM</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл Makefile.ssl (vi +79 Makefile.ssl) и измените
+следующее значение для процессора
+Pentium Pro:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">PROCESSOR=
+686</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">ЗАМЕЧАНИЕ.
+Три последние модификации выполненные
+нами устанавливают оптимизационные
+флаги для компиляции OpenSSL на сервере.
+Последняя модификация (PROCESSOR=), если у
+вас Pentium, то измените на 586, Pentium Pro/II/III на
+686, a 486 на 486.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Шаг
+6</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл Makefile.ssl (vi +161 Makefile.ssl) и измените
+следующую строку:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font color="#008080"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">MANDIR=$(OPENSSLDIR)/man</span></font></font><br/>
+Должна
+быть:<br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font size="2" style="font-size: 10pt">MANDIR=/usr/man</span></font></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Этот
+шаг нужен для определения каталога,
+куда будут проинсталлированы страницы
+руководства (man pages) OpenSSL. В нашем случае
+это каталог ⌠/usr/man■.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font face="Verdana, Tahoma, sans-serif, Arial">Шаг
+7</span></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сейчас
+мы должны скомпилировать и инсталлировать
+OpenSSL на сервере:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+openssl-0.9.5a]# make -f Makefile<br/>
+[root@deep openssl-0.9.5a]#
+make test<br/>
+[root@deep openssl-0.9.5a]# make install<br/>
+[root@deep
+openssl-0.9.5a]# mv /etc/ssl/misc/* /usr/bin/<br/>
+[root@deep
+openssl-0.9.5a]# rm -rf /etc/ssl/misc/<br/>
+[root@deep
+openssl-0.9.5a]# rm -rf /etc/ssl/lib/<br/>
+[root@deep
+openssl-0.9.5a]# rm -f /usr/bin/CA.pl<br/>
+[root@deep
+openssl-0.9.5a]# rm -f /usr/bin/CA.sh<br/>
+[root@deep
+openssl-0.9.5a]# install -m 644 libRSAglue.a /usr/lib/<br/>
+[root@deep
+openssl-0.9.5a]# install -m 644 rsaref/rsaref.h
+/usr/include/openssl/<br/>
+[root@deep openssl-0.9.5a]# strip
+/usr/bin/openssl<br/>
+[root@deep openssl-0.9.5a]# mkdir -p
+/etc/ssl/crl</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команда
+&quot;make -f&quot; создаст библиотеки OpenSSL
+(libcrypto.a и libssl.a) и двоичный файл &quot;openssl&quot;.
+Библиотеки будут созданы в каталоге
+верхнего уровня, а двоичный файл в
+каталоге &quot;apps&quot;. После успешного
+создания, команда &quot;make test&quot; будет
+тестировать библиотеки и в заключении
+&quot;make install&quot; создаст инсталляционный
+каталог и инсталлирует OpenSSL.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команда
+⌠mv■ переместит все файлы из ⌠/etc/ssl/misc/■
+в каталог ⌠/usr/bin/■. Эти файлы двоичные
+и должны располагаться в ⌠/usr/bin/■, так
+как там находятся все исполняемые файлы
+вашей системы. Также размещение их в
+этом каталоге поместит их в поле действия
+переменной окружения PATH.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команда
+⌠rm■ удалит каталоги ⌠/etc/ssl/misc/■ и
+⌠/etc/ssl/lib/■ из вашей системы, так как они
+сейчас располагаются в другом месте.
+Также, мы удаляем файлы ⌠CA.pl■ и ⌠CA.sh■,
+представляющие из себя небольшие скрипты
+для создания ваших собственных CA
+сертификатов. Эти скрипты, связанные с
+⌠openssl ca■ командами, имеют несколько
+странные требования, и по умолчанию
+конфигурация OpenSSL не позволяет вам легко
+напрямую использовать ⌠openssl ca■.Так,
+что мы создадим скрипт ⌠sign.sh■ позже,
+чтобы заменить их.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Пакет
+bc-1.05a-4.i386.rpm или новее должен быть уже
+проинсталлирован на вашем Linux сервере
+или вы получите сообщение об ошибке во
+время тестирования библиотек OpenSSL.</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Очистка после
+работы</font></h3>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+/]# cd /var/tmp<br/>
+[root@deep tmp]# rm -rf openssl-version/
+openssl-version.tar.gz</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команды
+⌠rm■ будет удалять все файлы с исходными
+кодами, которые мы использовали при
+компиляции и инсталляции OpenSSL. Также
+будет удален сжатый архив OpenSSL из каталога
+⌠/var/tmp■.</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; text-decoration: none"><a name="2"></a>
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font color="#0000aa">Конфигурации.</span></font></font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Все
+программное обеспечение, описанное в
+книге, имеет определенный каталог и
+подкаталог в архиве ⌠floppy.tgz■, включающей
+все конфигурационные файлы для всех
+программ. Если вы скачаете этот файл,
+то вам не нужно будет вручную воспроизводить
+файлы из книги, чтобы создать свои файлы
+конфигурации. Скопируйте файл связанные
+с OpenSSL из архива, измените их под свои
+требования и поместите в нужное место
+так, как это описано ниже. Файл с
+конфигурациями вы можете скачать с
+адреса:&nbsp;</span></span></span></font></font></font></span><span style="display: inline-block; border: none; padding: 0cm"><span style="font-variant: normal"><font color="#0000aa"><span style="text-decoration: none"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><a href="http://www.openna.com/books/floppy.tgz">http://www.openna.com/books/floppy.tgz</span></span></span></span></font></font></span></font></span></a></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Для
+запуска OpenSSL сервера следующие файлы
+должны быть созданы или скопированы в
+нужный каталог:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Копируйте
+файл openssl.cnf в каталог ⌠/etc/ssl/■.<br/>
+Копируйте
+файл sign.sh в каталог ⌠/usr/bin/■.<br/>
+Вы можете
+взять эти файлы из нашего архива
+floppy.tgz.</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Конфигурация
+файла ⌠/etc/ssl/openssl.cnf■</font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Это
+общий конфигурационный файл для программы
+OpenSSL, где вы можете настроить срок
+хранения ваших ключей, имя организации,
+адрес и т.д. Эти параметры вы можете
+изменить в секциях [ CA_default ] и
+[req_distinguished_name].</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Редактируйте
+файл openssl.cnf (vi /etc/ssl/openssl.cnf):</font></font></p>
+<pre class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; background: #e0e0e0"><font size="2" style="font-size: 10pt"># Примерный конфигурационный файл OpenSSL.</font>
+<font size="2" style="font-size: 10pt"># Это главным образом используется для создания удостоверяющих запросов.</font>
+<font size="2" style="font-size: 10pt">#</font>
+<font size="2" style="font-size: 10pt">RANDFILE = $ENV::HOME/.rnd</font>
+<font size="2" style="font-size: 10pt">oid_file = $ENV::HOME/.oid</font>
+<font size="2" style="font-size: 10pt">oid_section = new_oids</font>
+<font size="2" style="font-size: 10pt"># Используйте этот конфигурационный файл с опцией &quot;-extfile&quot; из</font>
+<font size="2" style="font-size: 10pt"># утилиты &quot;openssl x509&quot;, имя секции содержит </font>
+<font size="2" style="font-size: 10pt"># расширения  X.509v3, чтобы использовать:</font>
+<font size="2" style="font-size: 10pt"># extensions =</font>
+<font size="2" style="font-size: 10pt"># (Альтернативно, используйте конфигурационный файл который имеет только</font>
+<font size="2" style="font-size: 10pt"># X.509v3 расширения в основной [= default] секции.)</font>
+<font size="2" style="font-size: 10pt">[ new_oids ]</font>
+<font size="2" style="font-size: 10pt"># Мы можем добавить новый OIDs здесь для использования в 'ca' и 'req'.</font>
+<font size="2" style="font-size: 10pt"># Добавьте простой OID подобно этому:</font>
+<font size="2" style="font-size: 10pt"># testoid1=1.2.3.4</font>
+<font size="2" style="font-size: 10pt"># Или используйте подстановку конфигурационного файла наподобие этого:</font>
+<font size="2" style="font-size: 10pt"># testoid2=${testoid1}.5.6</font>
+<font size="2" style="font-size: 10pt">####################################################################</font>
+<font size="2" style="font-size: 10pt">[ ca ]</font>
+<font size="2" style="font-size: 10pt">default_ca = CA_default # Это ca секция по умолчанию</font>
+<font size="2" style="font-size: 10pt">####################################################################</font>
+<font size="2" style="font-size: 10pt">[ CA_default ]</font>
+<font size="2" style="font-size: 10pt">dir = /etc/ssl # где все хранится</font>
+<font size="2" style="font-size: 10pt">certs = $dir/certs # где хранятся штатные сертификаты</font>
+<font size="2" style="font-size: 10pt">crl_dir = $dir/crl # где хранятся штатные crl</font>
+<font size="2" style="font-size: 10pt">database = $dir/ca.db.index # файл с базой данных индексов.</font>
+<font size="2" style="font-size: 10pt">new_certs_dir = $dir/ca.db.certs # место по умолчанию для новых сертификатов.</font>
+<font size="2" style="font-size: 10pt">certificate = $dir/certs/ca.crt # CA сертификат</font>
+<font size="2" style="font-size: 10pt">serial = $dir/ca.db.serial # текущий регистрационный номер</font>
+<font size="2" style="font-size: 10pt">crl = $dir/crl.pem # текущий CRL</font>
+<font size="2" style="font-size: 10pt">private_key = $dir/private/ca.key # приватный ключ</font>
+<font size="2" style="font-size: 10pt">RANDFILE = $dir/ca.db.rand # приватный файл со случайным числом</font>
+<font size="2" style="font-size: 10pt">x509_extensions = usr_cert # расширение добавляемое к сертификату</font>
+<font size="2" style="font-size: 10pt"># Расширение добавляемое к CRL. Замечание: Netscape communicator</font>
+<font size="2" style="font-size: 10pt"># основывается на V2 CRL так что по умолчанию это закомментировано,</font>
+<font size="2" style="font-size: 10pt"># чтобы оставить V1 CRL.</font>
+<font size="2" style="font-size: 10pt"># crl_extensions = crl_ext</font>
+<font size="2" style="font-size: 10pt">default_days = 365 # сколько времени удостоверяет</font>
+<font size="2" style="font-size: 10pt">default_crl_days = 30 # сколько времени до следующего CRL</font>
+<font size="2" style="font-size: 10pt">default_md = md5 # какой использовать md.</font>
+<font size="2" style="font-size: 10pt">Preserve = no # сохранять порядок пройденных DN</font>
+<font size="2" style="font-size: 10pt"># Несколько различных путей для определения, как подобные запросы должны</font>
+<font size="2" style="font-size: 10pt"># выглядеть для CA, список атрибутов должен быть такой же и  плюс некоторые</font>
+<font size="2" style="font-size: 10pt"># необязательные поля </font>
+<font size="2" style="font-size: 10pt">policy = policy_match</font>
+<font size="2" style="font-size: 10pt"># Для CA политик</font>
+<font size="2" style="font-size: 10pt">[ policy_match ]</font>
+<font size="2" style="font-size: 10pt">countryName = match</font>
+<font size="2" style="font-size: 10pt">stateOrProvinceName = match</font>
+<font size="2" style="font-size: 10pt">organizationName = match</font>
+<font size="2" style="font-size: 10pt">organizationalUnitName = optional</font>
+<font size="2" style="font-size: 10pt">commonName = supplied</font>
+<font size="2" style="font-size: 10pt">emailAddress = optional</font>
+<font size="2" style="font-size: 10pt"># Для 'чьих угодно' политик</font>
+<font size="2" style="font-size: 10pt"># В этом пункте вы должны перечислить все приемлемые типы объектов</font>
+<font size="2" style="font-size: 10pt">[ policy_anything ]</font>
+<font size="2" style="font-size: 10pt">countryName = optional</font>
+<font size="2" style="font-size: 10pt">stateOrProvinceName = optional</font>
+<font size="2" style="font-size: 10pt">localityName = optional</font>
+<font size="2" style="font-size: 10pt">organizationName = optional</font>
+<font size="2" style="font-size: 10pt">organizationalUnitName = optional</font>
+<font size="2" style="font-size: 10pt">commonName = supplied</font>
+<font size="2" style="font-size: 10pt">emailAddress = optional</font>
+<font size="2" style="font-size: 10pt">####################################################################</font>
+<font size="2" style="font-size: 10pt">[ req ]</font>
+<font size="2" style="font-size: 10pt">default_bits = 1024</font>
+<font size="2" style="font-size: 10pt">default_keyfile = privkey.pem</font>
+<font size="2" style="font-size: 10pt">distinguished_name = req_distinguished_name</font>
+<font size="2" style="font-size: 10pt">attributes = req_attributes</font>
+<font size="2" style="font-size: 10pt">x509_extensions = v3_ca # Расширение добавляемое к самоподписанным сертификатам</font>
+<font size="2" style="font-size: 10pt">[ req_distinguished_name ]</font>
+<font size="2" style="font-size: 10pt">countryName = Country Name (2-х буквенный код)</font>
+<font size="2" style="font-size: 10pt">countryName_default = CA</font>
+<font size="2" style="font-size: 10pt">countryName_min = 2</font>
+<font size="2" style="font-size: 10pt">countryName_max = 2</font>
+<font size="2" style="font-size: 10pt">stateOrProvinceName = State or Province Name (полное имя)</font>
+<font size="2" style="font-size: 10pt">stateOrProvinceName_default = Quebec</font>
+<font size="2" style="font-size: 10pt">localityName = Locality Name (например, город)</font>
+<font size="2" style="font-size: 10pt">localityName_default = Montreal</font>
+<font size="2" style="font-size: 10pt">0.organizationName = Organization Name (например, компания)</font>
+<font size="2" style="font-size: 10pt">0.organizationName_default = Open Network Architecture</font>
+<font size="2" style="font-size: 10pt"># мы можем сделать это, но обычно это не нужно :-)</font>
+<font size="2" style="font-size: 10pt">#1.organizationName = Second Organization Name (например, компания)</font>
+<font size="2" style="font-size: 10pt">#1.organizationName_default = World Wide Web Pty Ltd</font>
+<font size="2" style="font-size: 10pt">organizationalUnitName = Organizational Unit Name (например, подразделение)</font>
+<font size="2" style="font-size: 10pt">organizationalUnitName_default = Internet Department</font>
+<font size="2" style="font-size: 10pt">commonName = Common Name (например, ВАШЕ имя)</font>
+<font size="2" style="font-size: 10pt">commonName_default = www.openna.com</font>
+<font size="2" style="font-size: 10pt">commonName_max = 64</font>
+<font size="2" style="font-size: 10pt">emailAddress = Email Address</font>
+<font size="2" style="font-size: 10pt">emailAddress_default = admin@openna.com</font>
+<font size="2" style="font-size: 10pt">emailAddress_max = 40</font>
+<font size="2" style="font-size: 10pt"># SET-ex3 = SET extension number 3</font>
+<font size="2" style="font-size: 10pt">[ req_attributes ]</font>
+<font size="2" style="font-size: 10pt">challengePassword = A challenge password</font>
+<font size="2" style="font-size: 10pt">challengePassword_min = 4</font>
+<font size="2" style="font-size: 10pt">challengePassword_max = 20</font>
+<font size="2" style="font-size: 10pt">unstructuredName = An optional company name</font>
+<font size="2" style="font-size: 10pt">[ usr_cert ]</font>
+<font size="2" style="font-size: 10pt"># Эти расширения добавляются, когда 'ca' подписанный запрос.</font>
+<font size="2" style="font-size: 10pt"># Это идет против рекомендаций PKIX, но некоторые CA делают это и</font>
+<font size="2" style="font-size: 10pt"># некоторые программы запрашивают это, чтобы уклониться от</font>
+<font size="2" style="font-size: 10pt"># интерпретирования сертификатов конечных пользователей как CA.</font>
+<font size="2" style="font-size: 10pt">basicConstraints=CA:FALSE</font>
+<font size="2" style="font-size: 10pt"># Здесь приведены некоторые примеры использования nsCertType. Если это</font>
+<font size="2" style="font-size: 10pt"># пропущено, то сертификат может использоваться для каких-нибудь пропусков</font>
+<font size="2" style="font-size: 10pt"># подписаний объектов.</font>
+<font size="2" style="font-size: 10pt"># Это OK для сервера SSL.</font>
+<font size="2" style="font-size: 10pt"># nsCertType = server</font>
+<font size="2" style="font-size: 10pt"># Это используется для объекта, подписывающего сертификат.</font>
+<font size="2" style="font-size: 10pt"># nsCertType = objsign</font>
+<font size="2" style="font-size: 10pt"># Это обычно используется для нормальных клиентов</font>
+<font size="2" style="font-size: 10pt"># nsCertType = client, email</font>
+<font size="2" style="font-size: 10pt"># и для всего, включая объекты подписания:</font>
+<font size="2" style="font-size: 10pt"># nsCertType = client, email, objsign</font>
+<font size="2" style="font-size: 10pt"># Это типично в keyUsage для клиентских сертификатов.</font>
+<font size="2" style="font-size: 10pt"># keyUsage = nonRepudiation, digitalSignature, keyEncipherment</font>
+<font size="2" style="font-size: 10pt"># Это будет выводится в списковом окне комментариев Netscape.</font>
+<font size="2" style="font-size: 10pt">nsComment = &quot;OpenSSL Generated Certificate&quot;</font>
+<font size="2" style="font-size: 10pt"># PKIX рекомендации, безопасно если включены  все сертификаты.</font>
+<font size="2" style="font-size: 10pt">subjectKeyIdentifier=hash</font>
+<font size="2" style="font-size: 10pt">authorityKeyIdentifier=keyid,issuer:always</font>
+<font size="2" style="font-size: 10pt"># Это для subjectAltName и issuerAltname.</font>
+<font size="2" style="font-size: 10pt"># Импортирование почтового адрес.</font>
+<font size="2" style="font-size: 10pt"># subjectAltName=email:copy</font>
+<font size="2" style="font-size: 10pt"># Copy subject details</font>
+<font size="2" style="font-size: 10pt"># issuerAltName=issuer:copy</font>
+<font size="2" style="font-size: 10pt">#nsCaRevocationUrl = http://www.domain.dom/ca-crl.pem</font>
+<font size="2" style="font-size: 10pt">#nsBaseUrl</font>
+<font size="2" style="font-size: 10pt">#nsRevocationUrl</font>
+<font size="2" style="font-size: 10pt">#nsRenewalUrl</font>
+<font size="2" style="font-size: 10pt">#nsCaPolicyUrl</font>
+<font size="2" style="font-size: 10pt">#nsSslServerName</font>
+<font size="2" style="font-size: 10pt">[ v3_ca]</font>
+<font size="2" style="font-size: 10pt"># Расширение для типичного CA</font>
+<font size="2" style="font-size: 10pt"># Рекомендация PKIX.</font>
+<font size="2" style="font-size: 10pt">subjectKeyIdentifier=hash</font>
+<font size="2" style="font-size: 10pt">authorityKeyIdentifier=keyid:always,issuer:always</font>
+<font size="2" style="font-size: 10pt"># Это то, что рекомендует PKIX, но некоторые  ⌠неправильные■ программы</font>
+<font size="2" style="font-size: 10pt"># засоряют критическими расширениями</font>
+<font size="2" style="font-size: 10pt">#basicConstraints = critical,CA:true</font>
+<font size="2" style="font-size: 10pt">#Так мы делаем это вместо вышеприведенного.</font>
+<font size="2" style="font-size: 10pt">basicConstraints = CA:true</font>
+<font size="2" style="font-size: 10pt"># Ключевое использование: это типично для CA сертификатов. Однако, так как</font>
+<font size="2" style="font-size: 10pt"># это предотвратит использование для проверки самоподписанных</font>
+<font size="2" style="font-size: 10pt"># сертификатов, лучше по умолчанию это не учитывать.</font>
+<font size="2" style="font-size: 10pt"># keyUsage = cRLSign, keyCertSign</font>
+<font size="2" style="font-size: 10pt"># Некоторые могли бы хотеть также </font>
+<font size="2" style="font-size: 10pt"># nsCertType = sslCA, emailCA</font>
+<font size="2" style="font-size: 10pt"># Включение почтового адреса в subject alt name: другая рекомендация PKIX</font>
+<font size="2" style="font-size: 10pt"># subjectAltName=email:copy</font>
+<font size="2" style="font-size: 10pt"># Копирование деталей запрашивающей стороны</font>
+<font size="2" style="font-size: 10pt"># issuerAltName=issuer:copy</font>
+<font size="2" style="font-size: 10pt"># RAW DER hex encoding of an extension: beware experts only!</font>
+<font size="2" style="font-size: 10pt"># 1.2.3.5=RAW:02:03</font>
+<font size="2" style="font-size: 10pt"># You can even override a supported extension:</font>
+<font size="2" style="font-size: 10pt"># basicConstraints= critical, RAW:30:03:01:01:FF</font>
+<font size="2" style="font-size: 10pt">[ crl_ext ]</font>
+<font size="2" style="font-size: 10pt"># CRL extensions.</font>
+<font size="2" style="font-size: 10pt"># Only issuerAltName and authorityKeyIdentifier make any sense in a CRL.</font>
+<font size="2" style="font-size: 10pt"># issuerAltName=issuer:copy</font>
+<font size="2" style="font-size: 10pt">authorityKeyIdentifier=keyid:always,issuer:always</font></pre><p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ</span></b>.
+Файл ⌠openssl.cnf■ уже будет существовать
+на вашей системе, когда вы скомпилируете
+и проинсталлируете программу OpenSSL, и
+может быть найден в каталоге ⌠/etc/ssl/■.
+Вам не нужно менять все опции установленные
+по умолчанию в этом файле; обычно,
+достаточно внести изменения в секции
+[CA_default] и [req_distinguished_name].</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Создание
+программы ⌠/usr/bin/sign.sh■</font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команда
+⌠openssl ca■ имеет некоторые странные
+требования и конфигурация OpenSSL по
+умолчанию не позволяет легко использовать
+ее напрямую. Поэтому мы будем создавать
+программу ⌠sign.sh■, заменяющую собой
+⌠openssl ca■.<br/>
+Создайте программный файл
+sign.sh (touch /usr/bin/sign.sh) и добавьте в него
+следующие строки:</font></font></p>
+<pre class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; background: #e0e0e0"><font size="2" style="font-size: 10pt">#!/bin/sh</font>
+<font size="2" style="font-size: 10pt">##</font>
+<font size="2" style="font-size: 10pt">## sign.sh -- Sign a SSL Certificate Request (CSR)</font>
+<font size="2" style="font-size: 10pt">## Copyright (c) 1998-1999 Ralf S. Engelschall, All Rights Reserved.</font>
+<font size="2" style="font-size: 10pt">##</font>
+<font size="2" style="font-size: 10pt"># argument line handling</font>
+<font size="2" style="font-size: 10pt">CSR=$1</font>
+<font size="2" style="font-size: 10pt">if [ $# -ne 1 ]; then</font>
+<font size="2" style="font-size: 10pt">echo &quot;Usage: sign.sign &lt;whatever&gt;.csr&quot;; exit 1</font>
+<font size="2" style="font-size: 10pt">fi</font>
+<font size="2" style="font-size: 10pt">if [ ! -f $CSR ]; then</font>
+<font size="2" style="font-size: 10pt">echo &quot;CSR not found: $CSR&quot;; exit 1</font>
+<font size="2" style="font-size: 10pt">fi</font>
+<font size="2" style="font-size: 10pt">case $CSR in</font>
+<font size="2" style="font-size: 10pt">*.csr ) CERT=&quot;`echo $CSR | sed -e 's/\.csr/.crt/'`&quot; ;;</font>
+<font size="2" style="font-size: 10pt">* ) CERT=&quot;$CSR.crt&quot; ;;</font>
+<font size="2" style="font-size: 10pt">esac</font>
+<font size="2" style="font-size: 10pt"># make sure environment exists</font>
+<font size="2" style="font-size: 10pt">if [ ! -d ca.db.certs ]; then</font>
+<font size="2" style="font-size: 10pt">mkdir ca.db.certs</font>
+<font size="2" style="font-size: 10pt">fi</font>
+<font size="2" style="font-size: 10pt">if [ ! -f ca.db.serial ]; then</font>
+<font size="2" style="font-size: 10pt">echo '01' &gt;ca.db.serial</font>
+<font size="2" style="font-size: 10pt">fi</font>
+<font size="2" style="font-size: 10pt">if [ ! -f ca.db.index ]; then</font>
+<font size="2" style="font-size: 10pt">cp /dev/null ca.db.index</font>
+<font size="2" style="font-size: 10pt">fi</font>
+<font size="2" style="font-size: 10pt"># create an own SSLeay config</font>
+<font size="2" style="font-size: 10pt">cat &gt;ca.config &lt;&lt;EOT</font>
+<font size="2" style="font-size: 10pt">[ ca ]</font>
+<font size="2" style="font-size: 10pt">default_ca = CA_own</font>
+<font size="2" style="font-size: 10pt">[ CA_own ]</font>
+<font size="2" style="font-size: 10pt">dir = /etc/ssl</font>
+<font size="2" style="font-size: 10pt">certs = /etc/ssl/certs</font>
+<font size="2" style="font-size: 10pt">new_certs_dir = /etc/ssl/ca.db.certs</font>
+<font size="2" style="font-size: 10pt">database = /etc/ssl/ca.db.index</font>
+<font size="2" style="font-size: 10pt">serial = /etc/ssl/ca.db.serial</font>
+<font size="2" style="font-size: 10pt">RANDFILE = /etc/ssl/ca.db.rand</font>
+<font size="2" style="font-size: 10pt">certificate = /etc/ssl/certs/ca.crt</font>
+<font size="2" style="font-size: 10pt">private_key = /etc/ssl/private/ca.key</font>
+<font size="2" style="font-size: 10pt">default_days = 365</font>
+<font size="2" style="font-size: 10pt">default_crl_days = 30</font>
+<font size="2" style="font-size: 10pt">default_md = md5</font>
+<font size="2" style="font-size: 10pt">preserve = no</font>
+<font size="2" style="font-size: 10pt">policy = policy_anything</font>
+<font size="2" style="font-size: 10pt">[ policy_anything ]</font>
+<font size="2" style="font-size: 10pt">countryName = optional</font>
+<font size="2" style="font-size: 10pt">stateOrProvinceName = optional</font>
+<font size="2" style="font-size: 10pt">localityName = optional</font>
+<font size="2" style="font-size: 10pt">organizationName = optional</font>
+<font size="2" style="font-size: 10pt">organizationalUnitName = optional</font>
+<font size="2" style="font-size: 10pt">commonName = supplied</font>
+<font size="2" style="font-size: 10pt">emailAddress = optional</font>
+<font size="2" style="font-size: 10pt">EOT</font>
+<font size="2" style="font-size: 10pt"># sign the certificate</font>
+<font size="2" style="font-size: 10pt">echo &quot;CA signing: $CSR -&gt; $CERT:&quot;</font>
+<font size="2" style="font-size: 10pt">openssl ca -config ca.config -out $CERT -infiles $CSR</font>
+<font size="2" style="font-size: 10pt">echo &quot;CA verifying: $CERT &lt;-&gt; CA cert&quot;</font>
+<font size="2" style="font-size: 10pt">openssl verify -CAfile /etc/ssl/certs/ca.crt $CERT</font>
+<font size="2" style="font-size: 10pt"># cleanup after SSLeay</font>
+<font size="2" style="font-size: 10pt">rm -f ca.config</font>
+<font size="2" style="font-size: 10pt">rm -f ca.db.serial.old</font>
+<font size="2" style="font-size: 10pt">rm -f ca.db.index.old</font>
+<font size="2" style="font-size: 10pt"># die gracefully</font>
+<font size="2" style="font-size: 10pt">exit 0</font></pre><p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сейчас,
+сделаем эту программу исполняемой и
+изменим права доступа принятые по
+умолчанию:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+/]# chmod 755 /usr/bin/sign.sh</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Вы
+можете найти прогамму ⌠sign.sh■ в
+дистрибутиве mod_ssl в каталоге
+⌠mod_ssl-version/pkg.contrib/■ или в нашем архиве
+floppy.tgz. Также заметим, что секция [CA_own]
+должна быть изменена в соответствии с
+вашим окружением и не забудьте изменит
+строку ■openssl verify √Cafile /etc/ssl/certs/ca.crt
+$CERT■.</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; text-decoration: none"><a name="3"></a>
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font color="#0000aa">Команды.</span></font></font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Команды
+описанные ниже мы будем часто использовать,
+но на самом деле их много больше, и вы
+должны изучить страницы руководства
+(man) и документацию, чтобы получить более
+подробную информацию.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Для
+примера, мы покажем вам как создавать
+сертификат для вашего Веб сервера Apache
+и/или ваш личный CA (Certifying Authority (подтверждение
+полномочий)) для подписания ваших
+⌠Certificate Signing Request■.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ</span></b>.
+Все команды перечисленные ниже выполняются
+в каталоге ⌠/etc/ssl/■.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font size="4" style="font-size: 14pt"><font face="Verdana, Tahoma, sans-serif, Arial">1.1</span></font>&nbsp;Создание
+приватного ключа RSA защищенного парольной
+фразой для вашего сервера Apache.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# openssl genrsa -des3 -out server.key 1024<br/>
+Generating RSA
+private key, 1024 bit long
+modulus<br/>
+......................+++++<br/>
+.....+++++<br/>
+e is
+65537 (0x10001)<br/>
+Enter PEM pass phrase:<br/>
+Verifying password -
+Enter PEM pass phrase:</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Пожалуйста,
+создайте резервную копию файла server.key
+и запомните парольную фразу.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font size="4" style="font-size: 14pt"><font face="Verdana, Tahoma, sans-serif, Arial">1.2</span></font>&nbsp;Создание
+Certificate Signing Request (CSR) с серверным приватным
+ключом RSA.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# openssl req -new -key server.key -out server.csr<br/>
+Using
+configuration from /etc/ssl/openssl.cnf<br/>
+Enter PEM pass
+phrase:<br/>
+You are about to be asked to enter information that will
+be incorporated<br/>
+into your certificate request.<br/>
+What you are
+about to enter is what is called a Distinguished Name or a DN.<br/>
+There
+are quite a few fields but you can leave some blank<br/>
+For some
+fields there will be a default value,<br/>
+If you enter '.', the
+field will be left blank.<br/>
+-----<br/>
+Country Name (2 letter
+code) [CA]:<br/>
+State or Province Name (full name)
+[Quebec]:<br/>
+Locality Name (eg, city) [Montreal]:<br/>
+Organization
+Name (eg, company) [Open Network Architecture]:<br/>
+Organizational
+Unit Name (eg, section) [Internet Department]:<br/>
+Common Name (eg,
+YOUR name) [www.openna.com]:<br/>
+Email Address
+[admin@openna.com]:<br/>
+Please enter the following 'extra'
+attributes<br/>
+to be sent with your certificate request<br/>
+A
+challenge password []:.<br/>
+An optional company name []:.</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Убедитесь,
+что вы ввели FQDN (Полностью определенное
+доменное имя (⌠Fully Qualified Domain Name■)) сервера,
+когда OpenSSL спросил вас о ⌠CommonName■
+(например, когда вы создаете CSR для Веб
+сервера который будет позже доступен
+через https://www.mydomain.com/, введите
+www.mydomain.com).</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">После
+создания вашего Certificate Signing Request (CSR), у
+вас возникают два варианта:</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Первый,
+это послать этот сертификат в коммерческие
+структуры Certifying Authority (CA), подобные
+Verisign или Thawte, для подписания. Вы обычно
+отправляете CSR через Веб форму, оплачиваете
+подписание, ждете Сертификата и
+запоминаете его в файле ⌠server.crt■.
+Результатом всех этих операций будет
+настоящий сертификат, который может
+быть использован с Apache.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Второй,
+вы можете использовать ваш собственный
+CA и затем самостоятельно подписывать
+CSR этим CA. Это решение экономично, и
+позволяет организации поддерживать
+собственный CA сервер и создавать так
+много сертификатов, как нужно для
+внутреннего использования без выплаты
+каких-нибудь денег коммерческим CA.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">К
+сожалению использование ваших собственных
+CA для создания сертификатов создает
+ряд проблем в электронной коммерции,
+потому что заказчики должны иметь
+некоторое доверие вашей организации
+через использования признанных
+коммерческих CA. Смотрите ниже информацию
+о том, как самостоятельно подписать CSR
+собственным CA.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font size="4" style="font-size: 14pt"><font face="Verdana, Tahoma, sans-serif, Arial">1.3</span></font>&nbsp;Создание
+вашего приватного ключа RSA (CA).</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# openssl genrsa -des3 -out ca.key 1024<br/>
+Generating RSA
+private key, 1024 bit long
+modulus<br/>
+...........................+++++<br/>
+............................................+++++<br/>
+e
+is 65537 (0x10001)<br/>
+Enter PEM pass phrase:<br/>
+Verifying
+password - Enter PEM pass phrase:</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сделайте
+резервную копию этого файла ca.key и
+запомните парольную фразу (pass-phrase),
+которую вы ввели.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font size="4" style="font-size: 14pt"><font face="Verdana, Tahoma, sans-serif, Arial">1.4</span></font>&nbsp;Создание
+самоподписанного (CA) сертификата
+(структура x509) с ключом RSA из CA.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# openssl req -new -x509 -days 365 -key ca.key -out ca.crt<br/>
+Using
+configuration from /etc/ssl/openssl.cnf<br/>
+Enter PEM pass
+phrase:<br/>
+You are about to be asked to enter information that will
+be incorporated<br/>
+into your certificate request.<br/>
+What you are
+about to enter is what is called a Distinguished Name or a DN.<br/>
+There
+are quite a few fields but you can leave some blank<br/>
+For some
+fields there will be a default value,<br/>
+If you enter '.', the
+field will be left blank.<br/>
+-----<br/>
+Country Name (2 letter
+code) [CA]:<br/>
+State or Province Name (full name)
+[Quebec]:<br/>
+Locality Name (eg, city) [Montreal]:<br/>
+Organization
+Name (eg, company) [Open Network Architecture]:<br/>
+Organizational
+Unit Name (eg, section) [Internet Department]:CA Marketing<br/>
+Common
+Name (eg, YOUR name) [www.openna.com]:<br/>
+Email Address
+[admin@openna.com]:<br/>
+[root@deep ssl]# mv server.key
+private/<br/>
+[root@deep ssl]# mv ca.key private/<br/>
+[root@deep
+ssl]# mv ca.crt certs/</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Команда
+⌠req■ создает самоподписанный сертификат,
+когда используется переключатель -x509.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><font size="4" style="font-size: 14pt"><font face="Verdana, Tahoma, sans-serif, Arial">1.5</span></font>&nbsp;Подписание
+запросов сертификата. (Мы создаем и
+используем наш личный Certificate Authority (CA))</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Приготовьте
+скрипт для подписания (он нужен, потому
+что команда ⌠openssl ca'' имеет некоторые
+странные требования и по умолчанию
+конфигурация OpenSSL не позволяет ее легко
+использовать напрямую). Скрипт с именем
+sign.sh находится в нашем архиве flopy.tgz в
+каталоге openssl. Используйте этот скрипт
+для подписания.</font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сейчас
+вы можете использовать CA для подписания
+CSR сервера, чтобы создать реальный
+сертификат для внутреннего использования
+в Веб сервере Apache (предполагаем, что вы
+уже имеете файл server.csr под рукой):</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# /usr/bin/sign.sh server.csr<br/>
+CA signing: server.csr -&gt;
+server.crt:<br/>
+Using configuration from ca.config<br/>
+Enter PEM
+pass phrase:<br/>
+Check that the request matches the
+signature<br/>
+Signature ok<br/>
+The Subjects Distinguished Name is
+as follows<br/>
+countryName :PRINTABLE:'CA'<br/>
+stateOrProvinceName
+:PRINTABLE:'Quebec'<br/>
+localityName
+:PRINTABLE:'Montreal'<br/>
+organizationName :PRINTABLE:'Open Network
+Architecture'<br/>
+organizationalUnitName :PRINTABLE:'Internet
+Department'<br/>
+commonName :PRINTABLE:'www.openna.com'<br/>
+emailAddress
+:IA5STRING:'admin@openna.com'<br/>
+Certificate is to be certified
+until Dec 1 14:59:29 2000 GMT (365 days)<br/>
+Sign the certificate?
+[y/n]:y<br/>
+1 out of 1 certificate requests certified, commit?
+[y/n]y<br/>
+Write out database with 1 new entries<br/>
+Data Base
+Updated<br/>
+CA verifying: server.crt &lt;-&gt; CA cert<br/>
+server.crt:
+OK<br/>
+This signs the CSR and results in a server.crt
+file.<br/>
+[root@deep ssl]# mv server.crt certs/</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сейчас
+мы имеем два файла: server.key и server.crt. Они
+могут быть использованы в конфигурационном
+файле httpd.conf Веб-сервера Apache следующим
+образом:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2"><span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">SSLCertificateFile
+/etc/ssl/certs/server.crt</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><span style="letter-spacing: normal">&nbsp;</span></font></span><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">(публичный
+ключ веб сервера)</span></span></span></font></font></font></span><br/>
+<span style="display: inline-block; border: none; padding: 0cm"><font color="#008080"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="font-variant: normal">SSLCertificateKeyFile
+/etc/ssl/private/server.key</span></span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#000000"><span style="letter-spacing: normal">&nbsp;</span></font></span><span style="font-variant: normal"><font color="#000000"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">(приватный
+ключ веб сервера)</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Файл
+server.csr больше не нужен.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+ssl]# rm -f server.csr</span></font></font></font></p>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt"><b><font face="Verdana, Tahoma, sans-serif, Arial">ЗАМЕЧАНИЕ.</span></b>&nbsp;Если
+вы получили сообщение об ошибке во время
+подписания сертификата, это потому что
+вы ввели неправильно FQDN (⌠Fully Qualified
+Domain Name■) для сервера, когда OpenSSL запросил
+у вас ⌠CommonName■; ⌠CommonName■ должен
+представлять из себя что-то подобное
+⌠my.domain.com■ и не ⌠domain.com■. Также, так как
+вы создавали сертификат и CA сертификат,
+важно, чтобы хотя бы небольшая часть
+информации представленной в них
+отличалась, или вы можете столкнуться
+с проблемами во время подписания
+удостоверяющих запросов.</font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0cm; margin-bottom: 0cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; text-decoration: none"><a name="4"></a>
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font color="#0000aa">Организация
+защиты OpenSSL</span></font></font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Сделайте
+ваши ключи ⌠Для чтения и записи■ только
+для пользователя root. Это важно, потому
+что никому не нужно работать к ним. Для
+этого выполните следующие команды.</font></font></p>
+<p class="western" style="margin-bottom: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<span style="display: inline-block; border: none; padding: 0cm"><font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt"><font color="#008080">[root@deep
+/]# chmod 600 /etc/ssl/certs/ca.crt<br/>
+[root@deep /]# chmod 600
+/etc/ssl/certs/server.crt<br/>
+[root@deep /]# chmod 600
+/etc/ssl/private/ca.key<br/>
+[root@deep /]# chmod 600
+/etc/ssl/private/server.key</span></font></font></font></p>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Некоторые
+варианты использования OpenSSL</font></h3>
+<p class="western" align="justify" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">OpenSSL
+может использоваться для:</font></font></p>
+<ol>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Создания
+	вашего сертификационного сервера.</font></font></p>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Обеспечения
+	конфиденциальности данных, целостности,
+	аутентификации и электронных подписей
+	при передачи для пользователей.</font></font></p>
+	<li><p class="western" style="margin-right: 0.53cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+	<font face="Verdana, Tahoma, sans-serif, Arial"><font size="2" style="font-size: 10pt">Безопасность
+	электронных коммерческих транзакций.</font></font></p>
+</ol>
+<h3 class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; margin-top: 0.26cm; margin-bottom: 0.48cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2">
+<font face="Verdana, Tahoma, sans-serif, Arial">Инсталлированные
+файлы</font></h3>
+<pre class="western" style="margin-left: 0.79cm; margin-right: 0.26cm; border: none; padding: 0cm; font-variant: normal; letter-spacing: normal; font-style: normal; font-weight: normal; orphans: 2; widows: 2; background: #e0e0e0"><span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /etc/ssl</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /etc/ssl/crl</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /etc/ssl/certs</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /etc/ssl/private</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /etc/ssl/openssl.cnf</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/openssl</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/c_rehash</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/sign.sh</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/verify.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/version.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/x509.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_CTX_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_CTX_start.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_add.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_add_word.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_bn2bin.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/c_hash</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/c_info</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/c_issuer</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/c_name</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/bin/der_chop</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/e_os.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/e_os2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/crypto.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/tmdiff.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/opensslv.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/opensslconf.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ebcdic.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/md2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/md5.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/sha.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/mdc2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/hmac.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ripemd.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/des.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rc2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rc4.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rc5.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/idea.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/blowfish.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/cast.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/bn.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rsa.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/dsa.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/dh.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/buffer.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/bio.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/stack.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/safestack.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/lhash.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rand.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/err.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/objects.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/evp.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/asn1.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/asn1_mac.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/pem.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/pem2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/x509.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/x509_vfy.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/x509v3.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/conf.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/txt_db.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/pkcs7.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/pkcs12.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/comp.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ssl.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ssl2.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ssl3.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/ssl23.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/tls1.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/include/openssl/rsaref.h</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/lib/libcrypto.a</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/lib/libssl.a</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/lib/libRSAglue.a</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/CA.pl.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/asn1parse.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_cmp.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_copy.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_generate_prime.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_mod_inverse.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_mod_mul_montgomery.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_mod_mul_reciprocal.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_num_bytes.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_rand.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_set_bit.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/BN_zero.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/CRYPTO_set_ex_data.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_generate_key.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_generate_parameters.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_get_ex_new_index.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_set_method.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DH_size.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_SIG_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_do_sign.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_dup_DH.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_generate_key.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_generate_parameters.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_get_ex_new_index.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_set_method.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_sign.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/DSA_size.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_GET_LIB.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_clear_error.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_error_string.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_get_error.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_load_crypto_strings.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_load_strings.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_print_errors.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_put_error.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ERR_remove_state.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/EVP_DigestInit.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/EVP_EncryptInit.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/OPENSSL_VERSION_NUMBER.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/OpenSSL_add_all_algorithms.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_add.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_bytes.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_cleanup.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_egd.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_load_file.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RAND_set_rand_method.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_blinding_on.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_check_key.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_generate_key.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_get_ex_new_index.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_new.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_padding_add_PKCS1_type_1.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_print.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_private_encrypt.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_public_encrypt.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_set_method.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_sign.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_sign_ASN1_OCTET_STRING.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/RSA_size.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/blowfish.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/bn.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/ca.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/ciphers.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/crl.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/crl2pkcs7.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/dgst.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/dhparam.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/dsa.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/dsaparam.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/enc.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/gendsa.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/genrsa.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/nseq.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/openssl.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/pkcs12.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/pkcs7.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/pkcs8.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/req.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/rsa.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/s_client.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/s_server.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/sess_id.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/smime.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/speed.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man1/spkac.1</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/bn_internal.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/buffer.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/crypto.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/d2i_DHparams.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/d2i_RSAPublicKey.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/dh.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/dsa.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/err.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/hmac.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/lh_stats.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/lhash.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/md5.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/mdc2.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/rand.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/rc4.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ripemd.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/rsa.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/sha.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/threads.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/SSL_get_error.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man3/ssl.3</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man5/config.5</span></font>
+<span style="display: inline-block; border: none; padding: 0cm"><font size="2" style="font-size: 10pt">&gt; /usr/man/man7/des_modes.7</span></font></pre><p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+</body>
+</html>

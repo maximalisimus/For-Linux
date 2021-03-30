@@ -73,3 +73,52 @@ emailAddress           = "maximalisimus127@gmail.com"  # CN/emailAddress=
 subjectAltName  = DNS:warden.vps.com # multidomain certificate
 
 
+
+
+
+
+
+
+
+
+# OpenSSL configuration to generate a new key with signing requst for a x509v3 
+# multidomain certificate
+#
+# openssl req -config bla.cnf -new | tee csr.pem
+# or
+# openssl req -config bla.cnf -new -out csr.pem
+[ req ]
+default_bits       = 4096
+default_md         = sha512
+default_keyfile    = key.pem
+prompt             = no
+encrypt_key        = no
+
+# base request
+distinguished_name = req_distinguished_name
+
+# extensions
+req_extensions     = v3_req
+
+# distinguished_name
+[ req_distinguished_name ]
+countryName            = "DE"                     # C=
+stateOrProvinceName    = "Hessen"                 # ST=
+localityName           = "Keller"                 # L=
+postalCode             = "424242"                 # L/postalcode=
+streetAddress          = "Crater 1621"            # L/street=
+organizationName       = "apfelboymschule"        # O=
+organizationalUnitName = "IT Department"          # OU=
+commonName             = "example.com"            # CN=
+emailAddress           = "webmaster@example.com"  # CN/emailAddress=
+
+# req_extensions
+[ v3_req ]
+# The subject alternative name extension allows various literal values to be 
+# included in the configuration file
+# http://www.openssl.org/docs/apps/x509v3_config.html
+subjectAltName  = DNS:www.example.com,DNS:www2.example.com # multidomain certificate
+
+# vim:ft=config
+
+
