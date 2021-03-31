@@ -122,3 +122,94 @@ subjectAltName  = DNS:www.example.com,DNS:www2.example.com # multidomain certifi
 # vim:ft=config
 
 
+
+
+
+
+sudo a2enmod headers
+sudo a2enmod ssl
+sudo a2enmod proxy
+sudo a2enmod proxy_http
+sudo a2enmod proxy_balancer
+sudo a2enmod lbmethod_byrequests
+
+sudo systemctl restart apache2
+
+<VirtualHost *:80>
+ ProxyPreserveHost On
+
+ ProxyPass / http://127.0.0.1:8080/
+ ProxyPassReverse / http://127.0.0.1:8080/
+</VirtualHost>
+
+sudo nano /etc/apache2/sites-enabled/000-default.conf
+
+<VirtualHost *:443>
+    
+    SSLEngine on
+    SSLCertificateFile /etc/ssl/domain.crt
+    SSLCertificateKeyFile /etc/ssl/domain.key
+    SSLCACertificateFile /etc/ssl/rootCA.crt
+    SSLCertificateChainFile /etc/ssl/certs/IntermediateCA.crt
+    
+    ProxyPreserveHost On
+    ProxyPass / http://localhost:8005/
+    ProxyPassReverse / http://localhost:8005/
+</VirtualHost>
+
+/usr/local/share/ca-certificates/
+sudo update-ca-certificates
+sudo update-ca-trust
+
+
+
+
+nginx:
+ssl_protocols       TLSv1 TLSv1.1 TLSv1.2;
+ssl_ciphers         AES128-SHA:AES256-SHA:RC4-SHA:DES-CBC3-SHA:RC4-MD5;
+ssl_certificate     /usr/local/nginx/conf/cert.pem;
+ssl_certificate_key /usr/local/nginx/conf/cert.key;
+
+
+listen 443;
+ssl on;
+ssl_certificate /etc/ssl/cert/example.crt;
+ssl_certificate_key /etc/ssl/private/example.key;
+ssl_protocols SSLv3 TLSv1;
+ssl_ciphers ALL:!aNULL:!ADH:!eNULL:!LOW:!EXP:RC4+RSA:+HIGH:+MEDIUM;
+server_name example.com www.example.com;
+
+
+
+server {
+    listen       443;
+    server_name  _;
+
+    ssl                  on;
+    ssl_certificate      cert.pem;
+    ssl_certificate_key  cert.key;
+
+    ssl_session_timeout  5m;
+
+    ssl_protocols  SSLv2 SSLv3 TLSv1;
+    ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP;
+    ssl_prefer_server_ciphers   on;
+
+    ssl_client_certificate ca.pem;
+    ssl_verify_client on;
+    ssl_verify_depth 1;
+
+    location / {
+        root   html;
+        index  index.html index.htm;
+    }
+}
+
+cp intermediate.crt ca.pem
+cat root.crt >> ca.pem
+
+openssl verify -CAfile /etc/nginx/ca.pem certs/client.crt 
+certs/client.crt: OK
+
+
+
