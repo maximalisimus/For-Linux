@@ -143,6 +143,32 @@ services:
 
 
 
+
+mkdir -p ./heimdall/config && cd ./heimdall
+nano docker-compose.yml
+
+
+---
+version: "2.1"
+services:
+  heimdall:
+    image: ghcr.io/linuxserver/heimdall
+    container_name: heimdall
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Moscow
+    volumes:
+      - ./config>:/config
+    ports:
+      - 8787:80
+    restart: unless-stopped
+
+
+sudo docker-compose up -d
+
+
+
 openssl genrsa -out rootCA.key 2048
 openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt
 openssl genrsa -out domain.key 2048
