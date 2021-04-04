@@ -122,6 +122,27 @@ services:
 
 
 
+mkdir searx && cd searx
+nano docker-compose.yml
+
+version: '2.3'
+
+services:
+  searx:
+    container_name: searx
+    image: angristan/searx:0.15
+    restart: always
+    ports:
+      - "8585:8888"
+    environment:
+      - IMAGE_PROXY=true
+      - BASE_URL=http://192.168.0.120:8585
+      - UID=1000
+      - GID=1000
+      
+
+
+
 openssl genrsa -out rootCA.key 2048
 openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt
 openssl genrsa -out domain.key 2048
