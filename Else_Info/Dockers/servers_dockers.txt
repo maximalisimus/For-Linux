@@ -130,7 +130,7 @@ version: '2.3'
 services:
   searx:
     container_name: searx
-    image: angristan/searx:0.15
+    image: angristan/searx:latest
     restart: always
     ports:
       - "8585:8888"
