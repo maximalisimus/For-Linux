@@ -203,7 +203,7 @@ certutil -d sql:$HOME/.pki/nssdb -A -t "P,," -n localhost.crt -i /home/mikl/ssl/
 
 
 
-mkdir ~/nginx_proxy/ssl && cd ~/nginx_proxy/ssl
+mkdir -p ~/nginx_proxy/ssl && cd ~/nginx_proxy/ssl
 openssl req -newkey rsa:2048 -nodes -keyout domain.key -out domain.csr
 openssl x509 -signkey domain.key -in domain.csr -req -days 365 -out domain.crt
 or one command:
