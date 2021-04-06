@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  mysql:
+    image: yobasystems/alpine-mariadb:latest
+    # image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    env_file: .env
+    volumes:
+      - dbmysql:/var/lib/mysql
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    # command: '--default-authentication-plugin=mysql_native_password'
+    networks:
+      - website
+
+  memcached:
+    image: memcached:latest
+
+  wordpress:
+    image: wordpress:5.7.0-php8.0-fpm
+    container_name: wordpress
+    depends_on:
+      - mysql
+    links:
+      - mysql
+      - memcached:memcached
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - WORDPRESS_DB_HOST=mysql:3306
+      - WORDPRESS_DB_USER=$MYSQL_USER
+      - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
+      - WORDPRESS_DB_NAME=$MYSQL_DATABASE
+    volumes:
+      - ./wordpress/:/var/www/html
+    networks:
+      - website
+
+  nginx:
+    image: nginx:alpine
+    depends_on:
+      - wordpress
+    links:
+      - wordpress
+      - memcached:memcached
+    container_name: wordpress-nginx
+    restart: unless-stopped
+    ports:
+      - "8282:80"
+    volumes:
+      - ./wordpress/:/var/www/html
+      - ./nginx-conf.d:/etc/nginx/conf.d
+    networks:
+      - website
+
+volumes:
+  dbmysql:
+
+networks:
+  website:
+    driver: bridge
