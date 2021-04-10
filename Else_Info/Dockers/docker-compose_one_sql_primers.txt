@@ -1,0 +1,241 @@
+
+
+sudo docker volume create portainer_data
+
+sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+
+mkdir memcache && cd memcache
+nano docker-compose.yml
+
+version: '3'
+
+services:
+  memcached:
+    image: memcached:latest
+    container_name: memcached
+    # ports:
+    #  - "11211:11211"
+    networks:
+      - memcache
+
+networks:
+  memcache:
+   name: memcache
+   driver: bridge
+
+
+sudo docker-compose up -d
+cd ../
+
+mkdir -p cmsmysql/dbmysql && cd cmsmysql
+nano docker-compose.yml
+
+
+
+version: '3'
+
+services:
+  mysql:
+    image: mariadb:latest
+    # image: mysql:8.0
+    container_name: cms-mysql
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=root_pass
+      #- MYSQL_USER=db_user
+      #- MYSQL_PASSWORD=db_pass
+      #- MYSQL_DATABASE=db_base
+    volumes:
+      - ./dbmysql/:/var/lib/mysql
+    command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+    # command: '--default-authentication-plugin=mysql_native_password'
+    networks:
+      - cmssql
+
+  adminmysql:
+    image: phpmyadmin
+    # phpmyadmin:fpm phpmyadmin:apache
+    # phpmyadmin:<version> phpmyadmin:<version>-alpine
+    # image: adminer:latest
+    # adminer
+    restart: always
+    container_name: cms-phpmyadmin
+    depends_on:
+      - mysql
+    links:
+      - mysql
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=mysql
+      - PMA_PORT=3306
+      #- PMA_USER=root
+      #- PMA_PASSWORD=root_pass
+      # Adminer is NOT environment
+    ports:
+      - 8181:80
+    networks:
+      - cmssql
+
+networks:
+  cmssql:
+   name: cmssql
+   driver: bridge
+
+
+sudo docker-compose up -d
+
+cd ../
+
+
+# test on wordpress apache
+
+mkdir -p wp/{wp_files,nginx-conf.d} && cd wp
+touch {docker-compose.yml,nginx-conf.d/wordpress.conf}
+
+nano nginx-conf.d/wordpress.conf
+nano docker-compose.yml
+
+sudo docker-compose up -d
+
+sed -i -e "/\# server_name/s/# //" nginx-conf.d/wordpress.conf
+sed -i -e "/north.world-ithech.ru/s/north.world-ithech.ru/warden.wps.com/" nginx-conf.d/wordpress.conf
+sudo docker-compose up --force-recreate --no-deps -d nginx
+
+
+
+server {
+        listen 80;
+        listen [::]:80;
+
+        # server_name  north.world-ithech.ru;
+
+        index index.php index.html index.htm;
+
+        root /var/www/html;
+
+        location / {
+                try_files $uri $uri/ /index.php$is_args$args;
+        }
+
+        location ~ \.php$ {
+                try_files $uri =404;
+                fastcgi_split_path_info ^(.+\.php)(/.+)$;
+                fastcgi_pass wordpress:9000;
+                fastcgi_index index.php;
+                include fastcgi_params;
+                fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+                fastcgi_param PATH_INFO $fastcgi_path_info;
+        }
+
+        location ~ /\.ht {
+                deny all;
+        }
+
+        location = /favicon.ico {
+                log_not_found off;
+        }
+        location = /robots.txt {
+                log_not_found off;
+        }
+        location ~* \.(css|gif|ico|jpeg|jpg|js|png)$ {
+                expires max;
+                log_not_found off;
+        }
+}
+
+
+
+version: '3'
+
+networks:
+  wpcms:
+      external:
+        name: cmssql
+  cache:
+      external:
+        name: memcache
+
+services:
+  wordpress:
+    image: wordpress:5.7.0-php8.0-fpm
+    container_name: wordpress
+    restart: unless-stopped
+    external_links:
+      - memcached:memcached
+    environment:
+      - WORDPRESS_DB_HOST=mysql:3306
+      - WORDPRESS_DB_USER=wp_db_user
+      - WORDPRESS_DB_PASSWORD=wp_db_pass
+      - WORDPRESS_DB_NAME=wp_db
+    volumes:
+      - ./wp_files/:/var/www/html
+    networks:
+      - wpcms
+      - cache
+      
+  nginx:
+    image: nginx:latest
+    depends_on:
+      - wordpress
+    links:
+      - wordpress
+    external_links:
+      - mysql
+      - memcached:memcached
+    container_name: wordpress-nginx
+    restart: unless-stopped
+    ports:
+      - "8282:80"
+    volumes:
+      - ./wp_files/:/var/www/html
+      - ./nginx-conf.d:/etc/nginx/conf.d
+    networks:
+      - wpcms
+      - cache
+
+
+
+sudo docker-compose up -d
+
+
+
+mkdir -p nextcloud/nxcloud_data && cd nextcloud
+
+MYSQL_ROOT_PASSWORD=root_pass
+MYSQL_PASSWORD=nxcloud_pass
+MYSQL_DATABASE=nxcloud_db
+MYSQL_USER=nxcloud_user
+
+nano docker-compose.yml
+
+version: '2'
+
+networks:
+  ncloud:
+      external:
+        name: cmssql
+  cache:
+      external:
+        name: memcache
+
+services:
+  nxcloud:
+    image: nextcloud
+    container_name: nxcloud
+    ports:
+      - 8383:80
+    external_links:
+      - mysql
+      - memcached:memcached
+    volumes:
+      - ./nxcloud_data/:/var/www/html
+    restart: always
+    networks:
+      - ncloud
+      - cache
+    
+    
+
