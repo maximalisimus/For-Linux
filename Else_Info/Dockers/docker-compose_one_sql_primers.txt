@@ -30,9 +30,6 @@ services:
       - "3306:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=root_pass
-      #- MYSQL_USER=db_user
-      #- MYSQL_PASSWORD=db_pass
-      #- MYSQL_DATABASE=db_base
     volumes:
       - ./dbmysql/:/var/lib/mysql
     command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
@@ -139,9 +136,6 @@ networks:
   wpcms:
       external:
         name: cmssql
-  cache:
-      external:
-        name: memcache
 
 services:
   wordpress:
@@ -159,7 +153,6 @@ services:
       - ./wp_files/:/var/www/html
     networks:
       - wpcms
-      - cache
       
   nginx:
     image: nginx:latest
@@ -179,7 +172,6 @@ services:
       - ./nginx-conf.d:/etc/nginx/conf.d
     networks:
       - wpcms
-      - cache
 
 
 
@@ -202,9 +194,6 @@ networks:
   ncloud:
       external:
         name: cmssql
-  cache:
-      external:
-        name: memcache
 
 services:
   nxcloud:
@@ -220,7 +209,6 @@ services:
     restart: always
     networks:
       - ncloud
-      - cache
     
     
 
