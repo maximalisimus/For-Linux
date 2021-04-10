@@ -5,8 +5,10 @@ sudo docker volume create portainer_data
 sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 
-mkdir memcache && cd memcache
+mkdir -p cmsmysql/dbmysql && cd cmsmysql
 nano docker-compose.yml
+
+
 
 version: '3'
 
@@ -17,25 +19,8 @@ services:
     # ports:
     #  - "11211:11211"
     networks:
-      - memcache
+      - cmssql
 
-networks:
-  memcache:
-   name: memcache
-   driver: bridge
-
-
-sudo docker-compose up -d
-cd ../
-
-mkdir -p cmsmysql/dbmysql && cd cmsmysql
-nano docker-compose.yml
-
-
-
-version: '3'
-
-services:
   mysql:
     image: mariadb:latest
     # image: mysql:8.0
