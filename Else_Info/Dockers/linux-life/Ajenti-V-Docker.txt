@@ -1,0 +1,67 @@
+
+
+TAG:
+v0.23
+DIGEST
+
+docker pull linuxlife/ajenti-v
+
+
+Ajenti-V Docker
+This is an updated docker image of the Ajenti/Ajenti-v control panel from niiknow/ajenticp
+based on his child image niiknow/docker-hostingbase:1.6.1
+
+BEFORE RUN CONTAINER:
+
+mkdir -p /app/ajenticp/{backup,www}
+
+START CONTAINER:
+
+docker run -p 80:80 -p 443:443 -p 7777:22 -p 8888:8000 -v /app/ajenticp/www:/www -v /app/ajenticp/backup:/backup -d linuxlife/ajenti-v:v0.23
+
+BROWSER: https://youip:8000
+
+Default Ajenti user/pass: root/admin
+
+START WITH DOCKER-COMPOSE:
+
+version: '3.8'
+
+services:
+  app:
+    image: linuxlife/ajenti-v:v0.23
+    restart: unless-stopped
+    volumes:
+      - www:/www/:Z
+      - home:/home/:Z
+      - dehydrated:/etc/dehydrated/:Z
+      - mysql:/var/lib/mysql/:Z
+      - php:/etc/php/:Z
+      - etc_ajenti:/etc/ajenti/:Z
+      - ./backup:/backup
+    ports:
+      - "80:80"
+      - "443:443"
+      - "7777:22"
+      - "8888:8000"
+    networks:
+      - ajenti-v
+volumes:
+  www:
+  home:
+  dehydrated:
+  mysql:
+  php:
+  etc_ajenti:
+networks:
+  ajenti-v:
+
+
+
+Dockerfile and assets: github: coming soon
+
+
+
+
+
+
