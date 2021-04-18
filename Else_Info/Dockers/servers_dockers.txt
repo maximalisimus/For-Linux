@@ -247,6 +247,7 @@ server {
   ssl on;
   ssl_certificate /home/mikl/nginx_proxy/ssl/domain.crt;
   ssl_certificate_key /home/mikl/nginx_proxy/ssl/domain.key;
+  ssl_dhparam /etc/ssl/dhparam.pem;
   location / {
      proxy_pass http://192.168.0.120:8005;
   }
@@ -258,14 +259,35 @@ sudo systemctl restart nginx
 docker run -d --name nginx -p 80:80 -v /path/to/nginx/config/default.conf:/etc/nginx/conf.d/default.conf nginx
 
 
-Similar configuration in docker-compose.yml may look like this:
-
-web:
-  image: nginx
-  volumes:
-    - ./nginx.conf:/etc/nginx/nginx.conf:ro
-  command: [nginx-debug, '-g', 'daemon off;']
+nano docker-compose.yml
+nginx-proxy:
 
 
+version: '3'
+
+services:
+  memcached:
+    image: memcached:latest
+
+  nginxgogs:
+    image: nginx:latest
+    links:
+      - memcached:memcached
+    container_name: nginx-gogs
+    restart: unless-stopped
+    ports:
+      - "8443:443"
+    volumes:
+      - ./nginx/conf.d/:/etc/nginx/conf.d
+      - ./ssl:/etc/ssl/
+    networks:
+      - nginxproxy
+
+networks:
+  nginxproxy:
+    driver: bridge
+
+
+sudo docker-compose up -d
 
 
