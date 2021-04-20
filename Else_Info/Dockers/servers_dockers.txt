@@ -159,7 +159,7 @@ services:
       - PGID=1000
       - TZ=Europe/Moscow
     volumes:
-      - ./config>:/config
+      - ./config:/config
     ports:
       - 8787:80
     restart: unless-stopped
