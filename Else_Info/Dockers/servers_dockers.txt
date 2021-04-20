@@ -169,6 +169,48 @@ sudo docker-compose up -d
 
 
 
+cp ./config/nginx/site-confs/default ./ng-site-default
+    volumes:
+      - ./ssl/:/etc/openssl/
+      - ./ng-site-default:/config/nginx/site-confs/default
+
+
+nginx.conf - to primer:
+
+server {
+    listen 80;
+    server_name docr.smmhub.ru;
+    server_tokens off;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://$host$request_uri;
+    }
+}
+server {
+    listen 443 ssl;
+    server_name docr.smmhub.ru;
+    server_tokens off;
+
+    ssl_certificate /etc/letsencrypt/live/docr.smmhub.ru/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/docr.smmhub.ru/privkey.pem;
+    include /etc/letsencrypt/options-ssl-nginx.conf;
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+    
+    # ssl_certificate /etc/openssl/domain.crt;
+	# ssl_certificate_key /etc/openssl/domain.key;
+    # ssl_dhparam /etc/openssl/dhparam.pem;
+    
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+    }
+}
+
+
 openssl genrsa -out rootCA.key 2048
 openssl req -x509 -new -key rootCA.key -days 10000 -out rootCA.crt
 openssl genrsa -out domain.key 2048
