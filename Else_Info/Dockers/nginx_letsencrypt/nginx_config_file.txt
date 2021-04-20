@@ -1,0 +1,51 @@
+
+
+Update the NGINX settings to forward HTTP to HTTPS
+Certbot should update your NGINX settings automatically, but here's now it will look after.
+
+# /etc/nginx/sites-available/my-example-domain.com
+
+server {
+    root /var/www/my-example-domain.com/current/public; # Directly serves anything in the Rails public folder
+    index index.html index.htm index.nginx-debian.html;
+    server_name my-example-domain.com www.my-example-domain.com; # managed by Certbot
+
+    location / {
+        proxy_pass http://localhost:8030; # 8030 is the port the Docker container is running on
+          proxy_set_header Host $host;
+          #try_files $uri $uri/ =404;
+    }
+
+    listen [::]:443 ssl ipv6only=on; # managed by Certbot
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/my-example-domain.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/my-example-domain.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = www.my-example-domain.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = my-example-domain.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80 ;
+    listen [::]:80 ;
+    server_name my-example-domain.com www.my-example-domain.com;
+    return 404; # managed by Certbot
+}
+
+
+
+
+
+
+
+
+
+
