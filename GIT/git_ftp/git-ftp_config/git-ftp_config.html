@@ -1,0 +1,851 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-04-22T02:24:35"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", sans-serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		h2 { margin-top: 0.35cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Liberation Serif", sans-serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "AR PL New Sung"; font-size: 18pt; so-language: zh-CN; font-weight: bold }
+		h2.ctl { font-family: "DejaVu Sans"; font-size: 18pt; so-language: hi-IN; font-weight: bold }
+		h3 { margin-top: 0.25cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Liberation Serif", sans-serif; font-size: 14pt; so-language: ru-RU; font-weight: bold }
+		h3.cjk { font-family: "AR PL New Sung"; font-size: 14pt; so-language: zh-CN; font-weight: bold }
+		h3.ctl { font-family: "DejaVu Sans"; font-size: 14pt; so-language: hi-IN; font-weight: bold }
+		h4 { margin-top: 0.21cm; margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Liberation Serif", sans-serif; font-size: 12pt; so-language: ru-RU; font-weight: bold }
+		h4.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN; font-weight: bold }
+		h4.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN; font-weight: bold }
+		td p { margin-bottom: 0cm; direction: ltr; color: #000000; text-align: left; orphans: 0; widows: 0; background: transparent }
+		td p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		td p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		td p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		pre { direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		pre.western { font-family: "Liberation Mono", serif; font-size: 10pt; so-language: ru-RU }
+		pre.cjk { font-family: "Liberation Mono"; font-size: 10pt; so-language: zh-CN }
+		pre.ctl { font-family: "Liberation Mono"; font-size: 10pt; so-language: hi-IN }
+		code.western { font-family: "Liberation Mono", serif }
+		code.cjk { font-family: "Liberation Mono" }
+		code.ctl { font-family: "Liberation Mono" }
+		strong { font-weight: bold }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+		em { font-style: italic }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="left">
+​<span style="font-variant: normal"><font color="#000000"><font face="Georgia, Times New Roman, Times, serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">git-ftp
+Настройка -- Как загружать изменения на
+хостинг через FTP (GitFTP) - Windows</span></span></span></font></font></font></span></h1>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<div id="TextSection" dir="ltr">
+	<table width="209" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="197"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="197" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s test push</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+	<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+	</p>
+	<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+	</p>
+</div>
+<div id="Раздел1" dir="ltr"><h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Что
+	происходит</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+	данной заметке рассматривается
+	использование скриптов </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">git-ftp</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	для загрузки изменений из локального
+	git-репозитория на FTP-хостинг.</span></span></span></font></font></font></span></p>
+	<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Программные
+	средства</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Для
+	заливки же кода через FTP, будем использовать
+	набор скриптов </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">git-ftp</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	(</span></span></span></font></font></font></span><a href="https://github.com/git-ftp/git-ftp" target="_blank"><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">https://github.com/git-ftp/git-ftp</span></span></span></font></font></span></font></span><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">(link
+	is external)</span></span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">)
+	- за который спасибо программисту René
+	Moser-у.<br/>
+Данную штуковину можно считать
+	элементарным средством для </span></span></span></font></font></font></span><a href="http://fkn.ktu10.com/?q=node/9501"><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">деплоя</span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	на удалённый сервер.</span></span></span></font></font></font></span></p>
+	<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Установка</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Рассмотри
+	уcтановку:</span></span></span></font></font></font></span></p>
+	<ul>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<a href="http://fkn.ktu10.com/?q=node/9550"><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+		Windows</span></span></span></font></font></span></font></span></a></p>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<a href="http://fkn.ktu10.com/?q=node/9551"><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+		Ubuntu Linux</span></span></span></font></font></span></font></span></a></p>
+		<li><p class="western" style="orphans: 2; widows: 2"></p>
+	</ul>
+	<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Настройка
+	параметров FTP-сервера</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Переходим
+	в папку репозитория (теперь уже вашего
+	проекта, изменения в котором будем
+	загружать на удаленный сервер с помощью
+	git ftp), и открываем папку </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.git</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+	в которой есть файл </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">config</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел2" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура1" alt="Фигура1" align="left"/>
+<span id="Врезка1" dir="ltr" style="position: absolute; top: 18.86cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="120" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="109"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="109" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">.git/config</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел3" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">--
+	открываем его редактором и добавляем
+	туда реквизиты доступа к вашему
+	FTP-серверу, например такие:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел4" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура2" alt="Фигура2" align="left"/>
+<span id="Врезка2" dir="ltr" style="position: absolute; top: 21.82cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="413" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="402"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">2</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">3</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">4</span></font></font></p>
+			</td>
+			<td width="402" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[git-ftp
+				</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;test&quot;</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">user
+				= df836as</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">url
+				= </span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;92.51.92.51/spec/public_html&quot;</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">password
+				= dfgd34rg34g</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел5" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">После
+	чего файл будет выглядеть как-то так:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел6" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура3" alt="Фигура3" align="left"/>
+<span id="Врезка3" dir="ltr" style="position: absolute; top: 2cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="423" cellpadding="0" cellspacing="0">
+		<col width="21"/>
+
+		<col width="402"/>
+
+		<tr>
+			<td width="21" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">2</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">3</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">4</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">5</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">6</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">7</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">8</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">9</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">10</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">11</span></font></font></p>
+			</td>
+			<td width="402" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[core]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">bare
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">repositoryformatversion
+				= 0</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">filemode
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">symlinks
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">ignorecase
+				= true</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">logallrefupdates
+				= true</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[git-ftp
+				</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;test&quot;</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">user
+				= df836as</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">url
+				= </span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;92.51.92.51/spec/public_html&quot;</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">password
+				= dfgd34rg34g</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел7" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Что
+	есть что:</span></span></span></font></font></font></span></p>
+	<ol>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">test
+		- условное название нашего ftp сервера,</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">далее
+		указано имя пользователя FTP</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">затем
+		указывается путь к директории проекта</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+		(в ней не обязательно должна быть папка
+		.git - более того </span></span></span></font></font></font></span></em><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">на
+		сервер её лучше не закидывать</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+		, работать можно с обычным набором
+		файлов, но .git обязательно должна быть
+		в наборе файлов на машине с которой вы
+		будете заливать изменения на FTP сервер)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+		который начинается с доменного имени
+		или ip-адреса сервера, а дальше всё
+		зависит от того к какой именно директории
+		дан доступ пользователю (в данном
+		случае </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">df836as</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+		имеет доступ к корню в котором есть
+		папка </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">spec</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+		а уже в ней папка </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">public_html</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+		куда и подразумевается заливать проект
+		и/или изменения).</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+		<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">92.51.92.51/spec/public_html
+		-- в вашем случае этот путь может быть
+		иным (зависит от того в какую именно
+		директорию логинится ftp-пользователь
+		- -именно от неё надо писать доп. путь
+		после ip или имени домена.)</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Последний
+		параметр - пароль для пользователя,
+		указанного выше (у нас - для </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">df836as</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">).</span></span></span></font></font></font></span></p>
+	</ol>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Далее,
+	после того как мы настроили параметры
+	сервера переходим в папку с локальным
+	репозиторием (в том же </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Git
+	Bash</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	в windows или в терминале в Linux), например:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел8" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура4" alt="Фигура4" align="left"/>
+<span id="Врезка4" dir="ltr" style="position: absolute; top: 19.34cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="208" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="197"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="197" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">cd
+				/D/www/spec.local</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел9" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Ну
+	и начинаем работать уже с git-ftp.</span></span></span></font></font></font></span></p>
+	<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Работа
+	с git-ftp</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Чтобы
+	загрузить весь проект на хостинг (первый
+	раз) выполните:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел10" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура5" alt="Фигура5" align="left"/>
+<span id="Врезка5" dir="ltr" style="position: absolute; top: 23.39cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="209" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="197"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="197" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s test init</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел11" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Если
+	же проект уже загружен (актуальные
+	версии файлов </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">уже
+	на сайте</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">),
+	то выполните:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел12" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура6" alt="Фигура6" align="left"/>
+<span id="Врезка6" dir="ltr" style="position: absolute; top: 2cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="238" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="226"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="226" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s test catchup</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел13" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">После
+	этого (загрузки всего репозитория или
+	отметки о том, что он уже в актуальном
+	состоянии) выгружаться будут только
+	новые изменения, что (после выполнения
+	коммита) можно сделать </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">командой:</span></span></span></font></font></font></span></strong></p>
+</div>
+<div id="Раздел14" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура7" alt="Фигура7" align="left"/>
+<span id="Врезка7" dir="ltr" style="position: absolute; top: 5.46cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="209" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="197"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="197" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s test push</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<h3 class="western" style="orphans: 2; widows: 2">​</h3>
+</div>
+<div id="Раздел15" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">А
+	если подробно (с коммитом из командной
+	строки - 3 команды):</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел16" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура8" alt="Фигура8" align="left"/>
+<span id="Врезка8" dir="ltr" style="position: absolute; top: 8.06cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="296" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="284"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">2</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">3</span></font></font></p>
+			</td>
+			<td width="284" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">$
+				git add .</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">$
+				git commit -m </span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;Commit
+				name&quot;</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">$
+				git ftp -s test push</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел17" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Если
+	что-то не получается, то чтобы </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">узнать
+	причину</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	ошибки используйте флаг </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">-v</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+	например:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел18" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура9" alt="Фигура9" align="left"/>
+<span id="Врезка9" dir="ltr" style="position: absolute; top: 12.02cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="267" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="256"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="256" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s test catchup -v</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел19" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ПРИМЕЧАНИЕ:
+	на старых версиях возможна </span></span></span></font></font></font></span><a href="http://fkn.ktu10.com/?q=node/8135"><span style="font-variant: normal"><font color="#0070b3"><span style="text-decoration: none"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">такая
+	проблема</span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+	лучше сразу обновить Git for Windows.</span></span></span></font></font></font></span></p>
+	<h2 class="western" style="margin-top: 0cm; margin-bottom: 0.05cm; line-height: 140%; orphans: 2; widows: 2">
+	​<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Несколько
+	серверов</span></span></span></font></font></span></h2>
+	<p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Можно
+	указать и </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">несколько</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	FTP серверов для git-ftp, например (пример
+	содержимого .git/config):</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел20" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура10" alt="Фигура10" align="left"/>
+<span id="Врезка10" dir="ltr" style="position: absolute; top: 17.06cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="423" cellpadding="0" cellspacing="0">
+		<col width="21"/>
+
+		<col width="402"/>
+
+		<tr>
+			<td width="21" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">2</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">3</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">4</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">5</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">6</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">7</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">8</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">9</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">10</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">11</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">12</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">13</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">14</span></font></font></p>
+				<p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">15</span></font></font></p>
+			</td>
+			<td width="402" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[core]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">bare
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">repositoryformatversion
+				= 0</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">filemode
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">symlinks
+				= false</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">ignorecase
+				= true</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				   </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">logallrefupdates
+				= true</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[git-ftp
+				</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;test&quot;</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">user
+				= df836as</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">url
+				= </span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;92.51.92.51/spec/public_html&quot;</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">password
+				= dfgd34rg34g</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">[git-ftp
+				</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;prod&quot;</span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">]</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">user
+				= b4407539_qwe</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">url
+				= </span></span></span></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#0000ff"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">&quot;free.get.com/&quot;</span></span></span></font></font></span></code></p>
+				<p class="western" align="left" style="orphans: 0; widows: 0"><code class="western"><span style="font-variant: normal"><span style="background: #ffffff">
+				    </span></span></code><code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">password
+				= df333Grg34g</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел21" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Тогда
+	для загрузки на указанный сервер </span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">prod</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	новых изменений, соответственно,
+	выполняем:</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел22" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+	<img src="git-ftp_config_html_9e121ae2067868c5.gif" name="Фигура11" alt="Фигура11" align="left"/>
+<span id="Врезка11" dir="ltr" style="position: absolute; top: 2.99cm; left: 0.03cm; width: 0.29cm; border: none; padding: 0cm; background: #ffffff"><p class="western" align="center" style="margin-bottom: 0cm">
+		<a href="http://fkn.ktu10.com/?q=node/8132"><span style="font-variant: normal"><font color="#ffffff"><span style="text-decoration: none"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><font size="1" style="font-size: 7pt"><span style="font-style: normal"><span style="font-weight: normal">?</span></span></font></font></span></font></span></a></p>
+	</span><br/>
+
+	</p>
+	<table width="209" cellpadding="0" cellspacing="0">
+		<col width="11"/>
+
+		<col width="197"/>
+
+		<tr>
+			<td width="11" style="border: none; padding: 0cm"><p class="western" align="right" style="font-variant: normal; font-style: normal; font-weight: normal; orphans: 0; widows: 0">
+				<font color="#afafaf"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="background: #ffffff">1</span></font></font></p>
+			</td>
+			<td width="197" style="border: none; padding: 0cm"><p class="western" align="left" style="orphans: 0; widows: 0">
+				<code class="western"><span style="font-variant: normal"><font color="#000000"><font face="Consolas, Bitstream Vera Sans Mono, Courier New, Courier, monospace"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: #ffffff">git
+				ftp -s prod push</span></span></span></font></font></span></code></p>
+			</td>
+		</tr>
+	</table>
+	<p class="western" style="orphans: 2; widows: 2"><br/>
+<br/>
+
+	</p>
+</div>
+<div id="Раздел23" dir="ltr"><p class="western" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+	<span style="font-variant: normal"><font color="#3b3b3b"><font face="Georgia, Times New Roman, Times, serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Вот
+	и всё) Удачи в использовании)</span></span></span></font></font></font></span></p>
+	<p class="western"><br/>
+<br/>
+<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<h1 class="western" align="left">​<font face="Times Newer Roman, serif"><font size="5" style="font-size: 18pt"><b>Git
+	FTP на примере в Windows</b></font></font></h1>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<font color="#111111"><font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt">Данный
+	пост для тех, кто уже освоил немного
+	GIT, и хочет чтобы его жизнь стала ещё
+	проще, а производительность выше! Т.е.
+	делать push сразу на FTP сервер, к которому
+	отсутствует доступ SSH.<br/>
+<br/>
+</font></font></font><font color="#111111"><font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><i>Для
+	работы с консолью я использовал Git
+	Bash.</i></font></font></font><font color="#111111"><font face="Times Newer Roman, serif"><font size="3" style="font-size: 12pt"><br/>
+<br/>
+Я
+	разделил пост на несколько этапов:</font></font></font></p>
+</div>
+<div id="Раздел24" dir="ltr">
+	<ol><li><p class="western" style="margin-bottom: 0cm; line-height: 160%">
+		<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Установка
+		Git-Ftp</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="margin-bottom: 0cm; line-height: 160%">
+		<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Проверка
+		установленного Git-Ftp</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="margin-bottom: 0cm; line-height: 160%">
+		<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Настройка
+		репозитория</span></span></span></font></font></font></span></p>
+		<li><p class="western" style="line-height: 160%"><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Использование,
+		загрузка на FTP сервер</span></span></span></font></font></font></span></p>
+	</ol>
+	<p class="western" style="line-height: 156%"><a name="habracut"></a><br/>
+<br/>
+
+	</p>
+	<h4 class="western" style="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.53cm">
+	​<span style="font-variant: normal"><font color="#111111"><font face="Fira Sans, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>1.
+	Установка Git-Ftp:</b></span></span></font></font></font></span></h4>
+	<p class="western" style="line-height: 156%"><br/>
+<br/>
+
+	</p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">clone</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> https://github.com/git-ftp/git-ftp</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">cd</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> git-ftp</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ chmod +x git-ftp</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ cp ~/git-ftp/git-ftp /bin/git-ftp</span></span></span></font></font></font></span></code></pre><p class="western" style="line-height: 156%">
+	<br/>
+<br/>
+
+	</p>
+	<h4 class="western" style="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.53cm">
+	​<span style="font-variant: normal"><font color="#111111"><font face="Fira Sans, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>2.
+	Проверка установленного Git-Ftp:</b></span></span></font></font></font></span></h4>
+	<p class="western" style="line-height: 156%"><br/>
+<br/>
+
+	</p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">cd</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> ~</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">which</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> git-ftp</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">/bin/git-ftp</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git-ftp --</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">help</span></span></span></font></font></font></span></code></pre><p class="western" style="line-height: 156%">
+	<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+	всё выполнилось без ошибок, то установка,
+	прошла как и планировалось.</span></span></span></font></font></font></span></p>
+	<h4 class="western" style="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.53cm">
+	​<span style="font-variant: normal"><font color="#111111"><font face="Fira Sans, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>3.
+	Настройка репозитория:</b></span></span></font></font></font></span></h4>
+	<p class="western" style="line-height: 156%"><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Применение
+	к проекту:</span></span></span></font></font></font></span></p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">cd</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> /c/OpenServer/domains/site-name</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ notepad .git/config</span></span></span></font></font></font></span></code></pre><p class="western" style="line-height: 156%">
+	<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+<br/>
+Добавьте
+	в открывшийся config следующее:</span></span></span></font></font></font></span></p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">[git-ftp </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#718c00"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">&quot;test&quot;</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">]</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><span style="letter-spacing: normal">     </span></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">user = ваш_ftp_пользователь</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><span style="letter-spacing: normal">     </span></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">url = 255.165.35.35/www/site-name.com</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><span style="letter-spacing: normal">     </span></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">password = ваш_ftp_пароль</span></span></span></font></font></font></span></code></pre><p class="western" style="line-height: 156%">
+	<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>url</b></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	— это Ip-адрес</span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>/</b></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">путь
+	к репозиторию на ftp-сервере<br/>
+</span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>test</b></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	— название конфига, который будет
+	указывать, на какой ftp-сервер, будут
+	загружаться обновления. Можно указать
+	несколько.<br/>
+<br/>
+Поставить метку, о
+	том, что на сервер уже были загружены
+	свежие обновления, выполнять не
+	обязательно. В этом случае git-ftp будет
+	обновлять только вновь изменённые
+	файлы.</span></span></span></font></font></font></span></p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git ftp -s </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">test</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> catchup</span></span></span></font></font></font></span></code></pre><p class="western" style="line-height: 156%">
+	<br/>
+<br/>
+
+	</p>
+	<h4 class="western" style="margin-top: 0cm; margin-bottom: 0cm; line-height: 0.53cm">
+	​<span style="font-variant: normal"><font color="#111111"><font face="Fira Sans, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>4.
+	Использование, загрузка на FTP сервер:</b></span></span></font></font></font></span></h4>
+	<p class="western" style="line-height: 156%"><br/>
+<br/>
+
+	</p>
+	<pre class="western" style="border-top: 1px solid #e5e8ec; border-bottom: 1px solid #e5e8ec; border-left: 1px solid #e5e8ec; border-right: none; padding-top: 0.46cm; padding-bottom: 0.46cm; padding-left: 0.53cm; padding-right: 0cm; line-height: 160%; background: #fbfdff"><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git add .</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git commit -m </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#718c00"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">&quot;Commit name&quot;</span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">$ git ftp -s </span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#f5871f"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">test</span></span></span></font></font></font></span></code><code class="western"><span style="font-variant: normal"><font color="#4d4d4c"><font face="Menlo, Monaco, Courier New, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"> push</span></span></span></font></font></font></span></code></pre><p class="western" style="margin-bottom: 0cm; line-height: 156%">
+	<span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>test</b></span></span></font></font></font></span><span style="font-variant: normal"><font color="#111111"><font face="apple-system, BlinkMacSystemFont, Arial, sans-serif"><font size="3" style="font-size: 12pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+	— название ftp-конфига, который мы указали
+	в настройках Git'a.<br/>
+<br/>
+Вот в общем-то
+	и всё. При редактирование файлов
+	повторяйте процедуру из пункта 4, для
+	обновления файлов на сервере.</span></span></span></font></font></font></span></p>
+</div>
+<div id="Раздел25" dir="ltr"><p class="western" style="margin-right: 0.11cm; margin-bottom: 0cm; line-height: 100%">
+	<font color="#444444"><b>Теги:</b></font><span style="background: transparent"><a href="https://m.habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bgit%5D">git</a><a href="https://m.habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bftp%5D">ftp</a><a href="https://m.habr.com/ru/search/?target_type=posts&amp;order=relevance&amp;q=%5Bwindows%5D">windows</a></span></p>
+	<p class="western" style="margin-right: 0.11cm; margin-top: 0.64cm; line-height: 100%">
+	<font color="#444444"><b>Хабы:</b></font><a href="https://m.habr.com/ru/hub/git/"><span style="background: transparent">Git</span></a></p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+	<p class="western" align="left" style="margin-bottom: 0cm; line-height: 100%">
+	<br/>
+
+	</p>
+</div>
+</body>
+</html>
