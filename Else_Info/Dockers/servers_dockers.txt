@@ -28,8 +28,23 @@ sudo apt-get update
 
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-# sudo curl -L "https://github.com/docker/compose/release/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-wget "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-Linux-x86_64"
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Darwin-x86_64
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Darwin-x86_64.sha256
+
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Darwin-x86_64.tgz
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Darwin-x86_64.tgz.sha256
+
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64.sha256
+
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Windows-x86_64.exe
+# https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Windows-x86_64.exe.sha256
+
+# https://github.com/docker/compose/releases/download/1.29.1/run.sh
+# https://github.com/docker/compose/archive/refs/tags/1.29.1.zip
+# https://github.com/docker/compose/archive/refs/tags/1.29.1.tar.gz
+
+wget "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-Linux-x86_64"
 
 sudo cp -f ./docker-compose-Linux-x86_64 /usr/local/bin/docker-compose
 rm -rf ./docker-compose-Linux-x86_64
@@ -42,9 +57,48 @@ sudo docker exec -i -t 6ee6223a3ce3 bash
 sudo groupadd docker
 sudo usermod -aG docker mikl
 
+
+
+
+
+
+Portainer to 1.24
+
 sudo docker volume create portainer_data
 
 sudo docker run -d -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
+
+sudo docker run -d -p 9000:9000 -p 8000:8000 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+
+
+Portainer to 2.0.0
+
+mkdir -p portainer-data && cd portainer-data
+nano docker-compose.yml
+
+version: '3'
+  service:
+    portainer:
+      image: portainer/portainer-ce
+      container_name: portainer-panel
+      restart: always
+      volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - portainer_data:/data
+      ports:
+        - 9000:9000
+        - 8000:8000
+      networks:
+        - portainer_net
+
+volumes:
+  portainer_data:
+
+networks:
+  portainer_net:
+    driver: bridge
+
 
 
 openssl rand -base64 48
