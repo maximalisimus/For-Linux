@@ -77,28 +77,23 @@ Portainer to 2.0.0
 mkdir -p portainer-data && cd portainer-data
 nano docker-compose.yml
 
-version: '3'
-  service:
-    portainer:
-      image: portainer/portainer-ce
-      container_name: portainer-panel
-      restart: always
-      volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-        - portainer_data:/data
-      ports:
-        - 9000:9000
-        - 8000:8000
-      # networks:
-      #  - portainer_net
+version: "3"
 
 volumes:
   portainer_data:
 
-# networks:
-#  portainer_net:
-#    driver: bridge
+services:
 
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    ports:
+      - 9000:9000
+      - 8000:8000
+    restart: always
 
 
 openssl rand -base64 48
