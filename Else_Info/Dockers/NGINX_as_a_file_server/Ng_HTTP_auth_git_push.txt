@@ -1,0 +1,40 @@
+
+
+Nginx HTTP authorization only for git push
+
+I host a private git server using Nginx. I'd like anyone to clone into my repos (without authorization) but require authorization if they try to push a commit.
+
+My Nginx configuration is as follows:
+
+server {
+  listen 443 ssl;
+  server_name git.example.com;
+  ssl_certificate /fullchain.pem;
+  ssl_certificate_key /privkey.pem;
+
+  location ~ ^.*\.git/(HEAD|info/refs|objects/info/.*|git-(upload|recieve)-pack) {
+    root /usr/share/nginx/git;
+
+# --- incorrect solution ---
+
+#    if ($1 = git-upload-pack) {
+#        auth_basic "Restricted";
+#        auth_basic_user_file /usr/share/nginx/htpasswd;
+#    }
+    client_max_body_size 0;
+    include fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
+    fastcgi_param GIT_HTTP_EXPORT_ALL "";
+    fastcgi_param GIT_PROJECT_ROOT $realpath_root;
+    fastcgi_param REMOTE_USER $remote_user;
+    fastcgi_param PATH_INFO $uri;
+    fastcgi_param unix:/var/fcgiwrap.socket;
+
+}
+
+From my understanding, a git push request sends a git-receive-pack to my server. My simple solution was to capture this suffix with $1 and use an if statement, but I found quickly that this is not the correct use for ifs (ifisevil).
+
+Is there a more appropriate solution to what I'm trying to accomplish?
+
+
+
