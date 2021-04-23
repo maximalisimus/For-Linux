@@ -1,0 +1,63 @@
+
+
+You use the error_page property in the nginx config.
+
+For example, if you intend to set the 404 error page to /404.html, use
+
+error_page 404 /404.html;
+Setting the 500 error page to /500.html is just as easy as:
+
+error_page 500 /500.html;
+
+
+location /my_blog {
+    error_page    404 /blog_article_not_found.html;
+}
+A site wide 404 page:
+
+server {
+    listen 80;
+    error_page  404  /website_page_not_found.html;
+    ...
+You can append standard error codes together to have a single page for several types of errors:
+
+location /my_blog {
+    error_page 500 502 503 504 /server_error.html
+}
+
+upstream server2 {
+    server 10.0.0.1:80;
+}
+server {
+    location /my_blog {
+        error_page    404 @try_server2;
+    }
+    location @try_server2 {
+        proxy_pass http://server2;
+    }
+
+
+An example to prevent clients fetching error pages directly:
+
+error_page 404 /404.html;
+location  /404.html {
+  internal;
+}
+
+
+
+An example of HTTP 403 error page:
+
+       error_page 403 /403.html;
+       location = /403.html {
+           root   html;
+           allow all;
+           internal;
+       }
+
+
+
+
+
+
+
