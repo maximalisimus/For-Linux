@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="author" content="utv"/>
+	<meta name="created" content="2021-04-23T08:32:00"/>
+	<meta name="changed" content="2021-04-23T15:21:32"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 3cm; margin-right: 1.5cm; margin-top: 2cm; margin-bottom: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU }
+		p.ctl { font-family: "Times New Roman"; font-size: 12pt; so-language: ar-SA }
+		h1 { margin-top: 0.49cm; margin-bottom: 0.49cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h1.western { font-family: "Times New Roman", serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "Times New Roman"; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.ctl { font-family: "Times New Roman"; font-size: 24pt; so-language: ar-SA; font-weight: bold }
+		a:link { color: #0563c1; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#0563c1" vlink="#800000" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+<a href="https://debian.pro/1799">https://debian.pro/1799</a></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h1 class="western" style="margin-top: 0cm; margin-bottom: 0.19cm; line-height: 0.74cm; background: #ffffff">
+<font color="#757575"><font face="Arial, serif"><font size="4" style="font-size: 15pt"><span style="font-weight: normal">Про
+Debian</span></font></font></font></h1>
+<p class="western" style="margin-top: 0.19cm; margin-bottom: 0.19cm; line-height: 100%">
+<img src="nginx_upload_html_dcca562088011852.gif" name="Фигура1" alt="Фигура1" align="bottom"/>
+</p>
+<h1 class="western" style="margin-top: 0cm; margin-bottom: 0.19cm; line-height: 0.74cm; background: #ffffff">
+<font color="#757575"><font face="Arial, serif"><font size="4" style="font-size: 15pt"><span style="font-weight: normal">Делаем
+файловый сервер из голого nginx. Webdav.</span></font></font></font></h1>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Иногда
+возникает необходимость заливать
+файлики на второй сервер и отдавать их
+оттуда же по http(s). Ну навскидку — отдельные
+серверы с картинками для вашего проекта.
+Или с архивами. Да с чем угодно, мне-то
+какая разница =)<br/>
+<br/>
+Поднимать ради
+этого ftp и городить работы с ftp в коде
+сайта? гм… SFTP… можно, но где взять
+разработчика, который умеет sftp из php?
+Джангисты и рельсовики все умеют, ладно.
+А если nodejs?<br/>
+А вот curl/libcurl есть везде,
+PUT/POST запросы можно сделать из любого
+ЯП/фреймворка. Поэтому приходят 2 логичных
+решения — либо написать php-код на
+принимающей стороне, который будет
+принимать файлы, либо сделать всё это
+на голом nginx-e. Окей, решили вторым
+способом, пришли на тостер, спросили…
+И получили какой-то бред в ответе —
+https://toster.ru/q/46578<br/>
+upload-module? big-upload-module?
+clientbodyonthefly ещё куда ни шло, это всё же
+штатная фича..<br/>
+<br/>
+Да к черту. Открываем
+доку (окей, в моём случае — задаём вопрос
+в воздух и получаем ответ от соседа-админа)
+по nginx и листаем до пункта «http webdav module».
+Всё, можно заливать файлы (ладно-ладно,
+конфиг я вам покажу). И решаем сразу все
+проблемы: нужен только дефолтный nginx из
+репозиториев debian/ubuntu, размер файла
+ограничен только стабильностью соединения
+(13 гиговый файл? да легко!), конфиг писать
+легко (копипастинг работает, да),
+авторизация рулится через привычный
+htpasswd.. В общем — быть. Погнали<br/>
+<br/>
+Допустим
+nginx у нас уже есть и что-то по http куда-то
+отвечает. Нам нужно на images.example.com настроить
+upload файлов через webdav (и научиться заливать
+файлы курлом) с авторизацией и научиться
+показывать эти файлы по http без авторизации.
+Создаём каталог, где будем всё это
+хранить, например:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">root@server:~#
+</font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">mkdir
+/home/user/data/www/images.example.com</font></font></font></b></p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Nginx
+из коробки работает от пользователя
+www-data (я про деб, в других дистрах это
+может быть www), от него же он будет и файлы
+писать, так что пофиксим права:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">root@server:~#
+</span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">chown
+-R www-data:www-data /home/user/data/www/images.example.com</span></font></font></font></b></p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Теперь</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">
+</span></font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">пишем</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">
+</span></font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">конфиг</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">
+(</span></font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">например</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">,
+</span></font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">в</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">
+/etc/nginx/sites-available/00-images.example.com):</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">server
+{</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+   </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">listen
+80;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+   </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">server_name
+images.example.com;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+   # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">описываем</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+upload-</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">секцию</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">:<br/>
+
+   </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">location
+/upload{</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">максимальный</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">размер</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файла</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">,
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">который</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">можно</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">залить</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">.<br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">client_max_body_size
+15g;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">каталог</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">,
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">куда</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">заливать</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">root
+/home/user/data/www/images.example.com;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # chmod </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">для</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">залитых</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файлов</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+- </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">здесь</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+777, </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">чтобы</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+user </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">тоже</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">мог</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">удалять</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файлы</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">dav_access
+user:rw group:rw all:rw;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">разрешаем</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">методы</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+webdav-a. </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">Для</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">примера</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">я</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">перечислил</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">все</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">,
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">для</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">аплоада</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файлов</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">хватит</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+PUT </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">и</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+MKCOL<br/>
+        </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">dav_methods
+PUT DELETE MKCOL COPY MOVE;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # nginx </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">будет</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">создавать</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">весь</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">путь</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">при</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">аплоаде</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файлов</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+(</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">можно</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">будет</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">не</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">создавать</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">предварительно</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">вложенные</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">каталоги</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">)<br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">create_full_put_path
+on;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">включаем</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+autoindex </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">в</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">каталоге</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+upload (</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">чтобы</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">на</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">самом</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+images.example.com </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">листинг</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">не</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">включать</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">).<br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">autoindex
+on;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">autoindex_exact_size
+off;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">autoindex_localtime
+on;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">charset
+utf-8;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">включаем</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">авторизацию</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">в</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+/upload:<br/>
+        </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">auth_basic
+&quot;Upload directory&quot;;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">auth_basic_user_file
+/etc/nginx/htpasswd;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">}</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+   # </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">теперь</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">описываем</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">раздачу</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">файлов</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">по</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+http </span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">из</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">
+&quot;</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">корня</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">&quot;
+</span></font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">сайта</font></font></font><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">:<br/>
+
+   </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">location
+/ {</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+       </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">root
+/home/user/data/www/images.example.com;</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+
+   </span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">}</span></font></font></font></b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US"><br/>
+</span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">}</span></font></font></font></b></p>
+<p lang="en-US" style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<br/>
+<br/>
+
+</p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Создадим</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">
+htpasswd-</span></font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">файл</font></font></font><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt"><span lang="en-US">:</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">root@server:~#
+</span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">touch
+/etc/nginx/htpasswd; chmod 600 /etc/nginx/htpasswd</span></font></font></font></b></p>
+<p lang="en-US" style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<br/>
+<br/>
+
+</p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Сгенерим
+пользователя (если у вас нет утилиты
+htpasswd, то поставьте пакет apache2-utils —
+apache2 этот пакет не ставит, если что =)) —
+команду повторите нужное количество
+раз, заменяя username, при запуске она
+запросит пароль для пользователя:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">root@server:~#
+</span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">htpasswd
+-nm username &gt;&gt; /etc/nginx/htpasswd</span></font></font></font></b></p>
+<p lang="en-US" style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<br/>
+<br/>
+
+</p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Рестартим
+nginx, если ещё нет и приступаем к заливанию
+файлов. Я покажу это на примере консольного
+curl, с libcurl, думаю, разберетесь сами, если
+уже дочитали до сюда.<br/>
+Например, у нас
+есть файл /tmp/bigfile. Нам его нужно будет
+показывать по адресу
+http://images.example.com/archives/bigfile.zip<br/>
+Запускаем
+curl с хитрыми параметрами:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.4cm; background: #edeceb">
+<font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">user@laptop:~$
+</span></font></font></font><b><font color="#000000"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">curl
+-T /tmp/bigfile
+http://username:password@images.example.com/upload/archives/bigfile.zip</span></font></font></font></b></p>
+<p lang="en-US" style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<br/>
+<br/>
+
+</p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Имейте
+в виду, что пока файл льётся, он льётся
+в каталог /var/lib/nginx/body/. Когда upload закончится,
+файл будет перемещен в docroot через mv —
+так что если у вас /var и каталог для upload
+на разных файловых системах, то операция
+будет не атомарной. Если же на одной
+файловой системе — то файл появится в
+docroot мнгновенно и целиком (то есть не
+будет такого, что вы заливаете файл, а
+в это время его кусок могут скачать
+другие).</font></font></font></p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">В
+некоторых местах вы можете услышать
+мнение, что передавать логин/пароль
+так, как это сделал я выше небезопасно
+и нужно обязательно передавать
+basic-авторизацию через http-заголовок
+Authorization, потому что так безопаснее. Так
+вот — не слушайте потом больше никогда
+этого человека. Заголовок Authorization это
+всего-лишь base64 (хоть и немного нестандартный)
+и декодится по первой же ссылке в гугле
+— https://webnet77.net/cgi-bin/helpers/base-64.pl<br/>
+Намного
+лучше будет настроить https
+(</font></font></font><a href="https://debian.pro/581" target="https://debian.pro/581"><font color="#48668a"><font face="Georgia, serif"><font size="3" style="font-size: 11pt">https://debian.pro/581</font></font></font></a><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">)
+и настроить ограничение по ip
+(</font></font></font><a href="https://debian.pro/726" target="https://debian.pro/726"><font color="#48668a"><font face="Georgia, serif"><font size="3" style="font-size: 11pt">https://debian.pro/726</font></font></font></a><font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">).
+Впрочем, если вам удобнее передавать
+через заголовок — welcome, но не тешьте
+себя надеждой, что это позволит избежать
+раскрытие пароля, если к исходникам
+заливалки получат доступ.</font></font></font></p>
+<p style="margin-top: 0.11cm; margin-bottom: 0.11cm; line-height: 100%; background: #ffffff">
+<font color="#5d5d5c"><font face="Arial, serif"><font size="3" style="font-size: 11pt">Да,
+ещё с этим модулем nginx’a не будут работать
+webdav-клиенты — уж очень он простой (в нём
+даже нет вебдавного листинга
+файлов/каталогов). Если вам нужен
+настоящий webdav — то советую посмотреть
+в сторону установки OwnCloud.</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 0.53cm; background: #f3f2f2">
+<font color="#ababaa"><font face="Arial, serif"><font size="2" style="font-size: 9pt">30.04.2015
+by</font></font></font><a href="http://debian.pro/" target="Перейти на сайт inkvizitor68sl"><font color="#48668a"><font face="Georgia, serif"><font size="2" style="font-size: 9pt">inkvizitor68sl</font></font></font></a><font color="#6d6d6d"><font face="Arial, serif"><font size="2" style="font-size: 9pt">|</font></font></font><a href="https://debian.pro/category/dadmin"><font color="#48668a"><font face="Georgia, serif"><font size="2" style="font-size: 9pt">Администрирование</font></font></font></a></p>
+<p class="western" style="margin-top: 0.19cm; margin-bottom: 0.19cm; line-height: 0.53cm; background: #f3f2f2">
+<img src="nginx_upload_html_ab0d9f93733e1ef1.gif" name="Фигура2" alt="Фигура2" align="bottom"/>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><a name="_GoBack"></a>
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+</body>
+</html>
