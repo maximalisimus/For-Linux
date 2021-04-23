@@ -1,6 +1,6 @@
 
 
-apt-get install nginx git fcgiwrap spawn-fcgi
+sudo apt-get install nginx git fcgiwrap spawn-fcgi git-core apache2-utils
 
 
 
@@ -43,6 +43,40 @@ server {
     fastcgi_param PATH_INFO $uri;
     fastcgi_param unix:/var/fcgiwrap.socket;
 
+}
+
+
+
+server {
+  listen 80 default_server;
+  listen [::]:80 default_server;
+
+  # server_name  north.world-ithech.ru;
+
+  index index.php index.html index.htm;
+  
+  root /home/mikl/git;
+  
+  # listen 443 ssl;
+  # server_name git.example.com;
+  # ssl_certificate /fullchain.pem;
+  # ssl_certificate_key /privkey.pem;
+
+  location / {
+    try_files $uri $uri/ =404;
+  }
+
+  location ~ (/.*) {
+    client_max_body_size 0;
+    # include fastcgi_params;
+    include /etc/nginx/fastcgi_params;
+    fastcgi_param SCRIPT_FILENAME /usr/lib/git-core/git-http-backend;
+    fastcgi_param GIT_HTTP_EXPORT_ALL "";
+    fastcgi_param GIT_PROJECT_ROOT /home/mikl/git/;
+    fastcgi_param REMOTE_USER $remote_user;
+    fastcgi_param PATH_INFO $1;
+    fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+  }
 }
 
 From my understanding, a git push request sends a git-receive-pack to my server. My simple solution was to capture this suffix with $1 and use an if statement, but I found quickly that this is not the correct use for ifs (ifisevil).
