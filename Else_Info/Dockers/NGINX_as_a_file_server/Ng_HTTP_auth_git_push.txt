@@ -1,5 +1,17 @@
 
 
+apt-get install nginx git fcgiwrap spawn-fcgi
+
+
+
+mkdir -p /var/git/test.git
+cd /var/git/test.git
+git init --bare
+git update-server-info
+chown -R www-data:www-data /var/git
+
+
+
 Nginx HTTP authorization only for git push
 
 I host a private git server using Nginx. I'd like anyone to clone into my repos (without authorization) but require authorization if they try to push a commit.
@@ -36,6 +48,39 @@ server {
 From my understanding, a git push request sends a git-receive-pack to my server. My simple solution was to capture this suffix with $1 and use an if statement, but I found quickly that this is not the correct use for ifs (ifisevil).
 
 Is there a more appropriate solution to what I'm trying to accomplish?
+
+
+
+apt-get install nginx git fcgiwrap spawn-fcgi
+apt-get install gitweb
+
+
+Configuring Nginx virtual host for GitWeb
+Nginx virtual host for GitWeb should look like this:
+
+server
+{
+  access_log /var/log/nginx/gitweb.access.log;
+
+  error_log /var/log/nginx/gitweb.error.log info;
+
+  server_name gitweb.developernote.com;
+
+  location /index.cgi {
+    root /usr/share/gitweb/;
+    include fastcgi_params;
+    gzip off;
+    fastcgi_param SCRIPT_NAME $uri;
+    fastcgi_param GITWEB_CONFIG /etc/gitweb.conf;
+    fastcgi_pass  unix:/var/run/fcgiwrap.socket;
+  }
+  location / {
+    root /usr/share/gitweb/;
+    index index.cgi;
+  }
+}
+
+
 
 
 
