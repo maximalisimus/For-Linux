@@ -100,7 +100,6 @@ docker run -d -p 9001:9001 --name portainer_agent --restart=always -v /var/run/d
 
 
 
-
 Portainer to 2.0.0
 
 mkdir -p portainer-data && cd portainer-data
