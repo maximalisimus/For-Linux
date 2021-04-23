@@ -89,15 +89,15 @@ version: '3'
       ports:
         - 9000:9000
         - 8000:8000
-      networks:
-        - portainer_net
+      # networks:
+      #  - portainer_net
 
 volumes:
   portainer_data:
 
-networks:
-  portainer_net:
-    driver: bridge
+# networks:
+#  portainer_net:
+#    driver: bridge
 
 
 
