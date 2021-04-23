@@ -1,0 +1,1154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="author" content="utv"/>
+	<meta name="created" content="2021-04-23T08:41:00"/>
+	<meta name="changed" content="2021-04-23T15:16:16"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21cm 29.7cm; margin-left: 3cm; margin-right: 1.5cm; margin-top: 2cm; margin-bottom: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "Times New Roman"; font-size: 12pt; so-language: ru-RU }
+		p.ctl { font-family: "Times New Roman"; font-size: 12pt; so-language: ar-SA }
+		h2 { margin-top: 0.49cm; margin-bottom: 0.49cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		h2.western { font-family: "Times New Roman", serif; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.cjk { font-family: "Times New Roman"; font-size: 18pt; so-language: ru-RU; font-weight: bold }
+		h2.ctl { font-family: "Times New Roman"; font-size: 18pt; so-language: ar-SA; font-weight: bold }
+		h3 { margin-top: 0.07cm; margin-bottom: 0cm; direction: ltr; color: #1f4d78; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Calibri Light", serif; font-size: 12pt; so-language: ru-RU }
+		h3.cjk { font-family: ; font-size: 12pt; so-language: ru-RU }
+		h3.ctl { font-family: ; font-size: 12pt; so-language: ar-SA }
+		h4 { margin-top: 0.07cm; margin-bottom: 0cm; direction: ltr; color: #2e74b5; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h4.western { font-family: "Calibri Light", serif; font-size: 12pt; so-language: ru-RU; font-style: italic }
+		h4.cjk { font-family: ; font-size: 12pt; so-language: ru-RU; font-style: italic }
+		h4.ctl { font-family: ; font-size: 12pt; so-language: ar-SA; font-style: italic }
+		pre { direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent }
+		pre.western { font-family: "Liberation Mono", serif; font-size: 10pt; so-language: ru-RU }
+		pre.cjk { font-family: "Liberation Mono"; font-size: 10pt; so-language: ru-RU }
+		pre.ctl { font-family: "Liberation Mono"; font-size: 10pt; so-language: ar-SA }
+		a:link { color: #0563c1; text-decoration: underline }
+		strong { font-weight: bold }
+		code.western { font-family: "Liberation Mono", serif }
+		code.cjk { font-family: "Liberation Mono" }
+		code.ctl { font-family: "Liberation Mono" }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#0563c1" vlink="#800000" dir="ltr"><p class="western" style="margin-bottom: 0cm; line-height: 100%">
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">version:
+'3.6'</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">services:</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">vsftpd:</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">image:
+fauria/vsftpd</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">environment:</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+FTP_USER=myuser</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+FTP_PASS=mYp4sS</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ports:</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+20:20</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+21:21</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">   
+<font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">volumes:
+</span></font></font>
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+/var/app/ftp:/home/vsftpd</span></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">    
+ <font face="Consolas, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-
+/var/log/ftp:/var/log/vsftpd</span></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-T backup-file.tar.gz ftp://username:password@ftp.server.com/backup/</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-T backup-file.tar.gz
+ftp://username:password@ftp.server.com/backup/backup.tar.gz</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+--upload-file &quot;{file1,file2}&quot; <a href="http://www.example.com/">http://www.example.com</a>
+</span>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com --user myname:mypassword</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Использование
+<span lang="en-US">curl</span> для работы с <span lang="en-US">ftp</span>-серверами</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">MooSE</span>
+( 2007-10-06 )</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Есть
+множество различных программ для доступа
+к <span lang="en-US">FTP</span>-серверам. Они удобны.
+Однако большинство из них не пригодны
+для использования в скриптах. Если же
+вы пишите скрипт, который должен работать
+с <span lang="en-US">FTP</span> - вам скорее всего
+подойдёт <span lang="en-US">curl</span>. Его основные
+команды очень просты, и их описание
+можно разместить на одной странице.</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Ниже
+следует что-то вроде небольшой памятки
+по основным командам <span lang="en-US">curl</span>.</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Самый
+простой способ для обращения к <span lang="en-US">ftp</span>-серверу:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com --user myname:mypassword</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Эта
+команда подключается к серверу, показывает
+список файлов и отключается.</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Для
+скачивания файла с сервера можно
+воспользоваться командой:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com/mp3/mozart_piano_sonata.zip --user
+myname:mypassword -o mozart_piano_sonata.zip</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Для
+загрузки файла на сервер нужна следующая
+команда:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-T koc_dance.mp3 ftp://myftpsite.com/mp3/ --user myname:mypassword</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Получение
+списка файлов в поддиректории:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com/mp3/  --user myname:mypassword</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Получение
+списка директорий. В качестве фильтра
+используется <span lang="en-US">grep</span>:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com  --user myname:mypassword -s | grep ^d</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">Удаление
+файлов с сервера:</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+ftp://myftpsite.com/ -X 'DELE mp3/koc_dance.mp3' --user
+myname:mypassword</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%">Для
+получений подробной справки используйте
+команду:</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">man
+curl</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">Или:</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+--manual | less</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">SFTP</span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-k  -u virt03:virt03 -T file4  sftp://192.168.56.110/home/virt03/</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">Syntax
+: </span>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-k  -u username:password -T filename sftp://IP_Addreess OR
+Hostname:/path/to/upload </span>
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">FTP</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">curl
+-k  -u virt03:virt03 -T file6  ftp://192.168.56.110</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">Example</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span lang="en-US">[root@virt03
+test]# curl -k  -u virt03:virt03 -T file4 
+sftp://192.168.56.110/home/virt03/</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0.42cm; line-height: 0.64cm; background: #ffffff">
+<font color="#222222"><font face="Arial, serif"><font size="5" style="font-size: 21pt"><b>Внесение
+SSL в конфигурации Vsftpd</b></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Откройте
+конфигурационный файл с привилегиями
+root:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">sudo
+nano /etc/vsftpd.conf</font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">В
+нижней части файла найдите строку,
+соответствующую только что созданному
+сертификату SSL:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_cert_file=/etc/ssl/private/vsftpd.pem</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Под
+этой строкой нужно внести дополнительную
+информацию об SSL.</font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">При
+создании сертификата ключевой файл и
+сертификат были помещены в один файл,
+поэтому можно указать строку закрытого
+ключа:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_private_key_file=/etc/ssl/private/vsftpd.pem</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Затем
+нужно внести следующие строки, которые
+ограничат доступ клиентов к TLS.</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_enable=YES<br/>
+allow_anon_ssl=NO<br/>
+force_local_data_ssl=YES<br/>
+force_local_logins_ssl=YES</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Затем
+нужно настроить сервер на использование
+TLS (преемник SSL):</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_tlsv1=YES<br/>
+ssl_sslv2=NO<br/>
+ssl_sslv3=NO</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Чтобы
+расширить конфигурационный файл,
+необходимо внести дополнительные опции:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">require_ssl_reuse=NO<br/>
+ssl_ciphers=HIGH</span></font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Сохранив
+изменения, закройте файл.</font></font></font></p>
+<p class="western" style="margin-bottom: 0.85cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Helvetica, serif"><font size="2" style="font-size: 11pt">Затем
+перезапустите сервер, чтоб активировать
+внесенные изменения:</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#444444"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">sudo
+service vsftpd restart</font></font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h4 class="western" style="margin-top: 0cm; background: #ffffff"><font color="#404040"><font face="Alegreya, serif"><font size="5" style="font-size: 18pt"><b>Как
+настроить SFTP VSFTPD с SSL / TLS на Ubuntu 18.04</b></font></font></font></h4>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<h3 class="western" style="margin-top: 0cm; margin-bottom: 0.21cm; background: #ffffff">
+<font color="#404040"><font face="Alegreya, serif"><b>Настройка
+SSL для VSFTPD</b></font></font></h3>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"> </font>
+</p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Поскольку
+данные (даже учетные данные), переданные
+по FTP, не зашифрованы, мы можем включить
+TLS / SSL для обеспечения другого уровня
+безопасности для нашего FTP-сервера.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Чтобы
+создать сертификат с помощью openssl,
+выполните следующие действия:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="1134" cellpadding="0" cellspacing="0">
+	<col width="1134"/>
+
+	<tr>
+		<td width="1134" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">#
+			sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout
+			/etc/ssl/private/vsftpd.pem -out /etc/ssl/private/vsftpd.pem</span></font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">где 365 –
+для добавления сертификата в течение
+одного года и добавления того же значения
+для флажков -out, -keyout, чтобы найти закрытый
+ключ и сертификат в том же файле.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Вам будет
+предложено добавить всю необходимую
+информацию для создания сертификата,
+как показано ниже</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="870" cellpadding="0" cellspacing="0">
+	<col width="870"/>
+
+	<tr>
+		<td width="870" style="border: none; padding: 0cm"><p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Generating
+			a 2048 bit RSA private key</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">.................+++</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">..............................................................................................+++</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">writing
+			new private key to '/etc/ssl/private/vsftpd.pem'</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-----</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">You
+			are about to be asked to enter information that will be
+			incorporated</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">into
+			your certificate request.</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">What
+			you are about to enter is what is called a Distinguished Name or a
+			DN.</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">There
+			are quite a few fields but you can leave some blank</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">For
+			some fields there will be a default value,</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">If
+			you enter '.', the field will be left blank.</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">-----</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Country
+			Name (2 letter code) [AU]:AU</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">State
+			or Province Name (full name) [Some-State]:SY</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Locality
+			Name (eg, city) []:Sydney</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Organization
+			Name (eg, company) [Internet Widgits Pty Ltd]:Linoxide</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Organizational
+			Unit Name (eg, section) []:</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Common
+			Name (e.g. server FQDN or YOUR name) []:ubuntu</span></font></font></p>
+			<p class="western" style="orphans: 0; widows: 0"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">Email
+			Address []:test@email.com</span></font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">После
+создания сертификата нам нужно добавить
+его в файл конфигурации vsftpd и включить
+SSL.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Для этого
+добавьте следующую строку в указанный
+файл:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="795" cellpadding="0" cellspacing="0">
+	<col width="795"/>
+
+	<tr>
+		<td width="795" style="border: none; padding: 0cm"><p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_cert_file=/etc/ssl/private/vsftpd.pem</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_private_key_file=/etc/ssl/private/vsftpd.pem</span></font></font></p>
+			<p class="western" style="orphans: 0; widows: 0"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">ssl_enable=YES</font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">осле того,
+как нам нужно отклонить анонимные
+подключения через SSL и потребовать SSL
+для передачи данных и входа в систему.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Для этого
+добавьте следующие строки в файл
+/etc/vsftpd.conf:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="795" cellpadding="0" cellspacing="0">
+	<col width="795"/>
+
+	<tr>
+		<td width="795" style="border: none; padding: 0cm"><p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">allow_anon_ssl=NO</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">force_local_data_ssl=YES</span></font></font></p>
+			<p class="western" style="orphans: 0; widows: 0"><font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">force_local_logins_ssl=YES</span></font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Как только
+добавленные строки добавлены, мы настроим
+сервер для использования TLS, который
+является предпочтительным преемником
+SSL.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Для этого
+добавьте следующие строки в один и тот
+же файл:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="795" cellpadding="0" cellspacing="0">
+	<col width="795"/>
+
+	<tr>
+		<td width="795" style="border: none; padding: 0cm"><p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_tlsv1=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_sslv2=NO</span></font></font></p>
+			<p class="western" style="orphans: 0; widows: 0"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">ssl_sslv3=NO</font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">После всех
+шагов наш файл конфигурации vsftpd будет
+выглядеть так:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="795" cellpadding="0" cellspacing="0">
+	<col width="795"/>
+
+	<tr>
+		<td width="795" style="border: none; padding: 0cm"><p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">listen=NO</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">listen_ipv6=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">anonymous_enable=NO</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">local_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">write_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">local_umask=022</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">dirmessage_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">use_localtime=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">xferlog_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">connect_from_port_20=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">chroot_local_user=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">secure_chroot_dir=/var/run/vsftpd/empty</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">pam_service_name=vsftpd</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">pasv_enable=Yes</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">pasv_min_port=10000</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">pasv_max_port=11000</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">user_sub_token=$USER</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">local_root=/home/$USER/ftp</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">userlist_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">userlist_file=/etc/vsftpd.userlist</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">userlist_deny=NO</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_cert_file=/etc/ssl/private/vsftpd.pem</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">rsa_private_key_file=/etc/ssl/private/vsftpd.pem</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_enable=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">allow_anon_ssl=NO</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">force_local_data_ssl=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">force_local_logins_ssl=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_tlsv1=YES</span></font></font></p>
+			<p class="western" style="margin-bottom: 0cm; orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt"><span lang="en-US">ssl_sslv2=NO</span></font></font></p>
+			<p class="western" style="orphans: 0; widows: 0"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">ssl_sslv3=NO</font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">После
+любых изменений в файле конфигурации
+vsftpd нам необходимо перезапустить службу
+следующей командой:</font></font></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<a href="https://itsecforu.ru/2018/05/30/%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D1%8C-sftp-vsftpd-%D1%81-ssl-tls-%D0%BD%D0%B0-ubuntu-18-04/"><font face="Arial, serif">?</font></a></p>
+<table width="795" cellpadding="0" cellspacing="0">
+	<col width="795"/>
+
+	<tr>
+		<td width="795" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0">
+			<font face="Courier New, serif"><font size="2" style="font-size: 10pt">#
+			sudo service vsftpd restart</font></font></p>
+		</td>
+	</tr>
+</table>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Вы также
+можете настроить vsftpd для использования
+letencrypt сертификата для sftp, но убедитесь,
+что у вас есть домен для проверки.</font></font></p>
+<p style="margin-bottom: 0.64cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif">Вы можете
+добавить переменную пути в конфигурацию
+vsftpd, где хранится ключ ssl и private.</font></font></p>
+<p style="margin-bottom: 0cm; line-height: 100%; background: #ffffff">
+<font color="#404040"><font face="Alegreya SC, serif"><span lang="en-US">rsa_cert_file=/ssl/letsencrypt/ftpdomain.com/chain-bundle.pem<br/>
+rsa_private_key_file=/ssl/letsencrypt/ftpdomain.com/private-key.pem</span></font></font></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><a name="_GoBack"></a>
+<span lang="en-US">VSFTPD configuration Primer:</span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>Если
+сервер предназначен для работы в
+интернет, полезно добавить некоторые
+ограничения.</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+<br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anonymous_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>no_anon_password=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anon_world_readable_only=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>connect_from_port_20=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>no_anon_password=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>hide_ids=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>pasv_min_port=50000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>pasv_max_port=60000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>xferlog_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>ascii_download_enable=NO</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>async_abor_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>one_process_model=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>idle_session_timeout=120</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>data_connection_timeout=300</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>accept_timeout=60</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>connect_timeout=60</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anon_max_rate=15000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+<br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>Для
+работы в интернет в независимом от
+inetd/xinetd режиме</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+<br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>listen=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>max_clients=200</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>max_per_ip=4</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anonymous_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>no_anon_password=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anon_world_readable_only=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>connect_from_port_20=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>hide_ids=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>pasv_min_port=50000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>pasv_max_port=60000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>xferlog_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>async_abor_enable=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>one_process_model=YES</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>idle_session_timeout=120</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>data_connection_timeout=300</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>accept_timeout=60</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>connect_timeout=60</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><span style="font-variant: normal"><font color="#4d4d4d"><span style="letter-spacing: normal"><span lang="en-US">
+       </span></span></font></span><span style="font-variant: normal"><font color="#4d4d4d"><font face="Roboto, Helvetica Neue, Helvetica, Arial, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span lang="en-US"><span style="font-style: normal"><b>anon_max_rate=15000</b></span></span></span></font></font></font></span><span lang="en-US"><br/>
+</span><br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<h2 class="western" style="margin-top: 0.53cm; margin-bottom: 0.26cm; line-height: 110%; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#1b6eae"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="6" style="font-size: 22pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Настраиваем
+FTP-сервер с виртуальными пользователями
+на базе vsftpd</span></span></span></font></font></font></span></h2>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Протокол
+FTP, несмотря на преклонный возраст и
+серьезные недостатки продолжает широко
+применяться, во многом благодаря простоте
+и поддержке со стороны самого широкого
+спектра устройств и ПО. FTP-сервер является
+неотъемлемой частью любого веб-сервера,
+применяется в системах автоматизированного
+обмена данными. Наиболее часто встающей
+перед администраторами таких систем
+задачей является создание сервера с
+виртуальными пользователями. Сегодня
+мы расскажем, как это сделать.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Про
+настройку FTP-сервера на базе </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>vsftpd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+мы уже рассказывали на страницах нашего
+сайта, недавно существенно дополнив и
+обновив статью </span></span></span></font></font></font></span><a href="https://interface31.ru/tech_it/2012/02/prostoy-ftp-server-na-baze-ubuntu.html" target="_blank"><span style="font-variant: normal"><font color="#1b6eae"><span style="text-decoration: none"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Простой
+FTP-сервер на базе Ubuntu (vsftpd)</span></span></span></font></font></span></font></span></a><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+В ней мы рассказали каким образом можно
+ограничить список пользователей, имеющих
+возможность подключаться к серверу, и
+их права. Однако локальные пользователи
+остаются при этом локальными пользователями
+и несмотря на ограниченные права могут
+оказаться объектом атаки, направленной
+на повышение прав, например, через
+уязвимости в каком-либо ПО.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Кроме
+того, ручное редактирование списков и
+настроек пользователей может оказаться
+весьма трудоемким делом если их не
+один-два, а существенно больше. Также
+иногда возникает ситуация, что светить
+данные реальных пользователей просто
+нежелательно, например, FTP используется
+движком сайта (CMS), связка пользователь-пароль
+явно прописана в конфиге и теоретически
+доступна любому работающему с сайтом
+сотруднику.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+таких ситуациях следует использовать
+виртуального пользователя, который
+будет иметь доступ исключительно к
+данному FTP-ресурсу и учетные данные
+которого можно смело сообщить всем
+принимающих участие в работе реальным
+сотрудникам.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+нашей статье мы настроим FTP-сервер для
+реализации следующей схемы:</span></span></span></font></font></font></span></p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><img src="vsftpd_html_2fa078c61d7bf8c9.png" name="Изображение1" align="left" width="320" height="269" border="0"/>
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Пусть
+в нашем распоряжении имеется некий
+веб-сервер под управлением которого
+находятся три сайта: </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>blue.lab</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>green.lab</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+и </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>red.lab</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+физически расположенные в одноименных
+директориях. Наша задача создать
+FTP-сервер с виртуальными пользователями,
+каждый из которых имеет доступ только
+к своему сайту.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Важное
+замечание, в данной схеме все сайты
+должны работать от имени веб-сервера
+(www-data), если вы используете запуск каждого
+сайта от имени своего (реального)
+пользователя, то вам лучше настроить
+FTP-сервер для работы с реальными
+пользователями или дополнительно
+обеспечить нужные права доступа для
+виртуальных пользователей, что может
+представлять из себя нетривиальную
+задачу.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Прежде
+всего установим соглашение: имя
+виртуального пользователя должно
+совпадать и именем корневой FTP-папки, в
+нашем случае папки сайта, а все такие
+папки должны располагаться в одном
+месте, т.е. подпадать под шаблон
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>/var/www/$USER</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+Это позволит в дальнейшем с легкостью
+манипулировать сайтами и виртуальными
+пользователями, а также избежать путаницы
+в именах и настройках.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Определившись
+с моделью размещения данных можно
+переходить к настройкам ПО. Кроме </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>vsftpd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+нам понадобятся пакеты </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>libpam-pwdfile</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+и </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>apache2-utils</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.
+Последний входит в состав одноименного
+веб-сервера и если у вас уже работает
+Apache, то устанавливать его не надо.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Сама
+установка предельно проста:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">apt-get install vsftpd libpam-pwdfile apache2-utils</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">После
+чего перейдем к настройкам FTP-сервера,
+которые расположены в файле </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>/etc/vsftpd.conf</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+мы перечислим опции в порядке их
+нахождения в файле.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Данная
+опция запускает FTP-сервер как службу</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">listen=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ниже
+имеется аналогичная взаимоисключающая
+опция:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">listen_ipv6=NO</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Первая
+из них обеспечивает поддержку IPv4, вторая
+сразу IPv6 и IPv4, поэтому должна быть
+включена только одна из них.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Запрещаем
+анонимных пользователей:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">anonymous_enable=NO</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">И
+разрешаем локальных (и виртуальных)
+пользователей:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">local_enable=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Также
+разрешаем запись:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">write_enable=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">и
+задаем маску для вновь создаваемых
+файлов и папок:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">local_umask=022</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Это
+обеспечит установку прав 755 на папки и
+644 на файлы, т.е. полный доступ только
+владельцу и чтение для группы и остальных.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Чтобы
+FTP использовал локальное время сервера,
+а не GMT установим:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">use_localtime=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">И
+включим лог загружаемых и скачиваемых
+файлов:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">xferlog_enable=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Разрешаем
+передачу данных через порт 20, требуется
+для лучшей совместимости с некоторыми
+клиентами:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">connect_from_port_20=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Задаем
+путь к логу и его формат:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">xferlog_file=/var/log/vsftpd.log</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">xferlog_std_format=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Укажем
+таймауты:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">idle_session_timeout=600</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">data_connection_timeout=120</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Первый
+задает время отключения бездействующего
+пользователя, а второй время ожидания
+возобновления неоконченной передачи.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Для
+корректной работы с текстовыми данными,
+в частности с символами переноса строки
+в разных ОС (CR+LF в Windows, LF в Linux) включим
+поддержку ASCII, это полезно, если вы
+скачиваете скрипты или файлы с Linux
+сервера, правите их в среде Windows и
+заливаете обратно. В этом случае FTP
+автоматически будет менять символы
+переноса строки для соответствия
+стандартам системы.</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">ascii_upload_enable=YES</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">ascii_download_enable=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Обязательно
+изолируем пользователя в корне его
+домашней директории и рядом впишем
+опцию, разрешающую запись в корень:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">chroot_local_user=YES</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">allow_writeable_chroot=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Остальные
+опции оставляем без изменения.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Ниже
+добавим необходимые нам настройки.
+Разрешим пассивный режим и явно укажем
+диапазон портов:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">pasv_enable=YES</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">pasv_min_port=62000</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">pasv_max_port=62999</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Включим
+виртуальных пользователей:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">guest_enable=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Укажем
+от имени какого реального пользователя
+они будут работать, так как в нашем
+случае нам надо работать с содержимым
+веб-сервера, то указываем соответствующего
+пользователя </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>www-data</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">.</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">guest_username=www-data</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Применяем
+к виртуальным пользователям настройки
+локальных, иначе к ним будут применены
+ограничения анонимных.</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">virtual_use_local_privs=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Укажем
+шаблон для автоматической генерации
+домашнего каталога виртуального
+пользователя:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">user_sub_token=$USER</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Теперь
+можно задать сами домашние директории</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">local_root=/var/www/$USER</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Также
+иногда неплохо будет скрыть реальных
+владельцев содержимого, для этого
+добавьте:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">hide_ids=YES</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Если
+вы используете Ubuntu, то добавьте следующую
+недокументированную опцию:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">seccomp_sandbox=NO</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Это
+позволит избежать ошибки </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>500
+OOPS: prctl PR_SET_SECCOMP failed</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+которая возникает из некорректной
+совместной работы </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>vsftpd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+и системы безопасности </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>seccomp</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+в Debian данная ошибка не проявляется.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">На
+этом настройка FTP-сервера закончена,
+сохраняем файл и переходим к настройке
+правил аутентификации. Откроем
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>/etc/pam.d/vsftpd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+закомментируем в нем все строки и добавим
+две свои:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">auth required pam_pwdfile.so pwdfile /etc/vsftpwd</span></span></span></span></font></font></font></span></code>
+<code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">account required pam_permit.so</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">После
+этого аутентификация локальных
+пользователей на FTP-сервере будет
+невозможна, работать будут только
+виртуальные. Опция </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>pwdfile
+/etc/vsftpwd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+указывает путь к файлу паролей, его нам
+необходимо будет создать на следующем
+шаге.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Для
+создания пользователей будем использовать
+утилиту </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>htpasswd</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+из состава </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>apache2-utils</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">,
+для создания файла паролей и первого
+пользователя введите:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">htpasswd -c -d /etc/vsftpwd blue.lab</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Ключ
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>-c</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+предписывает создать файл паролей, если
+он существует, то все данные в нем будут
+очищены, а файл перезаписан, </span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><b>-d</b></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">
+задает необходимый для vsftpd алгоритм
+шифрования хэша пароля.</span></span></span></font></font></font></span></p>
+<p class="western" align="justify" style="orphans: 2; widows: 2"><span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Следующие
+пользователи создаются командой (в
+нашем примере это пользователь green.lab):</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">htpasswd -d /etc/vsftpwd green.lab</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Для
+удаления пользователя используйте
+(удаляем red.lab):</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">htpasswd -D /etc/vsftpwd red.lab</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">После
+чего можно перезапустить службу
+FTP-сервера и проверить его работу:</span></span></span></font></font></font></span></p>
+<pre class="western" style="line-height: 141%; text-align: justify; orphans: 2; widows: 2; background: #f2f2f2"><code class="western"><span style="font-variant: normal"><font color="#295684"><font face="Ubuntu Mono, Courier, monospace"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><span style="background: transparent">service vsftpd restart</span></span></span></span></font></font></font></span></code></pre><p class="western" align="justify" style="orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#333333"><font face="Open Sans, Verdana, Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Как
+видим, настроить FTP-сервер с виртуальными
+пользователями по нашей инструкции (в
+отличие от многих иных &quot;инструкций&quot;
+в сети) абсолютно несложно и недолго.
+Если вы будете внимательно следовать
+всем нашим рекомендациям, то сложностей
+у вас возникнуть не должно.</span></span></span></font></font></font></span></p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p lang="en-US" class="western" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
+<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+
+</p>
+</body>
+</html>

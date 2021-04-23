@@ -1,0 +1,1274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 7.1.1.2 (Linux)"/>
+	<meta name="created" content="2020-04-09T22:39:19"/>
+	<meta name="changed" content="2021-04-23T16:34:35"/>
+	<meta name="AppVersion" content="15.0000"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin: 2cm }
+		p { margin-bottom: 0.25cm; direction: ltr; color: #000000; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.western { font-family: "Liberation Serif", serif; font-size: 12pt; so-language: ru-RU }
+		p.cjk { font-family: "AR PL New Sung"; font-size: 12pt; so-language: zh-CN }
+		p.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		h1 { margin-bottom: 0.21cm; direction: ltr; color: #000000; text-align: left; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Liberation Serif", sans-serif; font-size: 24pt; so-language: ru-RU; font-weight: bold }
+		h1.cjk { font-family: "AR PL New Sung"; font-size: 24pt; so-language: zh-CN; font-weight: bold }
+		h1.ctl { font-family: "DejaVu Sans"; font-size: 24pt; so-language: hi-IN; font-weight: bold }
+		strong { font-weight: bold }
+		em { font-style: italic }
+		a:link { color: #000080; so-language: zxx; text-decoration: underline }
+	</style>
+</head>
+<body lang="ru-RU" text="#000000" link="#000080" vlink="#800000" dir="ltr"><h1 class="western" align="left">
+<a href="http://likeunix.ru/vsftpd-config/"><span style="font-variant: normal"><font color="#000000"><span style="text-decoration: none"><font face="Arial, Helvetica, sans-serif"><font size="5" style="font-size: 18pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">vsftpd
+перевод конфигурационного файла</span></span></span></font></font></span></font></span></a></h1>
+<p class="western" align="left"><br/>
+<br/>
+
+</p>
+<p class="western" align="left"><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">#
+Разрешать анонимный
+доступ<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anonymous_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+#Разрешать
+анонимным пользователям пользоваться
+SSL<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">allow_anon_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+#
+Разрешить создавать директории анонимным
+пользователям в
+incoming<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_mkdir_write_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+#
+Разрешить запись в другие директории
+анонимному пользователю<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_other_write_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+#
+Разрешить заливать файлы анонимным
+пользователям в incoming<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_upload_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включение этой опции, анонимным
+пользователям будет разрешено скачивать
+только видимые ими из мира файлы.
+Предполагается полезным, если пользователи
+могут загружать<br/>
+на сервер и хранить
+на нем собственные
+файлы.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_world_readable_only=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включить, ASCII режим передачи данных
+будет разрешен при
+download.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ascii_download_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включить, ASCII режим передачи будет
+разрешен при uploads.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ascii_upload_enable=NO/YES</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении, специальные FTP команды
+известные как «async ABOR» будут разрешены.
+Только плохо продуманные FTP клиенты
+используют эту функцию.<br/>
+В добавок
+эта функция неудобна в управлении,
+поэтому отключена по умолчанию. К
+сожалению, некоторые FTP клиенты могут
+зависать в момент отмены передачи,<br/>
+если
+эта функция выключена. Если это происходит
+можно попробовать включить эту
+функцию.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">async_abor_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении, vsftpd стартуя в режиме listen,
+работает в фоновом режиме. Т.е. контроль
+передается той оболочке в которой был
+запущен vsftpd.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">background=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+(проверять
+/etc/shells при попытке входа локальных
+пользователей)<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">check_shell=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опции разрешает использование SITE CHMOD
+команд устанавливающих права доступа
+для файла. Анонимные пользаки не могу
+это использовать.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chmod_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Меняеться
+у всех анонимно закачанных файлов на
+сервер будут изменены владельцы на
+пользователя в указанного в
+chown_username.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chown_uploads=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+/etc/vsftpd.chroot_list
+задаётся список пользователей, при
+аутентификации которых деляется chroot в
+их домашний каталог<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chroot_list_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+#
+Привязать локального пользователя к
+замкнутой среде. Если выбрано локальные
+пользователи будут (по умолчанию)
+перенесены в chroot () «заточение»<br/>
+в их
+домашнем каталоге после входа. Внимание:
+эта опция имеет смысл быть включенной
+из соображений безопасности, особенно
+если пользователи имеют права позволяющие
+загрузку файлов на сервер, или shell
+доступ.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chroot_local_user=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении исходящие с сервера соединения
+исходят с порта 20, при выключении сервер
+может работать с несколько меньшими
+привилегиями.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">connect_from_port_20=NO/YES</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES приводит к протоколированию работы
+подключений по SSL. (Добавлено в
+2.0.6)<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">debug_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Начиная
+с версии 2.0.7 vsftpd умеет удалять неудавшиеся
+закачки, если определить следующий
+параметр.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">delete_failed_uploads=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+позволяет
+использовать список анонимных паролей
+типа e-mail, при использовании которых
+попытки подключения будут отвергнуты.
+По умолчанию, файл содержащий<br/>
+этот
+список располагается в /etc/vsftpd.banned_emails,
+но имеется возможность изменить путь,
+указав альтернативный путь в
+banned_email_file.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">deny_email_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+NO запрещает доступ на выполнение команд
+просмотра содержимого
+каталогов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">dirlist_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+входе в каталог пользователям показывается
+сообщение из файла .message. По умолчанию,
+директория сканируется на наличие<br/>
+сообщения
+в файле .message, что можно изменить задав
+имя другого файла.параметром
+message_file<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">dirmessage_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO (but the sample config file enables it)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+NO запрещает выполнять скачивание
+файлов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">download_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES включает параллельную генерацию двух
+журналов /var/log/xferlog и /var/log/vsftpd.log. Первый
+формируется в стиле wu-ftpd, второй в
+собственном формате
+vsftpd.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">dual_log_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Файлы
+и каталоги имена которых начинаются с
+«.» будут показаны при листинге каталогов,
+даже если флаг «a» не был использован
+клиентом.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">force_dot_files=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Работает
+только если включен параметр ssl_enable.
+Значение YES принудительно переключает
+соединения всех анонимных пользователей
+в режим SSL при скачивании и закачивании
+файлов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">force_anon_data_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешено
+только при включенном ssl_enable. При
+включении, все анонимные подключения
+будут использовать безопасные SSL
+соединения при посылке
+паролей.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">force_anon_logins_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешено
+только если ssl_enable активно. При включении,
+все не анонимные подключения используют
+безопасные SSL соединения для приема и
+передачи данных.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">force_local_data_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Работает
+только если включен параметр ssl_enable.
+Значение YES принудительно переключает
+соединения всех НЕ-анонимных пользователей
+в режим SSL при отправке
+пароля.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">force_local_logins_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Все
+неанонимные входы рассматриваются от
+имени гостевого пользователя; это
+позволяет производить аутентификацию
+с помощью PAM (pam_userdb) относительно файла
+имён виртуальных
+пользователей.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">guest_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Скрывать
+имена владельцев файлов и
+группы.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">hide_ids=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Установка
+SSL соединения происходит в первую
+очередь.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">implicit_ssl=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+опция включена сервер стартует в
+независимом от inetd/xinetd режиме «standalone
+mode». В этом случае он сам заботится о
+прослушивании и определении входящих
+соединений.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">listen=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Тоже
+что и для параметра listen, только vsftpd будет
+обслуживать IPv6, а не только IPv4. Этот
+параметр и параметр listen являются
+взаимоисключающими.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">listen_ipv6=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешает
+или запрещает вход для локальных
+пользователей. Если включено обычные
+пользовательские акаунты в /etc/passwd могут
+быть использованы для входа.<br/>
+Должно
+быть включено для разрешения любых не
+анонимных входов, включая вход виртуальных
+пользователей.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">local_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении опции, все загрузки на сервер
+происходят с блокировкой записи
+загружаемого файла. Все загрузки с
+сервера совершаются с общей блокировкой
+чтения скачиваемых
+файлов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">lock_upload_files=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES приводит к протоколированию всех
+запросов и ответов протокола FTP, а также
+в выключению параметра
+xferlog_std_format.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">log_ftp_protocol=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES включает использоваение «ls -R». Это
+создаёт значительный риск безопасности,
+потому что выполнение «ls -R» для каталога
+верхнего уровня, который содежит
+множество подкаталогов и файлов, может
+привести к очень большому потреблению
+ресурсов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ls_recurse_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешает
+обновления времени модификации файла
+через MDTM ftp команды.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">mdtm_write=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+YES vsftp не спрашивает пароль у анонимных
+пользователей, позволяя им подключаться
+сразу.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">no_anon_password=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES говорит vsftpd не выполнять блокировку
+при записи в файлы журналов. Обычно
+данный параметр выключен. В Solaris в связке
+с файловой системой Veritas иногда появляется
+ошибка, выражающаяся в зависании при
+попытке установить блокировку на файлы
+журналов.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">no_log_lock=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Для
+ядер 2.4 поддерживается другая модель
+безопасности: один процесс на одно
+соединение. Такая модель менее безопасна,
+но более производительна. Не включайте,
+если не понимаете что делаете и если
+вашему серверу не нужна поддержка
+огромного количества отдельных
+соединений.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">one_process_model=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Работает
+при включенном параметре chroot_local_user.
+Пользователи помещаются в свои домашние
+директории, которые указаны в файле
+/etc/passwd.<br/>
+Точное указание пути /./
+указывает что пользователь будет
+перемещен при входе в директорию в этом
+пути.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">passwd_chroot_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Установите
+YES, если вы хотите использовать имя
+(вместо IP адреса) в
+pasv_addres.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pasv_addr_resolve=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+хотим запретить PASV метод соединения.
+То отключаем.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pasv_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Включите,
+если хотите запретить PASV security check,
+контролирующую подключения с одинаковыми
+ip адресами. Включайте это, только если
+вы знаете что делаете! Используется в
+некоторых туннельных соединениях,
+возможно в FXP.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pasv_promiscuous=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Установите
+NO, если вы хотите запретить метод PORT в
+полученном соединении для приёма/передачи
+данных.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">port_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Установите
+YES, если вы хотите запретить проверку
+безопастности PORT, назначение которой
+убедиться, что исходяще соединение
+подключено именно к клиенту. Включайте
+только если понимаете, что
+делаете!<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">port_promiscuous=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+YES требует от всех SSL клиентов наличия
+клиентского сертификата. Уменьшение
+подлинности, применимое к этому
+сертификату, управляется параметром
+validate_cert (добавлен в
+2.0.6).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">require_cert=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Требовать
+многократного использование SSL
+сессии.<br/>
+Опции require_ssl_reuse=NO стоит уделить
+особое внимание, по умоланию она включена
+в результате некоторые ftp-клиенты не
+смогут подключиться к серверу (возникнет
+ошибка SSL connection failed; session reuse required). Поэтому
+ее стоит либо переключить в NO, тем самым
+увеличив угрозу перехвата данных. Либо
+перейти на “правильный” клиент, это
+FileZilla, lftp и консольный
+ftp-ssl.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">require_ssl_reuse=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Установите
+YES, если вы хотите запускать vsftpd от
+пользователя, который собственно и
+производит запуск. Обычно это нужно в
+тех случаях, когда доступ от пользователя
+root недоступен. СЕРЬЁЗНЕЙШЕЕ ЗАМЕЧАНИЕ!
+НЕ включайте этот параметр пока вы
+полностью не осознаете то, что вы делаете,
+так как использование этого параметра
+может создать серьёзную проблему с
+безопасностью. Особенно важно, чтобы
+vsftpd не мог использовать / в качестве
+корневого каталога, а также используйте
+chroot для ограничения доступа к файлам,
+когда включен данный параметр (даже
+если vsftpd запущен от root). Менее подходящим
+решением может быть использование
+deny_file с такими аргментами как {/*,*..*}, но
+надёжность такого решения не может
+сравниться с chroot, так что сильно на это
+не полагайтесь. При использовании этого
+параметра, вводятся ограничения на
+другие опции. Например не ждите, что
+будут работать опции требущие привелегий,
+такие как неанонимные входы, закачка
+файлов с изменением владельца, соединение
+по 20 порту и подключение по портам
+меньше, чем 1024, а также и другие
+подобные.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">run_as_launching_user=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+хотим разрешить вход анонимным
+пользователям только на основе проверки
+паролей указанных в e-mail листе. Это
+простой путь ограничения доступа к
+низко безопасному содержимому без
+необходимости в виртуальных пользователях.
+При включении,анонимные входы блокируются
+если пароль не содержится в файле
+указанном опцией email_password_file. Формат
+файла — один пароль на строку. По
+умолчанию файл располагается в
+/etc/vsftpd.email_passwords.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">secure_email_list_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+значении YES, vsftpd будет пытаться вести
+сессии. При этом он будет пытаться
+обновлять wtmp и utmp. Если для авторизации
+используется PAM, то vsftpd также будет
+пытаться открывать pam_session при входе и
+закрывать его только при выходе
+пользователя. Если вам не нужно
+протоколирование сессий, вы можете
+запретить это, а также вы можете указать
+vsftpd запускать меньше процессов и/или с
+меньшими привелегиями. Модификация
+wtmp и utmp работает только, если vsftpd собран
+с поддержкой PAM.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">session_support=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+значения выставим в YES то vsftpd будет
+пытаться показывать информацию о
+состояние сессий в списке процессов.
+Другими словами, показываемое имя
+процесса будет изменено, чтобы отражать
+состояние сессии vsftpd (idle, downloading и т.д.)
+Из соображений безопасности, возможно
+вам лучше оставить этот параметр
+выключенным.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">setproctitle_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Vsftpd
+будет обслуживать безопасные соединения
+через SSL. Это относится как к управляющим
+соединениям, так и к соединениям
+передающим данные. Также необходимо,
+чтобы и клиент поддерживал SSL соединения.
+Используйте этот параметр с осторожностью,
+потому что vsftpd целиком полагается на
+библиотеку openSSL в плане безопаснотсти
+SSL соединений и не может гарантировать,
+что эта библиотека свободна от
+ошибок.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Vsftpd
+запрашивает (но не делает из этого
+необходимости) у клиента сертификат.
+Обычно, это не вызывает проблем, но IBM
+zOS считает иначе (добавлено в
+2.0.7).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_request_cert=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Применяется
+только если включен параметр ssl_enable. В
+случае YES допускаются соединения про
+протоколу SSL v2. Предпочтительными
+являются соединения по протоколу TLS
+V1.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_sslv2=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Применяется
+только если включен параметр ssl_enable. В
+случае YES допускаются соединения про
+протоколу SSL v3. Предпочтительными
+являются соединения по протоколу TLS
+V1.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_sslv3=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешено
+только если ssl_enable включено. Если
+разрешено, эта опция разрешает соединения
+по протоколу TLS v1 который является
+оптимальным.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_tlsv1=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Загрузки
+должны завершаться через SSL, а не через
+EOF принятый через сокет. Это сделано для
+того чтобы убедиться что атакующий не
+завершил закачку подделаным TCP
+FIN.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">strict_ssl_read_eof=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+параметр установлен в «YES», то скачиваемые
+с vsftpd SSL-данные обязаны заканчиваться
+через SSL, а не через EOF на сокете.
+По-умолчанию параметр установлен в
+«NO», так как не нашлось ни одного
+FTP-клиента, который бы это поддерживал.
+Потребность в использовании этого
+параметра незначительна. Всё, на что
+влияет этот параметр, является возможностью
+сервера удостовериться в том, подтвердил
+ли FTP-клиент окончание скачанного файла.
+FTP-клиенты в состоянии проверить
+целостность скачанных файлов даже без
+этого параметра. (Добавлено в
+v2.0.7).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">strict_ssl_write_shutdown=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении, все выводы журнала направляемые
+ранее в /var/log/vsftpd.log будут<br/>
+направляться
+в системный журнал вместо
+этого.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">syslog_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включено, и vsftpd был скомпилирован с
+поддержкой tcp_wrappers,входящие соединения
+контролируются через tcp_wrappers. Этот
+механизм предоставляет возможность
+контролировать соединения по ip
+адресам,назначая конкретному подключению
+отдельный конфигурационный файл
+vsftpd.Параметры tcp_wrappers устанавливаются
+в конфигурационных файлах /etc/hosts.allow и
+/etc/hosts.deny, среди них есть переменная
+окружения VSFTPD_LOAD_CONF, указывающая на
+месторасположения файла с альтернативными
+vsftpd.conf параметрами для определенного
+правила (ip адреса) напротив которого
+она указана.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">tcp_wrappers=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+По
+умолчанию в полях листинга каталогов
+пользователей и групп отображаются
+цифровые ID. Включив эту опцию можно
+задать текстовые отображения. Это
+выключено по умолчанию по причине
+производительности.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">text_userdb_names=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+При
+включении, vsftpd распознает имена каталогов
+с тильдой «~» в начале как папки
+пользователей, папки будут распознаны
+только если файл /etc/passwd находится в
+_current_ chroot().<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">tilde_user_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+параметр установлен в «YES», то vsftpd будет
+отображать время в вашей локальной
+временной зоне в списке содержимого в
+каталоге. По-умолчанию отображается
+GMT. Этот параметр может затронуть также
+время, возвращаемое FTP-командой
+«MDTM».<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">use_localtime=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Внутреннее
+значение, используемое для проверки
+относительной выгоды использования
+системного вызова sendfile() на вашей
+платформе.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">use_sendfile=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция работает если userlist_enable включен.
+Если выбрано значение NO, значит вход
+пользователей будет отклонен если они
+не найдены в файле указанном usrlist_file.
+Если вход отклоняется, отказ производится
+перед тем как у пользователя будет
+запрошен пароль.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">userlist_deny=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+YES</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция работает если userlist_enable включен.
+Если выбрано значение NO, значит вход
+пользователей будет отклонен если они
+не найдены в файле указанном usrlist_file.
+Если вход отклоняется, отказ производится
+перед тем как у пользователя будет
+запрошен пароль.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">userlist_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+параметр установлен в «YES», то все
+полученные SSL-сертификаты от клиентов
+должны пройти проверку «OK». Самостоятельно
+подписанные сертификаты не проходят
+проверку «OK». (Добавлено в
+v2.0.6).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">validate_cert=NO/YES</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включено, виртуальные пользователи
+будут использовать одинаковые с
+локальными пользователями привилегии.
+По умолчанию, виртуальные пользователи
+используют одинаковые с анонимными
+пользователями привилегии, предполагающие
+большие ограничения, (особенно условия
+доступа на запись).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">virtual_use_local_privs=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Разрешает
+FTP команды изменяющие файловую систему.
+Такие команды как: STOR, DELE, RNFR, RNTO, MKD, RMD,
+APPE, SITE.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">write_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включено, журнал будет включать детальные
+отчеты о закачках на сервер, и закачках
+с сервера (uploads, downloads). По умолчанию, этот
+файл будет располагаться в
+/var/log/vsftpd.log, но расположение может быть
+изменено используя опцию
+vsftpd_log_file.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">xferlog_enable=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO (but the sample config file enables it)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+включено, запись в журнал производится
+в стандартном wu-ftpd стиле, xferlog формата.
+Полезно при желании использования уже
+существующих привычных способов
+генерации статистики. Однако с другой
+стороны, формат используемый по умолчанию
+лучше читается. Расположение журнала
+по умолчанию /var/log/xferlog, что может быть
+изменено при помощи опции
+xferlog_file.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">xferlog_std_format=NO/YES</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+NO</span></span></span></font></font></font></span></em></p>
+<p class="western" align="left" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+<strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Численные
+значения.</span></span></span></font></font></font></span></strong></p>
+<p class="western" align="left" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Максимальное
+время в секундах для выделения подключения
+с PASV стилем передачи данных.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">accept_timeout</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+60</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Максимальная
+допустимая скорость передачи данных
+для анонимных пользователей, выражена
+в байтах<br/>
+в секунду .<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_max_rate</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (unlimited)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+«umask», для создания файлов, применяемое
+к анонимным пользователям. ПРИМЕЧАНИЕ!
+Если вы хотите указать восьмеричные
+значения, помните о префиксе «0», иначе
+значение будет принято как десятеричное
+число.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_umask</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+077</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Права
+на файл для операции chown() над анонимно
+загруженными файлами на vsftpd. (Добавлено
+в v2.0.6).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chown_upload_mode</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0600</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+timeout, в секундах, которое отводится
+удалённому ftp-клиенту для ответа на
+команду «PORT»<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">connect_timeout</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+60</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Максимальный
+временной промежуток в секундах,
+разрешенного замирания процесса передачи
+данных. Если перерыв превышен, соединение
+с удаленным клиентом
+отбрасывается.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">data_connection_timeout</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+300</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Число
+секунд для паузы перед записью в лог
+после неуспешной авторизации в
+vsftpd.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">delay_failed_login</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+1</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Число
+секунд для паузы после успешной
+авторизации в vsftpd.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">delay_successful_login</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Маска
+файлов назначаемая при загрузке файлов
+на сервер. При желании возможно изменить
+на 0777 если есть необходимость сделать
+исполняемыми загружаемые на сервер
+файлы.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">file_open_mode</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0666</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Указывается
+порт для входящих соединений с сервером
+(пока connect_from_port_20 включен).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ftp_data_port</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+20</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+timeout, в секундах, которое отводится
+удалённому ftp-клиенту для ввода очередной
+FTP-команды. Если срабатывает событие по
+timeout, то удалённый клиент
+сбрасывается.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">idle_session_timeout</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+300</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+vsftpd запущен в standalone (автономном) режиме,
+то этот порт будет слушать входящие
+FTP-соединения.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">listen_port</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+21</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Максимальная
+скорость передачи данных, выраженная
+в байтах в секунду, для локально
+аутентифицированных
+пользователей.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">local_max_rate</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (unlimited)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Значение
+маски назначения прав доступа к файлам
+созданным локальными пользователями.
+Помните! Если вы хотите указать параметр
+в качестве цифрового значения, указывайте
+«0» (нулевую) приставку, иначе значение
+будет определено как целое
+десятизначное.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">local_umask</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+077</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+vsftpd запущен в standalone (автономном) режиме,
+то этот параметр указывает максимальное
+количество FTP-клиентов, которое может
+быть подключено. Любые, дополнительно
+подключившиеся пользователи, получат
+сообщение об ошибке.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">max_clients</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (unlimited)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Количество
+неудачных попыток входа, после которых
+сессия прекращается.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">max_login_fails</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+3</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+vsftpd находится в standalone mode, эта опция
+указывает максимально возможное
+количество клиентов с одинаковыми ip
+адресами. Клиентские подключения
+пытающиеся превысить этот лимит, получат
+сообщение об ошибке.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">max_per_ip</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (unlimited)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Максимальное
+значение порта, для соединения типа
+«PASV». Может использоваться для указания
+диапазона портов фаерволу.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pasv_max_port</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (use any port)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Минимальное
+значение порта, для соединения типа
+«PASV». Может использоваться для указания
+диапазона портов фаерволу.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pasv_min_port</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (use any port)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Возможно,
+и не потребуется менять это значение,
+но попробуйте установить значение
+«8192» для более гладкого лимита пропускной
+способности.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">trans_chunk_size</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+0 (let vsftpd pick a sensible setting)</span></span></span></font></font></font></span></em></p>
+<p class="western" align="left" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+<strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">СТРОКОВЫЕ
+ПАРАМЕТРЫ</span></span></span></font></font></font></span></strong></p>
+<p class="western" align="left" style="margin-bottom: 0cm; orphans: 2; widows: 2">
+<span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">В
+этой строке указывается каталог, в
+который vsftp будет переводить анонимных
+пользователей после входа. При неудаче
+просто игнорируется.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">anon_root</span></span></span></font></font></font></span></strong><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция указывает имя файла в котором
+содержится список анонимных e-mail паролей
+не принимаемых сервером. Сервер сверяется
+с этим файлом если опция<br/>
+deny_email_enable
+включена.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">banned_email_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/etc/vsftpd.banned_emails</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит имя файла, в котором содержится
+текст, который отображается когда кто-то
+подключился к серверу. Если параметр
+установлен, то он отменяет параметр
+«ftpd_banner».<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">banner_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит имя файла, из которого загружаются
+сертификаты «Certificate Authority» (CA) для проверки
+подлинности сертификатов от FTP-клиентов.
+К сожалению, по-умолчанию путь до файла
+с SSL-сертификатами CA не используется,
+так как vsftpd использует ограничения
+доступа к файлам в различных местах
+файловой системы (из-за chroot). (Добавлено
+в v2.0.6).<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ca_certs_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит пользователя, которому
+принадлежат права на анонимно загруженные
+на vsftpd файлы. Этот параметр работает
+только если параметр «chown_uploads» установлен
+в «YES».<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chown_username</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+root</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Опция
+является дополнением к chroot_list_enable
+указывает альтернативный путь к файлу
+содержащему список локальных пользователей
+которые будут перемещены в chroot()<br/>
+заточение
+в их домашние каталоги при входе. Эта
+опция уместна только при разрешенной
+chroot_list_enable. Если опция chroot_local_user включена,
+наоборот указывает<br/>
+файл списка
+пользователей не помещаемых в chroot()
+заточение.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">chroot_list_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/etc/vsftpd.chroot_list</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+В
+этой опции указывается список разделенных
+запятыми команд разрешенных FTP (post login.
+USER, PASS и QUIT pre-login всегда разрешены). Другие
+команды запрещены.<br/>
+Пример:
+cmds_allowed=PASV,RETR,QUIT<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">cmds_allowed</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит разделённый запятыми список,
+в котором указаны запрещённые FTP-команды
+(post login. «USER», «PASS» и «QUIT» всегда разрешены
+в pre-login). Если команда указывается в двух
+списках — в этом параметре и в
+«cmds_allowed», то тогда, отказ имеет
+приоритет.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">cmds_denied</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция может быть использована для выбора
+шаблона имен файлов к которым необходимо
+ограничить доступ. Обозначенный в
+шаблоне элемент не скрывается, но любая
+попытка<br/>
+сделать с ним что нибудь
+(скачать, изменить и др.) будет отклонена.
+Эта опция очень проста и не должна
+использоваться для серьезного контроля
+доступа. Может быть использована с
+настройками виртуальных пользователей.
+Пример: deny_file={*.mp3,*.mov,.private}<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">deny_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция указывает местонахождение DSA
+сертификата для использования в SSL
+зашифрованных соединениях.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">dsa_cert_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none — an RSA certificate suffices)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция задает расположение личного DSA
+ключа для использования в SSL зашифрованных
+соединениях. Если эта опция не выбрана,
+сертификат предусматривается как личный
+ключ.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">dsa_private_key_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+может использоваться для указания на
+альтернативный файл для параметра
+«secure_email_list_enable».<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">email_password_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/etc/vsftpd.email_passwords</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Имя
+пользователя, которое будет использоваться
+для обработки анонимного FTP. Домашний
+каталог этого пользователя — это корень
+пространства анонимного
+FTP.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ftp_username</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+ftp</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+В
+этой опции можно указать банер-строку
+выводимую на экран клиента при подключении
+к серверу.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ftpd_banner</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none — default vsftpd banner is displayed)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Опция
+содержит имя «гостевого» пользователя,
+определяющее его домашнюю директорию.Работает
+при включенной guest_enable.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">guest_username</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+ftp</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+может быть использован для установки
+шаблона имён файлов (и имён каталогов,
+и т.д.), которые должны быть скрыты из
+просмотра содержимого в каталоге. И,
+тем не менее, не смотря на то, что они
+являются скрытыми, они полностью
+абсолютно доступны для тех, кто знает
+какие фактические названия (файлов,
+каталогов) использовать. Файлы и каталоги
+будут скрыты, если их имена будут
+содержать строку, полученную из
+«hide_file», или, если их имена попадают под
+шаблон регулярного выражения, указанного
+в «hide_file». Заметьте, что шаблоны регулярных
+выражений для совпадений в vsftpd — всего
+лишь простая реализация, которая является
+подмножеством полнофункциональных
+регулярных выражений. Для более подробной
+информации о шаблонах для совпадения
+в регулярных выражениях смотрите
+параметр «deny_file». Например:
+hide_file={*.mp3,.hidden,hide*,h?}.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">hide_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Если
+запущен в standalone mode, обычно слушает все
+адреса (или все локальные интерфейсы).
+Что может быть отменено указанием
+определенных ip адресов в этой
+строке.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">listen_address</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+подобен параметру «listen_address», но
+указывается адрес по-умолчанию для
+прослушивания входящих IPv6-соединений
+(которые используются если параметр
+«listen_ipv6» установлен в «YES»). Указывается
+в виде стандартного формата
+IPv6-адреса.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">listen_address6</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция указывает каталог в который vsftpd
+должен перевести пользователя после
+локального не анонимного входа. В случае
+неудачи просто игнорируется.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">local_root</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+указывает на имя файла, который
+отображается при переходе в новый
+каталог. Содержимое файла отображается
+у удалённого пользователя. Параметр
+будет работать, только если
+«dirmessage_enable» установлена в
+«YES».<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">message_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+.message</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Имя
+пользователя, которое используется
+vsftpd, когда vsftpd хочет быть полностью
+непривилегированным. Заметьте, что
+параметр должен содержать скорее имя
+пользователя, чем «nobody». На большинстве
+машин пользователь «nobody» не должен
+использоваться для большинства важных
+вещей.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">nopriv_user</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+nobody</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+В
+этой строке можно указать имя PAM сервиса
+который будет использоваться для
+vsftpd.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">pam_service_name</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+vsftpd</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Этой
+опцией задается ip адрес для ответа на
+запрос PASV команды. Адрес указывается в
+цифровом виде, если не включен
+pasv_addr_resolve. По умолчанию,<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">берётся
+адрес сокета входящего
+соединения.<br/>
+pasv_address</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none — the address is taken from the incoming connected
+socket)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит путь в файловой системе до
+сертификата RSA для использования в
+шифрованных SSL-соединениях.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">rsa_cert_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/usr/share/ssl/certs/vsftpd.pem</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит путь в файловой системе до
+закрытого ключа RSA для использования в
+шифрованных SSL-соединениях. Если этот
+параметр не установлен, то подразумевается,
+что закрытый ключ находится в одном и
+том же файле, с
+сертификатом.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">rsa_private_key_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция указывает на имя пустого каталога.
+Также, каталог не должен быть записываемый
+для ftp пользователя. Этот каталог
+используется как безопасный chroot(), когда
+vsftpd не<br/>
+нужен доступ к файловой
+системе.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">secure_chroot_dir</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/usr/share/empty</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+может быть использован для выбора
+SSL-шифра, который vsftpd будет принимать
+для защищенных SSL соединений. Для более
+подробной информации смотрите страницы
+руководства man ciphers. Ограничение шифром
+может быть использовано для улучшения
+безопасности, поскольку это предотвращает
+удалённые попытки отгадать
+шифр.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">ssl_ciphers</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+DES-CBC3-SHA</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Эта
+опция позволяет задавать дополнительные
+параметры относительно к отдельным
+пользователям. Например если в
+user_config_dir выбрать /etc/vsftpd_user_conf, тогда<br/>
+вход
+пользователя «chris», означает что vsftpd
+будет использовать настройки из
+конфигурационного файла
+/etc/vsftpd_user_conf/chris для этой сессии. Обратите
+внимание,<br/>
+не все настройки применимы
+к отдельным пользователям, например
+listen_address, banner_file, max_per_ip, max_clients, xferlog_file, и
+другие.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">user_config_dir</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+полезен для взаимодействия с виртуальными
+пользователями. Параметр используется
+для автоматического создания домашнего
+каталога каждому виртуальному
+пользователю, основываясь на шаблоне.
+Например, если домашний каталог для
+настоящего пользователя, задаётся через
+«guest_username» как «/home/virtual/$USER», а
+«user_sub_token» установлен в «$USER», то затем
+как виртуальный пользователь «fred»
+авторизуется, он попадёт (обычно через
+chroot()) в каталог «/home/virtual/fred». Этот параметр
+будет работать, только если «local_root»
+будет содержать значение
+«user_sub_token»<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">user_sub_token</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+(none)</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Этот
+параметр указывает путь к файлу списка
+пользователей, загружаемому если
+userlist_enable параметр включен.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">userlist_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/etc/vsftpd.user_list</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+Параметр
+содержит имя файла, в который будет
+записываться лог в стиле vsftpd. Лог будет
+писаться только если параметр
+«xferlog_enable» будет установлен в «YES», а
+параметр «xferlog_std_format» будет установлен
+в «NO». Либо будет писаться, если параметр
+«dual_log_enable» установлен в «YES». Одна
+сложность — если у вас параметр
+«syslog_enable» установлен в «YES», то в этот
+файл ничего записываться не будет, а
+лог попадет в системный
+лог.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">vsftpd_log_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/var/log/vsftpd.log</span></span></span></font></font></font></span></em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+В
+параметре этой опции можно указать
+альтернативный путь к файлу журнала
+записываемому в стиле wu-ftpd. Запись в
+этот журнал производится только при
+включенной xferlog_eneble опции, включительно
+с xferlog_std_format. Также журнал ведется если
+включена опция dual_log_enable.<br/>
+</span></span></span></font></font></font></span><strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">xferlog_file</span></span></span></font></font></font></span></strong><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal"><br/>
+</span></span></span></font></font></font></span><em><span style="font-variant: normal"><font color="#000000"><font face="Arial, Helvetica, sans-serif"><font size="2" style="font-size: 10pt"><span style="letter-spacing: normal"><span style="font-style: normal"><span style="font-weight: normal">Default:
+/var/log/xferlog</span></span></span></font></font></font></span></em></p>
+</body>
+</html>
