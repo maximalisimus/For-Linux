@@ -1,0 +1,8 @@
+
+
+sudo apt-get install unoconv --no-install-recommends
+sudo pacman -S unoconv
+
+unoconv -f txt *.fb2
+
+
