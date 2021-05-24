@@ -1,0 +1,41 @@
+
+var offset = 0;
+function calcOffset() {
+    var xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+    xmlhttp.open("GET", "http://stackoverflow.com/", false);
+    xmlhttp.send();
+
+    var dateStr = xmlhttp.getResponseHeader('Date');
+    var serverTimeMillisGMT = Date.parse(new Date(Date.parse(dateStr)).toUTCString());
+    var localMillisUTC = Date.parse(new Date().toUTCString());
+
+    offset = serverTimeMillisGMT -  localMillisUTC;
+}
+
+function getServerTime() {
+    var date = new Date();
+
+    date.setTime(date.getTime() + offset);
+
+    return date;
+}
+
+
+
+
+
+function syncTime() {
+    // Set up our time object, synced by the HTTP DATE header
+    // Fetch the page over JS to get just the headers
+    console.log("syncing time")
+    var r = new XMLHttpRequest();
+    r.open('HEAD', document.location, false);
+    r.send(null);
+    var timestring = r.getResponseHeader("DATE");
+
+    systemtime = new Date(timestring); // Set the time to the date sent from the server
+}
+
+
+
+
