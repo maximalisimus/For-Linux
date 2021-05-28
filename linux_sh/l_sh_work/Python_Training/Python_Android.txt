@@ -1,0 +1,88 @@
+
+sudo apt install git
+sudo apt install cython
+pip install Cython
+sudo apt install openjdk-13-jdk-headless
+sudo apt install make
+sudo apt install autoconf
+sudo apt install libltdl-dev
+sudo apt-get install build-essential libsqlite3-dev sqlite3 bzip2 libbz2-dev zlib1g-dev libssl-dev openssl libgdbm-dev libgdbm-compat-dev liblzma-dev libreadline-dev libncursesw5-dev libffi-dev uuid-dev
+buildozer android clean
+buildozer android debug deploy run
+pip install cython
+
+
+python -m pip install --upgrade pip setuptools virtualenv
+
+
+---------------------------------------------------------
+
+Create the virtual environment named kivy_venv in your current directory:
+
+python -m virtualenv kivy_venv
+Activate the virtual environment. You will have to do this step from the current directory every time you start a new terminal. This sets up the environment so the new kivy_venv Python is used.
+
+For Windows default CMD, in the command line do:
+
+kivy_venv\Scripts\activate
+If you are in a bash terminal on Windows, instead do:
+
+source kivy_venv/Scripts/activate
+If you are in linux, instead do:
+
+source kivy_venv/bin/activate
+
+---------------------------------------------------------
+
+Install Kivy
+
+python -m pip install kivy[base] kivy_examples
+
+kivy[base,media] or kivy[full]
+
+To install the stable version of Kivy, from the terminal do:
+
+python -m pip install kivy[base] kivy_examples --no-binary kivy
+
+To install the latest cutting-edge Kivy from master, instead do:
+
+python -m pip install "kivy[base] @ https://github.com/kivy/kivy/archive/master.zip"
+
+---------------------------------------------------------
+
+git clone https://github.com/kivy/buildozer.git
+cd buildozer
+sudo python setup.py install
+
+pip install --user buildozer
+
+Venv:
+pip install buildozer
+
+
+
+buildozer init
+
+buildozer android debug deploy run
+
+
+
+# buildozer target command
+buildozer android clean
+buildozer android update
+buildozer android deploy
+buildozer android debug
+buildozer android release
+
+---------------------------------------------------------
+
+How to sign an android apk file
+
+https://stackoverflow.com/questions/4853011/how-to-sign-an-android-apk-file
+
+keytool -genkey -v -keystore my.keystore -keyalg RSA -keysize 2048 -validity 10000 -alias app
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my.keystore my-app.apk my_alias_name
+
+zipalign -p 4 my.apk my-aligned.apk
+
