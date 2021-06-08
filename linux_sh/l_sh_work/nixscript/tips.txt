@@ -1,12 +1,18 @@
-С НОВЫМ ГОДОМ NIXSCRIPT
-
-
-
-
-
-
-
-
-
+Source
+  # Подключаем все скрипты и библиотеки разом
+$ #!/bin/bash
+  ABSOLUT_FILENAME=$(readlink -e "$0")
+  filesdir=$(dirname "$ABSOLUT_FILENAME")
+  # Абсолютный динамический путь до скрипта
+  _sh_files=$(find "$filesdir/config" -maxdepth 1 -type f 
+               -iname "*.sh" | xargs)
+  # exec тут не работает, лучше строкой в массив
+  # Заодно избавимся от артефактов и нечисти при выводе
+  _files=( $_sh_files )
+  for i in ${_files[*]}; do
+      source $i
+  done
+  unset _sh_files &amp;&amp; unset _files
+  # Не забываем очищать скрипт от мусора
 Read more
 maximalisimus

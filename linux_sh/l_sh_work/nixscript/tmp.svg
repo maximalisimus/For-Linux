@@ -32,7 +32,22 @@
  </g>
 
 
-<text x="90" y="170" font-family="monospace" font-size="42" style="font-weight: bold;" fill="#5af">С НОВЫМ ГОДОМ NIXSCRIPT</text>
+<text x="90" y="170" font-family="monospace" font-size="50" style="font-weight: bold;" fill="#5af">Source</text>
+<text x="50.0" y="207" font-family="monospace" font-size="25" fill="#080"><tspan fill="#0af"  style="font-weight:normal;"># Подключаем все скрипты и библиотеки разом</tspan></text>
+<text x="50.0" y="232" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">#!/bin/bash</tspan></text>
+<text x="50.0" y="257" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">ABSOLUT_FILENAME=$(readlink -e "$0")</tspan></text>
+<text x="50.0" y="282" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">filesdir=$(dirname "$ABSOLUT_FILENAME")</tspan></text>
+<text x="50.0" y="307" font-family="monospace" font-size="22" fill="#080"><tspan fill="#0af"  style="font-weight:normal;"># Абсолютный динамический путь до скрипта</tspan></text>
+<text x="50.0" y="332" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">_sh_files=$(find "$filesdir/config" -maxdepth 1 -type f</tspan></text>
+<text x="490.0" y="357" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">-iname "*.sh" | xargs)</tspan></text>
+<text x="50.0" y="382" font-family="monospace" font-size="22" fill="#080"><tspan fill="#0af"  style="font-weight:normal;"># exec source и конвеер | source в этом случае не работают.</tspan></text>
+<text x="50.0" y="407" font-family="monospace" font-size="22" fill="#080"><tspan fill="#0af"  style="font-weight:normal;"># Лучше строкой в массив. Заодно избавимся от ошибок</tspan></text>
+<text x="50.0" y="432" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">_files=( $_sh_files )</tspan></text>
+<text x="50.0" y="457" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">for i in ${_files[*]}; do</tspan></text>
+<text x="90.0" y="482" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">source $i</tspan></text>
+<text x="50.0" y="507" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">done</tspan></text>
+<text x="50.0" y="532" font-family="monospace" font-size="22" fill="#080"><tspan  style="font-weight:normal;" fill="#5f5">unset _sh_files &amp;&amp; unset _files</tspan></text>
+<text x="50.0" y="557" font-family="monospace" font-size="22" fill="#080"><tspan fill="#0af"  style="font-weight:normal;"># Не забываем очистить скрипт от мусора</tspan></text>
 <text x="70" y="595" font-family="monospace" font-size="27" font-style="oblique" fill="#fa0">Read more</text>
 <text x="110" y="625" font-family="monospace" font-size="27" fill="#fa0">maximalisimus</text>
 <path d="m734.91 625.85h-11.509c-10.504 0-12.991 2.4871-12.991 12.991v11.509c0 10.504 2.4871 12.991 12.991 12.991h11.509c10.504 0 12.991-2.4871 12.991-12.991v-11.509c0-10.504-2.5135-12.991-12.991-12.991zm5.7679 26.749h-2.7252c-1.0319 0-1.3494-0.82021-3.2014-2.6988-1.614-1.561-2.3283-1.7727-2.7252-1.7727-0.55563 0-0.71438 0.15875-0.71438 0.92604v2.4606c0 0.66145-0.21166 1.0583-1.9579 1.0583-2.884 0-6.0854-1.7462-8.3344-5.0006-3.3867-4.7625-4.3127-8.3344-4.3127-9.0752 0-0.39687 0.15875-0.76729 0.92604-0.76729h2.7252c0.68792 0 0.9525 0.3175 1.2171 1.0583 1.3494 3.8894 3.5983 7.3025 4.5244 7.3025 0.34396 0 0.50271-0.15875 0.50271-1.0319v-4.0217c-0.10584-1.8521-1.0848-2.0108-1.0848-2.6723 0-0.3175 0.26458-0.635 0.68791-0.635h4.2862c0.58208 0 0.79374 0.3175 0.79374 1.0054v5.4239c0 0.58209 0.26459 0.79375 0.42334 0.79375 0.34395 0 0.635-0.21166 1.27-0.84666 1.9579-2.196 3.3602-5.5827 3.3602-5.5827 0.18521-0.39688 0.5027-0.76729 1.1906-0.76729h2.7252c0.82021 0 1.0054 0.42333 0.82021 1.0054-0.34396 1.5875-3.6777 6.2971-3.6777 6.2971-0.29104 0.47624-0.39688 0.68791 0 1.2171 0.29104 0.39687 1.2435 1.2171 1.8785 1.9579 1.1642 1.3229 2.0637 2.4342 2.3019 3.2014 0.26458 0.76729-0.13229 1.1642-0.89958 1.1642z" fill="#4680c2"/>

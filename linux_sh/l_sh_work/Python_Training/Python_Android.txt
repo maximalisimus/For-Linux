@@ -14,8 +14,8 @@ python -m pip install --upgrade pip setuptools virtualenv
 
 Archlinux:
 
-sudo pacman -S git cython java-runtime-common java-environment-common jdk-openjdk git make cmake automake autoconf lib32-libltdl
-sudo pacman -S sqlite lib32-sqlite bzip2 lib32-bzip2 zlib openssl lib32-openssl gdbm readline lib32-readline libffi lib32-libffi
+sudo pacman -S git cython java-runtime-common java-environment-common jdk-openjdk git make cmake automake autoconf
+sudo pacman -S lib32-libltdl sqlite lib32-sqlite bzip2 lib32-bzip2 zlib openssl lib32-openssl gdbm readline lib32-readline libffi lib32-libffi
 ???: sudo pacman -S lzip xz lib32-xz ncurses lib32-ncurses
 
 
