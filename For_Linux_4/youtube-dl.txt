@@ -1,0 +1,18 @@
+youtube-dl (BASH)
+# Просмотр нужного формата
+# Заодно игнорируем ошибки
+$ youtube-dl -iF <URL-of-video>
+# Список форматов плейлиста лучше вывести в файл
+$ youtube-dl --yes-playlist -iF <URL-playlist> > playlist.txt
+# Скачиваем понравившийся формат
+$ youtube-dl --yes-playlist -if 22 <URL-playlist>
+# Задать начало и конец плейлиста. Например
+$ youtube-dl --yes-playlist -if 22 \
+  --playlist-start 10 --playlist-end 20 <URL-playlist>
+# Даем правильные имена выходным файлам или файлу
+# Данную информацию убрали из всех man и help
+# Смотрите в прикреплённом файле youtube-dl-man-output.txt
+$ youtube-dl -o '%(title)s.%(ext)s' \
+  --yes-playlist -if 22 <URL-playlist>
+Read more
+maximalisimus
