@@ -4,6 +4,7 @@ youtube-dl (BASH)
 $ youtube-dl -iF <URL-of-video>
 # Список форматов плейлиста лучше вывести в файл
 $ youtube-dl --yes-playlist -iF <URL-playlist> > playlist.txt
+# youtube-dl --yes-playlist -iF <URL-playlist> | grep -Evi "youtube|download|info" | awk '{print $1,$2,$3,$4}' | grep -Evi "dash|only|format|640|1920" | uniq -dc
 # Скачиваем понравившийся формат
 $ youtube-dl --yes-playlist -if 22 <URL-playlist>
 # Задать начало и конец плейлиста. Например
